@@ -105,7 +105,7 @@ main:focus, .question-focus:focus { outline: none; }
 
 .pill {
   background: var(--card2); border: 1px solid var(--border); border-radius: 999px;
-  padding: 4px 12px; font-size: 13px; color: var(--muted);
+  padding: 4px 12px; font-size: 13px; color: var(--muted); white-space: nowrap;
 }
 .pill.good { color: var(--good); }
 .pill.bad { color: var(--bad); }
@@ -335,6 +335,7 @@ div.option { cursor: default; }
 .course-card-head h2 { margin: 0; font-size: 19px; }
 .course-card p { margin: 0; }
 .course-meta { font-size: 12px; }
+.private-site { text-decoration: none; }
 .picker-foot { margin-top: 22px; font-size: 13px; }
 
 .topic-list { display: grid; gap: 10px; }

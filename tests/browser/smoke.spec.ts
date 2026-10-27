@@ -3,6 +3,9 @@ import { expect, test } from "@playwright/test";
 test("course picker opens a course and practice reveals the explanation", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { name: /Course hub/i })).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: /CompTIA Network\+ Trainer/ })
+  ).toHaveAttribute("href", "https://nplus.aizat.my/");
 
   await page.getByRole("button", { name: /Academic Skills \(Sample\)/ }).click();
   await expect(page).toHaveURL(/#\/c\/sample-course$/);

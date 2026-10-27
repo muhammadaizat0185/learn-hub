@@ -34,6 +34,9 @@ await page.locator(".explanation").waitFor();
 await page.screenshot({ path: `${outDir}05-library-question.png`, fullPage: true });
 
 const mobile = await browser.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1 });
+await mobile.goto("http://127.0.0.1:4184/");
+await mobile.waitForSelector(".private-site");
+await mobile.screenshot({ path: `${outDir}07-mobile-picker.png`, fullPage: true });
 await mobile.goto("http://127.0.0.1:4184/#/c/sample-course");
 await mobile.getByRole("heading", { name: "Academic Skills (Sample)" }).waitFor();
 await mobile.screenshot({ path: `${outDir}06-mobile-home.png`, fullPage: true });

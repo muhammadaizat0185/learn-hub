@@ -52,9 +52,26 @@ export default function CoursePicker({
         </div>
       )}
 
+      <h2 className="section-title">Private</h2>
+      <a
+        className="mode card course-card private-site"
+        href="https://nplus.aizat.my/"
+        target="_blank"
+        rel="noopener"
+      >
+        <span className="course-card-head">
+          <h2>CompTIA Network+ Trainer</h2>
+          <span className="pill">Sign-in required</span>
+        </span>
+        <p>
+          N10-009 practice bank, simulations, and timed mock exams. Opens nplus.aizat.my behind
+          Cloudflare Access.
+        </p>
+      </a>
+
       <p className="muted picker-foot">
-        Course material lives in this repo; nothing here is behind a login. Progress, review decks,
-        and exam history are stored locally on each device.
+        Hub courses are public and need no login. Progress, review decks, and exam history are
+        stored locally on each device.
       </p>
     </div>
   );
