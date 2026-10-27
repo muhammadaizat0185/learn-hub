@@ -1,0 +1,158 @@
+[
+  {
+    "id": 1,
+    "topic": "Study techniques",
+    "type": "mcq",
+    "question": "Which approach makes the best use of spaced practice when preparing for an exam in four weeks?",
+    "options": [
+      { "letter": "A", "text": "Study the whole syllabus once, the night before the exam" },
+      { "letter": "B", "text": "Schedule short review sessions across the four weeks, with gaps between them" },
+      { "letter": "C", "text": "Read the lecture notes repeatedly in a single long session" },
+      { "letter": "D", "text": "Highlight each page in a different colour" }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 2,
+    "topic": "Study techniques",
+    "type": "mcq",
+    "question": "Which activity is an example of active recall?",
+    "options": [
+      { "letter": "A", "text": "Rereading a chapter until it feels familiar" },
+      { "letter": "B", "text": "Copying definitions word for word from the slide" },
+      { "letter": "C", "text": "Closing the book and writing what you remember, then checking" },
+      { "letter": "D", "text": "Listening to a recorded lecture while walking" }
+    ],
+    "answer": ["C"]
+  },
+  {
+    "id": 3,
+    "topic": "Study techniques",
+    "type": "multi",
+    "question": "Which two are evidence-based study strategies?",
+    "options": [
+      { "letter": "A", "text": "Retrieval practice (self-testing)" },
+      { "letter": "B", "text": "Highlighting every line" },
+      { "letter": "C", "text": "Spaced repetition" },
+      { "letter": "D", "text": "Pulling an all-nighter before the exam" }
+    ],
+    "answer": ["A", "C"]
+  },
+  {
+    "id": 4,
+    "topic": "Study techniques",
+    "type": "mcq",
+    "question": "A student mixes different problem types in one practice session instead of doing 20 of the same type. What is this called?",
+    "options": [
+      { "letter": "A", "text": "Cramming" },
+      { "letter": "B", "text": "Interleaving" },
+      { "letter": "C", "text": "Chunking" },
+      { "letter": "D", "text": "Priming" }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 5,
+    "topic": "Focus & wellbeing",
+    "type": "mcq",
+    "question": "Why is a full night's sleep especially useful the night before an exam?",
+    "options": [
+      { "letter": "A", "text": "It lets you memorise new material faster than studying" },
+      { "letter": "B", "text": "It supports consolidation of what you have already learned" },
+      { "letter": "C", "text": "It replaces the need for revision" },
+      { "letter": "D", "text": "It guarantees you will not feel anxious" }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 6,
+    "topic": "Focus & wellbeing",
+    "type": "mcq",
+    "question": "Which break pattern fits the Pomodoro technique?",
+    "options": [
+      { "letter": "A", "text": "25 minutes of focused work, then a 5-minute break" },
+      { "letter": "B", "text": "5 minutes of work, then a 25-minute break" },
+      { "letter": "C", "text": "90 minutes of work with no breaks until the task is done" },
+      { "letter": "D", "text": "Alternate between three subjects every 2 minutes" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 7,
+    "topic": "Focus & wellbeing",
+    "type": "multi",
+    "question": "Which three signs suggest you should take a short break?",
+    "options": [
+      { "letter": "A", "text": "You reread the same sentence several times without absorbing it" },
+      { "letter": "B", "text": "Your error rate is climbing" },
+      { "letter": "C", "text": "You feel refreshed and focused" },
+      { "letter": "D", "text": "You keep switching tasks without finishing anything" }
+    ],
+    "answer": ["A", "B", "D"]
+  },
+  {
+    "id": 8,
+    "topic": "Exam strategy",
+    "type": "mcq",
+    "question": "What is the most effective way to use a past exam paper?",
+    "options": [
+      { "letter": "A", "text": "Read the mark scheme first, then skim the questions" },
+      { "letter": "B", "text": "Attempt it under exam conditions, then review your errors in detail" },
+      { "letter": "C", "text": "Memorise the answers to every question" },
+      { "letter": "D", "text": "Only attempt the questions you already find easy" }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 9,
+    "topic": "Study techniques",
+    "type": "mcq",
+    "question": "When studying a worked example from a textbook, what should you do first?",
+    "options": [
+      { "letter": "A", "text": "Cover the solution and attempt the problem yourself" },
+      { "letter": "B", "text": "Copy the solution neatly into your notes" },
+      { "letter": "C", "text": "Read the solution twice and move on" },
+      { "letter": "D", "text": "Skip it and go straight to the exercises" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 10,
+    "topic": "Exam strategy",
+    "type": "multi",
+    "question": "Which three actions are sensible the night before an exam?",
+    "options": [
+      { "letter": "A", "text": "Review a short summary sheet of key points" },
+      { "letter": "B", "text": "Start learning a difficult topic for the first time" },
+      { "letter": "C", "text": "Prepare your materials and route for the next day" },
+      { "letter": "D", "text": "Aim for seven to nine hours of sleep" }
+    ],
+    "answer": ["A", "C", "D"]
+  },
+  {
+    "id": 11,
+    "topic": "Exam strategy",
+    "type": "mcq",
+    "question": "During an exam you get stuck on a long question. What is usually the best move?",
+    "options": [
+      { "letter": "A", "text": "Stay on it until it is finished, whatever the cost" },
+      { "letter": "B", "text": "Leave it, answer other questions, and return with your remaining time" },
+      { "letter": "C", "text": "Guess immediately and spend the rest of the time checking one answer" },
+      { "letter": "D", "text": "Stop writing and hand in early" }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 12,
+    "topic": "Exam strategy",
+    "type": "mcq",
+    "question": "After a mock exam, which review approach improves future performance most?",
+    "options": [
+      { "letter": "A", "text": "Check only your total score and move on" },
+      { "letter": "B", "text": "Reread the entire syllabus from the start" },
+      { "letter": "C", "text": "Group your mistakes by topic and practise the weakest areas" },
+      { "letter": "D", "text": "Compare your score with classmates and stop reviewing" }
+    ],
+    "answer": ["C"]
+  }
+]

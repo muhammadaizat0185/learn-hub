@@ -1,0 +1,110 @@
+{
+  "1": {
+    "summary": "Spacing study sessions across days forces each retrieval to work harder, which strengthens long-term memory more than one long session.",
+    "options": {
+      "A": "A single pass the night before relies on cramming; the material fades quickly and cannot be revisited.",
+      "B": "Short sessions spread over the four weeks create repeated retrieval with rest between them, the defining feature of spaced practice.",
+      "C": "A single long rereading session is massed practice; familiarity rises but durable recall does not.",
+      "D": "Highlighting is a passive activity and does not create the retrieval that spacing provides."
+    }
+  },
+  "2": {
+    "summary": "Active recall means retrieving information from memory without looking at the material first.",
+    "options": {
+      "A": "Rereading feels productive but mostly builds familiarity, not retrieval strength.",
+      "B": "Copying is transcription; the answer is on the page, so memory is not tested.",
+      "C": "Producing the material from memory and then checking it is retrieval practice.",
+      "D": "Listening is passive input; it does not require you to retrieve what you know."
+    }
+  },
+  "3": {
+    "summary": "Retrieval practice and spaced repetition have strong evidence behind them; highlighting and all-nighters do not.",
+    "options": {
+      "A": "Self-testing is retrieval practice, one of the best-supported study techniques.",
+      "B": "Highlighting is passive and can create an illusion of learning.",
+      "C": "Spacing reviews over time improves retention.",
+      "D": "An all-nighter harms sleep and consolidation and is not a study strategy to rely on."
+    }
+  },
+  "4": {
+    "summary": "Interleaving means mixing different types or topics within one practice session.",
+    "options": {
+      "A": "Cramming is concentrated last-minute study, not mixing problem types.",
+      "B": "Mixing problem types forces you to choose the right method each time.",
+      "C": "Chunking groups information into meaningful units; it is not mixing topics.",
+      "D": "Priming is exposure that makes later learning easier; it does not describe mixed practice."
+    }
+  },
+  "5": {
+    "summary": "Sleep, especially after study, supports memory consolidation; it does not replace revision.",
+    "options": {
+      "A": "Sleep helps consolidate existing learning; it is not a shortcut to learning new material.",
+      "B": "During sleep the brain stabilises and integrates what you studied.",
+      "C": "Sleep supports but cannot replace revision and practice.",
+      "D": "Sleep can reduce stress, but no strategy guarantees freedom from anxiety."
+    }
+  },
+  "6": {
+    "summary": "A standard Pomodoro cycle is 25 minutes of focused work followed by a 5-minute break.",
+    "options": {
+      "A": "The short, timed focus block with a brief break is the Pomodoro pattern.",
+      "B": "This reverses the pattern; the work block is the longer part.",
+      "C": "Working without breaks for 90 minutes ignores the technique's short focus cycles.",
+      "D": "Switching every two minutes prevents any focused work."
+    }
+  },
+  "7": {
+    "summary": "Repeated rereading, rising errors, and task switching are signs of fatigue; feeling refreshed is not.",
+    "options": {
+      "A": "Losing absorption is a clear sign that attention has dropped.",
+      "B": "More errors usually mean fatigue or overload.",
+      "C": "Feeling refreshed and focused means the break worked; it is not a reason to stop.",
+      "D": "Constant switching suggests concentration has broken down."
+    }
+  },
+  "8": {
+    "summary": "Past papers are most useful as a rehearsal under exam conditions followed by a careful error review.",
+    "options": {
+      "A": "Reading the mark scheme first removes the retrieval practice and makes the paper feel easier than it is.",
+      "B": "Simulating the exam exposes timing and knowledge gaps, and reviewing errors fixes them.",
+      "C": "Memorising answers does not transfer to new questions and hides weak understanding.",
+      "D": "Avoiding hard questions removes exactly the practice you need."
+    }
+  },
+  "9": {
+    "summary": "Attempting the problem before seeing the solution turns a worked example into retrieval practice.",
+    "options": {
+      "A": "Trying first, even unsuccessfully, prepares you to notice why the solution works.",
+      "B": "Copying the solution is passive and skips the thinking step.",
+      "C": "Reading twice builds familiarity, not the ability to solve it yourself.",
+      "D": "Skipping the example loses a chance to learn the method before practising."
+    }
+  },
+  "10": {
+    "summary": "Light review, practical preparation, and sleep help; learning a hard topic for the first time does not.",
+    "options": {
+      "A": "A short review of key points reinforces memory without exhausting you.",
+      "B": "Starting a difficult topic for the first time the night before adds stress and rarely sticks.",
+      "C": "Preparing materials and travel removes avoidable exam-day problems.",
+      "D": "Seven to nine hours supports attention and consolidation."
+    }
+  },
+  "11": {
+    "summary": "Leaving a difficult question and returning later protects time for questions you can answer.",
+    "options": {
+      "A": "Sunk cost on one question can cost marks elsewhere.",
+      "B": "Secure easier marks first, then return with a clear mind and remaining time.",
+      "C": "A guess can be sensible, but spending all remaining time checking one answer wastes opportunities.",
+      "D": "Handing in early gives up marks you could still earn."
+    }
+  },
+  "12": {
+    "summary": "Reviewing mistakes by topic shows which areas to practise next.",
+    "options": {
+      "A": "A total score says little about which topics need work.",
+      "B": "Restarting the syllabus ignores the evidence from the mock.",
+      "C": "Grouping errors by topic turns the mock into a targeted study plan.",
+      "D": "Comparing scores does not identify or fix your gaps."
+    }
+  }
+}
