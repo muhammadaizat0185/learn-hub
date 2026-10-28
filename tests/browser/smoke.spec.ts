@@ -50,3 +50,34 @@ test("library search finds a question and opens its detail", async ({ page }) =>
   await expect(page.locator(".detail-title")).toContainText("Q6");
   await expect(page.locator(".explanation")).toBeVisible();
 });
+
+test("code lab flags wrong syntax, then solves the set", async ({ page }) => {
+  await page.goto("/#/c/java-programming");
+  await page
+    .getByRole("navigation", { name: "Course" })
+    .getByRole("button", { name: "Code lab" })
+    .click();
+  await expect(page.getByRole("heading", { name: "Code lab" })).toBeVisible();
+
+  await page.getByRole("button", { name: /Welcome banner/ }).click();
+  await expect(page.getByRole("heading", { name: "Welcome banner" })).toBeVisible();
+  await expect(page.locator(".lab-field")).toHaveCount(5);
+
+  await page.locator('select[data-blank="1"]').selectOption("new");
+  await page.locator('select[data-blank="2"]').selectOption("int");
+  await page.locator('input[data-blank="3"]').fill("readLine(");
+  await page.locator('select[data-blank="4"]').selectOption("+");
+  await page.locator('input[data-blank="5"]').fill("+");
+  await page.getByRole("button", { name: "Check answers" }).click();
+
+  await expect(page.locator(".lab-feedback")).toContainText("not valid Java");
+  await expect(page.locator(".lab-field.is-syntax")).toHaveCount(1);
+
+  await page.locator('select[data-blank="2"]').selectOption("String");
+  await page.locator('input[data-blank="3"]').fill("nextLine");
+  await page.getByRole("button", { name: "Check answers" }).click();
+  await expect(page.locator(".lab-feedback.good")).toContainText("Simulation complete");
+
+  await page.getByRole("button", { name: "← All simulations" }).click();
+  await expect(page.getByRole("button", { name: /Welcome banner/ })).toContainText("solved");
+});

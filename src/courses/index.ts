@@ -2,9 +2,13 @@ import type {
   AnswerExplanation,
   CourseData,
   CourseMeta,
+  LabData,
+  LabSet,
+  LabTopicGroup,
   Question,
   TopicGroup,
 } from "../types";
+import { validateLab } from "../lib/lab";
 
 type JsonModule<T> = { default: T };
 
@@ -19,6 +23,10 @@ const questionLoaders = import.meta.glob("./*/questions.json") as Record<
 const explanationLoaders = import.meta.glob("./*/explanations.json") as Record<
   string,
   () => Promise<JsonModule<Record<string, AnswerExplanation>>>
+>;
+const labLoaders = import.meta.glob("./*/lab.json") as Record<
+  string,
+  () => Promise<JsonModule<LabSet[]>>
 >;
 
 function folderOf(path: string): string {
@@ -105,6 +113,31 @@ function groupTopics(questions: Question[]): TopicGroup[] {
   return order.map((name) => ({ name, ids: ids.get(name)! }));
 }
 
+function groupLab(sets: LabSet[]): LabTopicGroup[] {
+  const order: string[] = [];
+  const byTopic = new Map<string, LabSet[]>();
+  for (const set of sets) {
+    if (!byTopic.has(set.topic)) {
+      order.push(set.topic);
+      byTopic.set(set.topic, []);
+    }
+    byTopic.get(set.topic)!.push(set);
+  }
+  return order.map((name) => ({ name, sets: byTopic.get(name)! }));
+}
+
+function buildLab(folder: string, sets: LabSet[]): LabData {
+  const errors = validateLab(sets);
+  if (errors.length > 0) {
+    throw new Error(`Course "${folder}" has invalid lab data: ${errors.slice(0, 5).join("; ")}`);
+  }
+  return {
+    sets,
+    topics: groupLab(sets),
+    setById: new Map(sets.map((set) => [set.id, set])),
+  };
+}
+
 const cache = new Map<string, CourseData>();
 
 export async function loadCourse(id: string): Promise<CourseData> {
@@ -119,11 +152,13 @@ export async function loadCourse(id: string): Promise<CourseData> {
   const explanationPath = `./${folder}/explanations.json`;
   const loadQuestions = questionLoaders[questionPath];
   const loadExplanations = explanationLoaders[explanationPath];
+  const loadLab = labLoaders[`./${folder}/lab.json`];
   if (!loadQuestions) throw new Error(`Course "${folder}" has no questions.json.`);
 
-  const [questionsModule, explanationsModule] = await Promise.all([
+  const [questionsModule, explanationsModule, labModule] = await Promise.all([
     loadQuestions(),
     loadExplanations ? loadExplanations() : Promise.resolve({ default: {} }),
+    loadLab ? loadLab() : Promise.resolve(null),
   ]);
 
   const questions = questionsModule.default;
@@ -152,6 +187,7 @@ export async function loadCourse(id: string): Promise<CourseData> {
     questionById: new Map(unique.map((q) => [q.id, q])),
     explanations,
     topics: groupTopics(unique),
+    ...(labModule?.default?.length ? { lab: buildLab(folder, labModule.default) } : {}),
   };
   cache.set(id, data);
   return data;

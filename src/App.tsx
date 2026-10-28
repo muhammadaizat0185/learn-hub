@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import CodeLab from "./components/CodeLab";
 import CourseHome from "./components/CourseHome";
 import CoursePicker from "./components/CoursePicker";
 import ExamResults from "./components/ExamResults";
@@ -25,6 +26,7 @@ import {
 } from "./lib/practiceSession";
 import type { PracticeAnswer, PracticeSession } from "./lib/practiceSession";
 import { addExamResult, recordAnswer, resetProgress } from "./lib/storage";
+import { resetLabProgress } from "./lib/lab";
 import type { CourseData, ExamAnswer, Question, View } from "./types";
 
 type Route = { kind: "picker" } | { kind: "course"; id: string };
@@ -372,6 +374,7 @@ function CourseApp({ data, onExit }: { data: CourseData; onExit: () => void }) {
     setExamSession(null);
     setExamSummary(null);
     resetProgress(meta.id);
+    resetLabProgress(meta.id);
     setView("home");
   }
 
@@ -428,6 +431,8 @@ function CourseApp({ data, onExit }: { data: CourseData; onExit: () => void }) {
       }
       case "review":
         return <ReviewView onStartDrill={startDrill} />;
+      case "lab":
+        return <CodeLab />;
       case "library":
         return <LibraryView onPracticeOne={startSingle} onReset={resetAll} />;
       case "exam": {
@@ -525,6 +530,11 @@ function CourseApp({ data, onExit }: { data: CourseData; onExit: () => void }) {
           <button className={view === "library" ? "active" : ""} onClick={() => goTo("library")}>
             Library
           </button>
+          {data.lab && (
+            <button className={view === "lab" ? "active" : ""} onClick={() => goTo("lab")}>
+              Code lab
+            </button>
+          )}
           <button onClick={onExit}>All courses</button>
         </nav>
       </header>

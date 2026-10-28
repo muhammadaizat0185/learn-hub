@@ -1,0 +1,258 @@
+[
+  {
+    "id": "basics-1",
+    "topic": "Java basics",
+    "title": "Welcome banner",
+    "brief": "Read a name and an age from the keyboard, then print a greeting that predicts next year's age.",
+    "hint": "Scanner reads text with nextLine(); joining text and values in println needs the + operator.",
+    "code": "import java.util.Scanner;\n\npublic class WelcomeBanner {\n    public static void main(String[] args) {\n        Scanner input = {{1}} Scanner(System.in);\n\n        System.out.print(\"Your name: \");\n        {{2}} name = input.{{3}}();\n\n        System.out.print(\"Your age: \");\n        int age = input.nextInt();\n\n        int nextYear = age {{4}} 1;\n        System.out.println(\"Hello, \" + name + \"! Next year you will be \" {{5}} nextYear);\n    }\n}",
+    "blanks": [
+      { "id": 1, "kind": "select", "options": ["new", "static", "Scanner"], "answer": "new" },
+      { "id": 2, "kind": "select", "options": ["int", "String", "double"], "answer": "String" },
+      { "id": 3, "kind": "input", "answers": ["nextLine"], "placeholder": "read line" },
+      { "id": 4, "kind": "select", "options": ["+", "-", "*"], "answer": "+" },
+      { "id": 5, "kind": "input", "answers": ["+"], "placeholder": "join" }
+    ]
+  },
+  {
+    "id": "basics-2",
+    "topic": "Java basics",
+    "title": "Average mark",
+    "brief": "Total three marks, compute a decimal average, and print it to two decimal places.",
+    "hint": "Dividing an int total by 3 truncates; divide by 3.0 or store the result as a double.",
+    "code": "public class AverageMark {\n    public static void main(String[] args) {\n        int quiz = 78;\n        int midterm = 64;\n        int finalExam = 85;\n\n        int total = {{1}};\n        {{2}} average = total {{3}} 3.0;\n\n        System.out.{{4}}(\"Average: %.2f%n\", average);\n        System.out.println(\"Rounded: \" + Math.{{5}}(average));\n    }\n}",
+    "blanks": [
+      { "id": 1, "kind": "input", "answers": ["quiz + midterm + finalExam"], "placeholder": "total" },
+      { "id": 2, "kind": "select", "options": ["int", "double", "String"], "answer": "double" },
+      { "id": 3, "kind": "select", "options": ["/", "%", "*"], "answer": "/" },
+      { "id": 4, "kind": "select", "options": ["println", "printf", "print"], "answer": "printf" },
+      { "id": 5, "kind": "input", "answers": ["round"], "placeholder": "round" }
+    ]
+  },
+  {
+    "id": "decision-1",
+    "topic": "Decision structures",
+    "title": "Grade classifier",
+    "brief": "A nested if/else chain turns a score into a grade letter, including an A+ tier.",
+    "hint": "Java has no elseif keyword: the second branch is written as two words.",
+    "code": "import java.util.Scanner;\n\npublic class GradeClassifier {\n    public static void main(String[] args) {\n        Scanner input = new Scanner(System.in);\n        System.out.print(\"Score: \");\n        int score = input.nextInt();\n\n        {{1}} (score >= 80) {\n            if (score >= 90) {\n                System.out.println(\"A+\");\n            } {{2}} {\n                System.out.println(\"A\");\n            }\n        } {{3}} (score >= 70) {\n            System.out.println(\"B\");\n        } else if (score {{4}} 50) {\n            System.out.println(\"C\");\n        } else {\n            System.out.println({{5}});\n        }\n    }\n}",
+    "blanks": [
+      { "id": 1, "kind": "select", "options": ["if", "while", "switch"], "answer": "if" },
+      { "id": 2, "kind": "select", "options": ["else", "elseif", "otherwise"], "answer": "else" },
+      { "id": 3, "kind": "input", "answers": ["else if"], "placeholder": "two words" },
+      { "id": 4, "kind": "input", "answers": [">="], "placeholder": "compare" },
+      { "id": 5, "kind": "select", "options": ["\"Fail\"", "Fail", "'Fail'"], "answer": "\"Fail\"" }
+    ]
+  },
+  {
+    "id": "decision-2",
+    "topic": "Decision structures",
+    "title": "Drink menu with switch",
+    "brief": "A switch picks a menu item; then a conditional operator labels the choice as valid or not.",
+    "hint": "Every case needs break, and the fallback branch is default. The shortened if/else is the ? : operator.",
+    "code": "import java.util.Scanner;\n\npublic class MenuChoice {\n    public static void main(String[] args) {\n        Scanner input = new Scanner(System.in);\n        System.out.println(\"1. Coffee  2. Tea  3. Water\");\n        System.out.print(\"Choose: \");\n        int choice = input.nextInt();\n\n        {{1}} (choice) {\n            {{2}} 1:\n                System.out.println(\"Coffee\");\n                {{3}};\n            case 2:\n                System.out.println(\"Tea\");\n                break;\n            {{4}}:\n                System.out.println(\"Water\");\n        }\n\n        String label = (choice >= 1 && choice <= 3) {{5}} \"valid\" : \"invalid\";\n        System.out.println(label);\n    }\n}",
+    "blanks": [
+      { "id": 1, "kind": "select", "options": ["switch", "if", "case"], "answer": "switch" },
+      { "id": 2, "kind": "input", "answers": ["case"], "placeholder": "branch" },
+      { "id": 3, "kind": "select", "options": ["break", "continue", "return"], "answer": "break" },
+      { "id": 4, "kind": "select", "options": ["default", "case 3", "else"], "answer": "default" },
+      { "id": 5, "kind": "input", "answers": ["?"], "placeholder": "operator" }
+    ]
+  },
+  {
+    "id": "loops-1",
+    "topic": "Loops",
+    "title": "Sum and average to n",
+    "brief": "Accumulate 1 to n with a for loop, then print the total and a decimal average.",
+    "hint": "Start the accumulator at 0, keep looping while i <= n, and cast before dividing.",
+    "code": "import java.util.Scanner;\n\npublic class SumToN {\n    public static void main(String[] args) {\n        Scanner input = new Scanner(System.in);\n        System.out.print(\"n: \");\n        int n = input.nextInt();\n\n        int sum = {{1}};\n        for (int i = 1; i {{2}} n; {{3}}) {\n            sum {{4}} i;\n        }\n        System.out.println(\"Total: \" + sum);\n        System.out.println(\"Average: \" + {{5}} sum / n);\n    }\n}",
+    "blanks": [
+      { "id": 1, "kind": "input", "answers": ["0"], "placeholder": "start" },
+      { "id": 2, "kind": "select", "options": ["<=", "<", ">="], "answer": "<=" },
+      { "id": 3, "kind": "select", "options": ["i++", "i--", "i + 1"], "answer": "i++" },
+      { "id": 4, "kind": "select", "options": ["+=", "=", "=="], "answer": "+=" },
+      { "id": 5, "kind": "input", "answers": ["(double)"], "placeholder": "cast" }
+    ]
+  },
+  {
+    "id": "loops-2",
+    "topic": "Loops",
+    "title": "Nested multiplication table",
+    "brief": "Two nested loops print a 3 by 3 table and add every product to a running total.",
+    "hint": "The inner loop finishes one row; the outer loop prints the line break. Use += to accumulate.",
+    "code": "public class TimesTable {\n    public static void main(String[] args) {\n        int total = 0;\n        for (int row = 1; row <= 3; {{1}}) {\n            for (int col = 1; col {{2}} 3; col++) {\n                System.out.print({{3}} + \" \");\n                total {{4}} row * col;\n            }\n            System.out.{{5}}();\n        }\n        System.out.println(\"Sum of all products: \" + total);\n    }\n}",
+    "blanks": [
+      { "id": 1, "kind": "input", "answers": ["row++", "row += 1", "row = row + 1"], "placeholder": "next row" },
+      { "id": 2, "kind": "select", "options": ["<=", "<", ">="], "answer": "<=" },
+      { "id": 3, "kind": "input", "answers": ["row * col"], "placeholder": "product" },
+      { "id": 4, "kind": "select", "options": ["+=", "=", "++"], "answer": "+=" },
+      { "id": 5, "kind": "select", "options": ["println", "print", "printf"], "answer": "println" }
+    ]
+  },
+  {
+    "id": "loops-3",
+    "topic": "Loops",
+    "title": "Average until sentinel",
+    "brief": "Keep reading numbers until the user types 0, then print the average only if something was entered.",
+    "hint": "A sentinel loop tests the value before entering the body; count the values so you can divide safely.",
+    "code": "import java.util.Scanner;\n\npublic class AverageUntilZero {\n    public static void main(String[] args) {\n        Scanner input = new Scanner(System.in);\n        int total = 0;\n        int count = 0;\n\n        int value = input.nextInt();\n        {{1}} (value {{5}} 0) {\n            total += value;\n            {{2}};\n            value = input.nextInt();\n        }\n\n        {{3}} (count > 0) {\n            System.out.println(\"Average: \" + (double) total / count);\n        } {{4}} {\n            System.out.println(\"No values entered\");\n        }\n    }\n}",
+    "blanks": [
+      { "id": 1, "kind": "select", "options": ["while", "do", "for"], "answer": "while" },
+      { "id": 2, "kind": "input", "answers": ["count++", "count += 1", "count = count + 1"], "placeholder": "count" },
+      { "id": 3, "kind": "input", "answers": ["if"], "placeholder": "guard" },
+      { "id": 4, "kind": "select", "options": ["else", "else if", "finally"], "answer": "else" },
+      { "id": 5, "kind": "select", "options": ["!=", "==", "<>"], "answer": "!=" }
+    ]
+  },
+  {
+    "id": "classes-1",
+    "topic": "Classes & methods",
+    "title": "Bank account",
+    "brief": "A small class with a private field, a constructor, a getter, a deposit method, and a main that uses them.",
+    "hint": "The constructor parameter has the same name as the field, so use this.balance to reach the field.",
+    "code": "public class BankAccount {\n    private {{1}} balance;\n\n    public BankAccount(double opening) {\n        {{2}} = opening;\n    }\n\n    public double getBalance() {\n        {{3}} balance;\n    }\n\n    public void deposit(double amount) {\n        balance = balance {{4}} amount;\n    }\n\n    public static void main(String[] args) {\n        BankAccount account = {{5}} BankAccount(50.0);\n        account.{{6}}(25.0);\n        System.out.println(account.getBalance());\n    }\n}",
+    "blanks": [
+      { "id": 1, "kind": "select", "options": ["double", "int", "String"], "answer": "double" },
+      { "id": 2, "kind": "input", "answers": ["this.balance"], "placeholder": "the field" },
+      { "id": 3, "kind": "select", "options": ["return", "void", "this"], "answer": "return" },
+      { "id": 4, "kind": "select", "options": ["+", "-", "="], "answer": "+" },
+      { "id": 5, "kind": "select", "options": ["new", "this", "static"], "answer": "new" },
+      { "id": 6, "kind": "input", "answers": ["deposit"], "placeholder": "method" }
+    ]
+  },
+  {
+    "id": "classes-2",
+    "topic": "Classes & methods",
+    "title": "Rectangle methods",
+    "brief": "Instance methods compute area and perimeter; a static helper doubles another rectangle's area.",
+    "hint": "A static method belongs to the class, so you call it as Rectangle.doubleArea(r).",
+    "code": "public class Rectangle {\n    private double width;\n    private double height;\n\n    public Rectangle(double width, double height) {\n        this.width = width;\n        this.height = height;\n    }\n\n    public double area() {\n        return {{1}};\n    }\n\n    public {{2}} perimeter() {\n        return 2 * ({{3}});\n    }\n\n    public static double doubleArea(Rectangle r) {\n        return r.area() * 2;\n    }\n\n    public static void main(String[] args) {\n        Rectangle r = new Rectangle(3.0, 4.0);\n        System.out.println(\"Area: \" + r.{{4}}());\n        System.out.println(\"Perimeter: \" + r.perimeter());\n        System.out.println(\"Double area: \" + Rectangle.{{5}}(r));\n    }\n}",
+    "blanks": [
+      { "id": 1, "kind": "input", "answers": ["width * height"], "placeholder": "area" },
+      { "id": 2, "kind": "select", "options": ["double", "int", "void"], "answer": "double" },
+      { "id": 3, "kind": "input", "answers": ["width + height"], "placeholder": "half perimeter" },
+      { "id": 4, "kind": "input", "answers": ["area"], "placeholder": "method" },
+      { "id": 5, "kind": "input", "answers": ["doubleArea"], "placeholder": "static helper" }
+    ]
+  },
+  {
+    "id": "inheritance-1",
+    "topic": "Inheritance & polymorphism",
+    "title": "Animal and Dog",
+    "brief": "Dog extends Animal, calls the parent constructor, and overrides speak(); main calls the override through an Animal reference.",
+    "hint": "A subclass reaches the parent constructor with super(...), and @Override documents the override.",
+    "code": "public class Animal {\n    protected String name;\n\n    public Animal(String name) {\n        this.name = name;\n    }\n\n    public String speak() {\n        return \"...\";\n    }\n\n    public static void main(String[] args) {\n        Animal pet = new {{1}}(\"Rex\");\n        System.out.println(pet.{{2}}());\n    }\n}\n\nclass Dog {{3}} Animal {\n    public Dog(String name) {\n        {{4}}(name);\n    }\n\n    {{5}}\n    public String speak() {\n        return \"Woof\";\n    }\n}",
+    "blanks": [
+      { "id": 1, "kind": "select", "options": ["Dog", "Animal", "Object"], "answer": "Dog" },
+      { "id": 2, "kind": "select", "options": ["speak", "name", "Dog"], "answer": "speak" },
+      { "id": 3, "kind": "select", "options": ["extends", "implements", "imports"], "answer": "extends" },
+      { "id": 4, "kind": "input", "answers": ["super"], "placeholder": "parent" },
+      { "id": 5, "kind": "input", "answers": ["@Override"], "placeholder": "annotation" }
+    ]
+  },
+  {
+    "id": "inheritance-2",
+    "topic": "Inheritance & polymorphism",
+    "title": "Shape polymorphism",
+    "brief": "An abstract Shape is implemented by Circle and Square; a loop prints each area through the parent type.",
+    "hint": "An abstract method has no body and forces each subclass to implement it.",
+    "code": "{{1}} class Shape {\n    public abstract double area();\n}\n\nclass Circle extends Shape {\n    private double radius;\n\n    public Circle(double radius) {\n        this.radius = radius;\n    }\n\n    @Override\n    public double area() {\n        return Math.PI * {{2}};\n    }\n}\n\nclass Square extends Shape {\n    private double side;\n\n    public Square(double side) {\n        this.side = side;\n    }\n\n    @Override\n    public double area() {\n        return side {{3}} side;\n    }\n}\n\npublic class ShapeDemo {\n    public static void main(String[] args) {\n        Shape[] shapes = {{4}};\n        for (Shape shape : shapes) {\n            System.out.printf(\"%.2f%n\", shape.{{5}}());\n        }\n    }\n}",
+    "blanks": [
+      { "id": 1, "kind": "select", "options": ["abstract", "public", "static"], "answer": "abstract" },
+      { "id": 2, "kind": "input", "answers": ["radius * radius"], "placeholder": "circle area" },
+      { "id": 3, "kind": "select", "options": ["*", "+", "-"], "answer": "*" },
+      { "id": 4, "kind": "input", "answers": ["{ new Circle(2.0), new Square(3.0) }"], "placeholder": "array literal" },
+      { "id": 5, "kind": "input", "answers": ["area"], "placeholder": "method" }
+    ]
+  },
+  {
+    "id": "gui-1",
+    "topic": "GUI & Swing",
+    "title": "Login window",
+    "brief": "Build a small Swing window: a frame, a panel, a label, a text field, and a button.",
+    "hint": "Components are added to a container with add(), and the frame is given a size before it is shown.",
+    "code": "{{1}} javax.swing.JButton;\nimport javax.swing.JFrame;\nimport javax.swing.JLabel;\nimport javax.swing.JPanel;\nimport javax.swing.JTextField;\n\npublic class LoginWindow {\n    public static void main(String[] args) {\n        JFrame frame = new JFrame(\"Login\");\n        frame.setDefaultCloseOperation(JFrame.{{2}});\n\n        JPanel panel = new JPanel();\n        JLabel label = new JLabel(\"Username:\");\n        JTextField field = new JTextField(12);\n        JButton button = new JButton(\"Sign in\");\n\n        panel.{{3}}(label);\n        panel.add(field);\n        panel.add(button);\n        frame.add(panel);\n\n        frame.{{4}}(320, 160);\n        frame.setVisible({{5}});\n    }\n}",
+    "blanks": [
+      { "id": 1, "kind": "input", "answers": ["import"], "placeholder": "keyword" },
+      { "id": 2, "kind": "select", "options": ["EXIT_ON_CLOSE", "EXIT", "CLOSE"], "answer": "EXIT_ON_CLOSE" },
+      { "id": 3, "kind": "select", "options": ["add", "setSize", "print"], "answer": "add" },
+      { "id": 4, "kind": "select", "options": ["setSize", "setVisible", "pack"], "answer": "setSize" },
+      { "id": 5, "kind": "select", "options": ["true", "false", "1"], "answer": "true" }
+    ]
+  },
+  {
+    "id": "gui-2",
+    "topic": "GUI & Swing",
+    "title": "Grid of buttons",
+    "brief": "Use GridLayout to place six buttons in two rows, then show the frame.",
+    "hint": "GridLayout takes rows then columns; add() places each component in the next cell.",
+    "code": "import java.awt.GridLayout;\nimport javax.swing.JButton;\nimport javax.swing.JFrame;\n\npublic class ButtonGrid {\n    public static void main(String[] args) {\n        JFrame frame = new JFrame(\"Grid\");\n        frame.setLayout(new {{1}}(2, 3));\n\n        for (int i = 1; i <= 6; {{2}}) {\n            JButton button = new JButton(\"Button \" {{3}} i);\n            frame.{{4}}(button);\n        }\n\n        frame.setSize(400, 200);\n        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\n        frame.setVisible({{5}});\n    }\n}",
+    "blanks": [
+      { "id": 1, "kind": "select", "options": ["GridLayout", "FlowLayout", "BorderLayout"], "answer": "GridLayout" },
+      { "id": 2, "kind": "input", "answers": ["i++", "i += 1", "i = i + 1"], "placeholder": "increment" },
+      { "id": 3, "kind": "select", "options": ["+", ",", "&&"], "answer": "+" },
+      { "id": 4, "kind": "select", "options": ["add", "put", "insert"], "answer": "add" },
+      { "id": 5, "kind": "select", "options": ["true", "false", "1"], "answer": "true" }
+    ]
+  },
+  {
+    "id": "events-1",
+    "topic": "Event handling",
+    "title": "Click counter",
+    "brief": "Register an anonymous ActionListener that counts clicks and updates a label.",
+    "hint": "A JButton fires ActionEvent, so the listener must implement actionPerformed(ActionEvent).",
+    "code": "import java.awt.FlowLayout;\nimport java.awt.event.ActionEvent;\nimport java.awt.event.ActionListener;\nimport javax.swing.JButton;\nimport javax.swing.JFrame;\nimport javax.swing.JLabel;\n\npublic class ClickCounter {\n    private int clicks = 0;\n\n    public ClickCounter() {\n        JFrame frame = new JFrame(\"Counter\");\n        JLabel label = new JLabel(\"Clicks: 0\");\n        JButton button = new JButton(\"Click me\");\n\n        button.{{1}}(new ActionListener() {\n            @Override\n            public void {{2}}(ActionEvent event) {\n                clicks{{3}};\n                label.{{4}}(\"Clicks: \" + clicks);\n            }\n        });\n\n        frame.setLayout(new FlowLayout());\n        frame.add(button);\n        frame.add(label);\n        frame.setSize(300, 120);\n        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\n        {{5}};\n    }\n\n    public static void main(String[] args) {\n        new ClickCounter();\n    }\n}",
+    "blanks": [
+      { "id": 1, "kind": "select", "options": ["addActionListener", "addListener", "onClick"], "answer": "addActionListener" },
+      { "id": 2, "kind": "input", "answers": ["actionPerformed"], "placeholder": "handler" },
+      { "id": 3, "kind": "select", "options": ["++", "--", "+= 2"], "answer": "++" },
+      { "id": 4, "kind": "input", "answers": ["setText"], "placeholder": "set label" },
+      { "id": 5, "kind": "input", "answers": ["frame.setVisible(true)"], "placeholder": "show the window" }
+    ]
+  },
+  {
+    "id": "events-2",
+    "topic": "Event handling",
+    "title": "Lambda greeting",
+    "brief": "Replace the anonymous class with a lambda that opens a message dialog.",
+    "hint": "ActionListener is a functional interface, so a single expression can replace the whole class.",
+    "code": "import javax.swing.JButton;\nimport javax.swing.JFrame;\nimport javax.swing.JOptionPane;\n\npublic class GreetButton {\n    public {{1}}(String[] args) {\n        JFrame frame = new JFrame(\"Greeting\");\n        JButton button = new JButton({{5}});\n\n        button.{{2}}(event {{3}} {\n            JOptionPane.{{4}}(frame, \"Hello from Swing\");\n        });\n\n        frame.add(button);\n        frame.setSize(300, 120);\n        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\n        frame.setVisible(true);\n    }\n}",
+    "blanks": [
+      { "id": 1, "kind": "input", "answers": ["static void main"], "placeholder": "entry point" },
+      { "id": 2, "kind": "select", "options": ["addActionListener", "addMouseListener", "addKeyListener"], "answer": "addActionListener" },
+      { "id": 3, "kind": "input", "answers": ["->"], "placeholder": "lambda" },
+      { "id": 4, "kind": "input", "answers": ["showMessageDialog"], "placeholder": "dialog" },
+      { "id": 5, "kind": "input", "answers": ["\"Say hello\"", "\"Hello\""], "placeholder": "label" }
+    ]
+  },
+  {
+    "id": "exceptions-1",
+    "topic": "Exception handling",
+    "title": "Safe divide",
+    "brief": "Parse two numbers inside try, catch a bad number and a divide-by-zero separately, and always run finally.",
+    "hint": "Integer.parseInt throws NumberFormatException; dividing by zero throws ArithmeticException.",
+    "code": "import java.util.Scanner;\n\npublic class SafeDivide {\n    public static void main(String[] args) {\n        Scanner input = new Scanner(System.in);\n\n        {{1}} {\n            int a = Integer.parseInt(input.nextLine());\n            int b = Integer.parseInt(input.nextLine());\n            System.out.println(a / b);\n        } {{2}} ({{3}} error) {\n            System.out.println(\"That was not a number\");\n        } catch ({{4}} error) {\n            System.out.println(\"Cannot divide by zero\");\n        } {{5}} {\n            System.out.println(\"Done\");\n        }\n    }\n}",
+    "blanks": [
+      { "id": 1, "kind": "select", "options": ["try", "catch", "throw"], "answer": "try" },
+      { "id": 2, "kind": "input", "answers": ["catch"], "placeholder": "handler" },
+      { "id": 3, "kind": "input", "answers": ["NumberFormatException"], "placeholder": "parse error" },
+      { "id": 4, "kind": "input", "answers": ["ArithmeticException"], "placeholder": "math error" },
+      { "id": 5, "kind": "select", "options": ["finally", "else", "end"], "answer": "finally" }
+    ]
+  },
+  {
+    "id": "exceptions-2",
+    "topic": "Exception handling",
+    "title": "Withdraw guard",
+    "brief": "Create a checked exception, throw it when the balance is too low, and catch it in main.",
+    "hint": "A checked exception extends Exception, passes its message to super, and must be declared with throws.",
+    "code": "class InsufficientFundsException {{1}} Exception {\n    public InsufficientFundsException(String message) {\n        {{2}}(message);\n    }\n}\n\npublic class WithdrawDemo {\n    private double balance = 100.0;\n\n    public void withdraw(double amount) {{3}} InsufficientFundsException {\n        if (amount > balance) {\n            {{4}} new InsufficientFundsException(\"Not enough money\");\n        }\n        balance = balance - amount;\n    }\n\n    public static void main(String[] args) {\n        WithdrawDemo account = new WithdrawDemo();\n        {{5}} {\n            account.withdraw(150.0);\n        } catch (InsufficientFundsException error) {\n            System.out.println(error.getMessage());\n        }\n    }\n}",
+    "blanks": [
+      { "id": 1, "kind": "select", "options": ["extends", "implements", "throws"], "answer": "extends" },
+      { "id": 2, "kind": "input", "answers": ["super"], "placeholder": "parent" },
+      { "id": 3, "kind": "input", "answers": ["throws"], "placeholder": "declare" },
+      { "id": 4, "kind": "input", "answers": ["throw"], "placeholder": "raise" },
+      { "id": 5, "kind": "select", "options": ["try", "catch", "do"], "answer": "try" }
+    ]
+  }
+]

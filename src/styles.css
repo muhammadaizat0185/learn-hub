@@ -393,3 +393,93 @@ div.option { cursor: default; }
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Code lab */
+.lab-hero h1 { margin-top: 0; }
+.lab-topic { margin-top: 26px; }
+.lab-topic-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+.lab-topic-head h2 {
+  margin: 0; font-size: 13px; font-weight: 600; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.04em;
+}
+.lab-topic-head span { font-size: 13px; }
+
+.lab-set-list { display: grid; gap: 10px; }
+.lab-set {
+  width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  text-align: left; color: var(--text); cursor: pointer; margin-bottom: 0;
+  transition: border-color 0.12s, transform 0.12s;
+}
+.lab-set:hover { border-color: var(--accent); transform: translateY(-2px); }
+.lab-set-main { min-width: 0; }
+.lab-set h3 { margin: 0 0 4px; font-size: 16px; }
+.lab-set p { margin: 0; font-size: 13px; line-height: 1.45; }
+.lab-set-meta { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; flex-shrink: 0; }
+
+.lab-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+.lab-top .btn { margin-right: auto; }
+.lab-title { margin: 4px 0 6px; font-size: 28px; }
+.lab-brief { margin: 0 0 16px; max-width: 70ch; line-height: 1.5; }
+
+.lab-code {
+  background: #0b1018; border: 1px solid var(--border); border-radius: 12px;
+  padding: 14px 0; overflow-x: auto;
+  font-family: "Cascadia Code", Consolas, ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 14px; line-height: 1.9; tab-size: 4;
+}
+.lab-line { display: flex; min-width: max-content; padding-right: 16px; }
+.lab-gutter {
+  width: 44px; flex: none; text-align: right; padding-right: 14px;
+  color: #566278; user-select: none;
+}
+.lab-content { display: flex; align-items: baseline; white-space: pre; }
+.lab-content > span { flex: none; }
+
+.lab-field {
+  font: inherit; color: var(--text);
+  background: #172132; border: 1px solid #3a4a66; border-radius: 6px;
+  padding: 1px 6px; margin: 0 2px;
+}
+.lab-input::placeholder { color: #5d6b84; }
+.lab-select { min-width: 9ch; padding: 1px 2px; cursor: pointer; }
+.lab-field:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.lab-field.is-correct { border-color: var(--good); background: rgba(62, 207, 142, 0.14); color: #b8f5d8; }
+.lab-field.is-wrong { border-color: var(--bad); background: rgba(255, 107, 107, 0.12); }
+.lab-field.is-syntax { border-color: #f4c56a; background: rgba(244, 197, 106, 0.12); }
+
+.lab-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 16px 0 4px; }
+.lab-progress-text { font-size: 13px; margin-left: auto; }
+.lab-hint { margin: 10px 0 0; line-height: 1.5; }
+
+.lab-feedback {
+  margin-top: 14px; padding: 12px 14px; border-radius: 10px;
+  border: 1px solid var(--border); background: var(--card); line-height: 1.5;
+}
+.lab-feedback p { margin: 0; }
+.lab-feedback.good { border-color: var(--good); background: rgba(62, 207, 142, 0.08); }
+.lab-feedback.bad { border-color: var(--bad); background: rgba(255, 107, 107, 0.07); }
+.lab-feedback:focus { outline: none; }
+
+.lab-issues { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 6px; }
+.lab-issues li {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 13px;
+  background: var(--card2); border-radius: 8px; padding: 8px 10px;
+}
+.lab-issues b { color: var(--accent-soft); flex-shrink: 0; }
+.lab-issues .btn { margin-left: auto; }
+.lab-next { margin-top: 16px; }
+
+.mode-grid .mode:last-child:nth-child(odd) { grid-column: 1 / -1; }
+
+@media (max-width: 640px) {
+  .lab-set { flex-direction: column; align-items: stretch; }
+  .lab-set-meta { justify-content: flex-start; }
+  .lab-code { font-size: 12.5px; }
+  .lab-title { font-size: 22px; }
+  .lab-actions .btn { flex: 1 1 auto; }
+  .lab-gutter { width: 32px; padding-right: 8px; }
+  .lab-progress-text { margin-left: 0; width: 100%; }
+}
+@media (max-width: 560px) {
+  .mode-grid .mode:last-child:nth-child(odd) { grid-column: auto; }
+}

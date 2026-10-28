@@ -11,7 +11,8 @@
     "brand": "node scripts/make_brand_assets.mjs",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:browser": "playwright test"
+    "test:browser": "playwright test",
+    "verify:lab": "node scripts/verify-lab-java.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

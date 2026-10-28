@@ -18,7 +18,7 @@ export interface PracticeResume {
 }
 
 interface Props {
-  onNav: (view: "quiz" | "review" | "exam" | "library") => void;
+  onNav: (view: "quiz" | "review" | "exam" | "library" | "lab") => void;
   onStartTopic: (topic: string) => void;
   examResume?: ExamResume | null;
   practiceResume?: PracticeResume | null;
@@ -40,7 +40,7 @@ export default function CourseHome({
   onResumePractice,
   onDiscardPractice,
 }: Props) {
-  const { meta, questions, topics } = useCourse();
+  const { meta, questions, topics, lab } = useCourse();
   const [, forceTick] = useState(0);
   const state = load(meta.id);
   const attempted = Object.keys(state.stats).length;
@@ -140,6 +140,15 @@ export default function CourseHome({
           <h2>Library</h2>
           <p>Search every question, read explanations, back up progress, and see exam history.</p>
         </button>
+        {lab && (
+          <button className="mode card" onClick={() => onNav("lab")}>
+            <h2>Code lab</h2>
+            <p>
+              {lab.sets.length} coding simulations: fill the gaps in Java classes and methods, with
+              dropdown tokens and typed lines checked for syntax.
+            </p>
+          </button>
+        )}
       </div>
 
       <h2 className="section-title">Study by topic</h2>

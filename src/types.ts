@@ -37,16 +37,55 @@ export interface TopicGroup {
   ids: number[];
 }
 
+export interface LabSelectBlank {
+  id: number;
+  kind: "select";
+  options: string[];
+  answer: string;
+}
+
+export interface LabInputBlank {
+  id: number;
+  kind: "input";
+  answers: string[];
+  placeholder?: string;
+  reveal?: string;
+}
+
+export type LabBlank = LabSelectBlank | LabInputBlank;
+
+export interface LabSet {
+  id: string;
+  topic: string;
+  title: string;
+  brief: string;
+  hint?: string;
+  code: string;
+  blanks: LabBlank[];
+}
+
+export interface LabTopicGroup {
+  name: string;
+  sets: LabSet[];
+}
+
+export interface LabData {
+  sets: LabSet[];
+  topics: LabTopicGroup[];
+  setById: Map<string, LabSet>;
+}
+
 export interface CourseData {
   meta: CourseMeta;
   questions: Question[];
   questionById: Map<number, Question>;
   explanations: Record<number, AnswerExplanation>;
   topics: TopicGroup[];
+  lab?: LabData;
 }
 
 export interface ExamAnswer {
   letters: string[];
 }
 
-export type View = "home" | "quiz" | "review" | "exam" | "library";
+export type View = "home" | "quiz" | "review" | "exam" | "library" | "lab";
