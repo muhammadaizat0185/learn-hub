@@ -1,0 +1,11 @@
+{
+  "id": "java-programming",
+  "title": "Java Programming (BIT 33803)",
+  "shortTitle": "Java",
+  "description": "UTHM BIT 33803 Java Programming: practice questions built from past final exams, covering Java basics, control structures, classes and methods, inheritance, GUI, and event-driven programming.",
+  "exam": {
+    "questions": 40,
+    "minutes": 60,
+    "passPercent": 50
+  }
+}

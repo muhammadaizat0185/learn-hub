@@ -1,0 +1,535 @@
+[
+  {
+    "id": 1,
+    "topic": "OOP concepts",
+    "type": "mcq",
+    "question": "Which statement about a static variable in Java is correct?",
+    "options": [
+      { "letter": "A", "text": "Each object created from the class gets its own copy of the variable." },
+      { "letter": "B", "text": "The variable is shared by all instances of the class." },
+      { "letter": "C", "text": "The variable must be declared with the final keyword." },
+      { "letter": "D", "text": "The variable can only be used inside constructors." }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 2,
+    "topic": "OOP concepts",
+    "type": "mcq",
+    "question": "Which statement about inheritance is correct?",
+    "options": [
+      { "letter": "A", "text": "A superclass inherits the accessible data fields and methods of its subclass." },
+      { "letter": "B", "text": "A subclass inherits the accessible data fields and methods of its superclass." },
+      { "letter": "C", "text": "A subclass can directly access the private fields of its superclass." },
+      { "letter": "D", "text": "Inheritance only works when both classes are in the same package." }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 3,
+    "topic": "OOP concepts",
+    "type": "mcq",
+    "question": "In Java, a class can extend ______ superclass(es) and implement ______ interface(s).",
+    "options": [
+      { "letter": "A", "text": "one; one or more" },
+      { "letter": "B", "text": "one or more; one" },
+      { "letter": "C", "text": "one; exactly one" },
+      { "letter": "D", "text": "one or more; one or more" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 4,
+    "topic": "OOP concepts",
+    "type": "mcq",
+    "question": "Which statement about an abstract class is correct?",
+    "options": [
+      { "letter": "A", "text": "All methods in the class must be declared abstract." },
+      { "letter": "B", "text": "The class cannot be instantiated with the new operator." },
+      { "letter": "C", "text": "The class cannot declare a constructor." },
+      { "letter": "D", "text": "The class cannot contain concrete (implemented) methods." }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 5,
+    "topic": "OOP concepts",
+    "type": "mcq",
+    "question": "A class declared with the final keyword ______.",
+    "options": [
+      { "letter": "A", "text": "cannot be instantiated." },
+      { "letter": "B", "text": "cannot be extended by another class." },
+      { "letter": "C", "text": "must contain only final methods." },
+      { "letter": "D", "text": "must implement at least one interface." }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 6,
+    "topic": "Code validity",
+    "type": "mcq",
+    "question": "Consider this statement:\nJComboBox jcboColor = new JComboBox(\"Red\", \"Green\", \"Blue\");\nWhich best describes it?",
+    "options": [
+      { "letter": "A", "text": "Valid — JComboBox accepts three String arguments." },
+      { "letter": "B", "text": "Invalid — there is no JComboBox constructor that takes three String arguments; pass an array of items instead." },
+      { "letter": "C", "text": "Invalid — JComboBox can only be filled from a Vector, never an array." },
+      { "letter": "D", "text": "Valid — but only after importing javax.swing.event.*." }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 7,
+    "topic": "Code validity",
+    "type": "mcq",
+    "question": "A method is declared inside an abstract class:\nabstract public void display() {\n    System.out.println(\"Welcome to Java Classroom\");\n}\nWhich best describes this declaration?",
+    "options": [
+      { "letter": "A", "text": "Valid — an abstract method may provide a default body." },
+      { "letter": "B", "text": "Invalid — an abstract method must end with a semicolon and have no body." },
+      { "letter": "C", "text": "Invalid — abstract methods must be declared private." },
+      { "letter": "D", "text": "Valid — the enclosing abstract class allows the body." }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 8,
+    "topic": "Code validity",
+    "type": "mcq",
+    "question": "Consider this declaration:\nFont myFont = new Font(\"SansSerif \", 16, Font.BOLD);\nWhich best describes it?",
+    "options": [
+      { "letter": "A", "text": "Invalid — Font has no constructor that takes a String, an int, and an int." },
+      { "letter": "B", "text": "Invalid — a font name must not contain a space." },
+      { "letter": "C", "text": "Valid — it creates a bold 16-point font." },
+      { "letter": "D", "text": "Invalid — Font.BOLD cannot be passed to a constructor." }
+    ],
+    "answer": ["C"]
+  },
+  {
+    "id": 9,
+    "topic": "Code validity",
+    "type": "mcq",
+    "question": "Consider this interface:\npublic interface AnimalSound {\n    public void Cat() {\n        System.out.println(\"Meow.. Meow..\");\n    }\n}\nWhich best describes it?",
+    "options": [
+      { "letter": "A", "text": "Valid — interfaces can contain implemented methods." },
+      { "letter": "B", "text": "Invalid — an interface method with a body must be declared default or static." },
+      { "letter": "C", "text": "Invalid — interface methods cannot be public." },
+      { "letter": "D", "text": "Valid — as long as Cat() is declared public." }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 10,
+    "topic": "Code validity",
+    "type": "mcq",
+    "question": "Consider this declaration:\nclass Rectangle(){\n    public Rectangle(){\n        System.out.println(\"This is default constructor\");\n    }\n}\nWhich best describes it?",
+    "options": [
+      { "letter": "A", "text": "Invalid — the constructor must declare a void return type." },
+      { "letter": "B", "text": "Invalid — a class declaration must not have parentheses after the class name." },
+      { "letter": "C", "text": "Invalid — a constructor cannot contain println statements." },
+      { "letter": "D", "text": "Valid — it declares a default constructor." }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 11,
+    "topic": "Control structures",
+    "type": "mcq",
+    "question": "What is the output of the following code?\npublic static void main(String[] args) {\n    for (int i = -2; i < 2; i++) {\n        for (int j = -2; j < 2; j++) {\n            if (i < j)\n                System.out.print(\"7\");\n            else\n                System.out.print(\"3\");\n        }\n        System.out.println();\n    }\n}\nThe four output rows, top to bottom, are listed with slashes between them.",
+    "options": [
+      { "letter": "A", "text": "3777 / 3377 / 3337 / 3333" },
+      { "letter": "B", "text": "3333 / 3333 / 3333 / 3333" },
+      { "letter": "C", "text": "3333 / 7333 / 7733 / 7773" },
+      { "letter": "D", "text": "7333 / 7733 / 7773 / 7777" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 12,
+    "topic": "GUI & Swing",
+    "type": "multi",
+    "question": "Which three are main elements of a Java GUI application?",
+    "options": [
+      { "letter": "A", "text": "Components such as JButton and JLabel" },
+      { "letter": "B", "text": "Containers such as JFrame and JPanel" },
+      { "letter": "C", "text": "Layout managers that arrange components" },
+      { "letter": "D", "text": "Database tables that store the interface" }
+    ],
+    "answer": ["A", "B", "C"]
+  },
+  {
+    "id": 13,
+    "topic": "GUI & Swing",
+    "type": "mcq",
+    "question": "A Swing program must show a 300 x 200 window with a single JButton labelled \"Click here\", as in the exam figure. Which statement correctly adds the button so it appears in the window?",
+    "options": [
+      { "letter": "A", "text": "frame.add(button);" },
+      { "letter": "B", "text": "button.add(frame);" },
+      { "letter": "C", "text": "frame.setContentPane(button.getText());" },
+      { "letter": "D", "text": "frame.setButton(button);" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 14,
+    "topic": "GUI & Swing",
+    "type": "mcq",
+    "question": "The exam figure shows a File menu with New, Open, Save, and a Print submenu containing Print Preview and Page Setup. Which hierarchy correctly builds this menu?",
+    "options": [
+      { "letter": "A", "text": "A JMenuBar holding JMenus (File, Print); the File JMenu holds JMenuItems (New, Open, Save), and the Print JMenu holds its own JMenuItems." },
+      { "letter": "B", "text": "A JMenuBar holding JMenuItems; each JMenuItem holds the JMenus." },
+      { "letter": "C", "text": "A JMenuItem holding a JMenuBar, which holds the JMenus." },
+      { "letter": "D", "text": "A JFrame holding JMenuItems directly, without a JMenuBar." }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 15,
+    "topic": "GUI & Swing",
+    "type": "mcq",
+    "question": "In the exam figure, the Print entry opens a submenu. Which Swing class represents an entry that owns a submenu?",
+    "options": [
+      { "letter": "A", "text": "JMenuItem" },
+      { "letter": "B", "text": "JMenu" },
+      { "letter": "C", "text": "JMenuBar" },
+      { "letter": "D", "text": "JToolBar" }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 16,
+    "topic": "GUI & Swing",
+    "type": "mcq",
+    "question": "Which statement correctly installs a JMenuBar so it appears at the top of a JFrame?",
+    "options": [
+      { "letter": "A", "text": "frame.add(menuBar);" },
+      { "letter": "B", "text": "frame.setJMenuBar(menuBar);" },
+      { "letter": "C", "text": "frame.setMenu(menuBar);" },
+      { "letter": "D", "text": "frame.getContentPane().add(menuBar);" }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 17,
+    "topic": "GUI & Swing",
+    "type": "mcq",
+    "question": "Which approach correctly creates the Print submenu (Print Preview and Page Setup) under the File menu?",
+    "options": [
+      { "letter": "A", "text": "Create a JMenu named Print, add two JMenuItems to it, then add the Print JMenu to the File menu." },
+      { "letter": "B", "text": "Create a JMenuItem named Print, add two JMenus to it, then add it to the File menu." },
+      { "letter": "C", "text": "Create a JMenuBar named Print and add it to the File menu." },
+      { "letter": "D", "text": "Add Print Preview and Page Setup directly to the File menu and skip the Print entry." }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 18,
+    "topic": "Event handling",
+    "type": "mcq",
+    "question": "According to the delegation event model, what happens when the user clicks the button in the exam figure?",
+    "options": [
+      { "letter": "A", "text": "The button keeps checking whether it has been clicked." },
+      { "letter": "B", "text": "The button (the event source) creates an ActionEvent and calls actionPerformed() on the registered listener." },
+      { "letter": "C", "text": "The layout manager notices the click and updates the button." },
+      { "letter": "D", "text": "The JVM restarts the program and calls main() again." }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 19,
+    "topic": "Event handling",
+    "type": "multi",
+    "question": "Which are parts of Java's delegation event model? Select all that apply.",
+    "options": [
+      { "letter": "A", "text": "The event source, such as the button clicked" },
+      { "letter": "B", "text": "The event object, such as an ActionEvent" },
+      { "letter": "C", "text": "The event listener, such as an ActionListener" },
+      { "letter": "D", "text": "The layout manager, such as FlowLayout" }
+    ],
+    "answer": ["A", "B", "C"]
+  },
+  {
+    "id": 20,
+    "topic": "OOP concepts",
+    "type": "mcq",
+    "question": "Manager extends Employee. Its constructor must initialize the inherited fields and the new teamSize field. Which statement calls the Employee (superclass) constructor correctly?",
+    "options": [
+      { "letter": "A", "text": "Employee(name, id, department);" },
+      { "letter": "B", "text": "super(name, id, department);" },
+      { "letter": "C", "text": "this(name, id, department);" },
+      { "letter": "D", "text": "super.displayInfo();" }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 21,
+    "topic": "OOP concepts",
+    "type": "mcq",
+    "question": "Manager overrides Employee.displayInfo() and must call the superclass version first. Which declaration correctly overrides the method?",
+    "options": [
+      { "letter": "A", "text": "public void displayInfo() { super.displayInfo(); System.out.println(\"Team Size: \" + teamSize); }" },
+      { "letter": "B", "text": "public void displayInfo(int teamSize) { super.displayInfo(); }" },
+      { "letter": "C", "text": "private void displayInfo() { super.displayInfo(); }" },
+      { "letter": "D", "text": "public String displayInfo() { return \"Team Size: \" + teamSize; }" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 22,
+    "topic": "OOP concepts",
+    "type": "mcq",
+    "question": "Consider these classes:\nclass Employee {\n    public void displayInfo() {\n        System.out.println(\"Employee Name: \" + name);\n        System.out.println(\"ID: \" + id);\n        System.out.println(\"Department: \" + department);\n    }\n}\nclass Manager extends Employee {\n    @Override\n    public void displayInfo() {\n        super.displayInfo();\n        System.out.println(\"Team Size: \" + teamSize);\n    }\n}\nCarol is a Manager (name Carol, id 201, department IT, teamSize 5). What does carol.displayInfo() print?",
+    "options": [
+      { "letter": "A", "text": "Only Team Size: 5" },
+      { "letter": "B", "text": "Employee Name, ID, and Department, followed by Team Size" },
+      { "letter": "C", "text": "Only Employee Name, ID, and Department" },
+      { "letter": "D", "text": "A compile error, because displayInfo() cannot be overridden" }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 23,
+    "topic": "Code validity",
+    "type": "mcq",
+    "question": "A class declares private final JFrame frame; without an initializer, and its constructor later assigns frame = new JFrame(\"BMI\"). Why does this compile?",
+    "options": [
+      { "letter": "A", "text": "final fields are automatically initialized to null, so the assignment is optional." },
+      { "letter": "B", "text": "A blank final field may be assigned once, and this constructor assigns it." },
+      { "letter": "C", "text": "final is only allowed on methods, not on fields." },
+      { "letter": "D", "text": "It does not compile, because final fields must be initialized in their declaration." }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 24,
+    "topic": "String handling",
+    "type": "mcq",
+    "question": "A program stores employee details in StringBuffers to demonstrate their use. Which statement explains what StringBuffer provides?",
+    "options": [
+      { "letter": "A", "text": "StringBuffer is immutable, so the stored text cannot be modified." },
+      { "letter": "B", "text": "StringBuffer is mutable; append() changes the same object instead of creating a new String." },
+      { "letter": "C", "text": "StringBuffer can only store numeric values." },
+      { "letter": "D", "text": "A StringBuffer cannot be printed with System.out.println." }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 25,
+    "topic": "GUI & Swing",
+    "type": "mcq",
+    "question": "Which Swing component shows a drop-down list from which the user selects one car model (Proton, Perodua, Honda, Toyota, Chery, Audi)?",
+    "options": [
+      { "letter": "A", "text": "JComboBox" },
+      { "letter": "B", "text": "JList" },
+      { "letter": "C", "text": "JRadioButton" },
+      { "letter": "D", "text": "JTextField" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 26,
+    "topic": "GUI & Swing",
+    "type": "mcq",
+    "question": "Three radio buttons — Petrol RON95, Petrol RON97, and Diesel — must allow only one selection at a time. Which approach enforces that?",
+    "options": [
+      { "letter": "A", "text": "Create JRadioButtons and add them to a ButtonGroup." },
+      { "letter": "B", "text": "Add JRadioButtons directly to the frame without a ButtonGroup." },
+      { "letter": "C", "text": "Use JCheckBoxes without a ButtonGroup." },
+      { "letter": "D", "text": "Use JMenuItems inside a JMenu." }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 27,
+    "topic": "GUI & Swing",
+    "type": "mcq",
+    "question": "The BMI window shows a title label, Height and Weight input fields, and a Compute button. Which declarations match those components?",
+    "options": [
+      { "letter": "A", "text": "JLabel bmiLabel; JTextField heightField, weightField; JButton computeButton;" },
+      { "letter": "B", "text": "JLabel heightField, weightField; JTextField bmiLabel; JButton computeButton;" },
+      { "letter": "C", "text": "JButton bmiLabel; JLabel computeButton; JTextField heightField;" },
+      { "letter": "D", "text": "JTextField bmiLabel; JLabel computeButton; JButton heightField;" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 28,
+    "topic": "GUI & Swing",
+    "type": "mcq",
+    "question": "The BMI window has the title label at the top, the input area in the centre, and the Compute button at the bottom. Which layout setup matches the figure?",
+    "options": [
+      { "letter": "A", "text": "BorderLayout: add the label at NORTH, the input area at CENTER, and the button at SOUTH." },
+      { "letter": "B", "text": "FlowLayout with the three components added in sequence." },
+      { "letter": "C", "text": "GridLayout with all components in a single row." },
+      { "letter": "D", "text": "CardLayout showing one component at a time." }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 29,
+    "topic": "Event handling",
+    "type": "mcq",
+    "question": "The BMI class must respond when the Compute button is clicked. Which interface and method are required?",
+    "options": [
+      { "letter": "A", "text": "ActionListener with actionPerformed(ActionEvent event)" },
+      { "letter": "B", "text": "MouseListener with mouseClicked(MouseEvent event)" },
+      { "letter": "C", "text": "ItemListener with itemStateChanged(ItemEvent event)" },
+      { "letter": "D", "text": "WindowListener with windowClosing(WindowEvent event)" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 30,
+    "topic": "Code validity",
+    "type": "mcq",
+    "question": "Height and weight are typed into JTextFields. Which code reads both values as doubles?",
+    "options": [
+      { "letter": "A", "text": "double height = Double.parseDouble(heightField.getText()); double weight = Double.parseDouble(weightField.getText());" },
+      { "letter": "B", "text": "double height = heightField; double weight = weightField;" },
+      { "letter": "C", "text": "double height = heightField.getText(); double weight = weightField.getText();" },
+      { "letter": "D", "text": "double height = (double) heightField.getText(); double weight = (double) weightField.getText();" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 31,
+    "topic": "Control structures",
+    "type": "mcq",
+    "question": "Body mass index is calculated as BMI = weight / height squared x 703. Which Java expression implements the formula correctly?",
+    "options": [
+      { "letter": "A", "text": "double bmi = weight / (height * height) * 703;" },
+      { "letter": "B", "text": "double bmi = weight / height * height * 703;" },
+      { "letter": "C", "text": "double bmi = weight / (height * 703) * height;" },
+      { "letter": "D", "text": "double bmi = weight * height * height * 703;" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 32,
+    "topic": "OOP concepts",
+    "type": "mcq",
+    "question": "Which statement about constructors is correct?",
+    "options": [
+      { "letter": "A", "text": "A class can declare several constructors as long as their parameter lists differ." },
+      { "letter": "B", "text": "A class can declare several constructors with identical parameter lists." },
+      { "letter": "C", "text": "A class can declare only one constructor." },
+      { "letter": "D", "text": "A constructor must have void as its return type." }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 33,
+    "topic": "OOP concepts",
+    "type": "mcq",
+    "question": "A method declared with the final keyword ______.",
+    "options": [
+      { "letter": "A", "text": "cannot be overridden by a subclass." },
+      { "letter": "B", "text": "must be static." },
+      { "letter": "C", "text": "cannot be called from a subclass." },
+      { "letter": "D", "text": "can be overridden only by a class in the same package." }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 34,
+    "topic": "OOP concepts",
+    "type": "mcq",
+    "question": "Given Vehicle v = new Car(); where Car adds a method drive() that Vehicle does not declare. Which statement is correct?",
+    "options": [
+      { "letter": "A", "text": "v.drive() compiles because the object is really a Car." },
+      { "letter": "B", "text": "v.drive() does not compile because drive() is not declared in Vehicle; a cast to Car is needed." },
+      { "letter": "C", "text": "v.drive() compiles but throws an exception at runtime." },
+      { "letter": "D", "text": "v.drive() compiles only if drive() is final." }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 35,
+    "topic": "OOP concepts",
+    "type": "mcq",
+    "question": "Which statement about a subclass of an abstract class is correct?",
+    "options": [
+      { "letter": "A", "text": "Every subclass must implement all inherited abstract methods." },
+      { "letter": "B", "text": "Only a concrete subclass must implement them; an abstract subclass may leave them unimplemented." },
+      { "letter": "C", "text": "No subclass needs to implement them because the abstract class provides bodies." },
+      { "letter": "D", "text": "The compiler adds default implementations automatically." }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 36,
+    "topic": "Code validity",
+    "type": "mcq",
+    "question": "A class Data1 declares private int a = 1;. A Main class in the same file creates a Data1 object obj1 and calls System.out.println(obj1.a); Which best describes the statement?",
+    "options": [
+      { "letter": "A", "text": "Valid — Main is in the same file as Data1." },
+      { "letter": "B", "text": "Invalid — a is private to Data1, so code outside the class cannot access it." },
+      { "letter": "C", "text": "Valid — private members are visible anywhere in the same package." },
+      { "letter": "D", "text": "Invalid — println cannot print int values." }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 37,
+    "topic": "Code validity",
+    "type": "mcq",
+    "question": "Data2[] obj2 = new Data2[3]; is followed by System.out.println(obj2.getColor()); Which best describes it?",
+    "options": [
+      { "letter": "A", "text": "Valid — arrays inherit the methods of their element class." },
+      { "letter": "B", "text": "Invalid — getColor() must be called on an element such as obj2[0], which must first be assigned a Data2 object." },
+      { "letter": "C", "text": "Invalid — arrays cannot hold objects." },
+      { "letter": "D", "text": "Valid — but only after obj2 is initialised with new Data2()." }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 38,
+    "topic": "Control structures",
+    "type": "mcq",
+    "question": "What is the output of the following code?\nint i = 3;\nwhile (i < 8) {\n    System.out.println(i * i);\n    ++i;\n}\nThe values are printed on separate lines, listed here with slashes.",
+    "options": [
+      { "letter": "A", "text": "9 / 16 / 25 / 36 / 49" },
+      { "letter": "B", "text": "9 / 16 / 25 / 36 / 49 / 64" },
+      { "letter": "C", "text": "3 / 4 / 5 / 6 / 7" },
+      { "letter": "D", "text": "9 / 16 / 25 / 36" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 39,
+    "topic": "OOP concepts",
+    "type": "mcq",
+    "question": "Cylinder is a derived class of Circle. Which UML relationship is correct?",
+    "options": [
+      { "letter": "A", "text": "An inheritance (generalisation) arrow from Cylinder to Circle, with a hollow triangle at the Circle end." },
+      { "letter": "B", "text": "An inheritance arrow from Circle to Cylinder, with a hollow triangle at the Cylinder end." },
+      { "letter": "C", "text": "A composition diamond at Circle, because a cylinder contains a circle shape." },
+      { "letter": "D", "text": "A dashed dependency arrow from Circle to Cylinder." }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 40,
+    "topic": "OOP concepts",
+    "type": "mcq",
+    "question": "Circle declares protected double radius and protected final double PI = 3.142. Cylinder extends Circle and adds a height field. Which getVolume() implementation correctly returns PI x radius squared x height?",
+    "options": [
+      { "letter": "A", "text": "return PI * radius * radius * height;" },
+      { "letter": "B", "text": "return PI * radius * height;" },
+      { "letter": "C", "text": "return PI * height * height * radius;" },
+      { "letter": "D", "text": "return PI * radius + radius * height;" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 41,
+    "topic": "OOP concepts",
+    "type": "mcq",
+    "question": "Using the Circle class with PI = 3.142, a Cylinder is created with radius 4 and height 5. What does getVolume() return?",
+    "options": [
+      { "letter": "A", "text": "251.36" },
+      { "letter": "B", "text": "50.272" },
+      { "letter": "C", "text": "251.2" },
+      { "letter": "D", "text": "62.84" }
+    ],
+    "answer": ["A"]
+  }
+]

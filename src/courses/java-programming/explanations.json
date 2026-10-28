@@ -1,0 +1,371 @@
+{
+  "1": {
+    "summary": "A static variable belongs to the class itself, not to individual objects, so every instance shares one copy. Non-static fields are the per-object ones.",
+    "options": {
+      "A": "A separate copy per object describes an instance (non-static) variable.",
+      "B": "Correct: one shared copy exists for the class, no matter how many objects are created.",
+      "C": "static and final are independent modifiers; a static variable does not have to be final.",
+      "D": "Static members can be used from any method, not only constructors."
+    }
+  },
+  "2": {
+    "summary": "Inheritance flows from superclass to subclass: the subclass acquires the accessible (public and protected, plus package-private in the same package) members of its superclass.",
+    "options": {
+      "A": "The direction is reversed: a superclass does not inherit from its subclasses.",
+      "B": "Correct: the subclass reuses the accessible fields and methods declared in the superclass.",
+      "C": "Private members are not accessible to the subclass; it must go through public or protected methods such as getters.",
+      "D": "A subclass in another package still inherits public and protected members."
+    }
+  },
+  "3": {
+    "summary": "Java allows single inheritance for classes but any number of interfaces, which is how a class can take on multiple types.",
+    "options": {
+      "A": "Correct: one superclass, but one or more interfaces.",
+      "B": "A class cannot extend more than one superclass.",
+      "C": "There is no limit on how many interfaces a class implements.",
+      "D": "Only the interface count is unlimited; the superclass count is limited to one."
+    }
+  },
+  "4": {
+    "summary": "An abstract class may mix abstract and concrete methods and can declare constructors, but it cannot be instantiated directly — a concrete subclass must be created instead.",
+    "options": {
+      "A": "An abstract class can contain fully implemented methods; only methods marked abstract lack a body.",
+      "B": "Correct: new is only allowed for a concrete subclass.",
+      "C": "Abstract classes can declare constructors, which subclasses call through super(...).",
+      "D": "Concrete methods are allowed and often provide shared behaviour for subclasses."
+    }
+  },
+  "5": {
+    "summary": "The final modifier on a class prevents subclassing. The class can still be instantiated and used normally, like String.",
+    "options": {
+      "A": "Final classes are instantiable; final simply blocks inheritance.",
+      "B": "Correct: no class may extend a final class.",
+      "C": "Individual methods do not need to be declared final; they are effectively final because nothing can override them.",
+      "D": "Interfaces are unrelated to the final modifier."
+    }
+  },
+  "6": {
+    "summary": "JComboBox offers constructors with no arguments, an array of items, or a Vector — not three separate String arguments. The array form compiles: new JComboBox<>(new String[]{\"Red\", \"Green\", \"Blue\"}).",
+    "options": {
+      "A": "No JComboBox constructor accepts three separate String parameters.",
+      "B": "Correct: the statement fails to compile; pass the items as an array or Vector.",
+      "C": "An array is accepted; the problem is the argument style, not arrays.",
+      "D": "The import affects event handling, not whether this constructor call is valid; the class itself comes from javax.swing."
+    }
+  },
+  "7": {
+    "summary": "An abstract method only declares a signature; adding a body is a compile error. Either remove the braces and end with a semicolon, or make the method concrete and let subclasses override it.",
+    "options": {
+      "A": "Abstract methods cannot have bodies; default bodies are an interface feature, not an abstract-class feature.",
+      "B": "Correct: the valid form is abstract public void display();",
+      "C": "Abstract methods are normally public or protected; they cannot be private because subclasses must implement them.",
+      "D": "The class being abstract does not allow a body on an abstract method."
+    }
+  },
+  "8": {
+    "summary": "Font(String name, int style, int size) exists, so the declaration compiles and creates a bold 16-point font. The trailing space does not cause an error; an unrecognised family name simply falls back to a default font.",
+    "options": {
+      "A": "That constructor does exist: Font(String name, int style, int size).",
+      "B": "Spaces are legal in font names (for example Times New Roman); the string is not rejected.",
+      "C": "Correct: the call is valid, with style Font.BOLD and size 16.",
+      "D": "Font.BOLD is a constant int and is exactly what the style parameter expects."
+    }
+  },
+  "9": {
+    "summary": "Since Java 8, an interface method with a body must be marked default or static (private helper methods are also allowed since Java 9). A plain instance method with a body does not compile.",
+    "options": {
+      "A": "Only default, static, or private methods may have bodies; a plain method cannot.",
+      "B": "Correct: without default or static, the method must be abstract and have no body.",
+      "C": "Interface methods are commonly public; visibility is not the problem here.",
+      "D": "public is not enough — the missing default modifier is the compile error."
+    }
+  },
+  "10": {
+    "summary": "The parentheses after Rectangle are a syntax error; the valid form is class Rectangle { ... }. Constructors have no return type, and printing inside a constructor is legal.",
+    "options": {
+      "A": "Constructors never declare a return type, not even void.",
+      "B": "Correct: remove the () that follows the class name.",
+      "C": "Constructors may contain any statements, including println.",
+      "D": "The constructor body is fine, but the class header does not compile."
+    }
+  },
+  "11": {
+    "summary": "Each outer iteration prints one row of four characters, with 7 when i < j and 3 otherwise. For i = -2, -1, 0, 1 the rows are 3777, 3377, 3337, 3333.",
+    "options": {
+      "A": "Correct: as j increases past i, the printed character switches from 3 to 7, so each row has one more 3 than the row above.",
+      "B": "All 3s would mean i < j was never true, but it becomes true in the later columns of every row.",
+      "C": "This is what you get if the comparison is reversed to i > j.",
+      "D": "This is what you get if 3 and 7 are printed in the wrong branches of the if."
+    }
+  },
+  "12": {
+    "summary": "A GUI application is built from components placed in containers and arranged by layout managers, with events connecting the interface to the program logic.",
+    "options": {
+      "A": "Components are the visible controls the user interacts with.",
+      "B": "Containers hold and group components, and a frame is the top-level window.",
+      "C": "Layout managers decide component positions and sizes.",
+      "D": "Database tables are unrelated to the structure of the interface."
+    }
+  },
+  "13": {
+    "summary": "JFrame.add() places the component on the frame's content pane; with the default border layout and no constraint, the single button lands in the centre.",
+    "options": {
+      "A": "Correct: add() delegates to the content pane of the JFrame.",
+      "B": "This reverses the relationship — a container is added to the button, not the other way round.",
+      "C": "setContentPane() needs a container such as a JPanel; button.getText() returns a String.",
+      "D": "JFrame has no setButton method."
+    }
+  },
+  "14": {
+    "summary": "Menus form a tree: a JMenuBar at the top, a JMenu for each drop-down (and for each submenu), and a JMenuItem for each command.",
+    "options": {
+      "A": "Correct: JMenuBar contains JMenus; the File JMenu contains items and the Print JMenu, which in turn contains its own items.",
+      "B": "The roles are reversed — JMenuItem is a leaf command and cannot hold menus.",
+      "C": "A JMenuItem cannot contain a menu bar; the hierarchy is built the other way around.",
+      "D": "A JMenuBar is required to host the menus at the top of the window."
+    }
+  },
+  "15": {
+    "summary": "A submenu is a JMenu added inside another JMenu. JMenu extends JMenuItem, so it can sit where an item is expected while still holding its own items.",
+    "options": {
+      "A": "A JMenuItem is a leaf command; it cannot contain other items.",
+      "B": "Correct: Print is a JMenu nested inside the File JMenu.",
+      "C": "JMenuBar is the top-level container that holds the menus; it does not represent a submenu.",
+      "D": "JToolBar is a row of buttons and is unrelated to menus."
+    }
+  },
+  "16": {
+    "summary": "JFrame.setJMenuBar() is the dedicated method that attaches a menu bar to the top of the frame. Adding it to the content pane treats it as an ordinary component.",
+    "options": {
+      "A": "add() treats the bar as a normal component in the content area, not as the frame's menu bar.",
+      "B": "Correct: setJMenuBar installs the bar in the frame's menu-bar position.",
+      "C": "JFrame has no setMenu method; AWT Frame.setMenuBar takes an AWT MenuBar, a different legacy API.",
+      "D": "This also treats the menu bar as a regular component instead of using the menu-bar slot."
+    }
+  },
+  "17": {
+    "summary": "A submenu is a JMenu nested inside another JMenu; its commands are JMenuItems. The Print JMenu is added to the File JMenu like an item.",
+    "options": {
+      "A": "Correct: create the Print JMenu, fill it with the two JMenuItems, then add it to the File menu.",
+      "B": "A JMenuItem cannot hold other menus; the entry that opens a submenu must be a JMenu.",
+      "C": "JMenuBar is the top-level bar for the whole window, not a submenu.",
+      "D": "That removes the Print submenu shown in the figure, leaving both items directly under File."
+    }
+  },
+  "18": {
+    "summary": "In the delegation model the component is the source: it creates an event object and sends it to the listeners registered with addActionListener(). The listener's actionPerformed() runs.",
+    "options": {
+      "A": "There is no polling; the source pushes the event to its listeners.",
+      "B": "Correct: the clicked button fires an ActionEvent, and the registered listener handles it.",
+      "C": "Layout managers only arrange components; they do not process input.",
+      "D": "main() is not re-invoked; the event dispatch thread delivers the event to the listener."
+    }
+  },
+  "19": {
+    "summary": "The model has three players: the source that fires the event, the event object carrying information about it, and the listener whose method gets called.",
+    "options": {
+      "A": "The source is the component where the event originates, such as the button.",
+      "B": "The event object carries details about what happened.",
+      "C": "The listener implements the handler method that responds to the event.",
+      "D": "Layout managers arrange components but are not part of the event model."
+    }
+  },
+  "20": {
+    "summary": "super(name, id, department) invokes the Employee constructor from the Manager constructor, and it must be the first statement in the subclass constructor.",
+    "options": {
+      "A": "Without super, this reads as a method call and does not run the superclass constructor.",
+      "B": "Correct: super(...) chains to the superclass constructor with those arguments.",
+      "C": "this(...) calls another constructor in the same class, not a superclass constructor.",
+      "D": "That calls the superclass method displayInfo(), not its constructor."
+    }
+  },
+  "21": {
+    "summary": "An override keeps the same name, parameter list, and return type. The override can call super.displayInfo() to reuse the superclass output, then print the team size.",
+    "options": {
+      "A": "Correct: same signature as the superclass method, with super.displayInfo() called first.",
+      "B": "This is an overload: the different parameter list means Employee.displayInfo() is not overridden.",
+      "C": "A private method cannot override the superclass method; the access is more restrictive.",
+      "D": "The return type must match the superclass method, so returning String is an invalid override."
+    }
+  },
+  "22": {
+    "summary": "Manager.displayInfo() calls super.displayInfo() first, printing the employee name, ID, and department, then adds the Team Size line.",
+    "options": {
+      "A": "Team Size alone would print only if the superclass call were missing.",
+      "B": "Correct: the superclass details print first, then the overriding method adds the team size.",
+      "C": "The employee details alone would print if the override never printed the team size.",
+      "D": "Overriding is exactly what is happening; the code is valid."
+    }
+  },
+  "23": {
+    "summary": "A blank final instance field must be definitely assigned exactly once by the end of every constructor, which this constructor does.",
+    "options": {
+      "A": "Fields get default nulls, but a blank final still needs an explicit assignment; the default does not satisfy the rule.",
+      "B": "Correct: assigning the final field once in the constructor is allowed.",
+      "C": "final can be applied to fields, methods, and classes.",
+      "D": "Final fields may be declared without an initializer and assigned in a constructor."
+    }
+  },
+  "24": {
+    "summary": "StringBuffer is mutable: append(), insert(), and similar methods modify the same object, avoiding a new String for every change.",
+    "options": {
+      "A": "String is the immutable class; StringBuffer is its mutable counterpart.",
+      "B": "Correct: the buffer's contents can change in place.",
+      "C": "StringBuffer stores characters, such as names and departments.",
+      "D": "StringBuffer prints fine; println calls its toString()."
+    }
+  },
+  "25": {
+    "summary": "JComboBox shows the current selection and opens a drop-down list of the remaining choices.",
+    "options": {
+      "A": "Correct: a combo box is the standard drop-down selector.",
+      "B": "JList displays all items as a visible list rather than a drop-down.",
+      "C": "JRadioButton is a single option button, not a list of models.",
+      "D": "JTextField accepts typed input and offers no list of choices."
+    }
+  },
+  "26": {
+    "summary": "A ButtonGroup links the radio buttons so that selecting one deselects the others; without it, any number can stay selected.",
+    "options": {
+      "A": "Correct: add each JRadioButton to the same ButtonGroup.",
+      "B": "Without a ButtonGroup the radio buttons are independent and more than one can be selected.",
+      "C": "JCheckBox is designed for independent, multiple selections.",
+      "D": "JMenuItems are menu commands, not a radio-button group."
+    }
+  },
+  "27": {
+    "summary": "A JLabel shows the title text, JTextFields accept the height and weight, and a JButton triggers the calculation.",
+    "options": {
+      "A": "Correct: each component's type matches the role shown in the figure.",
+      "B": "The roles are swapped: labels are not inputs and text fields are not labels.",
+      "C": "The button and label are assigned to the wrong roles.",
+      "D": "Labels, buttons, and text fields are all mismatched here."
+    }
+  },
+  "28": {
+    "summary": "BorderLayout has five regions; NORTH sits at the top, CENTER fills the middle, and SOUTH sits at the bottom, matching the figure.",
+    "options": {
+      "A": "Correct: label NORTH, input area CENTER, button SOUTH.",
+      "B": "FlowLayout places components in one row that wraps, not in top, centre, and bottom regions.",
+      "C": "GridLayout would give every component an equal cell in a single row.",
+      "D": "CardLayout shows one component at a time, like a stack of cards."
+    }
+  },
+  "29": {
+    "summary": "A JButton fires an ActionEvent; the class implements ActionListener and overrides actionPerformed(ActionEvent) to handle the click.",
+    "options": {
+      "A": "Correct: addActionListener(this) registers the class, and actionPerformed runs on each click.",
+      "B": "mouseClicked reports mouse presses and releases, not the button's action.",
+      "C": "ItemListener handles selection changes in components such as combo boxes and check boxes.",
+      "D": "WindowListener handles window events such as closing, not button clicks."
+    }
+  },
+  "30": {
+    "summary": "getText() returns a String, so Double.parseDouble() converts the typed text into a double before calculating.",
+    "options": {
+      "A": "Correct: parse both fields with Double.parseDouble before using them.",
+      "B": "A JTextField is an object; it cannot be assigned to a double.",
+      "C": "A String cannot be assigned to a double without parsing.",
+      "D": "Casting does not convert a String to a double; that cast does not compile."
+    }
+  },
+  "31": {
+    "summary": "Square the height with parentheses, divide the weight by it, then multiply by 703: weight / (height * height) * 703.",
+    "options": {
+      "A": "Correct: the parentheses square the height before the division.",
+      "B": "Without parentheses this is (weight / height) * height * 703, so the height cancels out instead of being squared.",
+      "C": "The height cancels out, leaving weight / 703.",
+      "D": "Multiplying by height squared inverts the formula."
+    }
+  },
+  "32": {
+    "summary": "Constructors can be overloaded: several constructors are allowed as long as their parameter lists differ. Constructors have no return type, not even void.",
+    "options": {
+      "A": "Correct: different parameter lists distinguish the constructors.",
+      "B": "Two constructors with the same parameter list is a duplicate-method compile error.",
+      "C": "A class may declare as many constructors as it needs.",
+      "D": "Constructors never declare a return type."
+    }
+  },
+  "33": {
+    "summary": "A final method cannot be overridden, though subclasses still inherit it and can call it.",
+    "options": {
+      "A": "Correct: final blocks overriding in every subclass.",
+      "B": "final and static are independent modifiers.",
+      "C": "Subclasses can call final methods; they simply cannot override them.",
+      "D": "final applies in every package, not just the same one."
+    }
+  },
+  "34": {
+    "summary": "The reference type decides which methods are visible at compile time. Vehicle has no drive(), so v.drive() fails to compile until v is cast to Car.",
+    "options": {
+      "A": "The compiler only checks the reference type, not the object it points to.",
+      "B": "Correct: use ((Car) v).drive() after confirming the object really is a Car.",
+      "C": "The statement never compiles, so it cannot throw at runtime.",
+      "D": "final has no effect on which methods can be called through a reference."
+    }
+  },
+  "35": {
+    "summary": "An abstract subclass may leave inherited abstract methods unimplemented; the first concrete class in the hierarchy must implement all of them.",
+    "options": {
+      "A": "An abstract subclass may defer them; only concrete classes must implement them.",
+      "B": "Correct: abstract subclasses can pass the obligation further down.",
+      "C": "Abstract methods have no bodies, so nothing is provided to inherit.",
+      "D": "The compiler never invents implementations for abstract methods."
+    }
+  },
+  "36": {
+    "summary": "private restricts access to the declaring class only; being in the same file or the same package does not grant access. A public getter is required.",
+    "options": {
+      "A": "A shared file does not change access control.",
+      "B": "Correct: a is private to Data1 and cannot be read from Main.",
+      "C": "Package access comes from the default (no modifier), not private.",
+      "D": "println prints int values fine; the access is the problem."
+    }
+  },
+  "37": {
+    "summary": "An array object has only its own members such as length. Data2 methods belong to Data2 elements, so obj2[0] must be assigned an object before a method call.",
+    "options": {
+      "A": "An array does not inherit the methods of its element type.",
+      "B": "Correct: call getColor() on obj2[0] after obj2[0] = new Data2(...).",
+      "C": "Arrays can hold object references.",
+      "D": "The array exists already, but its slots are null until elements are created."
+    }
+  },
+  "38": {
+    "summary": "The loop runs for i = 3 through 7, printing 9, 16, 25, 36, 49. When i becomes 8 the condition i < 8 fails and the loop stops.",
+    "options": {
+      "A": "Correct: the squares of 3, 4, 5, 6, and 7.",
+      "B": "64 would require i = 8, which fails the loop condition.",
+      "C": "The code prints i * i, not i.",
+      "D": "This stops one iteration early; i = 7 still satisfies i < 8."
+    }
+  },
+  "39": {
+    "summary": "UML generalisation points from the subclass to the superclass with a hollow triangle at the superclass end, so the arrow goes from Cylinder to Circle.",
+    "options": {
+      "A": "Correct: hollow triangle at Circle, pointing from the derived class.",
+      "B": "The direction is reversed; the subclass points to the superclass.",
+      "C": "A composition diamond expresses has-a, not inheritance.",
+      "D": "A dashed dependency arrow is not an inheritance relationship."
+    }
+  },
+  "40": {
+    "summary": "Protected members are directly accessible inside the subclass, so getVolume() can use radius and PI; square the radius, then multiply by the height.",
+    "options": {
+      "A": "Correct: PI * radius * radius * height.",
+      "B": "This uses only one radius factor, giving area times height without squaring.",
+      "C": "This squares the height instead of the radius.",
+      "D": "This adds the terms instead of multiplying them."
+    }
+  },
+  "41": {
+    "summary": "Volume = PI x radius x radius x height = 3.142 x 4 x 4 x 5 = 251.36.",
+    "options": {
+      "A": "Correct: 3.142 x 16 = 50.272, then x 5 = 251.36.",
+      "B": "This is only the circle area, without multiplying by the height.",
+      "C": "This uses PI = 3.14 instead of the class constant 3.142.",
+      "D": "This is PI x radius x height, missing one radius factor."
+    }
+  }
+}
