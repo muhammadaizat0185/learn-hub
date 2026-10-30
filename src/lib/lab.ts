@@ -1,4 +1,5 @@
 import type { LabBlank, LabInputBlank, LabSet, LabSelectBlank } from "../types";
+import { readStored, writeStored } from "./persistence";
 
 export type TokenKind = "word" | "number" | "string" | "char" | "punct";
 
@@ -254,6 +255,18 @@ export function validateLab(sets: LabSet[]): string[] {
     if (!set.title.trim()) errors.push(`${at}: title is empty`);
     if (!set.brief.trim()) errors.push(`${at}: brief is empty`);
     if (!set.code.trim()) errors.push(`${at}: code is empty`);
+    if (set.walkthrough !== undefined) {
+      const walkthrough = set.walkthrough;
+      if (!walkthrough || typeof walkthrough !== "object" || Array.isArray(walkthrough) ||
+          !Array.isArray(walkthrough.steps) || walkthrough.steps.length === 0 || walkthrough.steps.length > 20 ||
+          walkthrough.steps.some((step) => typeof step !== "string" || !step.trim() || step.length > 2000)) {
+        errors.push(`${at}: walkthrough needs 1-20 nonempty steps of at most 2000 characters`);
+      }
+      if (walkthrough && walkthrough.output !== undefined &&
+          (typeof walkthrough.output !== "string" || !walkthrough.output.trim() || walkthrough.output.length > 10000)) {
+        errors.push(`${at}: walkthrough output must be nonempty text of at most 10000 characters`);
+      }
+    }
 
     const markers = [...set.code.matchAll(MARKER)].map((match) => Number(match[1]));
     const blankIds = set.blanks.map((blank) => blank.id);
@@ -273,6 +286,10 @@ export function validateLab(sets: LabSet[]): string[] {
     for (const blank of set.blanks) {
       const label = `${at} blank ${blank.id}`;
       if (!Number.isInteger(blank.id) || blank.id <= 0) errors.push(`${label}: id must be positive`);
+      if (blank.explanation !== undefined &&
+          (typeof blank.explanation !== "string" || !blank.explanation.trim() || blank.explanation.length > 2000)) {
+        errors.push(`${label}: explanation must be nonempty text of at most 2000 characters`);
+      }
       if (isSelectBlank(blank)) {
         if (blank.options.length < 2) errors.push(`${label}: needs at least two options`);
         if (new Set(blank.options).size !== blank.options.length) {
@@ -283,7 +300,7 @@ export function validateLab(sets: LabSet[]): string[] {
         if (blank.answers.length === 0) errors.push(`${label}: no accepted answers`);
         for (const answer of blank.answers) {
           if (!answer.trim()) errors.push(`${label}: an accepted answer is empty`);
-          if (tokenKey(answer) === undefined) errors.push(`${label}: answer "${answer}" is not valid Java`);
+          if (tokenKey(answer) === undefined) errors.push(`${label}: answer "${answer}" cannot be tokenized by this checker`);
         }
       }
     }
@@ -312,51 +329,54 @@ function emptyProgress(): LabProgress {
   return { version: 1, sets: {} };
 }
 
+export function normalizeLabProgress(input: unknown): LabProgress {
+  const progress = emptyProgress();
+  if (typeof input !== "object" || input === null || Array.isArray(input)) return progress;
+  const parsed = input as Record<string, unknown>;
+  if (parsed.version !== undefined && parsed.version !== 1) return progress;
+  const source = parsed.sets;
+  if (typeof source !== "object" || source === null || Array.isArray(source)) return progress;
+  for (const [id, value] of Object.entries(source).slice(0, 2000)) {
+    if (!id.trim() || id.length > 200 || ["__proto__", "constructor", "prototype"].includes(id)) continue;
+    if (typeof value !== "object" || value === null || Array.isArray(value)) continue;
+    const entry = value as Record<string, unknown>;
+    progress.sets[id] = {
+      attempts: typeof entry.attempts === "number" && Number.isFinite(entry.attempts) && entry.attempts >= 0
+        ? Math.min(Number.MAX_SAFE_INTEGER, Math.floor(entry.attempts)) : 0,
+      solved: entry.solved === true,
+      lastAt: typeof entry.lastAt === "string" && entry.lastAt.length <= 64 && Number.isFinite(Date.parse(entry.lastAt))
+        ? entry.lastAt : "",
+    };
+  }
+  return progress;
+}
+
 export function loadLabProgress(courseId: string): LabProgress {
   try {
-    const raw = localStorage.getItem(progressKey(courseId));
-    if (!raw) return emptyProgress();
-    const parsed = JSON.parse(raw) as unknown;
-    if (typeof parsed !== "object" || parsed === null) return emptyProgress();
-    const sets: Record<string, LabSetProgress> = {};
-    const source = (parsed as { sets?: unknown }).sets;
-    if (typeof source === "object" && source !== null) {
-      for (const [id, value] of Object.entries(source as Record<string, unknown>)) {
-        if (typeof value !== "object" || value === null) continue;
-        const entry = value as Record<string, unknown>;
-        sets[id] = {
-          attempts: typeof entry.attempts === "number" && entry.attempts >= 0 ? Math.floor(entry.attempts) : 0,
-          solved: entry.solved === true,
-          lastAt: typeof entry.lastAt === "string" ? entry.lastAt : "",
-        };
-      }
-    }
-    return { version: 1, sets };
+    const raw = readStored(progressKey(courseId));
+    return raw ? normalizeLabProgress(JSON.parse(raw)) : emptyProgress();
   } catch {
     return emptyProgress();
   }
 }
 
+export function saveLabProgress(courseId: string, progress: LabProgress): boolean {
+  return writeStored(progressKey(courseId), JSON.stringify(normalizeLabProgress(progress)));
+}
+
 export function recordLabAttempt(courseId: string, setId: string, solved: boolean): LabProgress {
   const progress = loadLabProgress(courseId);
+  if (!setId.trim() || setId.length > 200 || ["__proto__", "constructor", "prototype"].includes(setId)) return progress;
   const previous = progress.sets[setId] ?? { attempts: 0, solved: false, lastAt: "" };
   progress.sets[setId] = {
-    attempts: previous.attempts + 1,
+    attempts: Math.min(Number.MAX_SAFE_INTEGER, previous.attempts + 1),
     solved: previous.solved || solved,
     lastAt: new Date().toISOString(),
   };
-  try {
-    localStorage.setItem(progressKey(courseId), JSON.stringify(progress));
-  } catch {
-    // Storage can be unavailable in private mode; the session still works.
-  }
+  saveLabProgress(courseId, progress);
   return progress;
 }
 
-export function resetLabProgress(courseId: string) {
-  try {
-    localStorage.removeItem(progressKey(courseId));
-  } catch {
-    // Ignore storage failures on reset.
-  }
+export function resetLabProgress(courseId: string): boolean {
+  return writeStored(progressKey(courseId), null);
 }

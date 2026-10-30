@@ -1,0 +1,149 @@
+[
+  {
+    "id": "code-validity-foundations",
+    "title": "Read declarations, types, and failures",
+    "topic": "Code validity",
+    "minutes": 4,
+    "concepts": [
+      "Separate declarations from calls: a class name is followed by a class body, while a constructor has parameters and no return type. Java supplies a no-argument constructor only when you declare no constructors.",
+      "Check an API's parameter count, types, and meanings. Font(String name, int style, int size) accepts two integers, so swapping style and size can compile without producing the intended font. Compilation is not proof of correctness.",
+      "Initialize local variables before reading them. A blank final instance field must be assigned exactly once on each normally completing constructor path. Allocating an object array creates slots initially containing null, not the objects for those slots.",
+      "Text must be parsed before numeric arithmetic. Malformed integer text causes NumberFormatException at runtime; integer division by zero causes ArithmeticException. Catch expected failures specifically. A finally block normally runs after either success or a handled failure.",
+      "An abstract method declares a contract with a semicolon, not a body. An interface can also contain default or static methods with bodies, and private helper methods since Java 9; not every implemented interface method is invalid."
+    ],
+    "example": {
+      "title": "Parse a quantity and initialize an array element",
+      "code": "public class QuantityReading {\n    public static void main(String[] args) {\n        final int units = Integer.parseInt(\"7\");\n        double pairs = units / 2.0;\n        String[] labels = new String[1];\n        labels[0] = \"pairs\";\n        System.out.println(labels[0] + \": \" + pairs);\n\n        try {\n            Integer.parseInt(\"seven\");\n        } catch (NumberFormatException error) {\n            System.out.println(\"Use digits for a quantity.\");\n        }\n    }\n}",
+      "explanation": "Static expected output is shown below; this page does not execute Java. Parsing the digits produces the int 7. Dividing by 2.0 uses floating-point arithmetic, so the result is 3.5. The array element is assigned before it is read. The word seven is legal String data but cannot be parsed as an integer, so the catch block prints a helpful message instead of letting that failure terminate main.",
+      "output": "pairs: 3.5\nUse digits for a quantity.",
+      "steps": [
+        "Identify each declared type, then distinguish the array labels from its String element labels[0].",
+        "Predict what would happen if labels[0] were never assigned: printing it would show null; invoking a method on it would fail at runtime.",
+        "Compare units / 2 with units / 2.0. A double destination cannot restore a fraction already discarded by integer division."
+      ]
+    },
+    "labIds": ["basics-1", "basics-2", "exceptions-1"]
+  },
+  {
+    "id": "control-structures-tracing",
+    "title": "Trace decisions, repetition, and arithmetic",
+    "topic": "Control structures",
+    "minutes": 4,
+    "concepts": [
+      "An if/else-if chain selects its first true branch, so test narrow ranges before broader ones. Braces make branch ownership explicit. In a traditional colon-style switch, execution falls through unless a break or another exit stops it; fall-through is sometimes intentional.",
+      "Trace a for loop as initialization, condition, body, then update. A while loop tests before its body and may execute zero times; a do/while loop tests after its body. Make sure repeated work can eventually change the stopping condition.",
+      "Each outer-loop iteration starts a fresh inner-loop traversal. A print inside the inner loop contributes to one row; a println after that loop finishes the row. Bounds determine both the row and column counts.",
+      "Arithmetic follows grouping and operand types, not the result variable's type. Multiplication and division have equal precedence and associate left to right. Parenthesize a whole denominator, and convert an operand to double before dividing when you need a fraction.",
+      "A sentinel marks the end of input rather than another measurement. Exclude it from both sum and count, and guard an empty count before calculating an average. break exits the nearest loop; continue skips the rest of its current iteration."
+    ],
+    "example": {
+      "title": "Stop a measurement stream, then trace a small grid",
+      "code": "public class TraceMeasurements {\n    public static void main(String[] args) {\n        int total = 0;\n        int count = 0;\n        for (int value : new int[] {3, 4, 0, 9}) {\n            if (value == 0) {\n                break;\n            }\n            total += value;\n            count++;\n        }\n        if (count > 0) {\n            System.out.println(\"Mean: \" + (double) total / count);\n        } else {\n            System.out.println(\"No measurements\");\n        }\n\n        for (int row = 1; row <= 2; row++) {\n            for (int column = 1; column <= 3; column++) {\n                System.out.print(row == column ? \"X\" : \".\");\n            }\n            System.out.println();\n        }\n    }\n}",
+      "explanation": "Static expected output is shown below; this page does not execute Java. Only 3 and 4 contribute to the mean: zero ends the traversal before the 9 is visited. The cast applies before division, yielding 7.0 / 2. In the grid, the conditional operator chooses X where row and column match. There are two rows, each containing three characters.",
+      "output": "Mean: 3.5\nX..\n.X.",
+      "steps": [
+        "Record total and count after each accepted measurement: (3, 1), then (7, 2).",
+        "Consider an input whose first value is zero. The count stays zero and the guard selects No measurements.",
+        "List the column values 1, 2, 3 for each row; remember that column is initialized again when the next row begins."
+      ]
+    },
+    "labIds": ["basics-2", "decision-1", "decision-2", "loops-1", "loops-2", "loops-3"]
+  },
+  {
+    "id": "string-handling-values",
+    "title": "Distinguish text values from mutable buffers",
+    "topic": "String handling",
+    "minutes": 3,
+    "concepts": [
+      "A String's contents cannot change. Operations such as concat, trim, and replace return a result; assigning that result changes which String a variable refers to, not the original String's contents.",
+      "Use equals to compare String contents. The == operator compares object references, so equal text in two separate objects need not pass an identity check. Interned literals can make incorrect identity comparisons appear to work.",
+      "StringBuffer edits a mutable object, so two references to the same buffer observe an append. Its methods are synchronized; that does not automatically make a sequence of several calls atomic. StringBuilder is the usual unsynchronized alternative for single-threaded text assembly.",
+      "The + operator is evaluated left to right. 1 + 2 + \" stops\" produces \"3 stops\", but \"Stops: \" + 1 + 2 produces \"Stops: 12\". Parenthesize arithmetic when joining it to text.",
+      "Input methods consume different amounts of text. Scanner.nextInt reads a numeric token and can leave the line ending behind; a following nextLine may read only that remainder. Reading whole lines and parsing them makes that boundary explicit."
+    ],
+    "example": {
+      "title": "Extend a String and a shared buffer",
+      "code": "public class TextValues {\n    public static void main(String[] args) {\n        String original = \"map\";\n        String expanded = original.concat(\"s\");\n        StringBuffer route = new StringBuffer(\"A\");\n        StringBuffer alias = route;\n        alias.append(\" -> B\");\n\n        System.out.println(original);\n        System.out.println(expanded);\n        System.out.println(route);\n        System.out.println(\"map\".equals(new String(\"map\")));\n    }\n}",
+      "explanation": "Static expected output is shown below; this page does not execute Java. original still refers to the unchanged text map, while expanded holds the concatenated result. route and alias refer to one buffer, so appending through alias changes what printing route displays. The deliberately separate String object in the last line has equal contents; constructing a duplicate this way is a demonstration, not a recommended habit.",
+      "output": "map\nmaps\nA -> B\ntrue",
+      "steps": [
+        "Draw two arrows pointing to the same buffer, then update that object's contents once.",
+        "Contrast original.concat(\"s\") with alias.append(\" -> B\"): the first leaves its receiver unchanged, while the second mutates its receiver."
+      ]
+    },
+    "labIds": ["basics-1"]
+  },
+  {
+    "id": "oop-state-and-contracts",
+    "title": "Model state and specialize behavior",
+    "topic": "OOP concepts",
+    "minutes": 5,
+    "concepts": [
+      "A class defines state and behavior; new creates an instance and invokes a constructor. Overloaded constructors have different parameter lists. this refers to the current instance, while super(...) selects a superclass constructor to initialize the superclass part.",
+      "Keep implementation details private and expose meaningful operations. An unrelated top-level class does not gain private access just by sharing a source file. A subclass can use accessible inherited methods without directly touching the parent's private fields.",
+      "Inheritance models an is-a relationship; a class has one direct superclass and may implement multiple interfaces. An abstract class may combine state, constructors, concrete methods, and abstract contracts. A concrete descendant must implement the remaining abstract methods.",
+      "The declared reference type determines which methods a call can name; the actual object's class selects an overridden instance implementation at runtime. @Override catches signature mistakes. Changing parameters overloads a method rather than overriding it, and an override cannot narrow access.",
+      "An instance field belongs to one object; a static field belongs to the class. final prevents reassignment of a variable, overriding of a method, or subclassing of a class, depending on its position. A final reference does not make the referenced object immutable."
+    ],
+    "example": {
+      "title": "Share a counter while dispatching specialized messages",
+      "code": "abstract class Notice {\n    private final String label;\n    private static int created = 0;\n\n    Notice(String label) {\n        this.label = label;\n        created++;\n    }\n\n    public String heading() { return label; }\n    public static int count() { return created; }\n    public abstract String message();\n}\n\nclass Reminder extends Notice {\n    Reminder(String label) {\n        super(label);\n    }\n\n    @Override\n    public String message() {\n        return heading() + \": review\";\n    }\n}\n\npublic class NoticeDemo {\n    public static void main(String[] args) {\n        Notice first = new Reminder(\"Loops\");\n        Notice second = new Reminder(\"Text\");\n        System.out.println(first.message());\n        System.out.println(second.message());\n        System.out.println(\"Created: \" + Notice.count());\n    }\n}",
+      "explanation": "Static expected output is shown below; this page does not execute Java. Each Reminder calls the Notice constructor, which assigns that object's label and increments the shared counter. Both references have type Notice, whose contract permits message(); each call dispatches to Reminder.message(). The subclass reads the private label through heading(), not by accessing label directly. The two labels differ, but there is only one created counter for this class.",
+      "output": "Loops: review\nText: review\nCreated: 2",
+      "steps": [
+        "Trace each constructor call before tracing message(). Keep separate label values for the two instances.",
+        "Imagine a new method declared only in Reminder. A Notice reference cannot call it directly merely because it currently holds a Reminder; a downcast would require a compatible runtime object.",
+        "Connect inheritance to Withdraw guard: a custom class extending Exception directly defines a checked exception type. throw raises an instance; throws declares the possibility, and callers must catch it or propagate it. It is not an interface implementation."
+      ]
+    },
+    "labIds": ["classes-1", "classes-2", "inheritance-1", "inheritance-2", "exceptions-2"]
+  },
+  {
+    "id": "swing-component-trees",
+    "title": "Build a window from components and containers",
+    "topic": "GUI & Swing",
+    "minutes": 4,
+    "concepts": [
+      "Choose components by responsibility: JLabel presents text, JTextField accepts text, and JButton offers an action. Creating a component does not display it; attach it to a container that is ultimately inside a visible window.",
+      "A layout manager sizes and positions children. FlowLayout arranges a row that can wrap, GridLayout gives equal-sized cells, and BorderLayout assigns regions. Nest panels for richer layouts rather than adding several independent children to the same BorderLayout region.",
+      "Use JComboBox for a compact item selection. ButtonGroup enforces mutual exclusion among radio buttons but is not a visible container; add those buttons to both the group and a panel. Independent check boxes represent choices that can coexist.",
+      "Menus form a tree: a JFrame installs a JMenuBar with setJMenuBar; the bar holds JMenus, and a JMenu holds items or another JMenu as a submenu. Nest the submenu inside its intended parent rather than alongside that parent on the bar.",
+      "Schedule Swing construction and updates on the event-dispatch thread with SwingUtilities.invokeLater. Configure the close operation, populate the window, then pack it and make it visible. pack uses preferred component sizes; it does not promise fixed pixel dimensions."
+    ],
+    "example": {
+      "title": "Lay out a reading planner",
+      "code": "import java.awt.BorderLayout;\nimport java.awt.GridLayout;\nimport javax.swing.*;\n\npublic class ReadingWindow {\n    public static void main(String[] args) {\n        SwingUtilities.invokeLater(() -> {\n            JFrame frame = new JFrame(\"Reading planner\");\n            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\n            frame.setLayout(new BorderLayout(8, 8));\n\n            JPanel form = new JPanel(new GridLayout(2, 2, 6, 6));\n            form.add(new JLabel(\"Topic:\"));\n            form.add(new JComboBox<String>(\n                new String[] {\"Loops\", \"Objects\"}));\n            form.add(new JLabel(\"Minutes:\"));\n            form.add(new JTextField(\"12\", 6));\n\n            frame.add(new JLabel(\"Choose your next reading\"), BorderLayout.NORTH);\n            frame.add(form, BorderLayout.CENTER);\n            frame.add(new JButton(\"Plan\"), BorderLayout.SOUTH);\n            frame.pack();\n            frame.setVisible(true);\n        });\n    }\n}",
+      "explanation": "Static expected visual result, not console output: on a desktop with a graphical display, a window titled Reading planner shows a heading above a two-row form and a Plan button below it. The topic selector initially shows Loops, and the minutes field contains 12. Appearance and dimensions depend on the platform. The button has no action listener yet, so clicking it does not plan anything. This page shows source and a description; it does not launch the window.",
+      "steps": [
+        "Draw the frame's three occupied BorderLayout regions, then expand the center panel into its four GridLayout cells.",
+        "Distinguish the String array passed to the combo box constructor from several separate String arguments.",
+        "Try the layout labs before adding behavior. A visible button and a working button are separate milestones."
+      ]
+    },
+    "labIds": ["gui-1", "gui-2"]
+  },
+  {
+    "id": "event-handling-responses",
+    "title": "Turn a user action into a validated update",
+    "topic": "Event handling",
+    "minutes": 4,
+    "concepts": [
+      "An event source notifies registered listeners using an event object. A JButton's action can come from keyboard activation as well as a mouse click, so ActionListener models the intended action more directly than a mouse-only listener.",
+      "Registration connects source to callback; merely defining actionPerformed does not subscribe a listener. ActionListener has one abstract method, so an anonymous class or a compatible lambda can provide the callback. A lambda body runs when notified, not when registered.",
+      "Separate reading, validation, calculation, and display. getText returns a String; parse it explicitly and report malformed input. A successfully parsed value can still be unsuitable, such as a nonpositive duration; floating-point inputs may also need finite-value checks.",
+      "Swing callbacks normally execute on the event-dispatch thread. Keep handlers short and update components there; long-running work belongs off that thread, with results returned safely, for example through SwingWorker.",
+      "State that survives clicks belongs in a lasting object, such as a counter field. A local variable captured by a lambda must be final or effectively final, but a captured component reference may still refer to an object whose text can be updated."
+    ],
+    "example": {
+      "title": "Validate minutes when Plan is activated",
+      "code": "import java.awt.FlowLayout;\nimport javax.swing.*;\n\npublic class ReadingAction {\n    public static void main(String[] args) {\n        SwingUtilities.invokeLater(() -> {\n            JFrame frame = new JFrame(\"Plan a review\");\n            JTextField minutesField = new JTextField(\"12\", 6);\n            JButton plan = new JButton(\"Plan\");\n            JLabel status = new JLabel(\"Enter whole minutes.\");\n\n            plan.addActionListener(event -> {\n                try {\n                    int minutes = Integer.parseInt(minutesField.getText().trim());\n                    if (minutes <= 0) {\n                        status.setText(\"Use a positive number.\");\n                    } else {\n                        status.setText(\"Next review: \" + minutes + \" min.\");\n                    }\n                } catch (NumberFormatException error) {\n                    status.setText(\"Use whole numbers.\");\n                }\n                frame.pack();\n            });\n\n            frame.setLayout(new FlowLayout());\n            frame.add(minutesField);\n            frame.add(plan);\n            frame.add(status);\n            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\n            frame.pack();\n            frame.setVisible(true);\n        });\n    }\n}",
+      "explanation": "Static expected visual behavior, not console output: the status starts as Enter whole minutes. Activating Plan with 12 in the field changes it to Next review: 12 min. Entering 0 and activating Plan displays Use a positive number.; entering twelve displays Use whole numbers. The listener reads the current field contents on each action, and repacks the window to fit the changed label. This is a label-update demonstration, not a timer, and the page does not execute it.",
+      "steps": [
+        "Find the source (plan), registration (addActionListener), event parameter, and callback body.",
+        "Trace the valid, nonpositive, and malformed-input paths separately. Each path updates the same status component.",
+        "Compare the anonymous listener in Click counter with the lambda in Lambda greeting: both register an ActionListener, despite their different syntax."
+      ]
+    },
+    "labIds": ["events-1", "events-2", "exceptions-1"]
+  }
+]

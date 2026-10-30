@@ -30,6 +30,23 @@ export interface CourseMeta {
   shortTitle: string;
   description: string;
   exam: ExamConfig;
+  sample?: boolean;
+}
+
+export interface TopicLesson {
+  id: string;
+  title: string;
+  topic: string;
+  minutes: number;
+  concepts: string[];
+  example: {
+    title: string;
+    code?: string;
+    explanation: string;
+    output?: string;
+    steps?: string[];
+  };
+  labIds: string[];
 }
 
 export interface TopicGroup {
@@ -42,6 +59,7 @@ export interface LabSelectBlank {
   kind: "select";
   options: string[];
   answer: string;
+  explanation?: string;
 }
 
 export interface LabInputBlank {
@@ -50,6 +68,7 @@ export interface LabInputBlank {
   answers: string[];
   placeholder?: string;
   reveal?: string;
+  explanation?: string;
 }
 
 export type LabBlank = LabSelectBlank | LabInputBlank;
@@ -62,6 +81,7 @@ export interface LabSet {
   hint?: string;
   code: string;
   blanks: LabBlank[];
+  walkthrough?: { steps: string[]; output?: string };
 }
 
 export interface LabTopicGroup {
@@ -82,10 +102,11 @@ export interface CourseData {
   explanations: Record<number, AnswerExplanation>;
   topics: TopicGroup[];
   lab?: LabData;
+  lessons?: TopicLesson[];
 }
 
 export interface ExamAnswer {
   letters: string[];
 }
 
-export type View = "home" | "quiz" | "review" | "exam" | "library" | "lab";
+export type View = "home" | "quiz" | "summary" | "review" | "exam" | "library" | "lab" | "learn" | "settings";

@@ -7,6 +7,7 @@ import type {
   LabTopicGroup,
   Question,
   TopicGroup,
+  TopicLesson,
 } from "../types";
 import { validateLab } from "../lib/lab";
 
@@ -28,6 +29,7 @@ const labLoaders = import.meta.glob("./*/lab.json") as Record<
   string,
   () => Promise<JsonModule<LabSet[]>>
 >;
+const lessonLoaders = import.meta.glob("./*/lessons.json") as Record<string, () => Promise<JsonModule<TopicLesson[]>>>;
 
 function folderOf(path: string): string {
   return path.split("/")[1] ?? "";
@@ -39,7 +41,7 @@ for (const [path, module] of Object.entries(metaModules)) {
 }
 
 export function listCourses(): CourseMeta[] {
-  return [...metaByFolder.values()].sort((a, b) => a.title.localeCompare(b.title));
+  return [...metaByFolder.values()].sort((a, b) => Number(!!a.sample) - Number(!!b.sample) || a.title.localeCompare(b.title));
 }
 
 export function getCourseMeta(id: string): CourseMeta | undefined {
@@ -153,12 +155,14 @@ export async function loadCourse(id: string): Promise<CourseData> {
   const loadQuestions = questionLoaders[questionPath];
   const loadExplanations = explanationLoaders[explanationPath];
   const loadLab = labLoaders[`./${folder}/lab.json`];
+  const loadLessons = lessonLoaders[`./${folder}/lessons.json`];
   if (!loadQuestions) throw new Error(`Course "${folder}" has no questions.json.`);
 
-  const [questionsModule, explanationsModule, labModule] = await Promise.all([
+  const [questionsModule, explanationsModule, labModule, lessonModule] = await Promise.all([
     loadQuestions(),
     loadExplanations ? loadExplanations() : Promise.resolve({ default: {} }),
     loadLab ? loadLab() : Promise.resolve(null),
+    loadLessons ? loadLessons() : Promise.resolve(null),
   ]);
 
   const questions = questionsModule.default;
@@ -189,6 +193,18 @@ export async function loadCourse(id: string): Promise<CourseData> {
     topics: groupTopics(unique),
     ...(labModule?.default?.length ? { lab: buildLab(folder, labModule.default) } : {}),
   };
+  if (lessonModule) {
+    const lessons = lessonModule.default;
+    const ids = new Set<string>();
+    const text = (value: unknown): value is string => typeof value === "string" && !!value.trim();
+    if (!Array.isArray(lessons)) throw new Error("Invalid lesson collection.");
+    for (const lesson of lessons) {
+      if (!lesson || !text(lesson.id) || !/^[a-z0-9-]+$/.test(lesson.id) || ids.has(lesson.id) || !text(lesson.title) || !data.topics.some((topic) => topic.name === lesson.topic) || !Number.isFinite(lesson.minutes) || lesson.minutes <= 0 || !Array.isArray(lesson.concepts) || !lesson.concepts.length || !lesson.concepts.every(text) || !lesson.example || !text(lesson.example.title) || !text(lesson.example.explanation) || !Array.isArray(lesson.labIds) || !lesson.labIds.every((labId) => data.lab?.setById.has(labId))) throw new Error("Invalid lesson content or links.");
+      if ((lesson.example.code !== undefined && !text(lesson.example.code)) || (lesson.example.output !== undefined && !text(lesson.example.output)) || (lesson.example.steps !== undefined && (!Array.isArray(lesson.example.steps) || !lesson.example.steps.every(text)))) throw new Error("Invalid worked example.");
+      ids.add(lesson.id);
+    }
+    data.lessons = lessons;
+  }
   cache.set(id, data);
   return data;
 }

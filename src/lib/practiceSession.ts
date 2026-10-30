@@ -1,6 +1,7 @@
 import type { AnswerSource } from "./storage";
 import type { Question } from "../types";
 import { sameSet } from "./grading";
+import { readStored, writeStored } from "./persistence";
 
 const KEY_PREFIX = "hub.v1.course.";
 const KEY_SUFFIX = ".practice";
@@ -43,7 +44,7 @@ function normalizeAnswer(value: unknown): PracticeAnswer | null {
 
 export function loadPracticeSession(courseId: string): PracticeSession | null {
   try {
-    const raw = localStorage.getItem(key(courseId));
+    const raw = readStored(key(courseId));
     if (!raw) return null;
     const parsed: unknown = JSON.parse(raw);
     if (!isRecord(parsed) || parsed.version !== VERSION) return null;
@@ -83,19 +84,11 @@ export function loadPracticeSession(courseId: string): PracticeSession | null {
 }
 
 export function savePracticeSession(courseId: string, session: PracticeSession) {
-  try {
-    localStorage.setItem(key(courseId), JSON.stringify(session));
-  } catch {
-    // A full quota must not break an in-progress quiz in this tab.
-  }
+  return writeStored(key(courseId), JSON.stringify(session));
 }
 
 export function clearPracticeSession(courseId: string) {
-  try {
-    localStorage.removeItem(key(courseId));
-  } catch {
-    // ignore
-  }
+  return writeStored(key(courseId), null);
 }
 
 /** Score is derived from revealed answers so a resumed quiz cannot drift from storage. */

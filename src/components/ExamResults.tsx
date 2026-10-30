@@ -124,11 +124,12 @@ export default function ExamResults({ summary, onRetake, onHome, onRetryMissed }
           This percentage is for study feedback; it is not an official university grade.
         </p>
         <div className="btn-row">
-          <button className="btn primary" onClick={onRetake}>
+          {missed.length > 0 && <button className="btn primary" onClick={() => onRetryMissed(missed.map(({ g }) => g.q))}>Review missed and unanswered ({missed.length})</button>}
+          <button className="btn ghost" onClick={onRetake}>
             Take another mock
           </button>
           <button className="btn ghost" onClick={onHome}>
-            Home
+            Finish for now
           </button>
         </div>
       </div>

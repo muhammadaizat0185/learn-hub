@@ -1,0 +1,214 @@
+/* Loaded after styles.css. Theme selection is resolved by initDisplayPreferences. */
+:root {
+  color-scheme: dark;
+  --accent: #79a9ff;
+  --accent-soft: #a9caff;
+  --control-border: #7183a0;
+  --on-accent: #08111f;
+  --warning: #f4c56a;
+  --warning-bg: #302a22;
+  --picked-bg: #24344f;
+  --good-bg: #173a31;
+  --bad-bg: #3e2632;
+  --code-bg: #0b1018;
+  --field-bg: #172132;
+  --code-muted: #9aaac2;
+  --danger-text: #ffb0b0;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --card2: #e8eef6;
+  --text: #19263b;
+  --muted: #4b5c73;
+  --accent: #245bc0;
+  --accent-soft: #244f96;
+  --good: #146340;
+  --bad: #ae2633;
+  --border: #c6d0df;
+  --control-border: #75849b;
+  --on-accent: #ffffff;
+  --warning: #805100;
+  --warning-bg: #fff2ce;
+  --picked-bg: #dae7ff;
+  --good-bg: #e2f2e9;
+  --bad-bg: #fce7e9;
+  --code-bg: #f5f7fa;
+  --field-bg: #ffffff;
+  --code-muted: #4b5c73;
+  --danger-text: #ae2633;
+}
+
+:root[data-text-size="standard"] { font-size: 100%; }
+:root[data-text-size="large"] { font-size: 112.5%; }
+:root[data-text-size="larger"] { font-size: 125%; }
+
+body { font-size: 1rem; line-height: 1.5; }
+a { color: var(--accent); }
+
+/* Override the fixed pixel sizes used for reading and feedback in the base CSS. */
+.qtext, .qstem-list { font-size: 1.0625rem; }
+.qstem-list .qstem-row-sub { font-size: 1rem; }
+.option, .feedback, .explanation, .lab-brief, .lab-feedback,
+.bank-snippet, .display-settings, .course-card p { font-size: 1rem; }
+.mode, .wrong-item, .lab-set p, .lab-issues li,
+.hint, .explanation-options strong, .explanation h2 span,
+.explanation-disclaimer, .review-head p, .review-note, .phase-breakdown,
+.result-count, .detail-stats, .detail-title span, .exam-history li,
+.bank-filters, .bank-title, .course-meta, .picker-foot, .topic-info p,
+.pwa-toast p, .lab-progress-text, .lab-topic-head span { font-size: 0.875rem; }
+.explanation h3, .lab-hint { font-size: 1rem; }
+.explanation h2, .mode h2, .resume-card h2 { font-size: 1.125rem; }
+.course-card-head h2 { font-size: 1.1875rem; }
+.section-title, .topic-info h3, .lab-set h3 { font-size: 1rem; }
+.stat span, .review-counts span, .progress-summary span,
+.exam-side h2, .lab-topic-head h2 { font-size: 0.8125rem; }
+.detail-title { font-size: 1.25rem; }
+.pill { font-size: 0.8125rem; max-width: 100%; white-space: normal; }
+.option .letter { font-size: 0.8125rem; min-width: 1.625rem; height: 1.625rem; }
+.btn { font-size: 0.9375rem; }
+.btn.tiny, .qdot, .quiz-top .pill { font-size: 0.8125rem; }
+.topbar nav button, .lib-tab { font-size: 0.875rem; }
+
+/* Keep input text at least 16px, including the compact mobile code lab. */
+input, select, textarea, .search, .bank-filters select, .lab-field {
+  font-size: max(16px, 1rem);
+}
+textarea { font-family: inherit; }
+input, select, textarea { color: var(--text); background-color: var(--field-bg); }
+input::placeholder, textarea::placeholder, .lab-input::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+select option { color: var(--text); background: var(--card); }
+
+/* Contrast for interactive boundaries and hardcoded dark-theme states. */
+.btn, .option, .qdot, .search, .bank-filters select, .lab-field,
+.display-settings select { border-color: var(--control-border); }
+.btn.primary, .skip-link {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+.btn.primary:disabled {
+  opacity: 1;
+  color: var(--muted);
+  background: var(--card2);
+  border-color: var(--border);
+}
+.option.picked { border-color: var(--accent); background: var(--picked-bg); }
+.option.correct, .qdot.correct {
+  border-color: var(--good);
+  background: var(--good-bg);
+}
+.option.wrong, .qdot.wrong {
+  border-color: var(--bad);
+  background: var(--bad-bg);
+}
+.qdot.correct { color: var(--good); }
+.qdot.wrong { color: var(--bad); }
+.qdot.done { background: var(--picked-bg); color: var(--text); }
+.qdot.done.correct { background: var(--good-bg); color: var(--good); }
+.qdot.done.wrong { background: var(--bad-bg); color: var(--bad); }
+.qdot.current { border-color: var(--accent); color: var(--accent-soft); }
+.qdot.flagged { box-shadow: inset 0 -3px 0 var(--warning); }
+.btn.flag.on { color: var(--warning); border-color: var(--warning); }
+.explanation-caveat { border-color: var(--warning); background: var(--warning-bg); }
+.explanation-caveat strong { color: var(--warning); }
+.btn.danger { color: var(--danger-text); border-color: var(--bad); background: var(--bad-bg); }
+.btn.danger:hover { color: var(--on-accent); background: var(--bad); border-color: var(--bad); }
+:root[data-theme="light"] .btn.danger:hover { color: #ffffff; }
+.danger-zone { border-color: var(--bad); }
+:root[data-theme="light"] .pwa-toast { box-shadow: 0 12px 32px rgb(25 38 59 / 18%); }
+
+.lab-code { background: var(--code-bg); font-size: max(16px, 1rem); }
+.lab-content { font: inherit; }
+.lab-gutter { color: var(--code-muted); }
+.lab-field { background: var(--field-bg); }
+.lab-field.is-correct { color: var(--good); border-color: var(--good); background: var(--good-bg); }
+.lab-field.is-wrong { color: var(--text); border-color: var(--bad); background: var(--bad-bg); }
+.lab-field.is-syntax { color: var(--text); border-color: var(--warning); background: var(--warning-bg); }
+.lab-feedback.good { background: var(--good-bg); }
+.lab-feedback.bad { background: var(--bad-bg); }
+
+/* Preserve visible focus and 44px targets, including tiny buttons and exam navigation. */
+button, select, textarea, input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]),
+.btn, .btn.tiny, .topbar nav button, .qdot, .private-site, summary {
+  min-height: 44px;
+}
+button, select, .btn, .qdot { min-width: 44px; }
+.qdot { width: 44px; height: auto; }
+.exam-nav { grid-template-columns: repeat(auto-fill, minmax(44px, 1fr)); }
+.explanation-alternatives summary { padding-block: 8px; }
+:focus-visible, .lab-field:focus-visible, .lib-panel:focus-visible,
+.explanation-alternatives summary:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Long code scrolls locally rather than widening the whole document. */
+main, .card, .mode-grid > *, .lab-runner, .lab-code { min-width: 0; }
+.lab-code, pre {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+pre { font-size: 1rem; white-space: pre; overflow-wrap: normal; }
+code { font-size: 1em; }
+.lab-field { flex: none; }
+.option > :not(.letter), .wrong-item .wtext { min-width: 0; overflow-wrap: anywhere; }
+.course-card-head { flex-wrap: wrap; }
+.course-card-head h2 { min-width: 0; overflow-wrap: anywhere; }
+.course-card-head .pill { flex-shrink: 0; }
+.btn-row, .nav-row { flex-wrap: wrap; gap: 12px; }
+.topbar nav button { overflow-wrap: anywhere; }
+
+/* Course picker and standalone display settings only; lesson layout lives elsewhere. */
+.picker-tools { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 12px; }
+.picker-samples { border-top: 1px solid var(--border); margin-top: 24px; padding-top: 4px; }
+.picker-samples > p { margin-top: 0; }
+.picker-samples .course-card { border-style: dashed; }
+.display-settings h1 { margin-top: 0; font-size: 1.75rem; line-height: 1.25; }
+.display-settings > p { max-width: 65ch; }
+.display-settings-field { display: grid; gap: 8px; margin-block: 24px; }
+.display-settings-field label { font-weight: 600; }
+.display-settings-field select {
+  width: 100%;
+  max-width: 24rem;
+  padding: 10px 12px;
+  border: 1px solid var(--control-border);
+  border-radius: 8px;
+  background: var(--field-bg);
+  color: var(--text);
+  cursor: pointer;
+}
+.display-settings-field p { margin: 0; max-width: 65ch; }
+.display-settings-privacy { border-top: 1px solid var(--border); padding-top: 20px; }
+.display-settings-status { min-height: 1.5em; }
+.display-settings-status.is-warning {
+  color: var(--warning);
+  background: var(--warning-bg);
+  border-left: 3px solid var(--warning);
+  border-radius: 4px;
+  padding: 12px;
+}
+
+@media (max-width: 640px) {
+  .picker-tools { gap: 8px; }
+  .picker-domain { display: none; }
+  .topbar nav button { flex-basis: auto; }
+  .lab-code { padding-block: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .mode:hover, .lab-set:hover { transform: none; }
+}

@@ -1,0 +1,75 @@
+[
+  {
+    "id": "study-techniques-retrieval",
+    "title": "Build a recall, check, and revisit routine",
+    "topic": "Study techniques",
+    "minutes": 2,
+    "concepts": [
+      "Familiarity is not the same as recall. After an initial explanation, try reconstructing an idea without looking; the attempt reveals gaps that smooth rereading can hide.",
+      "Pair retrieval with feedback. Check your attempt, explain the difference, and try again later rather than rehearsing an unchecked mistake.",
+      "Spread encounters across separate sessions. Make the next interval manageable: revisit a shaky idea sooner and a reliably recalled one later, rather than treating one schedule as a rule for every learner.",
+      "Once basic procedures make sense, mix related problem types so you must choose an approach. Interleaving is purposeful comparison, not rapidly switching between unrelated distractions."
+    ],
+    "example": {
+      "title": "Learn to choose between two loop patterns",
+      "explanation": "This worked study plan uses a distinction rather than a memorized answer. A fixed number of repetitions and input that ends at a special value require different stopping decisions. If you cannot yet explain either pattern, begin with a small worked example; independent attempts become more useful once there is something to retrieve. The check is whether you can explain a new case after a gap, not whether the notes look familiar.",
+      "steps": [
+        "Read one example of repeating a known number of times and one example of repeating until a stop value appears.",
+        "Close the examples and explain how each pattern decides when to stop. Write a tiny trace from memory.",
+        "Compare with the examples. Record one specific correction, such as checking the stop value before adding it to a total.",
+        "In a later session, classify a mixed pair of new situations before writing any code; explain why you chose each stopping rule.",
+        "Schedule another short check. If you needed a hint, shorten the gap or simplify the next prompt instead of only rereading for longer."
+      ]
+    },
+    "labIds": []
+  },
+  {
+    "id": "focus-and-wellbeing-routine",
+    "title": "Make focused work sustainable",
+    "topic": "Focus & wellbeing",
+    "minutes": 2,
+    "concepts": [
+      "Give a session one observable goal, such as explaining a concept or checking a trace. A smaller finish line makes it easier to notice progress than a vague instruction to study everything.",
+      "Protect attention before starting: silence nonessential notifications, clear unrelated tabs, and keep a place to note tasks for later. A written reminder lets an interruption wait without requiring an immediate switch.",
+      "A work-and-break timer is a planning aid, not a test of endurance. The familiar Pomodoro pattern uses 25 minutes of work and 5 minutes of rest, but adjust the interval to the task and your needs.",
+      "Notice fatigue rather than treating every error as lack of effort. Repeated rereading or escalating mistakes can signal a need for rest. Regular sleep supports learning and attention; it does not replace practice or guarantee an anxiety-free exam."
+    ],
+    "example": {
+      "title": "Reset a study block that has stopped working",
+      "explanation": "Suppose you have spent several minutes rereading one explanation and cannot summarize it. The aim is to change the conditions, not punish yourself with a longer session. A break and a smaller retrieval task provide information about what you need next. This is a flexible routine, not a promise that a timer will remove every distraction or difficulty.",
+      "steps": [
+        "Pause and write a restart cue: Explain why this loop terminates in two sentences.",
+        "Take a short break away from the material; stretch, move, or get water if useful.",
+        "Return with only the relevant example open and choose a manageable work interval.",
+        "Attempt the two-sentence explanation before reopening the solution. If a concept is missing, study that specific prerequisite.",
+        "Stop at your planned finish time and note the next task, preserving time for your usual sleep routine."
+      ]
+    },
+    "labIds": []
+  },
+  {
+    "id": "exam-strategy-feedback",
+    "title": "Turn a practice exam into a targeted plan",
+    "topic": "Exam strategy",
+    "minutes": 2,
+    "concepts": [
+      "A practice paper measures more than topic knowledge: it also reveals pacing, interpretation, and checking habits. Use the permitted resources and timing of the real assessment when rehearsing those conditions.",
+      "Budget time in proportion to marks while reserving a checking period. If progress stalls, record useful working, mark the question, and move on when the assessment format permits returning later.",
+      "Classify mistakes by cause as well as topic. A missing concept, a misread instruction, an arithmetic slip, and unfinished work need different follow-up actions.",
+      "Review is complete only when it changes the next attempt. Re-solve a similar problem without the solution after a gap; copying the mark scheme demonstrates transcription, not independent understanding.",
+      "Reduce avoidable uncertainty before exam day: check the location, time, permitted materials, and relevant rules. Keep final revision manageable instead of sacrificing rest to a large new topic."
+    ],
+    "example": {
+      "title": "Review a short mock without chasing only the score",
+      "explanation": "Imagine a 40-minute practice with three lost marks from a loop boundary, two from missing a multi-select instruction, and an unfinished final question. Those outcomes suggest three separate interventions. Learning the loop rule will not by itself fix instruction reading or pacing. The plan below produces a specific next action for each cause, then checks whether the action helped.",
+      "steps": [
+        "Attempt the practice before opening its solutions. Note where time ran out and which answers were uncertain.",
+        "Trace the loop boundary using the first and last accepted values; then solve a new boundary example without looking.",
+        "Add a brief instruction check before answering: how many selections or pieces of working are requested?",
+        "For another 40-minute practice, reserve four minutes for checking and divide the remaining 36 minutes by the paper's mark allocation.",
+        "After a gap, try a comparable practice and review the same three causes. Update the plan from the evidence, not just the total score."
+      ]
+    },
+    "labIds": []
+  }
+]

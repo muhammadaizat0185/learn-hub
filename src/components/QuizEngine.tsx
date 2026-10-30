@@ -3,7 +3,7 @@ import { useCourse } from "../courseContext";
 import { isAnswered, remainingSeconds, sameSet } from "../lib/grading";
 import { EMPTY_PRACTICE_ANSWER, practiceScore } from "../lib/practiceSession";
 import type { PracticeAnswer, PracticeSession } from "../lib/practiceSession";
-import { load, recordAnswer } from "../lib/storage";
+import { load } from "../lib/storage";
 import type { ExamAnswer, Question } from "../types";
 import AnswerExplanation from "./AnswerExplanation";
 import Stem from "./Stem";
@@ -35,8 +35,7 @@ export function PracticeQuiz({
   const revealed = session.revealed.includes(q.id);
   const isCorrect = revealed && sameSet(answer.letters, q.answer);
   const { score, answered } = practiceScore(session, questionById);
-  const reviewMastered =
-    session.source === "review" && revealed && load(meta.id).masteredWrong.includes(q.id);
+  const reviewSchedule = revealed ? load(meta.id).reviews[q.id] : undefined;
   const caveat = !!explanations[q.id]?.caveat;
   const questionRef = useRef<HTMLDivElement>(null);
   const feedbackRef = useRef<HTMLDivElement>(null);
@@ -45,7 +44,7 @@ export function PracticeQuiz({
   useEffect(() => {
     window.scrollTo(0, 0);
     questionRef.current?.focus({ preventScroll: true });
-  }, [idx]);
+  }, [idx, session.startedAt]);
 
   useEffect(() => {
     if (revealed && !wasRevealed.current) feedbackRef.current?.focus({ preventScroll: true });
@@ -54,7 +53,6 @@ export function PracticeQuiz({
 
   function reveal() {
     if (revealed) return;
-    recordAnswer(meta.id, q.id, sameSet(answer.letters, q.answer), session.source);
     onReveal(q.id);
   }
 
@@ -79,10 +77,10 @@ export function PracticeQuiz({
     }
   }
 
-  const correctFeedback = reviewMastered
-    ? "Correct — mastered. Removed from the review deck."
-    : caveat
-      ? "Matches key — see caveat below."
+  const correctFeedback = caveat
+    ? "Matches key — see caveat below."
+    : reviewSchedule
+      ? `Correct. Next recall check: ${new Date(reviewSchedule.dueAt).toLocaleDateString()}.`
       : "Correct!";
 
   return (
@@ -98,6 +96,9 @@ export function PracticeQuiz({
         <span className="pill good">
           Score: {score}/{answered}
         </span>
+        <button className="btn ghost" onClick={onFinish}>
+          Finish session
+        </button>
         <button className="btn ghost" onClick={onExit}>
           Save &amp; exit
         </button>

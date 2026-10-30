@@ -1,4 +1,5 @@
 import type { ExamAnswer } from "../types";
+import { readStored, writeStored } from "./persistence";
 
 const KEY_PREFIX = "hub.v1.course.";
 const KEY_SUFFIX = ".exam";
@@ -24,7 +25,7 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 
 export function loadExamSession(courseId: string): ExamSession | null {
   try {
-    const raw = localStorage.getItem(key(courseId));
+    const raw = readStored(key(courseId));
     if (!raw) return null;
     const parsed: unknown = JSON.parse(raw);
     if (!isRecord(parsed) || parsed.version !== VERSION) return null;
@@ -71,17 +72,9 @@ export function loadExamSession(courseId: string): ExamSession | null {
 }
 
 export function saveExamSession(courseId: string, session: ExamSession) {
-  try {
-    localStorage.setItem(key(courseId), JSON.stringify(session));
-  } catch {
-    // A full quota must not break an in-progress exam in this tab.
-  }
+  return writeStored(key(courseId), JSON.stringify(session));
 }
 
 export function clearExamSession(courseId: string) {
-  try {
-    localStorage.removeItem(key(courseId));
-  } catch {
-    // ignore
-  }
+  return writeStored(key(courseId), null);
 }

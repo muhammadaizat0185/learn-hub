@@ -1,142 +1,106 @@
 import { beforeEach, describe, expect, it } from "vitest";
-import {
-  addExamResult,
-  lastAttemptCorrect,
-  load,
-  markWrongMastered,
-  recordAnswer,
-  resetProgress,
-} from "../../src/lib/storage";
-
+import { addExamResult, DAY, dueReviewIds, lastAttemptCorrect, load, normalizeState, recordAnswer, recordUnanswered, resetProgress, reviewStatus, snoozeReview } from "../../src/lib/storage";
 const COURSE = "sample-course";
 const OTHER = "another-course";
+const NOW = 1_800_000_000_000;
+beforeEach(() => localStorage.clear());
 
-beforeEach(() => {
-  localStorage.clear();
-});
-
-describe("per-course isolation", () => {
-  it("keeps stats separate between courses", () => {
-    recordAnswer(COURSE, 1, false, "practice");
+describe("per-course isolation and migration", () => {
+  it("keeps stats separate and uses the existing key", () => {
+    recordAnswer(COURSE, 1, false);
     expect(load(COURSE).stats[1]).toBeDefined();
     expect(load(OTHER).stats[1]).toBeUndefined();
-    expect(load(OTHER).wrong).toEqual([]);
-  });
-
-  it("stores keys under a per-course namespace", () => {
-    recordAnswer(COURSE, 1, true, "practice");
     expect(localStorage.getItem(`hub.v1.course.${COURSE}.progress`)).toBeTruthy();
-    expect(localStorage.getItem(`hub.v1.course.${OTHER}.progress`)).toBeNull();
   });
-
-  it("ignores corrupt JSON and resets to an empty state per course", () => {
+  it("recovers from corrupt JSON", () => {
     localStorage.setItem(`hub.v1.course.${COURSE}.progress`, "{");
-    expect(load(COURSE)).toEqual({
-      version: 1,
-      stats: {},
-      wrong: [],
-      masteredWrong: [],
-      examHistory: [],
-    });
+    expect(load(COURSE)).toEqual({ version: 2, stats: {}, wrong: [], masteredWrong: [], reviews: {}, examHistory: [] });
+  });
+  it("preserves legacy stats and manual clears without inventing spaced mastery", () => {
+    const legacy = { version: 1, stats: { 1: { seen: 4, correct: 3 } }, wrong: [1], masteredWrong: [1], examHistory: [] };
+    localStorage.setItem(`hub.v1.course.${COURSE}.progress`, JSON.stringify(legacy));
+    const state = load(COURSE);
+    expect(state.stats).toEqual(legacy.stats);
+    expect(state.masteredWrong).toEqual([1]);
+    expect(state.reviews[1]).toMatchObject({ successfulReviews: 0, reason: "legacy", lastReviewedAt: null });
+    expect(dueReviewIds(state, NOW)).toEqual([1]);
+    expect(normalizeState(state)).toEqual(state);
+  });
+  it("ignores invalid scheduling records and repairs missing ones", () => {
+    const state = normalizeState({ stats: { 1: { seen: 1, correct: 9 } }, reviews: { 1: { dueAt: -1 }, nope: { dueAt: 0 } } });
+    expect(state.stats[1].correct).toBe(1);
+    expect(Object.keys(state.reviews)).toEqual(["1"]);
+    expect(state.reviews[1].reason).toBe("legacy");
   });
 });
 
-describe("recording answers", () => {
-  it("tracks attempts and adds misses to the review deck", () => {
-    recordAnswer(COURSE, 10, false, "practice");
-    let state = load(COURSE);
-    expect(state.stats[10]).toMatchObject({ seen: 1, correct: 0, lastCorrect: false });
-    expect(state.wrong).toContain(10);
-    expect(state.masteredWrong).not.toContain(10);
-
-    recordAnswer(COURSE, 10, true, "practice");
-    state = load(COURSE);
-    expect(state.stats[10]).toMatchObject({ seen: 2, correct: 1, lastCorrect: true });
-    expect(lastAttemptCorrect(state.stats[10])).toBe(true);
+describe("scheduled recall", () => {
+  it("records misses and schedules them immediately", () => {
+    recordAnswer(COURSE, 10, false, "practice", NOW);
+    expect(load(COURSE).stats[10]).toEqual({ seen: 1, correct: 0, lastCorrect: false });
+    expect(load(COURSE).wrong).toContain(10);
+    expect(dueReviewIds(load(COURSE), NOW)).toEqual([10]);
   });
-
-  it("does not master during ordinary practice", () => {
-    recordAnswer(COURSE, 11, false, "practice");
-    recordAnswer(COURSE, 11, true, "practice");
-    expect(load(COURSE).masteredWrong).not.toContain(11);
+  it("one correct answer schedules tomorrow, not mastery", () => {
+    recordAnswer(COURSE, 12, false, "practice", NOW);
+    recordAnswer(COURSE, 12, true, "review", NOW + 1);
+    const state = load(COURSE);
+    expect(state.masteredWrong).not.toContain(12);
+    expect(state.reviews[12]).toMatchObject({ successfulReviews: 1, intervalDays: 1, dueAt: NOW + 1 + DAY });
+    expect(dueReviewIds(state, NOW + 2)).toEqual([]);
   });
-
-  it("masters a review question after one correct answer", () => {
-    recordAnswer(COURSE, 12, false, "practice");
-    recordAnswer(COURSE, 12, true, "review");
-    expect(load(COURSE).masteredWrong).toContain(12);
-    expect(load(COURSE).wrong).toContain(12);
+  it("early repeats do not inflate recall or postpone the due date", () => {
+    recordAnswer(COURSE, 1, true, "practice", NOW);
+    const original = load(COURSE).reviews[1];
+    for (let i = 1; i <= 20; i++) recordAnswer(COURSE, 1, true, "review", NOW + i);
+    expect(load(COURSE).reviews[1]).toEqual(original);
+    expect(load(COURSE).stats[1].seen).toBe(21);
   });
-
-  it("returns a mastered question to the review deck after another miss", () => {
-    recordAnswer(COURSE, 13, false, "practice");
-    recordAnswer(COURSE, 13, true, "review");
-    expect(load(COURSE).masteredWrong).toContain(13);
-
-    recordAnswer(COURSE, 13, false, "review");
+  it("advances 1, 3, 7 days only when due and lapses reset spacing", () => {
+    recordAnswer(COURSE, 13, false, "practice", NOW);
+    recordAnswer(COURSE, 13, true, "review", NOW);
+    recordAnswer(COURSE, 13, true, "review", NOW + DAY);
+    expect(load(COURSE).reviews[13]).toMatchObject({ successfulReviews: 2, intervalDays: 3, dueAt: NOW + 4 * DAY });
+    recordAnswer(COURSE, 13, true, "review", NOW + 4 * DAY);
+    expect(reviewStatus(load(COURSE).reviews[13])).toBe("Recalled over time");
+    expect(load(COURSE).reviews[13].dueAt).toBe(NOW + 11 * DAY);
+    recordAnswer(COURSE, 13, false, "exam", NOW + 5 * DAY);
+    expect(load(COURSE).reviews[13]).toMatchObject({ successfulReviews: 0, dueAt: NOW + 5 * DAY });
     expect(load(COURSE).masteredWrong).not.toContain(13);
-    expect(load(COURSE).wrong).toContain(13);
   });
-
-  it("does not master from an exam answer", () => {
-    recordAnswer(COURSE, 14, false, "practice");
-    recordAnswer(COURSE, 14, true, "exam");
-    expect(load(COURSE).masteredWrong).not.toContain(14);
+  it("snoozing postpones without claiming a correct answer", () => {
+    recordAnswer(COURSE, 20, false, "practice", NOW);
+    snoozeReview(COURSE, [20], NOW);
+    expect(load(COURSE).reviews[20]).toMatchObject({ successfulReviews: 0, dueAt: NOW + DAY });
+    expect(load(COURSE).stats[20].correct).toBe(0);
   });
-});
-
-describe("exam history", () => {
-  it("keeps the newest 20 results", () => {
-    for (let i = 0; i < 25; i++) {
-      addExamResult(COURSE, {
-        date: new Date(2026, 0, i + 1).toISOString(),
-        raw: i,
-        total: 90,
-        percent: i,
-        passed: false,
-      });
-    }
-    const history = load(COURSE).examHistory;
-    expect(history).toHaveLength(20);
-    expect(history[0].raw).toBe(5);
-    expect(history[19].raw).toBe(24);
+  it("retains unanswered exam questions separately without fake attempts", () => {
+    recordUnanswered(COURSE, 7, NOW);
+    expect(load(COURSE).stats[7]).toBeUndefined();
+    expect(load(COURSE).wrong).not.toContain(7);
+    expect(dueReviewIds(load(COURSE), NOW)).toEqual([7]);
+    expect(reviewStatus(load(COURSE).reviews[7])).toBe("Not attempted in exam");
   });
-
-  it("repairs a missing percentage on load", () => {
-    localStorage.setItem(
-      `hub.v1.course.${COURSE}.progress`,
-      JSON.stringify({
-        stats: {},
-        wrong: [],
-        masteredWrong: [],
-        examHistory: [
-          { date: "2026-01-01T00:00:00.000Z", raw: 6, total: 8, passed: true },
-        ],
-      })
-    );
-    expect(load(COURSE).examHistory[0].percent).toBe(75);
+  it("new correct questions are also scheduled", () => {
+    recordAnswer(COURSE, 8, true, "exam", NOW);
+    expect(load(COURSE).reviews[8].dueAt).toBe(NOW + DAY);
+    expect(lastAttemptCorrect(load(COURSE).stats[8])).toBe(true);
+    expect(lastAttemptCorrect({ seen: 0, correct: 0 })).toBe(false);
   });
 });
 
-describe("manual controls", () => {
-  it("marks questions mastered without dropping them from the wrong list", () => {
-    recordAnswer(COURSE, 20, false, "practice");
-    markWrongMastered(COURSE, [20]);
-    expect(load(COURSE).masteredWrong).toContain(20);
-    expect(load(COURSE).wrong).toContain(20);
+describe("history and reset", () => {
+  it("keeps the newest 20 exam results", () => {
+    for (let i = 0; i < 25; i++) addExamResult(COURSE, { date: new Date(2026, 0, i + 1).toISOString(), raw: i, total: 90, percent: i, passed: false });
+    expect(load(COURSE).examHistory).toHaveLength(20);
+    expect(load(COURSE).examHistory[0].raw).toBe(5);
   });
-
-  it("resetProgress clears every field for one course only", () => {
-    recordAnswer(COURSE, 21, false, "practice");
-    recordAnswer(OTHER, 21, false, "practice");
-    resetProgress(COURSE);
-    expect(load(COURSE)).toEqual({
-      version: 1,
-      stats: {},
-      wrong: [],
-      masteredWrong: [],
-      examHistory: [],
-    });
+  it("repairs missing legacy percentages", () => {
+    expect(normalizeState({ examHistory: [{ date: "2026-01-01", raw: 6, total: 8, passed: true }] }).examHistory[0].percent).toBe(75);
+  });
+  it("resets just one course", () => {
+    recordAnswer(COURSE, 21, false); recordAnswer(OTHER, 21, false); resetProgress(COURSE);
+    expect(load(COURSE).stats).toEqual({}); expect(load(COURSE).reviews).toEqual({});
     expect(load(OTHER).wrong).toContain(21);
   });
 });

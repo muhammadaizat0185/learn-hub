@@ -2,7 +2,8 @@
   "id": "sample-course",
   "title": "Academic Skills (Sample)",
   "shortTitle": "Sample course",
-  "description": "A demonstration course bundled with the hub: 12 original questions on evidence-based study techniques, focus, and exam strategy. Replace it with your own course folder.",
+  "sample": true,
+  "description": "Try 12 questions on evidence-based study techniques, focus, and exam strategy to explore practice, review, and timed mock exams.",
   "exam": {
     "questions": 8,
     "minutes": 15,

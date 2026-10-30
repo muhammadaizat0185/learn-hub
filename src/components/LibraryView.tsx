@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { ChangeEvent, KeyboardEvent, RefObject } from "react";
 import { useCourse } from "../courseContext";
-import { downloadProgressBackup, parseProgressBackup } from "../lib/backup";
-import { load, save } from "../lib/storage";
+import { downloadProgressBackup, parseProgressBackup, restoreProgressBackup } from "../lib/backup";
+import { dueReviewIds, load } from "../lib/storage";
+import { loadLabProgress } from "../lib/lab";
 import type { Question } from "../types";
 import AnswerExplanation from "./AnswerExplanation";
 import Stem from "./Stem";
@@ -22,13 +23,16 @@ function formatDate(iso: string): string {
 }
 
 export default function LibraryView({
-  onPracticeOne,
-  onReset,
+  onPracticeOne, onReset, onRestored, detail, onNavigate,
 }: {
   onPracticeOne: (q: Question) => void;
   onReset: () => void;
+  onRestored: () => void;
+  detail?: string;
+  onNavigate: (detail: string) => void;
 }) {
-  const [tab, setTab] = useState<LibraryTab>("questions");
+  const tab: LibraryTab = detail === "progress" ? "progress" : "questions";
+  const setTab = (next: LibraryTab) => onNavigate(next);
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   function onTabKeyDown(event: KeyboardEvent<HTMLButtonElement>, index: number) {
@@ -80,18 +84,17 @@ export default function LibraryView({
         aria-labelledby={`lib-tab-${tab}`}
         tabIndex={0}
       >
-        {tab === "questions" && <QuestionBank onPracticeOne={onPracticeOne} />}
-        {tab === "progress" && <ProgressPanel onReset={onReset} />}
+        {tab === "questions" && <QuestionBank onPracticeOne={onPracticeOne} selected={detail?.startsWith("q-") ? Number(detail.slice(2)) : null} onSelect={(id) => onNavigate(id === null ? "questions" : `q-${id}`)} />}
+        {tab === "progress" && <ProgressPanel onReset={onReset} onRestored={onRestored} />}
       </div>
     </div>
   );
 }
 
-function QuestionBank({ onPracticeOne }: { onPracticeOne: (q: Question) => void }) {
+function QuestionBank({ onPracticeOne, selected, onSelect: setSelected }: { onPracticeOne: (q: Question) => void; selected: number | null; onSelect: (id: number | null) => void }) {
   const { questions, topics } = useCourse();
   const [query, setQuery] = useState("");
   const [topic, setTopic] = useState("all");
-  const [selected, setSelected] = useState<number | null>(null);
   const searchRef = useRef<HTMLInputElement>(null);
   const detailRef = useRef<HTMLHeadingElement>(null);
 
@@ -252,16 +255,18 @@ function QuestionDetail({
   );
 }
 
-function ProgressPanel({ onReset }: { onReset: () => void }) {
-  const { meta } = useCourse();
+function ProgressPanel({ onReset, onRestored }: { onReset: () => void; onRestored: () => void }) {
+  const { meta, questions, lab } = useCourse();
   const [revision, setRevision] = useState(0);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
   const fileRef = useRef<HTMLInputElement>(null);
   const state = useMemo(() => load(meta.id), [meta.id, revision]);
 
-  const attempted = Object.keys(state.stats).length;
-  const openWrong = state.wrong.filter((id) => !state.masteredWrong.includes(id)).length;
+  const attempted = questions.filter((q) => state.stats[q.id]?.seen).length;
+  const openWrong = dueReviewIds(state).filter((id) => questions.some((q) => q.id === id)).length;
+  const labProgress = loadLabProgress(meta.id);
+  const solvedLabs = lab?.sets.filter((set) => labProgress.sets[set.id]?.solved).length ?? 0;
 
   function exportBackup() {
     const name = downloadProgressBackup(meta.id, state);
@@ -275,23 +280,18 @@ function ProgressPanel({ onReset }: { onReset: () => void }) {
     if (!file) return;
     setMessage("");
     setError("");
-    const parsed = parseProgressBackup(await file.text(), meta.id);
-    if (!parsed.ok) {
-      setError(parsed.error);
-      return;
-    }
-    if (!window.confirm("Replace your current progress with this backup? This cannot be undone.")) {
-      return;
-    }
-    save(meta.id, parsed.state);
+    if (file.size > 5 * 1024 * 1024) { setError("That file is too large for a course backup (5 MB maximum)."); return; }
+    let text: string;
+    try { text = await file.text(); } catch { setError("That file could not be read. Try selecting it again."); return; }
+    const parsed = parseProgressBackup(text, meta.id);
+    if (!parsed.ok) { setError(parsed.error); return; }
+    const labCount = parsed.labProgress ? Object.keys(parsed.labProgress.sets).length : 0;
+    const preview = `${Object.keys(parsed.state.stats).length} question records, ${parsed.state.examHistory.length} exam results${parsed.labProgress ? `, ${labCount} lab records and ${Object.keys(parsed.labDrafts ?? {}).length} lab drafts` : ". This older backup has no lab data; your existing lab results and drafts will be kept"}`;
+    if (!window.confirm(`Restore ${preview}? This replaces this course's progress and clears active practice/exam sessions and recent result screens. Timed exams are never restored. Export your current progress first if you need to keep it.`)) return;
+    if (!restoreProgressBackup(meta.id, parsed)) { setError("Restore could not be completed because browser storage is unavailable. Your previous data was retained where possible; keep both backup files."); return; }
+    onRestored();
     setRevision((value) => value + 1);
-    setMessage(
-      `Imported ${Object.keys(parsed.state.stats).length} question stat${
-        Object.keys(parsed.state.stats).length === 1 ? "" : "s"
-      } and ${parsed.state.examHistory.length} exam result${
-        parsed.state.examHistory.length === 1 ? "" : "s"
-      }.`
-    );
+    setMessage(`Restored ${Object.keys(parsed.state.stats).length} question records and ${parsed.state.examHistory.length} exam results${parsed.labProgress ? `, with ${labCount} lab records` : "; existing lab progress was kept"}. Active sessions were cleared.`);
   }
 
   return (
@@ -303,19 +303,22 @@ function ProgressPanel({ onReset }: { onReset: () => void }) {
         </div>
         <div>
           <b>{openWrong}</b>
-          <span>still to review</span>
+          <span>reviews due now</span>
         </div>
         <div>
           <b>{state.examHistory.length}</b>
           <span>mock exams taken</span>
         </div>
+        {lab && <div><b>{solvedLabs}/{lab.sets.length}</b><span>labs solved</span></div>}
       </div>
 
       <section className="card" aria-labelledby="backup-heading">
         <h2 id="backup-heading">Backup and restore</h2>
         <p className="muted">
-          The export contains question stats, the review deck, and mock exam history for this
-          course. Active practice and exam sessions are deliberately not included.
+          Export this course's question stats, review schedule, mock exam history, lab results and
+          lab drafts. You can import the file on another device. Active practice/exam sessions and
+          recent result screens are not included; restoring clears them so they cannot change restored progress.
+          Nothing is uploaded and there is no automatic cross-device sync.
         </p>
         <div className="btn-row start">
           <button className="btn primary" onClick={exportBackup}>
@@ -368,8 +371,9 @@ function ProgressPanel({ onReset }: { onReset: () => void }) {
       <section className="card danger-zone" aria-labelledby="reset-heading">
         <h2 id="reset-heading">Reset progress</h2>
         <p className="muted">
-          Clears stats, the review deck, mock exam history, and any active practice or exam session
-          for this course on this device. Export a backup first if you want to keep it.
+          Clears question stats, review schedules, mock exam history, lab results, lab drafts and
+          all active sessions and recent summaries for this course on this device. Display preferences
+          and other courses are not changed. Export a backup first if you want to keep your progress.
         </p>
         <button className="btn danger" onClick={onReset}>
           Reset all progress…
