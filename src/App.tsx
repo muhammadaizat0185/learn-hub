@@ -22,7 +22,7 @@ import type { PracticeAnswer, PracticeSession } from "./lib/practiceSession";
 import { buildPracticeSummary, clearPracticeSummary, loadPracticeSummary, savePracticeSummary } from "./lib/practiceSummary";
 import type { PracticeSummary } from "./lib/practiceSummary";
 import { addExamResult, recordAnswer, recordUnanswered, resetProgress } from "./lib/storage";
-import { resetLabProgress } from "./lib/lab";
+import { labLabel, resetLabProgress } from "./lib/lab";
 import { resetLabDrafts } from "./lib/labDrafts";
 import { selectQuestions } from "./lib/study";
 import type { Recommendation } from "./lib/study";
@@ -268,7 +268,7 @@ function CourseApp({ data, route, onExit }: { data: CourseData; route: Extract<R
       default: return <CourseHome key={revision} examResume={examResume} practiceResume={practiceResume} onResumePractice={() => goTo("quiz")} onDiscardPractice={discardPractice} onNav={(target) => goTo(target)} onQuickQuiz={startRandomQuiz} onStartTopic={startTopic} onRecommend={followRecommendation} onLearn={(id) => goTo("learn", id)} hasSummary={!!practiceSummary} />;
     }
   }
-  const navigation: { view: View; label: string }[] = [{ view: "home", label: "Home" }, { view: "learn", label: "Learn" }, { view: "review", label: "Review" }, { view: "exam", label: "Mock exam" }, ...(data.lab ? [{ view: "lab" as View, label: "Code lab" }] : []), { view: "library", label: "Library" }];
+  const navigation: { view: View; label: string }[] = [{ view: "home", label: "Home" }, { view: "learn", label: "Learn" }, { view: "review", label: "Review" }, { view: "exam", label: "Mock exam" }, ...(data.lab ? [{ view: "lab" as View, label: labLabel(meta) }] : []), { view: "library", label: "Library" }];
   return <div className="app">
     <a className="skip-link" href={courseUrl(meta.id, view, detail)} onClick={(event) => { event.preventDefault(); mainRef.current?.focus(); }}>Skip to main content</a>
     <header className="topbar">

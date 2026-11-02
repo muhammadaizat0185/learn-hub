@@ -1,5 +1,21 @@
-import type { LabBlank, LabInputBlank, LabSet, LabSelectBlank } from "../types";
+import type { CourseMeta, LabBlank, LabInputBlank, LabSet, LabSelectBlank } from "../types";
 import { readStored, writeStored } from "./persistence";
+
+/**
+ * The lab started as Java-only, so the default label and note keep the old wording. A course
+ * without compiled code (logic or induction sets, for example) overrides both in course.json.
+ */
+export function labLabel(meta: CourseMeta): string {
+  return meta.lab?.label?.trim() || "Code lab";
+}
+
+export function labNote(meta: CourseMeta): string {
+  return (
+    meta.lab?.note?.trim() ||
+    "Complete Java examples with dropdowns and typed gaps. Answers are compared with authored " +
+      "expected solutions, not compiled or executed. Equivalent Java may not be recognized."
+  );
+}
 
 export type TokenKind = "word" | "number" | "string" | "char" | "punct";
 

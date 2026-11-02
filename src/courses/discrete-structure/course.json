@@ -1,0 +1,15 @@
+{
+  "id": "discrete-structure",
+  "title": "Discrete Structure (BIT11003)",
+  "shortTitle": "Discrete",
+  "description": "UTHM BIT11003/BIC10103 Discrete Structure: practice questions built from the tutorial sheets and lecture slides, covering propositions and logic, conjunctive and disjunctive normal forms, predicates and quantifiers, and mathematical induction.",
+  "exam": {
+    "questions": 40,
+    "minutes": 60,
+    "passPercent": 50
+  },
+  "lab": {
+    "label": "Logic lab",
+    "note": "Complete truth tables, normal forms, quantifier statements and induction steps by filling the gaps. Symbol choices come from dropdowns; typed gaps need the value or expression exactly as authored, because equivalent but differently written answers may not be recognized."
+  }
+}

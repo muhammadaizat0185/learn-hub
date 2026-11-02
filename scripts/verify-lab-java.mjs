@@ -56,6 +56,11 @@ try {
     if (!existsSync(file)) continue;
 
     const sets = JSON.parse(readFileSync(file, "utf8"));
+    const metaPath = join(coursesDir, entry.name, "course.json");
+    const meta = existsSync(metaPath) ? JSON.parse(readFileSync(metaPath, "utf8")) : {};
+    // Only courses that opt in are treated as Java; other subjects still get structure checks.
+    const compiles = meta?.lab?.compile === "javac";
+    if (!compiles) console.log(`${entry.name}: lab is not Java, skipping javac (structure checks still run).`);
     const byTopic = new Map();
     for (const set of sets) {
       byTopic.set(set.topic, (byTopic.get(set.topic) ?? 0) + 1);
@@ -69,6 +74,7 @@ try {
 
     for (const set of sets) {
       totalBlanks += set.blanks.length;
+      if (!compiles) continue;
       const source = assemble(set);
       const className = /public\s+class\s+([A-Za-z_$][\w$]*)/.exec(source)?.[1];
       if (!className) {

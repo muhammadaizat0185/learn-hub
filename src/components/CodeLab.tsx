@@ -5,6 +5,8 @@ import {
   canonicalAnswer,
   canonicalValues,
   gradeSet,
+  labLabel,
+  labNote,
   loadLabProgress,
   recordLabAttempt,
 } from "../lib/lab";
@@ -117,11 +119,10 @@ function CourseCodeLab({ selectedSetId, onSelectSet }: CodeLabProps) {
   return (
     <div className="lab">
       <div className="card lab-hero">
-        <h1 ref={headingRef} tabIndex={-1}>Code lab</h1>
+        <h1 ref={headingRef} tabIndex={-1}>{labLabel(meta)}</h1>
         <p className="muted">
-          Complete Java examples with dropdowns and typed gaps. Answers are compared with authored
-          expected solutions, not compiled or executed. Equivalent Java may not be recognized.
-          Drafts, including revealed answers, are saved on this device when storage is available.
+          {labNote(meta)}
+          {" Drafts, including revealed answers, are saved on this device when storage is available."}
         </p>
         <div className="stat-row">
           <div className="stat">
@@ -323,9 +324,9 @@ function SetRunner({
       <h1 className="lab-title" ref={headingRef} tabIndex={-1}>{set.title}</h1>
       <p className="muted lab-brief">{set.brief}</p>
       <p className="muted">
-        This is expected-solution matching, not a Java compiler. Typed gaps are compared token by
-        token, ignoring spacing, comments and an optional trailing semicolon. Equivalent solutions
-        may not be recognized. Your code is not executed. Ctrl/Command+Enter checks all gaps.
+        This is expected-solution matching, not a compiler. Typed gaps are compared token by
+        token, ignoring spacing, comments and an optional trailing semicolon. Equivalent answers
+        may not be recognized. Nothing you type is executed. Ctrl/Command+Enter checks all gaps.
       </p>
       {saveFailed ? (
         <p className="hint lab-hint" role="alert">
@@ -445,7 +446,7 @@ function SetRunner({
 function issueText(result: BlankResult): string {
   if (result.status === "empty") return "is still empty.";
   if (result.status === "syntax") return `could not be matched: ${result.message}. This is a token check, not a compiler diagnostic.`;
-  return "does not match an authored solution. An equivalent Java expression may not be recognized.";
+  return "does not match an authored solution. An equivalent expression may not be recognized.";
 }
 
 function renderLine(

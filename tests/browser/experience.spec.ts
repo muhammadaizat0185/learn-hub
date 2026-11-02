@@ -35,7 +35,13 @@ async function fits(page: Page) {
 
 test("real courses precede samples and display settings persist", async ({ page }) => {
   await page.goto("/");
-  await expect(page.locator("button.course-card").first()).toContainText("Java");
+  const titles = await page
+    .locator("button.course-card")
+    .evaluateAll((nodes) => nodes.map((node) => node.textContent ?? ""));
+  expect(titles.length).toBeGreaterThanOrEqual(2);
+  const firstSample = titles.findIndex((title) => title.includes("Sample"));
+  expect(firstSample).toBeGreaterThan(0);
+  expect(titles.slice(firstSample).every((title) => title.includes("Sample"))).toBe(true);
   await expect(page.getByRole("heading", { name: "Try a sample" })).toBeVisible();
   await page.getByRole("button", { name: "Display preferences", exact: true }).click();
   await page.getByLabel("Theme", { exact: true }).selectOption("dark");
@@ -400,6 +406,79 @@ for (const theme of ["light", "dark"]) {
     await page.screenshot({ path: testInfo.outputPath(`desktop-lesson-${theme}.png`), fullPage: true });
   });
 }
+
+test("discrete structure shows its topics, lesson notation, and explanations", async ({ page }, testInfo) => {
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto("/");
+  await expect(page.getByRole("heading", { name: "Discrete Structure (BIT11003)" })).toBeVisible();
+
+  await page.goto("/#/c/discrete-structure");
+  await expect(page.getByRole("heading", { name: "Discrete Structure (BIT11003)" })).toBeVisible();
+  for (const topic of ["Propositions and logic", "CNF and DNF", "Predicates and quantifiers", "Mathematical induction"]) {
+    await expect(page.getByRole("heading", { name: topic, exact: true })).toBeVisible();
+  }
+  await fits(page);
+  await page.screenshot({ path: testInfo.outputPath("discrete-home.png"), fullPage: true });
+
+  await page.goto("/#/c/discrete-structure/learn/normal-forms-cnf-dnf");
+  await expect(page.getByRole("heading", { name: "Read a truth table as a CNF or a DNF" })).toBeVisible();
+  await expect(page.locator(".lesson").first()).toContainText("(¬p ∨ ¬q)");
+  await fits(page);
+  await page.screenshot({ path: testInfo.outputPath("discrete-lesson.png"), fullPage: true });
+
+  await page.goto("/#/c/discrete-structure");
+  await page.getByRole("button", { name: /Quick quiz/ }).first().click();
+  await page.locator(".option").first().click();
+  await page.getByRole("button", { name: "Check answer" }).click();
+  await expect(page.locator(".explanation").first()).toBeVisible();
+  await fits(page);
+  await page.screenshot({ path: testInfo.outputPath("discrete-quiz.png"), fullPage: true });
+});
+
+test("logic lab drops the Java wording and grades math gaps without a compiler", async ({ page }, testInfo) => {
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto("/#/c/discrete-structure");
+  await nav(page, "Logic lab");
+  await expect(page.getByRole("heading", { name: "Logic lab" })).toBeVisible();
+  await expect(page.getByText(/Symbol choices come from dropdowns/)).toBeVisible();
+  await expect(page.getByText("Java")).toHaveCount(0);
+  await fits(page);
+  await page.screenshot({ path: testInfo.outputPath("discrete-lab-list.png"), fullPage: true });
+
+  await page.getByRole("button", { name: /Implication and biconditional columns/ }).click();
+  await expect(page.getByRole("heading", { name: "Implication and biconditional columns" })).toBeVisible();
+  for (const [id, value] of [["1", "T"], ["2", "F"], ["3", "T"], ["4", "T"]] as const) {
+    await page.locator(`input[data-blank="${id}"]`).fill(value);
+  }
+  await page.locator('select[data-blank="5"]').selectOption("true");
+  await page.locator('select[data-blank="6"]').selectOption("agree");
+  await page.getByRole("button", { name: "Check answers" }).click();
+  await expect(page.locator(".lab-feedback.good")).toContainText("Lab complete.");
+
+  await page.goto("/#/c/discrete-structure/lab/nested-negation");
+  for (const [id, value] of [["1", "→"], ["2", "∧"], ["3", "∧"], ["4", "∃"], ["5", "∀"], ["6", "∃"], ["7", "∃"]] as const) {
+    await page.locator(`select[data-blank="${id}"]`).selectOption(value);
+  }
+  await page.getByRole("button", { name: "Check answers" }).click();
+  await expect(page.locator(".lab-feedback.good")).toContainText("Lab complete.");
+  await fits(page);
+  await page.screenshot({ path: testInfo.outputPath("discrete-lab.png"), fullPage: true });
+
+  await page.goto("/#/c/discrete-structure/lab/induction-sum-steps");
+  await page.locator('input[data-blank="2"]').fill("k(k + 1) / 2");
+  await page.locator('input[data-blank="4"]').fill("∀");
+  await page.getByRole("button", { name: "Check answers" }).click();
+  await expect(page.locator(".lab-feedback.bad")).toContainText("1/6 gaps match");
+  await expect(page.locator("#lab-gap-feedback-4")).toContainText("unexpected character");
+  await expect(page.getByRole("heading", { name: "Worked walkthrough" })).not.toBeVisible();
+  await page.getByRole("button", { name: "Show solution", exact: true }).click();
+  await expect(page.getByRole("heading", { name: "Worked walkthrough" })).toBeVisible();
+
+  await page.goto("/#/c/discrete-structure/exam");
+  await expect(page.getByText(/40 questions in 60 minutes/)).toBeVisible();
+  await fits(page);
+  await page.screenshot({ path: testInfo.outputPath("discrete-exam.png"), fullPage: true });
+});
 
 test("unknown deep links recover without blank pages", async ({ page }) => {
   await page.goto("/#/c/java-programming/learn/not-a-topic");

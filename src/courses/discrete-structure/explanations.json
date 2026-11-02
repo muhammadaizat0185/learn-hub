@@ -1,0 +1,362 @@
+{
+  "1": {
+    "summary": "A proposition is a declarative sentence with exactly one truth value. \"Ipoh is the capital of Perak\" is either true or false, so it qualifies.",
+    "options": {
+      "A": "A command has no truth value, so it is not a proposition.",
+      "B": "A question has no truth value, so it is not a proposition.",
+      "C": "Correct: the sentence declares a fact and is in fact true.",
+      "D": "With an unbound x this is an open sentence; it becomes a proposition only once x is given a value or quantified."
+    }
+  },
+  "2": {
+    "summary": "Propositions must be declarative and have a definite truth value. \"2 + 3 = 7\" is false and \"The moon is a satellite of the Earth\" is true; both count.",
+    "options": {
+      "A": "Correct: false is still a truth value, so this is a proposition.",
+      "B": "A command cannot be true or false.",
+      "C": "The free variable x leaves the truth value undecided, so this is an open sentence.",
+      "D": "Correct: a true declarative sentence."
+    }
+  },
+  "3": {
+    "summary": "Negating \"hot and sunny\" applies De Morgan's law: ¬(p ∧ q) ≡ ¬p ∨ ¬q, so the negation is \"not hot or not sunny\".",
+    "options": {
+      "A": "This negates each part but keeps the conjunction; ¬p ∧ ¬q is stronger than ¬(p ∧ q).",
+      "B": "Correct: the conjunction becomes a disjunction of the negations.",
+      "C": "Only the connective changed; neither component was negated.",
+      "D": "\"Cold\" is a new predicate rather than the negation of hot or sunny."
+    }
+  },
+  "4": {
+    "summary": "Reading the textbook is a necessary condition for understanding, and a necessary condition belongs in the \"then\" part: if you understand the materials, you read the textbook.",
+    "options": {
+      "A": "This treats reading as a sufficient condition, which reverses the claim.",
+      "B": "Correct: understanding implies the necessary condition was met.",
+      "C": "A conjunction states that both happen; it says nothing about the dependency.",
+      "D": "This is the contrapositive of A, so it carries the same reversed meaning."
+    }
+  },
+  "5": {
+    "summary": "An implication p → q is false only when p is true and q is false. The hypothesis \"0.5 is an integer\" is false, so the implication is true regardless of the conclusion.",
+    "options": {
+      "A": "Correct: a false hypothesis makes the implication vacuously true.",
+      "B": "The conclusion being false only makes the implication false when the hypothesis is true.",
+      "C": "A false hypothesis makes the implication true, not false.",
+      "D": "0.5 is not an integer, so the hypothesis is false."
+    }
+  },
+  "6": {
+    "summary": "The contrapositive of p → q is ¬q → ¬p: negate both parts and swap them, giving \"If I do not stay home, then it does not snow today\".",
+    "options": {
+      "A": "This is the converse q → p, which swaps without negating.",
+      "B": "This is the inverse ¬p → ¬q, which negates without swapping.",
+      "C": "Correct: ¬q → ¬p, logically equivalent to the original implication.",
+      "D": "A conjunction is not an implication; this states that both parts happen."
+    }
+  },
+  "7": {
+    "summary": "CNF is a conjunction of disjunctions of propositional variables or their negations, for example (p ∨ q) ∧ (p ∨ ¬q) ∧ (¬p ∨ ¬q).",
+    "options": {
+      "A": "That ordering describes DNF, the disjunction of conjunctions.",
+      "B": "Correct: CNF conjoins clauses that are each a disjunction of literals.",
+      "C": "CNF clauses normally contain negations, and there are several brackets rather than one conjunction.",
+      "D": "A negated disjunction is not a normal form; De Morgan's law would push it into one."
+    }
+  },
+  "8": {
+    "summary": "A normal form is full when no variable is missing from any bracket, i.e. every variable of the proposition appears in every bracket as itself or negated.",
+    "options": {
+      "A": "Correct: presence of every variable in each bracket is what makes the form full.",
+      "B": "Fullness is about the shape of the expression, not about being a tautology.",
+      "C": "Both plain and negated variables may appear; the requirement is presence, not polarity.",
+      "D": "The number of brackets comes from the truth-table rows used, not from the number of variables."
+    }
+  },
+  "9": {
+    "summary": "The full CNF takes one clause from each false row, and the clause must be false for exactly that row. With p = T and q = F, p enters as ¬p and q enters as q, giving (¬p ∨ q).",
+    "options": {
+      "A": "Correct: a variable appears negated when that row makes it true, so this clause fails only at p = T, q = F.",
+      "B": "This is the clause for the opposite row p = F, q = T.",
+      "C": "A conjunction of literals is a DNF term, not a CNF clause.",
+      "D": "This is a DNF term, and for the opposite row as well."
+    }
+  },
+  "10": {
+    "summary": "The full DNF takes one term from each true row, with each variable written as that row values it, then joins them with ∨: (p ∧ ¬q) ∨ (¬p ∧ q).",
+    "options": {
+      "A": "Correct: one minterm per true row, combined by disjunction.",
+      "B": "This joins clauses with ∧, so it is a CNF shape rather than a DNF.",
+      "C": "This is the full CNF of the same proposition, built from its two false rows.",
+      "D": "These terms describe the rows where p and q agree, which are the false rows here."
+    }
+  },
+  "11": {
+    "summary": "\"Everyone likes someone\" quantifies over people first and lets the liked person depend on who is doing the liking: ∀x ∃y L(x, y).",
+    "options": {
+      "A": "Correct: for every x there is a y, possibly different for each x, whom x likes.",
+      "B": "Swapping the order claims one single person whom everybody likes, a stronger statement.",
+      "C": "This says everyone likes everyone.",
+      "D": "This only claims that some pair of people like each other."
+    }
+  },
+  "12": {
+    "summary": "In ∃y ∀x L(x, y) the y is chosen before the ∀x runs, so one fixed person is liked by every person: \"There is someone whom everyone likes\".",
+    "options": {
+      "A": "That is ∀x ∃y L(x, y), where the liked person may vary with each x.",
+      "B": "Correct: the outer ∃y fixes one person for all x.",
+      "C": "That needs a negation, for example ∃x ∀y ¬L(x, y).",
+      "D": "That is ∀x ∀y L(x, y)."
+    }
+  },
+  "13": {
+    "summary": "\"No books are expensive\" is a universal conditional: everything that is a book is not expensive, ∀x (B(x) → ¬E(x)).",
+    "options": {
+      "A": "Correct: the standard form for a negative universal claim.",
+      "B": "This says some book is not expensive, which is far weaker.",
+      "C": "This says everything expensive is a book, reversing the classes.",
+      "D": "With an existential quantifier and an implication the statement is satisfied by any object that is not a book."
+    }
+  },
+  "14": {
+    "summary": "Quantifier negation flips ∀ to ∃ and negates the predicate: ¬∀x P(x) ≡ ∃x ¬P(x). \"Not everything has P\" means \"something lacks P\".",
+    "options": {
+      "A": "This is the stronger claim that nothing has P; it is the negation pushed too far.",
+      "B": "Correct: De Morgan's law for quantifiers.",
+      "C": "This is equivalent to ∀x ¬P(x), not to ¬∀x P(x).",
+      "D": "This drops the negation altogether."
+    }
+  },
+  "15": {
+    "summary": "Universal conditionals pair ∀ with →: \"Every parrot is ugly\" is ∀x (P(x) → U(x)).",
+    "options": {
+      "A": "Correct: anything that is a parrot is ugly.",
+      "B": "With ∧ this claims every object in the universe is both a parrot and ugly.",
+      "C": "This is the weaker \"some parrot is ugly\".",
+      "D": "This reverses it to \"everything ugly is a parrot\"."
+    }
+  },
+  "16": {
+    "summary": "The inductive step takes P(k) as the inductive hypothesis and derives P(k + 1) from it, which is what makes the chain of dominoes continue.",
+    "options": {
+      "A": "Correct: assume P(k), prove P(k + 1).",
+      "B": "That runs the argument backwards; the hypothesis is about k, not k + 1.",
+      "C": "Induction proves a statement for infinitely many n, not for one largest case.",
+      "D": "Assuming the result for every n is what you are trying to prove, so the reasoning would be circular."
+    }
+  },
+  "17": {
+    "summary": "For n = 0 the left side is just the single term 2^0 = 1, and the right side is 2^(0+1) − 1 = 2 − 1 = 1, so P(0) holds.",
+    "options": {
+      "A": "Correct: both sides equal 1, which is the basis check.",
+      "B": "The sum of the terms up to 2^0 is 1, not 0.",
+      "C": "3 is the right side of P(1), not of P(0).",
+      "D": "Both sides equal 3 in P(1); the basis step is P(0)."
+    }
+  },
+  "18": {
+    "summary": "Multiplying the hypothesis expression by 7 gives 7^(k+1) − 7·2^k, which is 7^(k+1) − 2^(k+1) once 5·2^k is added back, so the rewritten form is 7(7^k − 2^k) + 5·2^k: both terms are divisible by 5.",
+    "options": {
+      "A": "Correct: 7(7^k − 2^k) is divisible by 5 by the hypothesis, and 5·2^k plainly is.",
+      "B": "Adding only 2^k leaves 7^(k+1) − 2^(k+1) − 5·2^k, which is not the target expression.",
+      "C": "This expands to 5·7^k + 2^(k+1), which is not 7^(k+1) − 2^(k+1).",
+      "D": "This is not a rewrite of the difference of powers, and it is not divisible by 5."
+    }
+  },
+  "19": {
+    "summary": "Induction needs both a basis step that starts the chain and an inductive step that carries it forward; together they cover every integer from the starting value up.",
+    "options": {
+      "A": "Correct: without a true P(1) (or P(0)) there is nothing to propagate.",
+      "B": "The inductive hypothesis assumes P(k); P(k + 1) is what must be proved.",
+      "C": "Correct: that is exactly the conclusion the two steps give.",
+      "D": "With no basis step the chain never starts; an implication from P(k) to P(k + 1) alone proves nothing."
+    }
+  },
+  "20": {
+    "summary": "The sum of the first n squares is n(n + 1)(2n + 1) / 6, and the step from k to k + 1 works by adding (k + 1)^2 to that closed form.",
+    "options": {
+      "A": "This is the formula for 1 + 2 + ... + n, not for the squares.",
+      "B": "This is the closed form for the sum of the first n cubes, 1^3 + 2^3 + ... + n^3.",
+      "C": "Correct: n(n + 1)(2n + 1) / 6, giving 5 for n = 2.",
+      "D": "The divisor is 6, not 2; this value is wrong already at n = 2."
+    }
+  },
+  "21": {
+    "summary": "An implication p → q is promised to fail only when the hypothesis is true and the conclusion is not, so the single false row is p = T, q = F.",
+    "options": {
+      "A": "Correct: a true hypothesis with a false conclusion is the only case that breaks the promise.",
+      "B": "T → T is true; both sides agree.",
+      "C": "F → T is true. A false hypothesis makes an implication vacuously true.",
+      "D": "F → F is also vacuously true."
+    }
+  },
+  "22": {
+    "summary": "\"q if p\" puts p in the antecedent: being sunny is the condition that triggers playing, so the sentence is p → q.",
+    "options": {
+      "A": "Correct: \"if it is sunny\" is the hypothesis, \"we play the game\" is the conclusion.",
+      "B": "That would be written \"it is sunny if we play the game\", which reverses the condition.",
+      "C": "The biconditional would need \"if and only if\", saying the two happen together and never apart.",
+      "D": "This is the inverse, which is not equivalent to the original implication."
+    }
+  },
+  "23": {
+    "summary": "\"p if and only if q\" means the two conditions arrive and leave together; \"exactly those days when\" is the phrase that pins both directions at once.",
+    "options": {
+      "A": "This is a one-way conditional, p → q.",
+      "B": "Correct: \"on exactly those days when\" forces each side to imply the other.",
+      "C": "\"Only if\" gives one direction (p → q), not both.",
+      "D": "\"Whenever\" is another way of writing a single implication."
+    }
+  },
+  "24": {
+    "summary": "Two rewrites of p → q appear in every logic course: the disimplication ¬p ∨ q and the contrapositive ¬q → ¬p. Both have the same truth table as the original.",
+    "options": {
+      "A": "Correct: ¬p ∨ q is false exactly when p is true and q is false, the same row as p → q.",
+      "B": "Correct: the contrapositive always has the truth table of the original implication.",
+      "C": "This is the converse, and it is false when p = T, q = F while the original is true.",
+      "D": "This is the negation of p → q, not something equivalent to it."
+    }
+  },
+  "25": {
+    "summary": "[(p → q) ∧ q] → p is false only at p = F, q = T: there p → q and q are both true, so the hypothesis is true while the conclusion p is false. It is a true row everywhere else, including the two rows where the hypothesis collapses to false.",
+    "options": {
+      "A": "At (T, T) the hypothesis is T and the conclusion p is T, so the proposition is true.",
+      "B": "At (T, F) the conjunction (p → q) ∧ q is false because q is false, and a false hypothesis makes the implication true.",
+      "C": "Correct: the hypothesis (p → q) ∧ q is true and p is false.",
+      "D": "At (F, F) the conjunction is false because q is false, which again makes the implication true."
+    }
+  },
+  "26": {
+    "summary": "CNF is built from the false rows, and this proposition has one: p = F, q = T. Negating each value in that row and joining them with ∨ gives the single clause (p ∨ ¬q).",
+    "options": {
+      "A": "Correct: one false row gives one clause, and (p ∨ ¬q) is false exactly at p = F, q = T.",
+      "B": "That clause is false at p = T, q = F, a row where the proposition is true.",
+      "C": "A CNF clause joins literals with ∨, not ∧.",
+      "D": "A full CNF has one clause per false row; this has two clauses and would be false at a row where the proposition is true."
+    }
+  },
+  "27": {
+    "summary": "DNF is built from the true rows: one conjunction of all the variables per row, joined by ∨. Rows 1, 2 and 4 give (p ∧ q), (p ∧ ¬q) and (¬p ∧ ¬q).",
+    "options": {
+      "A": "Correct: three true rows, three minterms, disjoined.",
+      "B": "The minterms of a DNF are joined with ∨; using ∧ would make the expression true only when all three contradictory rows hold at once.",
+      "C": "(¬p ∧ q) is the one row where the proposition is false, so it must not appear in the DNF.",
+      "D": "This is a conjunction of clauses, which is the CNF shape, not the DNF shape."
+    }
+  },
+  "28": {
+    "summary": "¬(p → q) is true only at p = T, q = F, and there the conclusion (q ∧ ¬r) is false because q is false. So ψ is false at (T, F, T) and (T, F, F); in every other row the hypothesis is false and the implication is vacuously true.",
+    "options": {
+      "A": "Correct: these are the two rows with p = T and q = F, the only rows where the hypothesis holds.",
+      "B": "When q is true, ¬(p → q) is false, which makes the whole implication true.",
+      "C": "When p is false, p → q is true, so its negation is false and ψ is true.",
+      "D": "Same reason: with p = F the hypothesis ¬(p → q) fails and ψ is vacuously true."
+    }
+  },
+  "29": {
+    "summary": "Two false rows give two clauses. Row (T, F, T) contributes (¬p ∨ q ∨ ¬r) and row (T, F, F) contributes (¬p ∨ q ∨ r); each literal is the negation of that row's value, so each clause is false on exactly its own row.",
+    "options": {
+      "A": "Correct: the two clauses are false precisely at the two false rows of ψ.",
+      "B": "These clauses are false at p = F, q = T, which are rows where ψ is true.",
+      "C": "The clauses of a CNF are joined with ∧, and their literals with ∨; this has the operators swapped.",
+      "D": "The signs on p and q are reversed, so this would be false on the wrong rows."
+    }
+  },
+  "30": {
+    "summary": "(¬u ∧ z) ∨ y is false only when y is false and (¬u ∧ z) is false, which leaves the three rows (u, y, z) = (T, F, T), (T, F, F) and (F, F, F). Three false rows give three CNF clauses.",
+    "options": {
+      "A": "Two clauses would mean only two false rows; there is a third one at u = F, y = F, z = F.",
+      "B": "Correct: three false rows, therefore three clauses in the full CNF.",
+      "C": "Five is the number of true rows, which is what a full DNF would use.",
+      "D": "Six is the number of true rows of a related proposition; the CNF counts false rows instead."
+    }
+  },
+  "31": {
+    "summary": "Read the CNF from the false rows only. S is false at (T, T, F), (F, T, T) and (F, T, F), giving the clauses (¬x ∨ ¬y ∨ z), (x ∨ ¬y ∨ ¬z) and (x ∨ ¬y ∨ z). The five true rows never appear in a CNF.",
+    "options": {
+      "A": "Correct: one clause per false row, each literal flipped from that row's value.",
+      "B": "This is the full DNF of S: it lists the true rows with ∧ inside and ∨ between, which is the other normal form.",
+      "C": "The first clause here is false at (T, T, T), a row where S is true, so the conjunction would be wrong on that row.",
+      "D": "The last clause is false at (F, F, F), where S is true, so this set of clauses cannot be the CNF."
+    }
+  },
+  "32": {
+    "summary": "A disjunctive normal form is a disjunction of conjunctions of literals: outer ∨ joining blocks that contain only ∧ and negations. Both correct options have that shape.",
+    "options": {
+      "A": "Correct: two conjunctions of literals joined by ∨, and it is full DNF as well.",
+      "B": "The outer operator is ∧ joining clauses that contain ∨, which makes this a CNF, not a DNF.",
+      "C": "The outer operator is ∧ and one block contains ∨, so the literals are not arranged as conjunctions disjoined.",
+      "D": "Correct: two conjunctions of literals joined by ∨; a DNF block need not mention every variable to be a DNF, only to be a full DNF."
+    }
+  },
+  "33": {
+    "summary": "\"All sports cars are fast\" is a universal conditional: take any car, and if it is a sports car then it is fast, ∀x (S(x) → F(x)).",
+    "options": {
+      "A": "Correct: ∀ is paired with → when restricting a claim to a subclass.",
+      "B": "With ∧ this claims that every car in the domain is a sports car and is fast.",
+      "C": "This is the much weaker \"some sports car is fast\".",
+      "D": "This reverses the claim to \"every fast car is a sports car\"."
+    }
+  },
+  "34": {
+    "summary": "An existence claim pairs ∃ with ∧: there is at least one car that is fast and is not a sports car, ∃x (F(x) ∧ ¬S(x)).",
+    "options": {
+      "A": "With ∀ this claims every car is fast and not a sports car.",
+      "B": "Correct: ∃ with ∧ is the standard form for \"there are ... that are not ...\".",
+      "C": "An implication under ∃ is satisfied by any car that is not fast, so it does not assert the existence of a fast one.",
+      "D": "This says no sports car is fast, which is a different claim."
+    }
+  },
+  "35": {
+    "summary": "\"Every fast sports car is expensive\" needs both properties in the hypothesis: ∀x ((S(x) ∧ F(x)) → E(x)). The ∧ sits inside the antecedent while the outer connective stays →.",
+    "options": {
+      "A": "Correct: anything that is both a sports car and fast is expensive.",
+      "B": "This says every sports car is fast and expensive, which the statement does not claim.",
+      "C": "This only says some fast sports car is expensive rather than all of them.",
+      "D": "With ∨ in the antecedent, any fast car at all — sports or not — would have to be expensive."
+    }
+  },
+  "36": {
+    "summary": "Negations cross quantifiers one at a time, flipping each one: ¬∀x ∀y P(x, y) becomes ∃x ¬∀y P(x, y), then ∃x ∃y ¬P(x, y). Two ∀s become two ∃s.",
+    "options": {
+      "A": "Correct: both quantifiers flip and the predicate is negated.",
+      "B": "The quantifiers must change from ∀ to ∃; leaving them as ∀ gives a stronger statement.",
+      "C": "Pushing the negation past both quantifiers without flipping them leaves a ∀ inside, and this expression is equivalent to ¬∃x ∃y P, which says nothing has P.",
+      "D": "Only the quantifier nearest the negation may be flipped before the inner one is handled, so mixing ∃ and ∀ changes the meaning."
+    }
+  },
+  "37": {
+    "summary": "The claim is about a disjunction holding for everyone, with no condition to serve as an antecedent, so it is ∀x (P(x) ∨ Q(x)): each person satisfies at least one of the two properties.",
+    "options": {
+      "A": "Correct: \"or\" stays \"or\" under a universal quantifier.",
+      "B": "This reads \"everyone who takes the course is a CS student\", which is a different promise.",
+      "C": "This only says someone does both.",
+      "D": "This says everyone both takes the course and is a CS student, dropping the alternatives."
+    }
+  },
+  "38": {
+    "summary": "P(k) sums up to k, so P(k + 1) is the same sum with the next term tacked on. Add k + 1 to both sides and the algebra finishes the step.",
+    "options": {
+      "A": "Correct: the (k + 1)-th term of 1 + 2 + ... + n is k + 1.",
+      "B": "k is already inside P(k); the new term is the one after it.",
+      "C": "(k + 1)^2 would be the extra term for a sum of squares, not a sum of first powers.",
+      "D": "That is the term after next; the series increases by one each step."
+    }
+  },
+  "39": {
+    "summary": "The statement only claims anything about positive even integers, so the chain starts at the smallest one, n = 2: 2(2 + 2) = 8, which 4 divides. The inductive step then moves between even values.",
+    "options": {
+      "A": "1 is not even, so it is outside the range the statement covers.",
+      "B": "Correct: n = 2 is the first value the claim applies to, and 4 divides 8.",
+      "C": "Starting at 4 would leave n = 2 unproved even though the claim covers it.",
+      "D": "0 is not a positive integer."
+    }
+  },
+  "40": {
+    "summary": "At n = 1 the series has its single first term 5(1) − 1 = 4, and the closed form gives (1 / 2)(3 + 5) = 4, so the basis step holds.",
+    "options": {
+      "A": "Correct: the one-term sum and the formula both give 4.",
+      "B": "5 is the difference between consecutive terms, not the value of the first term.",
+      "C": "9 is the second term of the series; P(1) stops at the first term.",
+      "D": "Both sides give 4, so there is no mismatch to reconcile."
+    }
+  }
+}

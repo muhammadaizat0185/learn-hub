@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useCourse } from "../courseContext";
 import { remainingSeconds } from "../lib/grading";
 import { load } from "../lib/storage";
-import { loadLabProgress } from "../lib/lab";
+import { labLabel, loadLabProgress } from "../lib/lab";
 import { recommendStudy, topicMetrics } from "../lib/study";
 import type { Recommendation } from "../lib/study";
 import type { View } from "../types";
@@ -58,7 +58,7 @@ export default function CourseHome({ onNav, onQuickQuiz, onStartTopic, onRecomme
     <h2 className="section-title">More ways to study</h2><div className="mode-grid compact-modes">
       <button className="mode card" onClick={() => onNav("review")}><h2>Recall review</h2><p>Revisit mistakes and questions due for a spaced recall check.</p></button>
       <button className="mode card" onClick={() => onNav("exam")}><h2>Timed mock exam</h2><p>{examSize} questions · {meta.exam.minutes} minutes · {meta.exam.passPercent}% study pass mark.</p></button>
-      {lab && <button className="mode card" onClick={() => onNav("lab")}><h2>Code lab</h2><p>{lab.sets.length} guided exercises with hints, explanations and saved drafts.</p></button>}
+      {lab && <button className="mode card" onClick={() => onNav("lab")}><h2>{labLabel(meta)}</h2><p>{lab.sets.length} guided exercises with hints, explanations and saved drafts.</p></button>}
       <button className="mode card" onClick={() => onNav("library")}><h2>Library</h2><p>Search questions, read explanations, and back up your progress.</p></button>
     </div>
     <p className="muted local-note">Saved in this browser, not synced across devices. Use Library → Progress to make a backup.</p>

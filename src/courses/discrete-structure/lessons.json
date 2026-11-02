@@ -1,0 +1,98 @@
+[
+  {
+    "id": "logic-propositions-connectives",
+    "title": "Spot a proposition, then negate and re-implicate it",
+    "topic": "Propositions and logic",
+    "minutes": 5,
+    "concepts": [
+      "A proposition is a declarative sentence with exactly one truth value. Commands (\"Open the door.\"), questions, and open sentences such as x + 5 = 7 with x unbound are not propositions. A false statement like 2 + 3 = 7 still is one, because false is a truth value.",
+      "Negate a compound statement by pushing ¬ inward with De Morgan's law: ¬(p ∧ q) becomes ¬p ∨ ¬q and ¬(p ∨ q) becomes ¬p ∧ ¬q. The English form of \"The summer in Johor is hot and sunny\" therefore uses \"or\", not \"and\".",
+      "An implication p → q is false only in the single case p true and q false. When the hypothesis is false the implication is true whatever the conclusion says, so \"If 0.5 is an integer, then 1 + 0.5 = 3\" is true.",
+      "From p → q there are three relatives: the converse q → p, the inverse ¬p → ¬q, and the contrapositive ¬q → ¬p. Only the contrapositive is equivalent to the original, which is what makes it useful for direct proofs.",
+      "Read necessary and sufficient carefully in English: \"p is necessary for q\" and \"q only if p\" both place p in the then-part (q → p), while \"p is sufficient for q\" gives p → q. Rewriting the sentence as if ..., then ... before assigning symbols keeps the direction right."
+    ],
+    "example": {
+      "title": "Four English sentences, four symbolic readings",
+      "explanation": "Let p be \"your car is out of gas\" and q be \"you cannot drive your car\". Each row below shows how a surface pattern in English maps onto connectives, and the check is always to identify the hypothesis first, then the conclusion.",
+      "steps": [
+        "\"Your car is not out of gas\" is simply ¬p.",
+        "\"You cannot drive your car if it is out of gas\" puts the if-part first in meaning: p → q.",
+        "\"Your car is not out of gas if you can drive it\" has hypothesis \"you can drive it\" (¬q) and conclusion ¬p, so ¬q → ¬p, the contrapositive of p → q and therefore equivalent to it.",
+        "\"If you cannot drive your car then it is out of gas\" is q → p, the converse, which is not equivalent to the original claim."
+      ]
+    },
+    "labIds": ["truth-table-columns", "sentence-to-symbol"]
+  },
+  {
+    "id": "normal-forms-cnf-dnf",
+    "title": "Read a truth table as a CNF or a DNF",
+    "topic": "CNF and DNF",
+    "minutes": 6,
+    "concepts": [
+      "A conjunctive normal form is a conjunction of disjunctions of variables or their negations, for example (p ∨ q) ∧ (p ∨ ¬q) ∧ (¬p ∨ ¬q). A disjunctive normal form reverses the nesting: disjunctions of conjunctions, such as (p ∧ ¬q ∧ ¬r) ∨ (¬p ∧ ¬q ∧ r).",
+      "Every compound proposition is equivalent to a CNF and to a DNF, so the two forms are alternative readings of the same truth table rather than different functions.",
+      "A normal form is full when no variable is missing from any bracket. Fullness matters because only then does each bracket describe exactly one row of the truth table.",
+      "Build the full CNF from the rows where the result is false: one clause per such row, in which a variable appears negated when the row values it true and un-negated when the row values it false. The clause must be false for that row alone.",
+      "Build the full DNF from the rows where the result is true: one term per such row, with each variable written exactly as that row values it. If a row is true for p = T and q = F the term is (p ∧ ¬q)."
+    ],
+    "example": {
+      "title": "Both normal forms of [(p ↔ q) ⊕ ¬p] → ¬q",
+      "explanation": "The tutorial works this proposition out for two variables, so the truth table has four rows. Its result column is false for (p, q) = (T, T) and for (F, T), and true for (T, F) and (F, F). Each row then supplies exactly one bracket, and the two answers must describe the same column.",
+      "steps": [
+        "False row (T, T): both variables are true, so both enter negated and joined by ∨, giving (¬p ∨ ¬q).",
+        "False row (F, T): p is false so it enters plain, q is true so it enters negated, giving (p ∨ ¬q). Conjoin the two clauses: full CNF is (¬p ∨ ¬q) ∧ (p ∨ ¬q).",
+        "True row (T, F): read the values as they stand, giving (p ∧ ¬q). True row (F, F) gives (¬p ∧ ¬q). Disjoin them: full DNF is (p ∧ ¬q) ∨ (¬p ∧ ¬q).",
+        "Check either form against one row, for example (F, T): CNF gives (T ∨ F) ∧ (F ∨ F) = F, matching the table. The shared factor ¬q in both answers is the signal that the same column was read twice."
+      ]
+    },
+    "labIds": ["cnf-from-table", "full-normal-forms"]
+  },
+  {
+    "id": "predicates-quantifier-translation",
+    "title": "Translate between English and nested quantifiers",
+    "topic": "Predicates and quantifiers",
+    "minutes": 6,
+    "concepts": [
+      "A predicate such as L(x, y) is \"x likes y\": it becomes a proposition only once every variable is bound by a quantifier and the universe of discourse is fixed. Naming the universe is part of the answer, because the same formula can be true over people and false over integers.",
+      "The universal quantifier ∀x P(x) pairs with → and the existential pairs with ∧. \"Every parrot is ugly\" is ∀x (P(x) → U(x)); writing it with ∧ instead claims that everything in the universe is an ugly parrot.",
+      "Order matters in nested quantifiers. ∀x ∃y L(x, y) says everyone likes someone, and the person liked may differ from one x to the next, while ∃y ∀x L(x, y) says one single person is liked by everybody. The second implies the first, never the reverse.",
+      "Negation rules for quantifiers mirror De Morgan: ¬∀x P(x) ≡ ∃x ¬P(x) and ¬∃x P(x) ≡ ∀x ¬P(x). In English, \"not every student has a book\" means \"some student has no book\".",
+      "Work a translation in four steps: fix the universe, define the predicates, choose the quantifier for each noun phrase, then apply the connective rule (∀ with →, ∃ with ∧). Claims such as \"no books are expensive\" are universal conditionals with a negated conclusion, ∀x (B(x) → ¬E(x))."
+    ],
+    "example": {
+      "title": "\"Some student does not have any book\"",
+      "explanation": "Take S(x) for \"x is a student\", B(y) for \"y is a book\" and H(x, y) for \"x has y\", with the universe of discourse being all objects. The sentence contains one existential claim about a student and one negated existential claim about books, so two quantifiers are needed.",
+      "steps": [
+        "Universe and predicates are already declared, so nothing needs to be restricted to people or to books by hand.",
+        "\"Some student\" is ∃x S(x) and the two parts must be joined with ∧, because the object asserted to exist has to be a student.",
+        "\"does not have any book\" denies the existence of a book that x has: ¬∃y (B(y) ∧ H(x, y)), equivalently ∀y (B(y) → ¬H(x, y)).",
+        "Put them together: ∃x (S(x) ∧ ∀y (B(y) → ¬H(x, y))). Compare it with ∃x (S(x) ∧ ∀y (B(y) ∧ H(x, y))), which is the different claim that some student has every book."
+      ]
+    },
+    "labIds": ["quantifier-and-connective", "nested-negation"]
+  },
+  {
+    "id": "induction-three-steps",
+    "title": "Run the three steps of an induction proof",
+    "topic": "Mathematical induction",
+    "minutes": 6,
+    "concepts": [
+      "Mathematical induction proves a statement P(n) for every integer from a chosen start upwards. The domino picture names the two obligations: something must tip the first domino, and each domino must tip the next one.",
+      "Step 1, the basis step, verifies P for the first value. For sums written 1 + 2 + ... + n that is usually n = 1, but a statement about non-negative integers starts at n = 0, where 1 + 2 + ... + 2^n reduces to the single term 2^0 = 1.",
+      "Step 2, the inductive hypothesis, states P(k) and assumes it. Step 3, the inductive step, uses that assumption to prove P(k + 1). Writing both sides of P(k + 1) before substituting the hypothesis shows how much work the assumption actually does.",
+      "Divisibility proofs follow the same pattern with algebra: rewrite the (k + 1) expression so that it contains a multiple of the k expression plus a leftover that is visibly divisible. To move from 7^k − 2^k to 7^(k+1) − 2^(k+1), multiply the hypothesis by 7 and add back 5·2^k.",
+      "Close with the conclusion the method licenses: because the basis holds and P(k) → P(k + 1) holds, P(n) is true for all n from the starting value onwards. A missing basis step leaves the chain unstarted, no matter how clean the inductive step is."
+    ],
+    "example": {
+      "title": "Prove 1 + 2 + 2^2 + ... + 2^n = 2^(n+1) − 1 for n ≥ 0",
+      "explanation": "The statement is about non-negative integers, so the chain begins at 0 rather than 1. The inductive step is a two-line algebraic argument: split the sum at the last term, then use the hypothesis on the part that remains.",
+      "steps": [
+        "Basis step: P(0) says 2^0 = 2^1 − 1, i.e. 1 = 1, which is true.",
+        "Inductive hypothesis: assume P(k), that 1 + 2 + 2^2 + ... + 2^k = 2^(k+1) − 1.",
+        "Inductive step: 1 + 2 + ... + 2^k + 2^(k+1) = (2^(k+1) − 1) + 2^(k+1) by the hypothesis, and the two powers of 2 combine to 2·2^(k+1) = 2^(k+2), giving 2^(k+2) − 1 = 2^((k+1)+1) − 1, which is exactly P(k + 1).",
+        "Conclusion: by mathematical induction the formula holds for every non-negative integer n. Notice that the basis step used n = 0; starting the sum at 1 would have left P(0) unproved."
+      ]
+    },
+    "labIds": ["induction-sum-steps", "induction-divisibility"]
+  }
+]

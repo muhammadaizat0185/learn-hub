@@ -7,6 +7,9 @@ import { describe, expect, it } from "vitest";
 import javaLessons from "../../src/courses/java-programming/lessons.json";
 import javaQuestions from "../../src/courses/java-programming/questions.json";
 import javaLabs from "../../src/courses/java-programming/lab.json";
+import discreteLessons from "../../src/courses/discrete-structure/lessons.json";
+import discreteQuestions from "../../src/courses/discrete-structure/questions.json";
+import discreteLabs from "../../src/courses/discrete-structure/lab.json";
 import sampleLessons from "../../src/courses/sample-course/lessons.json";
 import sampleQuestions from "../../src/courses/sample-course/questions.json";
 import type { TopicLesson } from "../../src/types";
@@ -18,6 +21,7 @@ const courses: {
   labs: { id: string }[];
 }[] = [
   { name: "Java", lessons: javaLessons, questions: javaQuestions, labs: javaLabs },
+  { name: "Discrete Structure", lessons: discreteLessons, questions: discreteQuestions, labs: discreteLabs },
   { name: "Sample", lessons: sampleLessons, questions: sampleQuestions, labs: [] },
 ];
 

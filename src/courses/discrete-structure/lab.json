@@ -1,0 +1,188 @@
+[
+  {
+    "id": "truth-table-columns",
+    "topic": "Propositions and logic",
+    "title": "Implication and biconditional columns",
+    "brief": "Fill the missing entries of a four-row truth table, then state the rule behind each column.",
+    "hint": "An implication fails in exactly one row. A biconditional is true when the two values match.",
+    "code": "p  q |  p → q    p ↔ q\nT  T |  {{1}}      T\nT  F |  {{2}}      F\nF  T |  {{3}}      F\nF  F |  T        {{4}}\n\nRules behind the columns\n  p → q is false only when p is {{5}} and q is false.\n  p ↔ q is true exactly when the two values {{6}}.",
+    "blanks": [
+      { "id": 1, "kind": "input", "answers": ["T"], "placeholder": "T or F", "explanation": "p is true and q is true, so the promise p → q holds. Type the capital letter T." },
+      { "id": 2, "kind": "input", "answers": ["F"], "placeholder": "T or F", "explanation": "This is the single row that breaks an implication: a true hypothesis with a false conclusion." },
+      { "id": 3, "kind": "input", "answers": ["T"], "placeholder": "T or F", "explanation": "With p false the implication is vacuously true, whatever q says." },
+      { "id": 4, "kind": "input", "answers": ["T"], "placeholder": "T or F", "explanation": "Both values are false here, so they agree and the biconditional is true." },
+      { "id": 5, "kind": "select", "options": ["true", "false"], "answer": "true", "explanation": "The implication only fails when the hypothesis is true and the conclusion is false." },
+      { "id": 6, "kind": "select", "options": ["agree", "differ"], "answer": "agree", "explanation": "p ↔ q is the claim that the two sides carry the same truth value." }
+    ],
+    "walkthrough": {
+      "steps": [
+        "Rows 1 and 4 carry matching values, so the biconditional is true in both, and row 1 also makes the implication true.",
+        "Row 2 (p = T, q = F) is the one false row of p → q, and row 3 (p = F, q = T) is vacuously true because a false hypothesis promises nothing.",
+        "This gap-filling sheet is matched against the authored answers, so type T and F exactly as the table shows them; nothing here is executed."
+      ]
+    }
+  },
+  {
+    "id": "sentence-to-symbol",
+    "topic": "Propositions and logic",
+    "title": "Translating English into connectives",
+    "brief": "Choose the connective or formula that matches each English sentence, with p and q fixed at the top.",
+    "hint": "\"q if p\" puts p first. \"q only if p\" puts p last.",
+    "code": "Let  p = \"the switch is on\"   and   q = \"the lamp lights\".\n\na) The lamp lights if the switch is on.\n       p {{1}} q\n\nb) The lamp lights only if the switch is on.\n       q {{2}} p\n\nc) It is not the case that both are true.\n       ¬ ( p {{3}} q )\n\nd) The switch is off but the lamp still lights.\n       {{4}} ∧ q\n\ne) The lamp lights exactly when the switch is on.\n       {{5}}\n\nf) The converse of \"if p then q\" is\n       {{6}}",
+    "blanks": [
+      { "id": 1, "kind": "select", "options": ["→", "↔", "∨"], "answer": "→", "explanation": "\"if the switch is on\" is the hypothesis, so the sentence is p → q." },
+      { "id": 2, "kind": "select", "options": ["→", "↔", "∨"], "answer": "→", "explanation": "\"only if\" introduces the necessary condition, which sits in the consequent: q → p." },
+      { "id": 3, "kind": "select", "options": ["∧", "∨", "→"], "answer": "∧", "explanation": "\"both are true\" is the conjunction p ∧ q, and the sentence denies it." },
+      { "id": 4, "kind": "select", "options": ["¬p", "p", "¬q"], "answer": "¬p", "explanation": "\"but\" behaves like ∧ while asserting the switch is off, so the left literal is ¬p." },
+      { "id": 5, "kind": "select", "options": ["p ↔ q", "p → q", "q → p"], "answer": "p ↔ q", "explanation": "\"exactly when\" binds in both directions, which is the biconditional." },
+      { "id": 6, "kind": "select", "options": ["q → p", "¬p → ¬q", "¬q → ¬p"], "answer": "q → p", "explanation": "The converse swaps hypothesis and conclusion; ¬q → ¬p is the contrapositive and ¬p → ¬q is the inverse." }
+    ],
+    "walkthrough": {
+      "steps": [
+        "Sentences a and b describe the same pair of facts in different directions: a is p → q, b is q → p.",
+        "Negation applies to whichever connective joins the two statements inside it, so c needs ∧ before the ¬ and d needs ¬p before the ∧.",
+        "Only e and f ask for a whole formula: \"exactly when\" is ↔, and the converse is the swap, not the negation."
+      ]
+    }
+  },
+  {
+    "id": "cnf-from-table",
+    "topic": "CNF and DNF",
+    "title": "Reading both normal forms off a table",
+    "brief": "Turn the eight rows of a three-variable function into the clauses and minterms that build its normal forms.",
+    "hint": "A clause comes from a false row: disjoin the literals, negating every variable that is true in that row.",
+    "code": "S is fixed by these rows.\n\nx  y  z |  S          piece\nT  T  T |  T          minterm  (x ∧ y ∧ z)\nT  T  F |  F          clause   {{1}}\nT  F  T |  T          minterm  (x ∧ ¬y ∧ z)\nT  F  F |  T          minterm  (x ∧ ¬y ∧ ¬z)\nF  T  T |  F          clause   {{2}}\nF  T  F |  F          clause   {{3}}\nF  F  T |  T          minterm  (¬x ∧ ¬y ∧ z)\nF  F  F |  T          minterm  {{4}}\n\nCNF(S) joins the clauses of the {{5}} rows with ∧.\nDNF(S) joins the minterms of the {{6}} rows with ∨.",
+    "blanks": [
+      { "id": 1, "kind": "select", "options": ["(¬x ∨ ¬y ∨ z)", "(x ∨ y ∨ ¬z)", "(¬x ∧ ¬y ∧ z)"], "answer": "(¬x ∨ ¬y ∨ z)", "explanation": "Row (T, T, F) makes x, y and ¬z true, so the clause that is false exactly there uses ¬x, ¬y and z." },
+      { "id": 2, "kind": "select", "options": ["(x ∨ ¬y ∨ ¬z)", "(¬x ∨ y ∨ z)", "(x ∧ ¬y ∧ ¬z)"], "answer": "(x ∨ ¬y ∨ ¬z)", "explanation": "Row (F, T, T): x is false so it appears plain, while the true y and z appear negated." },
+      { "id": 3, "kind": "select", "options": ["(x ∨ ¬y ∨ z)", "(¬x ∨ y ∨ ¬z)", "(x ∨ y ∨ z)"], "answer": "(x ∨ ¬y ∨ z)", "explanation": "Row (F, T, F): only y is true, so only y is negated in this clause." },
+      { "id": 4, "kind": "select", "options": ["(¬x ∧ ¬y ∧ ¬z)", "(x ∨ y ∨ z)", "(¬x ∨ ¬y ∨ ¬z)"], "answer": "(¬x ∧ ¬y ∧ ¬z)", "explanation": "A minterm for row (F, F, F) conjoins the negation of each variable, and all three are false in that row." },
+      { "id": 5, "kind": "select", "options": ["false", "true"], "answer": "false", "explanation": "Each CNF clause is false on exactly one row, so the clauses are collected from the false rows." },
+      { "id": 6, "kind": "select", "options": ["true", "false"], "answer": "true", "explanation": "Each minterm is true on exactly one row, so the DNF lists the true rows." }
+    ],
+    "walkthrough": {
+      "steps": [
+        "The three false rows produce the full CNF (¬x ∨ ¬y ∨ z) ∧ (x ∨ ¬y ∨ ¬z) ∧ (x ∨ ¬y ∨ z), which is the answer to the matching mock-exam question.",
+        "The five true rows produce the full DNF with five minterms; a shorter DNF is still a DNF but not a full one.",
+        "Check any clause by substituting its own row: the false row makes every literal false, so that clause and the whole CNF fail, while every other row satisfies it."
+      ]
+    }
+  },
+  {
+    "id": "full-normal-forms",
+    "topic": "CNF and DNF",
+    "title": "Full CNF and full DNF of one proposition",
+    "brief": "Work both normal forms of [(p → q) ∧ q] → p from its truth table and name the shape of each.",
+    "hint": "One false row gives one CNF clause; the other three rows give the three minterms of the DNF.",
+    "code": "F = [(p → q) ∧ q] → p\n\np  q |  F\nT  T |  T\nT  F |  T\nF  T |  {{1}}\nF  F |  T\n\nCNF(F) = {{2}}                 one clause, from the single false row\nDNF(F) = (p ∧ q) ∨ {{3}} ∨ (¬p ∧ ¬q)\n\nA normal form is called {{4}} when every variable appears in every bracket.\nA CNF joins its clauses with {{5}}, and each clause is a disjunction of {{6}}.\nThe DNF above has {{7}} minterms, one for each true row.",
+    "blanks": [
+      { "id": 1, "kind": "input", "answers": ["F"], "placeholder": "T or F", "explanation": "At p = F, q = T both p → q and q are true, so the hypothesis holds while the conclusion p fails." },
+      { "id": 2, "kind": "select", "options": ["(p ∨ ¬q)", "(¬p ∨ q)", "(p ∧ ¬q)"], "answer": "(p ∨ ¬q)", "explanation": "The false row is p = F, q = T, so the clause negates each of those values: p from ¬p, and ¬q from q being true." },
+      { "id": 3, "kind": "select", "options": ["(p ∧ ¬q)", "(¬p ∧ q)", "(p ∨ ¬q)"], "answer": "(p ∧ ¬q)", "explanation": "The second true row is p = T, q = F, whose minterm is p ∧ ¬q." },
+      { "id": 4, "kind": "select", "options": ["full", "final"], "answer": "full", "explanation": "A full (canonical) normal form mentions every variable in every bracket, which is what the truth-table recipe guarantees." },
+      { "id": 5, "kind": "select", "options": ["∧", "∨", "→"], "answer": "∧", "explanation": "Conjunctive normal form is a conjunction of disjunctions, so ∧ sits between the clauses." },
+      { "id": 6, "kind": "select", "options": ["literals", "clauses", "predicates"], "answer": "literals", "explanation": "A literal is a variable or its negation; a clause disjoins literals." },
+      { "id": 7, "kind": "input", "answers": ["3"], "placeholder": "how many", "explanation": "Three rows are true, so the full DNF has three minterms." }
+    ],
+    "walkthrough": {
+      "steps": [
+        "Evaluate the hypothesis (p → q) ∧ q first: it is true only at (T, T) and (F, T), and in the second of those the conclusion p is false.",
+        "CNF reads the false rows and DNF reads the true rows, which is why this proposition has a one-clause CNF and a three-term DNF.",
+        "The typed gap in the last line expects the plain digit 3, matching the three true rows of the table."
+      ]
+    }
+  },
+  {
+    "id": "quantifier-and-connective",
+    "topic": "Predicates and quantifiers",
+    "title": "Choosing the quantifier and the connective",
+    "brief": "Match each English statement to the right quantifier and the right connective inside it.",
+    "hint": "The golden rules: ∀ travels with →, and ∃ travels with ∧.",
+    "code": "Domain: all students in the class.\nP(x) = \"x passes the test\",   D(x) = \"x takes discrete mathematics\".\n\na) Every student takes discrete mathematics.\n       {{1}}x D(x)\n\nb) At least one student takes discrete mathematics.\n       {{2}}x D(x)\n\nc) Nobody takes discrete mathematics.\n       ∀x {{3}} D(x)\n\nd) Everything that passes the test takes the course.\n       ∀x ( P(x) {{4}} D(x) )\n\ne) Something both passes the test and takes the course.\n       ∃x ( P(x) {{5}} D(x) )\n\nf) The domain of discourse is\n       {{6}}",
+    "blanks": [
+      { "id": 1, "kind": "select", "options": ["∀", "∃"], "answer": "∀", "explanation": "\"every\" quantifies over the whole domain." },
+      { "id": 2, "kind": "select", "options": ["∃", "∀"], "answer": "∃", "explanation": "\"at least one\" is an existence claim." },
+      { "id": 3, "kind": "select", "options": ["¬", "∧"], "answer": "¬", "explanation": "\"nobody takes it\" says every student fails to take it, so the predicate is negated inside a universal." },
+      { "id": 4, "kind": "select", "options": ["→", "∧"], "answer": "→", "explanation": "A universal restriction uses the universal conditional; with ∧ it would claim every student both passes and takes the course." },
+      { "id": 5, "kind": "select", "options": ["∧", "→"], "answer": "∧", "explanation": "An existence claim needs both properties true of the same object; with → the statement would be satisfied by anything that does not pass." },
+      { "id": 6, "kind": "select", "options": ["the set of objects the variables range over", "the set of connectives the language allows"], "answer": "the set of objects the variables range over", "explanation": "The domain fixes what x may stand for, which decides the truth of every quantified statement." }
+    ],
+    "walkthrough": {
+      "steps": [
+        "Pair the quantifier with the connective that matches the shape of the claim: universal claims restrict with →, existential claims witness with ∧.",
+        "A negated universal, ∀x ¬D(x), is the same statement as \"nobody takes the course\", while ¬∃x D(x) is its equivalent through the negation rules.",
+        "Swap the pairs in d and e and both statements change meaning, which is why the pairing is worth memorising."
+      ]
+    }
+  },
+  {
+    "id": "nested-negation",
+    "topic": "Predicates and quantifiers",
+    "title": "Translating about cars, then negating nested quantifiers",
+    "brief": "Finish three translations over the domain of cars, then push negations past one and two quantifiers.",
+    "hint": "Each negation that crosses a quantifier flips it: ∀ becomes ∃ and ∃ becomes ∀.",
+    "code": "Domain: all cars.\nS(x) = \"x is a sports car\",  F(x) = \"x is fast\",  E(x) = \"x is expensive\".\n\na) All sports cars are fast.\n       ∀x ( S(x) {{1}} F(x) )\n\nb) There are fast cars that are not sports cars.\n       ∃x ( F(x) {{2}} ¬S(x) )\n\nc) Every fast sports car is expensive.\n       ∀x ( ( S(x) {{3}} F(x) ) → E(x) )\n\nNegation rules\n       ¬∀x P(x)   ≡   {{4}}x ¬P(x)\n       ¬∃x P(x)   ≡   {{5}}x ¬P(x)\n       ¬∀x ∀y P(x, y)   ≡   {{6}}x {{7}}y ¬P(x, y)",
+    "blanks": [
+      { "id": 1, "kind": "select", "options": ["→", "∧"], "answer": "→", "explanation": "A universal conditional: take any car, and if it is a sports car then it is fast." },
+      { "id": 2, "kind": "select", "options": ["∧", "→"], "answer": "∧", "explanation": "The existential claims one car that is fast and is not a sports car at the same time." },
+      { "id": 3, "kind": "select", "options": ["∧", "∨", "→"], "answer": "∧", "explanation": "Both properties belong in the hypothesis, so they conjoin inside the antecedent while the outer connective stays →." },
+      { "id": 4, "kind": "select", "options": ["∃", "∀"], "answer": "∃", "explanation": "\"Not everything has P\" means something lacks P." },
+      { "id": 5, "kind": "select", "options": ["∀", "∃"], "answer": "∀", "explanation": "\"Nothing has P\" means every object lacks P." },
+      { "id": 6, "kind": "select", "options": ["∃", "∀"], "answer": "∃", "explanation": "The outer ∀ flips first when the negation crosses it." },
+      { "id": 7, "kind": "select", "options": ["∃", "∀"], "answer": "∃", "explanation": "Every quantifier the negation passes is flipped, so both become ∃ and only the predicate keeps the ¬." }
+    ],
+    "walkthrough": {
+      "steps": [
+        "Statements a to c are the three tutorial translations: universal with →, existential with ∧, and a two-part hypothesis conjoined inside the antecedent.",
+        "For the nested case, move the negation one quantifier at a time: ¬∀x ∀y P becomes ∃x ¬∀y P, then ∃x ∃y ¬P.",
+        "Order matters once quantifiers differ: ∃y ∀x is not equivalent to ∀x ∃y, so a swapped pair is not a legal simplification."
+      ]
+    }
+  },
+  {
+    "id": "induction-sum-steps",
+    "topic": "Mathematical induction",
+    "title": "The three steps on a sum formula",
+    "brief": "Fill the arithmetic that carries the classic proof of 1 + 2 + ... + n = n(n + 1) / 2 from P(1) to P(k + 1).",
+    "hint": "The inductive step only ever adds the next term to both sides of the hypothesis, then tidies the algebra.",
+    "code": "Prove  1 + 2 + ... + n = n(n + 1) / 2  for every positive integer n.\n\n1. Basis step.     Substitute {{1}} and check that both sides equal 1.\n2. Hypothesis.     Assume the sum of the first k integers is {{2}}.\n3. Inductive step. The term that must be added to both sides is {{3}}.\n4. Factor.         k(k + 1) / 2 + (k + 1) = (k + 1)(k + 2) / {{4}},\n                   which is the closed form taken at {{5}}.\n5. Conclude.       The statement holds for every positive integer by {{6}}.",
+    "blanks": [
+      { "id": 1, "kind": "input", "answers": ["n = 1"], "placeholder": "value of n", "explanation": "The claim starts at the first positive integer, so the basis step substitutes n = 1 and gets 1 = 1." },
+      { "id": 2, "kind": "input", "answers": ["k(k + 1) / 2"], "placeholder": "closed form in k", "explanation": "The inductive hypothesis is P(k): the closed form with k in place of n. Write it exactly as authored; spacing between k and the bracket is ignored but the divisor 2 is not." },
+      { "id": 3, "kind": "input", "answers": ["k + 1"], "placeholder": "next term", "explanation": "P(k) stops at k, so P(k + 1) has one extra term, namely k + 1." },
+      { "id": 4, "kind": "input", "answers": ["2"], "placeholder": "divisor", "explanation": "Factoring (k + 1) out of k(k + 1)/2 + (k + 1) leaves ((k + 1)(k + 2))/2, so the divisor stays 2." },
+      { "id": 5, "kind": "select", "options": ["k + 1", "k + 2", "k"], "answer": "k + 1", "explanation": "The expression just derived is the closed form evaluated at n = k + 1, which is exactly P(k + 1)." },
+      { "id": 6, "kind": "select", "options": ["mathematical induction", "a truth table", "the contrapositive"], "answer": "mathematical induction", "explanation": "A true basis step plus a valid step from P(k) to P(k + 1) is the principle of mathematical induction." }
+    ],
+    "walkthrough": {
+      "steps": [
+        "The basis step anchors the chain; the hypothesis names P(k) without claiming it for every n.",
+        "Adding k + 1 to both sides and putting the right side over the common divisor 2 gives (k + 1)(k + 2) / 2, the closed form at k + 1.",
+        "Typed gaps are compared with the authored solution after spacing is normalised, so equivalent rewrites such as (k + 1)*k/2 are not recognised even though a mathematician would accept them."
+      ]
+    }
+  },
+  {
+    "id": "induction-divisibility",
+    "topic": "Mathematical induction",
+    "title": "A divisibility proof, term by term",
+    "brief": "Complete the rewrite that proves 7^n − 2^n is a multiple of 5 for every non-negative integer n.",
+    "hint": "Pull a 7 out of 7^(k+1) so the hypothesis expression appears, then repair the coefficient of 2^k.",
+    "code": "Prove that 7^n − 2^n is divisible by 5 for every non-negative integer n.\n\nBasis.        n = 0 gives 7^0 − 2^0 = {{1}}, and 5 divides that value.\nHypothesis.   Assume 7^k − 2^k = 5m for some integer m.\nInductive step. Rewrite the next difference as\n\n      7^(k+1) − 2^(k+1)  =  {{2}} ( 7^k − 2^k )  +  {{3}} * 2^k\n\nThe first summand is a multiple of 5 because of {{4}}; the second is 5\ntimes an integer.  Spot check the next case: 7^1 − 2^1 = {{5}}, and the\nclaim is stated for every n ≥ {{6}}.",
+    "blanks": [
+      { "id": 1, "kind": "input", "answers": ["0"], "placeholder": "value", "explanation": "7^0 − 2^0 = 1 − 1 = 0, and every integer divides 0, so the basis step holds." },
+      { "id": 2, "kind": "select", "options": ["7", "5", "2"], "answer": "7", "explanation": "Taking 7 out of 7^(k+1) gives 7(7^k − 2^k), which is where the hypothesis can be used." },
+      { "id": 3, "kind": "input", "answers": ["5"], "placeholder": "coefficient", "explanation": "7(7^k − 2^k) subtracts 7·2^k, but only 2·2^k should be subtracted, so 5·2^k must be added back." },
+      { "id": 4, "kind": "select", "options": ["the inductive hypothesis", "the basis step", "the converse"], "answer": "the inductive hypothesis", "explanation": "7^k − 2^k = 5m is exactly the assumption, so 7 times it is 35m." },
+      { "id": 5, "kind": "input", "answers": ["5"], "placeholder": "value", "explanation": "7 − 2 = 5, which is divisible by 5, confirming the case n = 1." },
+      { "id": 6, "kind": "input", "answers": ["0"], "placeholder": "starting value", "explanation": "The statement covers non-negative integers, so the chain begins at n = 0 rather than n = 1." }
+    ],
+    "walkthrough": {
+      "steps": [
+        "Expanding the completed line gives 7^(k+1) − 7·2^k + 5·2^k = 7^(k+1) − 2·2^k = 7^(k+1) − 2^(k+1), so the rewrite really is the next power difference.",
+        "Both summands carry a factor of 5, which is the whole argument: the first through the hypothesis, the second by inspection.",
+        "The same shape appears in the tutorial item 3 divides 2^(2n) − 1: rewrite the next power so the hypothesis expression reappears, then show the leftover term is divisible as well."
+      ]
+    }
+  }
+]

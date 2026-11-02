@@ -111,9 +111,23 @@ Unbalanced brackets, unterminated strings, and stray characters are reported as 
 rather than a plain wrong answer. Enter jumps to the next gap, Ctrl+Enter checks the set, and a
 set only counts as solved when every gap is correct without using "Show answer".
 
-`npm run verify:lab` re-assembles every set from its canonical answers and compiles it with
-`javac`, and it also enforces 2-3 sets per topic and 3-10 blanks per set. Run it after editing
-any `lab.json`; a simulation cannot ship as invalid Java.
+`npm run verify:lab` re-assembles every set from its canonical answers and enforces 2-3 sets per
+topic and 3-10 blanks per set. Courses whose sets really assemble into Java opt in with
+`"lab": { "compile": "javac" }` in `course.json`; only those are handed to `javac`, so a logic or
+discrete-math lab gets the structure checks without the compiler. Run the script after editing any
+`lab.json`; a Java simulation cannot ship as invalid Java.
+
+A subject that has nothing to compile labels the tab and writes its own intro line in the same
+block:
+
+```json
+"lab": { "label": "Logic lab", "note": "How the gaps work for this subject." }
+```
+
+`labLabel()` and `labNote()` fall back to the Java wording, so the navigation tab, the heading and
+the runner text stay honest per subject. Typed gaps still pass through the Java tokeniser, which
+rejects `∀ ∃ ¬ ∧ ∨`: keep those symbols in `select` options or in the `code` text, and leave the
+typed answers as ASCII (`T`, `F`, `k + 1`, `n = 1`, `k(k + 1) / 2`).
 
 ## Progress and privacy
 
@@ -137,4 +151,8 @@ hostname — its bundled question bank must stay behind Access.
 ## Status
 
 Live at `learn.aizat.my`. The Java Programming course has 41 practice questions and 17 code-lab
-simulations across eight topics. The sample course stays as a template for new courses.
+simulations across eight topics. Discrete Structure (BIT11003/BIC10103) is in progress: a 40-question
+bank and one lesson per topic across four units — propositions and logic, CNF and DNF, predicates and
+quantifiers, and mathematical induction — plus a Logic lab of eight gap-filling sets, two per unit,
+all built from the tutorial sheets and lecture slides. The sample course stays as a template for new
+courses.

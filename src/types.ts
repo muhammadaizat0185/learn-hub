@@ -24,6 +24,15 @@ export interface ExamConfig {
   passPercent: number;
 }
 
+export interface CourseLabOptions {
+  /** Tab and heading label for the gap-filling sets. Defaults to "Code lab". */
+  label?: string;
+  /** Intro line under the lab heading. Defaults to the Java wording. */
+  note?: string;
+  /** Set to "javac" only when every set assembles into compilable Java. */
+  compile?: "javac";
+}
+
 export interface CourseMeta {
   id: string;
   title: string;
@@ -31,6 +40,7 @@ export interface CourseMeta {
   description: string;
   exam: ExamConfig;
   sample?: boolean;
+  lab?: CourseLabOptions;
 }
 
 export interface TopicLesson {

@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { listCourses, loadCourse } from "../../src/courses";
+import { tokenKey } from "../../src/lib/lab";
 
 describe("course registry", () => {
   it("lists the sample course", () => {
@@ -45,5 +46,61 @@ describe("course registry", () => {
 
   it("rejects an unknown course id", async () => {
     await expect(loadCourse("missing-course")).rejects.toThrow(/no course folder/i);
+  });
+});
+
+describe("discrete structure course", () => {
+  it("is listed and loads without validation errors", async () => {
+    expect(listCourses().map((course) => course.id)).toContain("discrete-structure");
+    const data = await loadCourse("discrete-structure");
+    expect(data.meta.shortTitle).toBe("Discrete");
+    expect(data.questions.length).toBeGreaterThan(0);
+  });
+
+  it("covers the four source units as topics", async () => {
+    const data = await loadCourse("discrete-structure");
+    expect(data.topics.map((topic) => topic.name)).toEqual([
+      "Propositions and logic",
+      "CNF and DNF",
+      "Predicates and quantifiers",
+      "Mathematical induction",
+    ]);
+  });
+
+  it("explains every question and marks every option letter", async () => {
+    const data = await loadCourse("discrete-structure");
+    for (const question of data.questions) {
+      const explanation = data.explanations[question.id];
+      expect(explanation, `Q${question.id}`).toBeDefined();
+      expect(explanation.summary.trim().length).toBeGreaterThan(0);
+      for (const option of question.options) {
+        expect(explanation.options[option.letter], `Q${question.id} option ${option.letter}`).toBeDefined();
+      }
+    }
+  });
+
+  it("fills a whole mock exam and pairs every unit with two lab sets", async () => {
+    const data = await loadCourse("discrete-structure");
+    expect(data.questions).toHaveLength(data.meta.exam.questions);
+
+    const lab = data.lab;
+    expect(lab?.topics.map((topic) => [topic.name, topic.sets.length])).toEqual([
+      ["Propositions and logic", 2],
+      ["CNF and DNF", 2],
+      ["Predicates and quantifiers", 2],
+      ["Mathematical induction", 2],
+    ]);
+
+    const units = new Set(data.topics.map((topic) => topic.name));
+    for (const set of lab?.sets ?? []) {
+      expect(units.has(set.topic), `${set.id} topic`).toBe(true);
+      expect(set.blanks.length, `${set.id} blanks`).toBeGreaterThanOrEqual(4);
+      for (const blank of set.blanks) {
+        if (blank.kind !== "input") continue;
+        for (const answer of blank.answers) {
+          expect(tokenKey(answer), `${set.id} blank ${blank.id}: "${answer}"`).not.toBeUndefined();
+        }
+      }
+    }
   });
 });

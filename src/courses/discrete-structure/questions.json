@@ -1,0 +1,522 @@
+[
+  {
+    "id": 1,
+    "topic": "Propositions and logic",
+    "type": "mcq",
+    "question": "Which sentence is a proposition?",
+    "options": [
+      { "letter": "A", "text": "Close the door." },
+      { "letter": "B", "text": "What time does the lecture start?" },
+      { "letter": "C", "text": "Ipoh is the capital of Perak." },
+      { "letter": "D", "text": "x + 5 = 7." }
+    ],
+    "answer": ["C"]
+  },
+  {
+    "id": 2,
+    "topic": "Propositions and logic",
+    "type": "multi",
+    "question": "Which of the following are propositions? Select all that apply.",
+    "options": [
+      { "letter": "A", "text": "2 + 3 = 7." },
+      { "letter": "B", "text": "Open the door." },
+      { "letter": "C", "text": "x + 5 = 7." },
+      { "letter": "D", "text": "The moon is a satellite of the Earth." }
+    ],
+    "answer": ["A", "D"]
+  },
+  {
+    "id": 3,
+    "topic": "Propositions and logic",
+    "type": "mcq",
+    "question": "Which statement is the negation of \"The summer in Johor is hot and sunny\"?",
+    "options": [
+      { "letter": "A", "text": "The summer in Johor is not hot and not sunny." },
+      { "letter": "B", "text": "The summer in Johor is not hot or not sunny." },
+      { "letter": "C", "text": "The summer in Johor is hot or sunny." },
+      { "letter": "D", "text": "The summer in Johor is neither hot nor cold." }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 4,
+    "topic": "Propositions and logic",
+    "type": "mcq",
+    "question": "Write \"It is necessary to read the textbook to understand the materials of this course\" in the form \"if p, then q\".",
+    "options": [
+      { "letter": "A", "text": "If you read the textbook, then you understand the materials of this course." },
+      { "letter": "B", "text": "If you understand the materials of this course, then you read the textbook." },
+      { "letter": "C", "text": "You read the textbook and you understand the materials of this course." },
+      { "letter": "D", "text": "If you do not read the textbook, then you do not understand the materials of this course." }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 5,
+    "topic": "Propositions and logic",
+    "type": "mcq",
+    "question": "Determine whether the implication is true or false: \"If 0.5 is an integer, then 1 + 0.5 = 3\".",
+    "options": [
+      { "letter": "A", "text": "True, because a false hypothesis makes the implication true." },
+      { "letter": "B", "text": "False, because 1 + 0.5 is not 3." },
+      { "letter": "C", "text": "False, because the hypothesis is false." },
+      { "letter": "D", "text": "True, because 0.5 is an integer." }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 6,
+    "topic": "Propositions and logic",
+    "type": "mcq",
+    "question": "What is the contrapositive of \"If it snows today, then I will stay home\"?",
+    "options": [
+      { "letter": "A", "text": "If I stay home, then it snows today." },
+      { "letter": "B", "text": "If it does not snow today, then I do not stay home." },
+      { "letter": "C", "text": "If I do not stay home, then it does not snow today." },
+      { "letter": "D", "text": "It snows today and I do not stay home." }
+    ],
+    "answer": ["C"]
+  },
+  {
+    "id": 7,
+    "topic": "CNF and DNF",
+    "type": "mcq",
+    "question": "Which description matches a conjunctive normal form (CNF)?",
+    "options": [
+      { "letter": "A", "text": "A disjunction of conjunctions of propositional variables or their negations." },
+      { "letter": "B", "text": "A conjunction of disjunctions of propositional variables or their negations." },
+      { "letter": "C", "text": "A single conjunction of propositional variables with no negations." },
+      { "letter": "D", "text": "The negation of a disjunction of propositional variables." }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 8,
+    "topic": "CNF and DNF",
+    "type": "mcq",
+    "question": "A CNF or DNF expression is called full when ______.",
+    "options": [
+      { "letter": "A", "text": "no variable is missing from any bracket." },
+      { "letter": "B", "text": "the compound proposition is a tautology." },
+      { "letter": "C", "text": "every bracket contains only negated variables." },
+      { "letter": "D", "text": "the number of brackets equals the number of variables." }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 9,
+    "topic": "CNF and DNF",
+    "type": "mcq",
+    "question": "A compound proposition is false in the row where p = T and q = F. Which clause does that row contribute to the full CNF?",
+    "options": [
+      { "letter": "A", "text": "(¬p ∨ q)" },
+      { "letter": "B", "text": "(p ∨ ¬q)" },
+      { "letter": "C", "text": "(p ∧ ¬q)" },
+      { "letter": "D", "text": "(¬p ∧ q)" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 10,
+    "topic": "CNF and DNF",
+    "type": "mcq",
+    "question": "A compound proposition is true exactly in the rows p = T, q = F and p = F, q = T. Which expression is its full DNF?",
+    "options": [
+      { "letter": "A", "text": "(p ∧ ¬q) ∨ (¬p ∧ q)" },
+      { "letter": "B", "text": "(p ∨ ¬q) ∧ (¬p ∨ q)" },
+      { "letter": "C", "text": "(¬p ∨ ¬q) ∧ (p ∨ q)" },
+      { "letter": "D", "text": "(p ∧ q) ∨ (¬p ∧ ¬q)" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 11,
+    "topic": "Predicates and quantifiers",
+    "type": "mcq",
+    "question": "Let L(x, y) be \"x likes y\" over the set of all people. Which symbolic form states \"Everyone likes someone\"?",
+    "options": [
+      { "letter": "A", "text": "∀x ∃y L(x, y)" },
+      { "letter": "B", "text": "∃y ∀x L(x, y)" },
+      { "letter": "C", "text": "∀x ∀y L(x, y)" },
+      { "letter": "D", "text": "∃x ∃y L(x, y)" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 12,
+    "topic": "Predicates and quantifiers",
+    "type": "mcq",
+    "question": "With the same predicate L(x, y), which statement corresponds to ∃y ∀x L(x, y)?",
+    "options": [
+      { "letter": "A", "text": "Everyone likes someone." },
+      { "letter": "B", "text": "There is someone whom everyone likes." },
+      { "letter": "C", "text": "Someone does not like anyone." },
+      { "letter": "D", "text": "Everyone likes everyone." }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 13,
+    "topic": "Predicates and quantifiers",
+    "type": "mcq",
+    "question": "Let B(x) be \"x is a book\" and E(x) be \"x is expensive\", over the set of all objects. Which symbolic form states \"No books are expensive\"?",
+    "options": [
+      { "letter": "A", "text": "∀x (B(x) → ¬E(x))" },
+      { "letter": "B", "text": "∃x (B(x) ∧ ¬E(x))" },
+      { "letter": "C", "text": "∀x (E(x) → B(x))" },
+      { "letter": "D", "text": "∃x (B(x) → ¬E(x))" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 14,
+    "topic": "Predicates and quantifiers",
+    "type": "mcq",
+    "question": "Which expression is equivalent to ¬∀x P(x)?",
+    "options": [
+      { "letter": "A", "text": "∀x ¬P(x)" },
+      { "letter": "B", "text": "∃x ¬P(x)" },
+      { "letter": "C", "text": "¬∃x P(x)" },
+      { "letter": "D", "text": "∃x P(x)" }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 15,
+    "topic": "Predicates and quantifiers",
+    "type": "mcq",
+    "question": "Let P(x) be \"x is a parrot\" and U(x) be \"x is ugly\". Which formula states \"Every parrot is ugly\"?",
+    "options": [
+      { "letter": "A", "text": "∀x (P(x) → U(x))" },
+      { "letter": "B", "text": "∀x (P(x) ∧ U(x))" },
+      { "letter": "C", "text": "∃x (P(x) ∧ U(x))" },
+      { "letter": "D", "text": "∀x (U(x) → P(x))" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 16,
+    "topic": "Mathematical induction",
+    "type": "mcq",
+    "question": "In a proof by mathematical induction, what does the inductive step ask you to do?",
+    "options": [
+      { "letter": "A", "text": "Assume P(k) is true and prove P(k + 1)." },
+      { "letter": "B", "text": "Assume P(k + 1) is true and prove P(k)." },
+      { "letter": "C", "text": "Check the statement for the largest value of n of interest." },
+      { "letter": "D", "text": "Assume the statement holds for every n and conclude the result." }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 17,
+    "topic": "Mathematical induction",
+    "type": "mcq",
+    "question": "Let P(n) be 1 + 2 + 2^2 + ... + 2^n = 2^(n+1) − 1 for all non-negative integers n. Which pair of values is checked in the basis step P(0)?",
+    "options": [
+      { "letter": "A", "text": "Left side 1, right side 1." },
+      { "letter": "B", "text": "Left side 0, right side 1." },
+      { "letter": "C", "text": "Left side 1, right side 3." },
+      { "letter": "D", "text": "Left side 3, right side 3." }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 18,
+    "topic": "Mathematical induction",
+    "type": "mcq",
+    "question": "Assume 7^k − 2^k is divisible by 5. Which rewrite of 7^(k+1) − 2^(k+1) proves the inductive step?",
+    "options": [
+      { "letter": "A", "text": "7(7^k − 2^k) + 5·2^k" },
+      { "letter": "B", "text": "7(7^k − 2^k) + 2^k" },
+      { "letter": "C", "text": "5(7^k − 2^k) + 7·2^k" },
+      { "letter": "D", "text": "7^k(7 − 2^k)" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 19,
+    "topic": "Mathematical induction",
+    "type": "multi",
+    "question": "Which statements about mathematical induction are correct? Select all that apply.",
+    "options": [
+      { "letter": "A", "text": "The basis step starts the chain, like pushing the first domino." },
+      { "letter": "B", "text": "The inductive hypothesis assumes the statement for n = k + 1." },
+      { "letter": "C", "text": "A valid induction proves the statement for all integers from the starting value onwards." },
+      { "letter": "D", "text": "The basis step can be skipped as long as the inductive step works." }
+    ],
+    "answer": ["A", "C"]
+  },
+  {
+    "id": 20,
+    "topic": "Mathematical induction",
+    "type": "mcq",
+    "question": "Which closed form can be proved by induction for 1^2 + 2^2 + ... + n^2?",
+    "options": [
+      { "letter": "A", "text": "n(n + 1) / 2" },
+      { "letter": "B", "text": "(n(n + 1) / 2)^2" },
+      { "letter": "C", "text": "n(n + 1)(2n + 1) / 6" },
+      { "letter": "D", "text": "n(n + 1)(2n + 1) / 2" }
+    ],
+    "answer": ["C"]
+  },
+  {
+    "id": 21,
+    "topic": "Propositions and logic",
+    "type": "mcq",
+    "question": "The implication p → q is false in which row of its truth table?",
+    "options": [
+      { "letter": "A", "text": "p = T, q = F" },
+      { "letter": "B", "text": "p = T, q = T" },
+      { "letter": "C", "text": "p = F, q = T" },
+      { "letter": "D", "text": "p = F, q = F" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 22,
+    "topic": "Propositions and logic",
+    "type": "mcq",
+    "question": "Let p be \"it is sunny\" and q be \"we play the game\". How is \"We play the game if it is sunny\" written symbolically?",
+    "options": [
+      { "letter": "A", "text": "p → q" },
+      { "letter": "B", "text": "q → p" },
+      { "letter": "C", "text": "p ↔ q" },
+      { "letter": "D", "text": "¬p → ¬q" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 23,
+    "topic": "Propositions and logic",
+    "type": "mcq",
+    "question": "Which sentence has the form \"p if and only if q\"?",
+    "options": [
+      { "letter": "A", "text": "If the store is closed, I want to shop there." },
+      { "letter": "B", "text": "The store is closed on exactly those days when I want to shop there." },
+      { "letter": "C", "text": "The store is closed only if I want to shop there." },
+      { "letter": "D", "text": "I want to shop there whenever the store is closed." }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 24,
+    "topic": "Propositions and logic",
+    "type": "multi",
+    "question": "Which expressions are logically equivalent to p → q? Select all that apply.",
+    "options": [
+      { "letter": "A", "text": "¬p ∨ q" },
+      { "letter": "B", "text": "¬q → ¬p" },
+      { "letter": "C", "text": "q → p" },
+      { "letter": "D", "text": "p ∧ ¬q" }
+    ],
+    "answer": ["A", "B"]
+  },
+  {
+    "id": 25,
+    "topic": "CNF and DNF",
+    "type": "mcq",
+    "question": "In which row is the proposition [(p → q) ∧ q] → p false?",
+    "options": [
+      { "letter": "A", "text": "p = T, q = T" },
+      { "letter": "B", "text": "p = T, q = F" },
+      { "letter": "C", "text": "p = F, q = T" },
+      { "letter": "D", "text": "p = F, q = F" }
+    ],
+    "answer": ["C"]
+  },
+  {
+    "id": 26,
+    "topic": "CNF and DNF",
+    "type": "mcq",
+    "question": "What is the full CNF of [(p → q) ∧ q] → p?",
+    "options": [
+      { "letter": "A", "text": "(p ∨ ¬q)" },
+      { "letter": "B", "text": "(¬p ∨ q)" },
+      { "letter": "C", "text": "(p ∧ ¬q)" },
+      { "letter": "D", "text": "(¬p ∨ ¬q) ∧ (p ∨ q)" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 27,
+    "topic": "CNF and DNF",
+    "type": "mcq",
+    "question": "The proposition [(p → q) ∧ q] → p is true in rows 1, 2 and 4 of the truth table. Which expression is its full DNF?",
+    "options": [
+      { "letter": "A", "text": "(p ∧ q) ∨ (p ∧ ¬q) ∨ (¬p ∧ ¬q)" },
+      { "letter": "B", "text": "(p ∧ q) ∧ (p ∧ ¬q) ∧ (¬p ∧ ¬q)" },
+      { "letter": "C", "text": "(p ∧ q) ∨ (p ∧ ¬q) ∨ (¬p ∧ q)" },
+      { "letter": "D", "text": "(p ∨ q) ∧ (p ∨ ¬q) ∧ (¬p ∨ ¬q)" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 28,
+    "topic": "CNF and DNF",
+    "type": "mcq",
+    "question": "Let ψ be ¬(p → q) → (q ∧ ¬r). For which two rows of (p, q, r) is ψ false?",
+    "options": [
+      { "letter": "A", "text": "(T, F, T) and (T, F, F)" },
+      { "letter": "B", "text": "(T, T, T) and (T, T, F)" },
+      { "letter": "C", "text": "(F, T, T) and (F, T, F)" },
+      { "letter": "D", "text": "(F, F, T) and (F, F, F)" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 29,
+    "topic": "CNF and DNF",
+    "type": "mcq",
+    "question": "Which is the full CNF of ψ = ¬(p → q) → (q ∧ ¬r)?",
+    "options": [
+      { "letter": "A", "text": "(¬p ∨ q ∨ ¬r) ∧ (¬p ∨ q ∨ r)" },
+      { "letter": "B", "text": "(p ∨ ¬q ∨ r) ∧ (p ∨ ¬q ∨ ¬r)" },
+      { "letter": "C", "text": "(¬p ∧ q ∧ ¬r) ∨ (¬p ∧ q ∧ r)" },
+      { "letter": "D", "text": "(¬p ∨ ¬q ∨ r) ∧ (p ∨ q ∨ ¬r)" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 30,
+    "topic": "CNF and DNF",
+    "type": "mcq",
+    "question": "How many clauses does the full CNF of (¬u ∧ z) ∨ y contain?",
+    "options": [
+      { "letter": "A", "text": "2" },
+      { "letter": "B", "text": "3" },
+      { "letter": "C", "text": "5" },
+      { "letter": "D", "text": "6" }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 31,
+    "topic": "CNF and DNF",
+    "type": "mcq",
+    "question": "A function S has the following truth-table rows:\n· x = T, y = T, z = T gives S = T\n· x = T, y = T, z = F gives S = F\n· x = T, y = F, z = T gives S = T\n· x = T, y = F, z = F gives S = T\n· x = F, y = T, z = T gives S = F\n· x = F, y = T, z = F gives S = F\n· x = F, y = F, z = T gives S = T\n· x = F, y = F, z = F gives S = T\nWhich expression is the full CNF of S?",
+    "options": [
+      { "letter": "A", "text": "(¬x ∨ ¬y ∨ z) ∧ (x ∨ ¬y ∨ ¬z) ∧ (x ∨ ¬y ∨ z)" },
+      { "letter": "B", "text": "(x ∧ y ∧ z) ∨ (x ∧ ¬y ∧ z) ∨ (x ∧ ¬y ∧ ¬z) ∨ (¬x ∧ ¬y ∧ z) ∨ (¬x ∧ ¬y ∧ ¬z)" },
+      { "letter": "C", "text": "(¬x ∨ ¬y ∨ ¬z) ∧ (x ∨ y ∨ z) ∧ (x ∨ y ∨ ¬z)" },
+      { "letter": "D", "text": "(x ∨ y ∨ ¬z) ∧ (¬x ∨ ¬y ∨ z) ∧ (¬x ∨ ¬y ∨ ¬z)" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 32,
+    "topic": "CNF and DNF",
+    "type": "multi",
+    "question": "Which of these are disjunctive normal forms? Select all that apply.",
+    "options": [
+      { "letter": "A", "text": "(p ∧ ¬q) ∨ (¬p ∧ q)" },
+      { "letter": "B", "text": "(p ∨ q) ∧ (¬p ∨ r)" },
+      { "letter": "C", "text": "p ∧ (q ∨ r)" },
+      { "letter": "D", "text": "(¬p ∧ ¬q ∧ r) ∨ (p ∧ q)" }
+    ],
+    "answer": ["A", "D"]
+  },
+  {
+    "id": 33,
+    "topic": "Predicates and quantifiers",
+    "type": "mcq",
+    "question": "The domain is all cars, S(x) is \"x is a sports car\" and F(x) is \"x is fast\". Which formula states \"All sports cars are fast\"?",
+    "options": [
+      { "letter": "A", "text": "∀x (S(x) → F(x))" },
+      { "letter": "B", "text": "∀x (S(x) ∧ F(x))" },
+      { "letter": "C", "text": "∃x (S(x) ∧ F(x))" },
+      { "letter": "D", "text": "∀x (F(x) → S(x))" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 34,
+    "topic": "Predicates and quantifiers",
+    "type": "mcq",
+    "question": "With the same car predicates, which formula states \"There are fast cars that are not sports cars\"?",
+    "options": [
+      { "letter": "A", "text": "∀x (F(x) ∧ ¬S(x))" },
+      { "letter": "B", "text": "∃x (F(x) ∧ ¬S(x))" },
+      { "letter": "C", "text": "∃x (F(x) → ¬S(x))" },
+      { "letter": "D", "text": "∀x (S(x) → ¬F(x))" }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 35,
+    "topic": "Predicates and quantifiers",
+    "type": "mcq",
+    "question": "Let S(x), F(x) and E(x) mean \"x is a sports car\", \"x is fast\" and \"x is expensive\" over all cars. Which formula states \"Every fast sports car is expensive\"?",
+    "options": [
+      { "letter": "A", "text": "∀x ((S(x) ∧ F(x)) → E(x))" },
+      { "letter": "B", "text": "∀x (S(x) → (F(x) ∧ E(x)))" },
+      { "letter": "C", "text": "∃x ((S(x) ∧ F(x)) ∧ E(x))" },
+      { "letter": "D", "text": "∀x ((S(x) ∨ F(x)) → E(x))" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 36,
+    "topic": "Predicates and quantifiers",
+    "type": "mcq",
+    "question": "Which expression is equivalent to ¬∀x ∀y P(x, y)?",
+    "options": [
+      { "letter": "A", "text": "∃x ∃y ¬P(x, y)" },
+      { "letter": "B", "text": "∀x ∀y ¬P(x, y)" },
+      { "letter": "C", "text": "¬∃x ∃y P(x, y)" },
+      { "letter": "D", "text": "∃x ∀y ¬P(x, y)" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 37,
+    "topic": "Predicates and quantifiers",
+    "type": "mcq",
+    "question": "Let P(x) be \"x takes a discrete mathematics course\" and Q(x) be \"x is a computer science student\". How is \"Everybody must take a discrete mathematics course or be a computer science student\" written?",
+    "options": [
+      { "letter": "A", "text": "∀x (P(x) ∨ Q(x))" },
+      { "letter": "B", "text": "∀x (P(x) → Q(x))" },
+      { "letter": "C", "text": "∃x (P(x) ∧ Q(x))" },
+      { "letter": "D", "text": "∀x (P(x) ∧ Q(x))" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 38,
+    "topic": "Mathematical induction",
+    "type": "mcq",
+    "question": "In a proof of 1 + 2 + ... + n = n(n + 1) / 2, what term is added to each side when passing from P(k) to P(k + 1)?",
+    "options": [
+      { "letter": "A", "text": "k + 1" },
+      { "letter": "B", "text": "k" },
+      { "letter": "C", "text": "(k + 1)^2" },
+      { "letter": "D", "text": "k + 2" }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 39,
+    "topic": "Mathematical induction",
+    "type": "mcq",
+    "question": "For the statement \"4 is a divisor of n(n + 2) for all positive even integers n\", which value must the basis step check?",
+    "options": [
+      { "letter": "A", "text": "n = 1" },
+      { "letter": "B", "text": "n = 2" },
+      { "letter": "C", "text": "n = 4" },
+      { "letter": "D", "text": "n = 0" }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 40,
+    "topic": "Mathematical induction",
+    "type": "mcq",
+    "question": "The series 4 + 9 + 14 + ... + (5n − 1) is claimed to equal (n / 2)(3 + 5n). What value does each side take in the basis step n = 1?",
+    "options": [
+      { "letter": "A", "text": "4 on both sides." },
+      { "letter": "B", "text": "5 on both sides." },
+      { "letter": "C", "text": "9 on the left, 4 on the right." },
+      { "letter": "D", "text": "4 on the left, 8 on the right." }
+    ],
+    "answer": ["A"]
+  }
+]
