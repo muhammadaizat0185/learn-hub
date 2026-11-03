@@ -1,0 +1,559 @@
+[
+  {
+    "id": "dss-three-components",
+    "topic": "DSS fundamentals",
+    "title": "The three components and the architecture labels",
+    "brief": "Name each of the three fundamental DSS components, then finish the acronyms from the typical architecture diagram.",
+    "hint": "Data is stored, models are manipulated, and the dialog is what you interact with. The other four lines are straight from the architecture slide.",
+    "code": "Three fundamental components of a DSS\n\n  Which component is it?\n    {{1}}  stores internal, external and personal data\n    {{2}}  holds optimisation and goal-seeking models\n    {{3}}  lets the user interact with the system\n\nTypical architecture\n\n  TPS   = {{4}}\n  OLAP  = {{5}}\n  DSS DATABASE = current data from {{6}}\n  DATA MINING = finds relationships for {{7}}",
+    "blanks": [
+      {
+        "id": 1,
+        "kind": "select",
+        "options": [
+          "Data management",
+          "Model management",
+          "User interface management"
+        ],
+        "answer": "Data management",
+        "explanation": "The data management component stores information from an organisation's traditional data repositories, from external sources such as the Internet, and from the personal insights of individual users."
+      },
+      {
+        "id": 2,
+        "kind": "select",
+        "options": [
+          "Data management",
+          "Model management",
+          "User interface management"
+        ],
+        "answer": "Model management",
+        "explanation": "The model management component handles representations of events, facts or situations; the chapter's two named model kinds are optimisation and goal-seeking."
+      },
+      {
+        "id": 3,
+        "kind": "select",
+        "options": [
+          "Data management",
+          "Model management",
+          "User interface management"
+        ],
+        "answer": "User interface management",
+        "explanation": "The user interface management component, or dialog, is what allows a user to interact with the system. In the three-letter form it is the DGMS."
+      },
+      {
+        "id": 4,
+        "kind": "select",
+        "options": [
+          "transaction processing system",
+          "total program storage",
+          "transfer protocol service"
+        ],
+        "answer": "transaction processing system",
+        "explanation": "TPS is the transaction processing system: the operational source that feeds current data into the DSS database."
+      },
+      {
+        "id": 5,
+        "kind": "select",
+        "options": [
+          "on-line analytical processing",
+          "online application layer protocol",
+          "operational analysis pipeline"
+        ],
+        "answer": "on-line analytical processing",
+        "explanation": "OLAP is on-line analytical processing, and it provides the highest level of functionality in a data-driven DSS."
+      },
+      {
+        "id": 6,
+        "kind": "select",
+        "options": [
+          "applications or groups",
+          "the printed annual report",
+          "the model base"
+        ],
+        "answer": "applications or groups",
+        "explanation": "The slide defines the DSS database as current data from applications or groups."
+      },
+      {
+        "id": 7,
+        "kind": "select",
+        "options": [
+          "prediction",
+          "archival",
+          "printing"
+        ],
+        "answer": "prediction",
+        "explanation": "Data mining is the technology for finding relationships in large databases for prediction."
+      }
+    ],
+    "walkthrough": {
+      "steps": [
+        "Chapter 1 names exactly three fundamental components: the database management system (DBMS), the model management system (MBMS) and the dialog generation and management system (DGMS). The first two blanks are data and model; the dialog is the third.",
+        "Read the descriptions back. Storing information from internal repositories, the Internet and users' insights is data management. Representations of events, facts or situations built as optimisation or goal-seeking models is model management. Allowing the user to interact is the user interface management component.",
+        "The architecture diagram then labels the boxes around those three. TPS supplies the transaction data, OLAP is on-line analytical processing, and the DSS database holds current data from applications or groups.",
+        "Data mining sits in the same diagram as the prediction tool: it finds relationships in large databases rather than storing models or printing reports."
+      ]
+    }
+  },
+  {
+    "id": "dss-characteristics-or-limitation",
+    "topic": "DSS fundamentals",
+    "title": "Characteristic or limitation?",
+    "brief": "Mark each statement as one of the chapter's DSS characteristics or one of its stated limitations.",
+    "hint": "Three of these are the limitation slide: what a DSS cannot do, what its interface cannot yet parse, and what a narrow scope prevents.",
+    "code": "Label each statement characteristic or limitation.\n\n  Semi-structured and unstructured problems    {{1}}\n  Managers at all levels                       {{2}}\n  Cannot parse natural-language requests       {{3}}\n  Effectiveness, but not efficiency            {{4}}\n  Complete control by the decision-maker       {{5}}\n  Narrow scope blocks generalisability         {{6}}\n  No room for creativity or intuition          {{7}}\n  Adaptable, flexible, built by end users      {{8}}",
+    "blanks": [
+      {
+        "id": 1,
+        "kind": "select",
+        "options": [
+          "characteristic",
+          "limitation"
+        ],
+        "answer": "characteristic",
+        "explanation": "Support for decision makers in semi-structured and unstructured problems is item 1 of the characteristics list."
+      },
+      {
+        "id": 2,
+        "kind": "select",
+        "options": [
+          "characteristic",
+          "limitation"
+        ],
+        "answer": "characteristic",
+        "explanation": "Supporting managers at all levels is item 2 of the characteristics list."
+      },
+      {
+        "id": 3,
+        "kind": "select",
+        "options": [
+          "characteristic",
+          "limitation"
+        ],
+        "answer": "limitation",
+        "explanation": "The limitation slide says language and command interfaces are not yet sophisticated enough to allow natural language processing of user directives and inquiries."
+      },
+      {
+        "id": 4,
+        "kind": "select",
+        "options": [
+          "characteristic",
+          "limitation"
+        ],
+        "answer": "characteristic",
+        "explanation": "Effectiveness, but not efficiency, is listed as a capability: the decision's quality counts, not the system's speed."
+      },
+      {
+        "id": 5,
+        "kind": "select",
+        "options": [
+          "characteristic",
+          "limitation"
+        ],
+        "answer": "characteristic",
+        "explanation": "Complete control by decision-makers is item 5 of the characteristics list."
+      },
+      {
+        "id": 6,
+        "kind": "select",
+        "options": [
+          "characteristic",
+          "limitation"
+        ],
+        "answer": "limitation",
+        "explanation": "Being designed to a narrow scope of application, which inhibits generalisability to multiple decision contexts, is the third stated limitation."
+      },
+      {
+        "id": 7,
+        "kind": "select",
+        "options": [
+          "characteristic",
+          "limitation"
+        ],
+        "answer": "limitation",
+        "explanation": "A DSS cannot be designed to contain distinctly human decision making such as creativity, imagination or intuition."
+      },
+      {
+        "id": 8,
+        "kind": "select",
+        "options": [
+          "characteristic",
+          "limitation"
+        ],
+        "answer": "characteristic",
+        "explanation": "Adaptability and flexibility, plus ease of development by end users, both appear in the characteristics list."
+      }
+    ],
+    "walkthrough": {
+      "steps": [
+        "Split the slide deck in your head first: Chapter 1 has one list of characteristics and capabilities, and one separate slide titled Limitations of DSS.",
+        "The limitations list has exactly three entries: no creativity, imagination or intuition; no natural-language processing of user directives; and a narrow scope that blocks generalisability. Blanks 3, 6 and 7 are those three, so mark them limitation.",
+        "Everything else quoted here comes from the characteristics list: semi-structured and unstructured support, all management levels, individuals and groups, interdependent or sequential decisions, complete control by decision-makers, and effectiveness but not efficiency.",
+        "Adaptability, flexibility and ease of development by end users appear in the second half of the characteristics list, so blank 8 is a characteristic too."
+      ]
+    }
+  },
+  {
+    "id": "dss-power-taxonomy",
+    "topic": "Types of DSS",
+    "title": "Sort six scenarios into Power's five types",
+    "brief": "For each scenario, pick the DSS type that Power (2002) assigns it, using the mode of assistance as the criterion.",
+    "hint": "Ask what the system actually assists with: a model, a dataset, a document, expertise in rules, or people talking to each other.",
+    "code": "Name the DSS type for each scenario (Power, 2002).\n\n  MYCIN diagnoses from stored rules          {{1}}\n  A spreadsheet with what-if formulas        {{2}}\n  Video conferencing on a shared task        {{3}}\n  Ten years of internal sales, queried       {{4}}\n  Scanned reports, images and video          {{5}}\n  Routing model, not data intensive          {{6}}",
+    "blanks": [
+      {
+        "id": 1,
+        "kind": "select",
+        "options": [
+          "knowledge-driven",
+          "model-driven",
+          "communication-driven",
+          "data-driven",
+          "document-driven"
+        ],
+        "answer": "knowledge-driven",
+        "explanation": "Knowledge-driven DSS provide specialised problem-solving expertise stored as facts, rules or procedures and recommend actions. MYCIN is the chapter's example."
+      },
+      {
+        "id": 2,
+        "kind": "select",
+        "options": [
+          "knowledge-driven",
+          "model-driven",
+          "communication-driven",
+          "data-driven",
+          "document-driven"
+        ],
+        "answer": "model-driven",
+        "explanation": "A spreadsheet with formulas is the first example listed under model-driven DSS: the user manipulates a model with parameters."
+      },
+      {
+        "id": 3,
+        "kind": "select",
+        "options": [
+          "knowledge-driven",
+          "model-driven",
+          "communication-driven",
+          "data-driven",
+          "document-driven"
+        ],
+        "answer": "communication-driven",
+        "explanation": "Communication-driven DSS use network and communication technologies to support more than one person on a shared task; video conferencing is the listed example."
+      },
+      {
+        "id": 4,
+        "kind": "select",
+        "options": [
+          "knowledge-driven",
+          "model-driven",
+          "communication-driven",
+          "data-driven",
+          "document-driven"
+        ],
+        "answer": "data-driven",
+        "explanation": "Emphasis on access to and manipulation of a time series of internal company data is the data-driven definition."
+      },
+      {
+        "id": 5,
+        "kind": "select",
+        "options": [
+          "knowledge-driven",
+          "model-driven",
+          "communication-driven",
+          "data-driven",
+          "document-driven"
+        ],
+        "answer": "document-driven",
+        "explanation": "Document-driven DSS manage, retrieve and manipulate unstructured information such as scanned documents, hypertext, images, sound and video, with a search engine as the primary tool."
+      },
+      {
+        "id": 6,
+        "kind": "select",
+        "options": [
+          "knowledge-driven",
+          "model-driven",
+          "communication-driven",
+          "data-driven",
+          "document-driven"
+        ],
+        "answer": "model-driven",
+        "explanation": "An optimum routing model is model-driven, and the chapter notes model-driven DSS are not necessarily data intensive."
+      }
+    ],
+    "walkthrough": {
+      "steps": [
+        "Power's criterion is the mode of assistance, so classify by what the user is handed: a rule base, a model, a document store, a dataset, or a network.",
+        "Rules that recommend a diagnosis mean expertise has been stored as facts and rules, which is knowledge-driven.",
+        "Formulas, forecasting models and routing models are all models the user manipulates with parameters, so blanks 2 and 6 are model-driven.",
+        "A decade of internal sales figures is a time series of company data, which is the data-driven family; scanned reports, images and video are unstructured documents, which is the document-driven family.",
+        "People collaborating on a shared task over network technology is communication-driven, and the chapter adds that this type is related to group decision support systems."
+      ]
+    }
+  },
+  {
+    "id": "dss-data-versus-model",
+    "topic": "Types of DSS",
+    "title": "Data-driven against model-driven",
+    "brief": "Complete the contrast between the two emphases and the three levels of functionality in a data-driven DSS.",
+    "hint": "Type single words. The functionality ladder runs from simple file systems, through warehouses, to the analytics tool at the top.",
+    "code": "Complete the contrast between the two emphases.\n\n  A {{1}}-driven DSS works on internal time-series data.\n  A {{2}}-driven DSS works on a statistical or simulation\n     model, and is not necessarily data {{3}}.\n\nFunctionality in the data-driven family, low to high:\n\n  file systems accessed by {{4}} and retrieval tools\n  {{5}} warehouses\n  {{6}}, which gives the highest level",
+    "blanks": [
+      {
+        "id": 1,
+        "kind": "input",
+        "answers": [
+          "data"
+        ],
+        "placeholder": "one word",
+        "explanation": "The data-driven, or data-oriented, DSS emphasises access to and manipulation of a time series of internal company data."
+      },
+      {
+        "id": 2,
+        "kind": "input",
+        "answers": [
+          "model"
+        ],
+        "placeholder": "one word",
+        "explanation": "The model-driven DSS emphasises access to and manipulation of a statistical, financial, optimisation or simulation model."
+      },
+      {
+        "id": 3,
+        "kind": "input",
+        "answers": [
+          "intensive"
+        ],
+        "placeholder": "one word",
+        "reveal": "intensive",
+        "explanation": "The chapter's exact wording is that model-driven DSS are not necessarily data intensive, which is what separates them from the data-driven family."
+      },
+      {
+        "id": 4,
+        "kind": "input",
+        "answers": [
+          "query"
+        ],
+        "placeholder": "one word",
+        "explanation": "Simple file systems accessed by query and retrieval tools provide the elementary level of functionality."
+      },
+      {
+        "id": 5,
+        "kind": "input",
+        "answers": [
+          "data"
+        ],
+        "placeholder": "one word",
+        "explanation": "Data warehouses provide the additional functionality in the middle of the ladder."
+      },
+      {
+        "id": 6,
+        "kind": "input",
+        "answers": [
+          "OLAP"
+        ],
+        "placeholder": "abbreviation",
+        "explanation": "OLAP, on-line analytical processing, provides the highest level of functionality in a data-driven DSS."
+      }
+    ],
+    "walkthrough": {
+      "steps": [
+        "Start from the two definitions on the taxonomy slides. The one that works on a time series of internal company data is data-driven; the one that works on a statistical, financial, optimisation or simulation model is model-driven.",
+        "The distinguishing sentence about the model-driven family is that it uses user-supplied data and parameters and is not necessarily data intensive, so blank 3 is intensive.",
+        "The functionality ladder for the data-driven family is stated in ascending order: simple file systems accessed by query and retrieval tools, then data warehouses for additional functionality, then OLAP at the top.",
+        "That leaves query for blank 4, data for blank 5 and OLAP for blank 6."
+      ]
+    }
+  },
+  {
+    "id": "dss-decision-structure",
+    "topic": "Decision types and information systems",
+    "title": "Structured, semi-structured or unstructured",
+    "brief": "Label each decision with the category the chapter's examples place it in.",
+    "hint": "Routine and repetitive with a standard solution is structured. Judgment alone on a fuzzy problem is unstructured. Anything mixing the two is semi-structured.",
+    "code": "Label each decision structured, semi or unstructured.\n\n  Warehouse distribution                 {{1}}\n  Inventory control                      {{2}}\n  Recruiting an executive                {{3}}\n  Point of sales                         {{4}}\n  Credit evaluation                      {{5}}\n  Research and development planning      {{6}}\n  Negotiation                            {{7}}\n  Quality assurance                      {{8}}",
+    "blanks": [
+      {
+        "id": 1,
+        "kind": "select",
+        "options": [
+          "structured",
+          "semi-structured",
+          "unstructured"
+        ],
+        "answer": "structured",
+        "explanation": "Warehouse distribution is on the structured list: routine, repetitive and predictable with a standard solution."
+      },
+      {
+        "id": 2,
+        "kind": "select",
+        "options": [
+          "structured",
+          "semi-structured",
+          "unstructured"
+        ],
+        "answer": "semi-structured",
+        "explanation": "Inventory control is a semi-structured example: a standard procedure plus individual judgment."
+      },
+      {
+        "id": 3,
+        "kind": "select",
+        "options": [
+          "structured",
+          "semi-structured",
+          "unstructured"
+        ],
+        "answer": "unstructured",
+        "explanation": "Executive recruiting is listed as unstructured, relying on intuition and judgment with no cut-and-dried solution."
+      },
+      {
+        "id": 4,
+        "kind": "select",
+        "options": [
+          "structured",
+          "semi-structured",
+          "unstructured"
+        ],
+        "answer": "structured",
+        "explanation": "Point of sales is a structured example, handled by transaction processing."
+      },
+      {
+        "id": 5,
+        "kind": "select",
+        "options": [
+          "structured",
+          "semi-structured",
+          "unstructured"
+        ],
+        "answer": "semi-structured",
+        "explanation": "Credit evaluation is the classic semi-structured case: rules narrow the field, a person decides the rest."
+      },
+      {
+        "id": 6,
+        "kind": "select",
+        "options": [
+          "structured",
+          "semi-structured",
+          "unstructured"
+        ],
+        "answer": "unstructured",
+        "explanation": "Research and development planning is listed as unstructured, at the strategic end."
+      },
+      {
+        "id": 7,
+        "kind": "select",
+        "options": [
+          "structured",
+          "semi-structured",
+          "unstructured"
+        ],
+        "answer": "unstructured",
+        "explanation": "Negotiation appears in the unstructured row under managerial control."
+      },
+      {
+        "id": 8,
+        "kind": "select",
+        "options": [
+          "structured",
+          "semi-structured",
+          "unstructured"
+        ],
+        "answer": "semi-structured",
+        "explanation": "Quality assurance is listed with inventory control and credit evaluation as semi-structured."
+      }
+    ],
+    "walkthrough": {
+      "steps": [
+        "Use the chapter's own three tests. Structured decisions are routine and repetitive, objectives are clearly defined in all phases, and standard solutions exist.",
+        "Unstructured decisions are non-routine, unpredictable and fuzzy, have no cut-and-dried solution, and apply intuition and judgment through the intelligence, design and choice phases of the Simon model.",
+        "Semi-structured is the mix: non-routine but predictable, requiring standard solution procedures together with individual judgment.",
+        "Applying that: warehouse distribution and point of sales are structured; recruiting an executive, R&D planning and negotiation are unstructured; inventory control, credit evaluation and quality assurance are the semi-structured three."
+      ]
+    }
+  },
+  {
+    "id": "dss-system-by-era",
+    "topic": "Decision types and information systems",
+    "title": "Which system, which era, which level",
+    "brief": "Place each information system on the timeline, then finish the two lines about management levels.",
+    "hint": "Four systems, four dates: early 1960s, the 1960s, early 1970s, late 1980s. The later and more interactive the system, the higher the management level it serves.",
+    "code": "Complete the information-system timeline.\n\n  {{1}}  early 1960s, operational, routine transactions\n  {{2}}  the 1960s, summary and exception reports\n  {{3}}  early 1970s, semi and unstructured problems\n  {{4}}  late 1980s, senior level, graphics, drill-down\n\n  The three levels are strategic, {{5}} and operational.\n  A DSS was originally built for {{6}} management.",
+    "blanks": [
+      {
+        "id": 1,
+        "kind": "select",
+        "options": [
+          "TPS",
+          "MIS",
+          "DSS",
+          "EIS"
+        ],
+        "answer": "TPS",
+        "explanation": "Transaction Processing Systems were developed in the early 1960s, serve the operational level, and perform and record daily routine and repetitive transactions."
+      },
+      {
+        "id": 2,
+        "kind": "select",
+        "options": [
+          "TPS",
+          "MIS",
+          "DSS",
+          "EIS"
+        ],
+        "answer": "MIS",
+        "explanation": "Management Information Systems came in the 1960s, serve operational or middle management, and produce summary and exception reports."
+      },
+      {
+        "id": 3,
+        "kind": "select",
+        "options": [
+          "TPS",
+          "MIS",
+          "DSS",
+          "EIS"
+        ],
+        "answer": "DSS",
+        "explanation": "Decision Support Systems were developed in the early 1970s with a primary focus on semi-structured and unstructured decision making."
+      },
+      {
+        "id": 4,
+        "kind": "select",
+        "options": [
+          "TPS",
+          "MIS",
+          "DSS",
+          "EIS"
+        ],
+        "answer": "EIS",
+        "explanation": "Executive Information Systems, also called Executive Support Systems, came in the late 1980s for senior management, with graphics and drill-down."
+      },
+      {
+        "id": 5,
+        "kind": "select",
+        "options": [
+          "tactical",
+          "technical",
+          "temporary"
+        ],
+        "answer": "tactical",
+        "explanation": "The three levels of management activity are strategic, tactical and operational."
+      },
+      {
+        "id": 6,
+        "kind": "select",
+        "options": [
+          "middle",
+          "senior",
+          "operational"
+        ],
+        "answer": "middle",
+        "explanation": "The chapter says a DSS was originally designed to serve the middle management level, even though its characteristics list later says it supports managers at all levels."
+      }
+    ],
+    "walkthrough": {
+      "steps": [
+        "Order the four systems by date, not by importance: TPS early 1960s, MIS the 1960s, DSS early 1970s, EIS late 1980s.",
+        "Then check each against the level it serves: operational for TPS, operational or middle for MIS, middle for the original DSS, senior for EIS.",
+        "The focus tells them apart as well. TPS is structured decision making, MIS is fairly structured with summary and exception reports, DSS is semi-structured and unstructured, and EIS monitors organisational performance for executives.",
+        "The last two blanks come from the same slide: the three levels of management activity are strategic, tactical and operational, and the DSS was originally aimed at middle management."
+      ]
+    }
+  }
+]

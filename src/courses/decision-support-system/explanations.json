@@ -1,0 +1,187 @@
+{
+  "1": {
+    "summary": "The working definition in Chapter 1 is an interactive computer-based system that helps decision makers solve semi-structured and unstructured problems. Interactivity and the semi/unstructured focus are the two parts examiners look for.",
+    "options": {
+      "A": "That is a Transaction Processing System: it records daily routine and repetitive transactions and updates operational databases.",
+      "B": "Correct: interactive, computer-based, and aimed at semi-structured and unstructured problems.",
+      "C": "Periodic and exception reports in a fixed format are the Management Information System's job, not a DSS.",
+      "D": "A DSS supports the decision maker; the chapter keeps control with the decision-maker, so it does not replace them."
+    }
+  },
+  "2": {
+    "summary": "The chapter's characteristic list includes support for semi-structured and unstructured problems, support for managers at all levels, support for individuals and groups, support for interdependent or sequential decisions, complete control by decision-makers, and effectiveness but not efficiency.",
+    "options": {
+      "A": "Correct: semi-structured and unstructured problems are the core DSS territory.",
+      "B": "Correct: DSS support is not limited to one management level.",
+      "C": "Wrong way round. The listed characteristic is effectiveness, but not efficiency.",
+      "D": "Correct: the decision-maker, not the system or the IT department, keeps complete control.",
+      "E": "Correct: decisions that depend on each other or arrive in sequence are supported."
+    }
+  },
+  "3": {
+    "summary": "\"Effectiveness, but not efficiency\" means the value of a DSS is measured by the quality of the decision it produces, not by how fast or cheap the system itself runs. A slower but better decision is still a success.",
+    "options": {
+      "A": "Correct: decision quality is the criterion, even at the cost of speed or expense.",
+      "B": "Throughput against a TPS is an efficiency measure, which the chapter explicitly de-emphasises.",
+      "C": "Minimising running cost first is an efficiency argument, the opposite of the stated characteristic.",
+      "D": "Removing the manager contradicts \"complete control by decision-makers\"."
+    }
+  },
+  "4": {
+    "summary": "The stated limitations are that a DSS cannot be designed to contain distinctly human decision making such as creativity, imagination or intuition; that language and command interfaces are not sophisticated enough for natural-language directives; and that a narrow scope inhibits generalisability across decision contexts.",
+    "options": {
+      "A": "False: the characteristics list says DSS supports managers at all levels.",
+      "B": "Correct: this is the first limitation on the chapter's list.",
+      "C": "False: the data management component draws on internal repositories, external sources such as the Internet, and users' own insights.",
+      "D": "False: adaptability, flexibility and ease of development by end users are listed as characteristics."
+    }
+  },
+  "5": {
+    "summary": "The three fundamental components are the data management component (DBMS), the model management component (MBMS) and the dialog generation and management system (DGMS). Models come from MBMS, the interaction from DGMS.",
+    "options": {
+      "A": "Correct: MBMS handles representations of events, facts or situations such as optimisation and goal-seeking models; DGMS is the dialog that lets the user interact with the system.",
+      "B": "DBMS stores the data, not the models, and this pair leaves the interaction unexplained.",
+      "C": "Reversed: DGMS is the dialog and DBMS is the stored data; neither holds the models.",
+      "D": "TPS and OLAP are boxes in the architecture diagram, not one of the three DSS components."
+    }
+  },
+  "6": {
+    "summary": "In the typical architecture, TPS is the transaction processing system feeding the DSS database, OLAP is on-line analytical processing, the DSS database holds current data from applications or groups, and data mining finds relationships in large databases for prediction.",
+    "options": {
+      "A": "Correct: TPS stands for transaction processing system.",
+      "B": "Correct: OLAP stands for on-line analytical processing.",
+      "C": "Correct: the DSS database holds current data from applications or groups.",
+      "D": "Data mining is a technology for finding relationships in large databases for prediction, not storage hardware for the model base.",
+      "E": "A MODEL is a representation of a problem, not a delivery protocol."
+    }
+  },
+  "7": {
+    "summary": "Power (2002) uses the mode of assistance as the criterion and names five types: communication-driven, data-driven, document-driven, knowledge-driven and model-driven.",
+    "options": {
+      "A": "Correct: this is Power's five-type taxonomy exactly.",
+      "B": "These are management levels and analytics horizons, not modes of assistance.",
+      "C": "These describe system output styles, not Power's taxonomy.",
+      "D": "These are groupings of decision makers, not DSS types."
+    }
+  },
+  "8": {
+    "summary": "A model-driven DSS emphasises access to and manipulation of a statistical, financial, optimisation or simulation model, using data and parameters supplied by the user. The chapter's own examples are a spreadsheet with formulas, a statistical forecasting model and an optimum routing model.",
+    "options": {
+      "A": "A data-driven DSS is about querying a time series of internal data, not manipulating a model.",
+      "B": "Correct: all three examples are models the user manipulates with parameters.",
+      "C": "A document-driven DSS retrieves and analyses unstructured documents.",
+      "D": "A knowledge-driven DSS recommends actions from stored facts and rules."
+    }
+  },
+  "9": {
+    "summary": "A knowledge-driven DSS provides specialised problem-solving expertise stored as facts, rules or procedures, and suggests or recommends actions to managers. MYCIN, the rule-based program that helps physicians diagnose blood disease, is the chapter's example.",
+    "options": {
+      "A": "Communication-driven DSS support several people on a shared task through network technologies; MYCIN advises one physician.",
+      "B": "Data-driven DSS query internal time-series data; MYCIN reasons over rules.",
+      "C": "Correct: rule-based expertise that recommends an action is knowledge-driven.",
+      "D": "Document-driven DSS retrieve unstructured documents, not rules."
+    }
+  },
+  "10": {
+    "summary": "A document-driven DSS uses storage and processing technologies for document retrieval and analysis, managing unstructured information in electronic formats such as scanned documents, hypertext, images, sound and video. A search engine is the primary tool associated with it.",
+    "options": {
+      "A": "Correct: unstructured electronic documents plus a search engine define the document-driven type.",
+      "B": "A model-driven DSS manipulates a statistical, financial, optimisation or simulation model.",
+      "C": "A knowledge-driven DSS stores expertise as facts and rules and recommends actions.",
+      "D": "A communication-driven DSS supports collaboration between people on a shared task."
+    }
+  },
+  "11": {
+    "summary": "A data-driven (data-oriented) DSS emphasises access to and manipulation of a time series of internal company data and sometimes external data. Simple file systems accessed by query and retrieval tools give the elementary functionality, data warehouses add more, and OLAP provides the highest level.",
+    "options": {
+      "A": "Correct: internal time-series data, sometimes with external data, is the definition.",
+      "B": "That describes the knowledge-driven type.",
+      "C": "That describes the communication-driven type.",
+      "D": "\"Not necessarily data intensive\" is what the chapter says about model-driven DSS."
+    }
+  },
+  "12": {
+    "summary": "A communication-driven DSS uses network and communication technologies to facilitate collaboration on decision making, supporting more than one person working on a shared task. The chapter names NetMeeting, Groove and video conferencing and notes it is related to group decision support systems.",
+    "options": {
+      "A": "A data-driven DSS is about querying internal time-series data, not collaboration.",
+      "B": "Correct: shared-task collaboration over network technologies, related to GDSS.",
+      "C": "A document-driven DSS retrieves and analyses unstructured documents.",
+      "D": "A model-driven DSS manipulates an analytical model rather than connecting people."
+    }
+  },
+  "13": {
+    "summary": "Semi-structured decisions combine standard solution procedures with individual judgment. The chapter's examples are inventory control, credit evaluation and quality assurance (production scheduling, plant layout and project scheduling also appear in the same row).",
+    "options": {
+      "A": "Correct: inventory control sits in the semi-structured row.",
+      "B": "Correct: credit evaluation needs both a standard procedure and judgment.",
+      "C": "Point of sales is a structured example, handled by transaction processing.",
+      "D": "Correct: quality assurance is listed as semi-structured.",
+      "E": "Research and development planning is an unstructured example."
+    }
+  },
+  "14": {
+    "summary": "Structured (programmed) decisions are routine, repetitive and predictable, with clearly defined objectives and standard solutions. Warehouse distribution is one of the chapter's structured examples, alongside accounts receivable, order entry, budget analysis and short-term forecasting.",
+    "options": {
+      "A": "Executive recruiting is listed as an unstructured example, requiring judgment.",
+      "B": "Correct: warehouse distribution is routine with a standard solution procedure.",
+      "C": "Research and development planning is listed as unstructured.",
+      "D": "Negotiation is listed under managerial control as unstructured."
+    }
+  },
+  "15": {
+    "summary": "Non-routine, unpredictable, \"fuzzy\" problems with no cut-and-dried solution are unstructured (non-programmed) decisions; the chapter says they apply intuition and judgment and use the Simon model phases of intelligence, design and choice.",
+    "options": {
+      "A": "Structured decisions are routine and predictable, the opposite of this description.",
+      "B": "Those are management-control functions, not the Simon model phases for unstructured decisions.",
+      "C": "Correct: unstructured, and the Simon model phases named in the chapter are intelligence, design and choice.",
+      "D": "Those three words sound plausible but are not the phases the chapter attaches to unstructured decisions."
+    }
+  },
+  "16": {
+    "summary": "The chapter dates DSS to the early 1970s, originally designed to serve middle management, with a primary focus on semi-structured and unstructured decision making.",
+    "options": {
+      "A": "That timeline and operational focus belong to TPS, developed in the early 1960s.",
+      "B": "That is the MIS row: developed in the 1960s, summary and exception reports.",
+      "C": "Correct: early 1970s, originally middle management.",
+      "D": "That is the EIS/ESS row, developed in the late 1980s for senior management."
+    }
+  },
+  "17": {
+    "summary": "Executive Information Systems, also called Executive Support Systems, were developed in the late 1980s, serve senior management, monitor organisational performance, and are very user-friendly with graphics and drill-down capability. An EIS draws critical information from MIS, DSS and other sources.",
+    "options": {
+      "A": "TPS serves the operational level and was developed in the early 1960s.",
+      "B": "MIS serves operational or middle management with summary and exception reports.",
+      "C": "DSS came in the early 1970s and targets semi-structured and unstructured problems, not executive monitoring.",
+      "D": "Correct: late 1980s, senior management, graphics and drill-down."
+    }
+  },
+  "18": {
+    "summary": "In the MIS-to-DSS table the DSS column promises information plus techniques to analyse specific problems, interactive inquiries and responses, an ad hoc, flexible and adaptable format, and information produced by analytical modelling of business data.",
+    "options": {
+      "A": "Correct: this is the DSS side of the decision-support row.",
+      "B": "Periodic, exception, demand and push reports are the MIS side.",
+      "C": "Correct: ad hoc, flexible and adaptable is the DSS information format.",
+      "D": "Correct: analytical modelling of business data is how the DSS produces its information.",
+      "E": "Prespecified, fixed format from extraction and manipulation is the MIS side."
+    }
+  },
+  "19": {
+    "summary": "The decision-structure slide pairs unstructured decisions with strategic management and ad hoc, unscheduled, summarised, infrequent, forward-looking, external, wide-scope information. Operational management with structured decisions takes the opposite profile.",
+    "options": {
+      "A": "This is the operational-level profile: pre-specified, scheduled, detailed, frequent, historical, internal, narrow focus.",
+      "B": "Correct: the strategic, unstructured profile in the chapter's figure.",
+      "C": "Fixed-format, transaction-level and internal-only again describe operational information.",
+      "D": "Real-time machine-generated repetition is characteristic of transaction processing, not strategic planning."
+    }
+  },
+  "20": {
+    "summary": "The chapter lists information overload, the ability for workers to work from home, a global economy with strong competition facilitated by web-based platforms, a more diversified workforce, powerful and increasingly knowledgeable customers, technology innovations, and societal issues or government regulations.",
+    "options": {
+      "A": "Correct: information overload heads the business-pressure list.",
+      "B": "Correct: powerful customers with rising expectations are on the list.",
+      "C": "The pressure is the opposite: a global economy with strong competition facilitated by web-based platforms.",
+      "D": "Correct: a changing, more diversified workforce and remote working are listed.",
+      "E": "Societal issues and government regulation are listed as pressures that add to the difficulty, not as things being eliminated."
+    }
+  }
+}

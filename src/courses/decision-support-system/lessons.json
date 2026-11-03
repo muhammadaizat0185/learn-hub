@@ -1,0 +1,109 @@
+[
+  {
+    "id": "dss-introduction-and-components",
+    "title": "Say what a DSS is, and name its three moving parts",
+    "topic": "DSS fundamentals",
+    "minutes": 6,
+    "concepts": [
+      "A Decision Support System is an interactive computer-based system that helps decision makers use information and communication technologies to identify and solve problems. The two halves worth quoting in an exam answer are interactive and semi-structured or unstructured problems: a system that only files transactions or only prints monthly reports is not a DSS.",
+      "The pressure behind the need is listed as information overload, remote and more diversified workforces, global web-enabled competition, powerful and better-informed customers, technology innovation, and societal or government regulation. Decision makers operate in environments that are highly competitive, fast-paced, near real-time and overloaded with information, with data distributed across the enterprise.",
+      "The characteristics list is the source of most true-or-false items. It includes support for decision makers in semi-structured and unstructured problems, support for managers at all levels, support for individuals and groups, support for interdependent or sequential decisions, complete control by decision-makers, and effectiveness but not efficiency. It also includes support for the intelligence, design, choice and implementation phases, adaptability and flexibility, interactivity and ease of use, ease of development by end users, support for modelling and analysis, data access, and standalone, integrated and Web-based forms.",
+      "Chapter 1 names three fundamental components: the data management component or DBMS, the model management component or MBMS, and the dialog component or DGMS. Data management stores information from an organisation's traditional data repositories, from external sources such as the Internet, and from the personal insights and experiences of individual users. Model management handles representations of events, facts or situations, with optimisation models and goal-seeking models given as the two examples. User interface management lets a user interact with the system.",
+      "The typical architecture diagram around those three components labels TPS as the transaction processing system, DSS DATABASE as current data from applications or groups, EXTERNAL DATA, MODELS, OLAP TOOLS as on-line analytical processing, DATA MINING as the technology for finding relationships in large databases for prediction, and USER INTERFACE as how the user enters the problem and receives answers.",
+      "The stated limitations are as exam-ready as the advantages: a DSS cannot be designed to contain distinctly human decision making such as creativity, imagination or intuition; its language and command interfaces are not yet sophisticated enough to allow natural language processing of user directives and inquiries; and it is normally designed to a narrow scope of application, which inhibits generalisability to multiple decision-making contexts."
+    ],
+    "example": {
+      "title": "Pulling the three components out of one paragraph",
+      "explanation": "Take the retail example used in the course essay: a company analyses sales data and inventory levels to decide reordering, comparing what-if scenarios of stock levels on profitability, and reads the result off charts on a dashboard. Label each part of that sentence with the component that owns it.",
+      "steps": [
+        "\"Sales data and inventory levels\" plus market trend data pulled in from outside are the data management component, because it stores information from internal repositories and external sources.",
+        "\"Comparing what-if scenarios of stock levels on profitability\" is the model management component: a forecasting or optimisation model run over parameters the user supplies.",
+        "\"Reads the result off charts on a dashboard\" is the user interface management component, the dialog through which the manager enters the problem and receives the answer.",
+        "\"The manager decides the reorder, not the system\" is the characteristic that the decision-maker keeps complete control, and it is also why the limitation about intuition matters: the judgment half of the decision stays human."
+      ]
+    },
+    "labIds": ["dss-three-components", "dss-characteristics-or-limitation"],
+    "resources": [
+      {
+        "label": "Video · Intro: Making Sense of the Noise",
+        "url": "https://www.youtube.com/watch?v=PLvbLcs3Vq8",
+        "note": "NotebookLM's overview of the whole subject — watch it before the chapter videos."
+      },
+      {
+        "label": "Video · Chapter 1: Decision Support Systems",
+        "url": "https://www.youtube.com/watch?v=lZ0O_RcbdSg",
+        "note": "The narration of the exact chapter this lesson covers."
+      }
+    ]
+  },
+  {
+    "id": "power-five-dss-types",
+    "title": "Sort any tool into Power's five types",
+    "topic": "Types of DSS",
+    "minutes": 5,
+    "concepts": [
+      "Using the mode of assistance as the criterion, Power (2002) differentiates five types of DSS: communication-driven, data-driven, document-driven, knowledge-driven and model-driven. The criterion is what the system hands the user to work with, so classify by the object of assistance, not by the industry or the programming language.",
+      "A model-driven DSS emphasises access to and manipulation of a statistical, financial, optimisation or simulation model. It uses data and parameters provided by users to help analyse a situation and is not necessarily data intensive. The chapter's examples are a spreadsheet with formulas, a statistical forecasting model and an optimum routing model.",
+      "A data-driven or data-oriented DSS emphasises access to and manipulation of a time series of internal company data and sometimes external data. Its functionality runs in three ascending levels: simple file systems accessed by query and retrieval tools, then data warehouses for additional functionality, then OLAP for the highest level.",
+      "A knowledge-driven DSS provides specialised problem-solving expertise stored as facts, rules or procedures, and suggests or recommends actions to managers. MYCIN, the rule-based reasoning program that helps physicians diagnose blood disease, is the standard example.",
+      "A document-driven DSS uses storage and processing technologies for document retrieval and analysis, managing unstructured information in electronic formats such as scanned documents, hypertext, images, sound and video. A search engine is the primary tool associated with this type.",
+      "A communication-driven DSS uses network and communication technologies to facilitate collaboration on decision making, supporting more than one person working on a shared task, with NetMeeting, Groove and video conferencing as examples. It is the type most closely related to group decision support systems. Which type an organisation picks depends on its needs and its decision-making culture."
+    ],
+    "example": {
+      "title": "Five one-line systems, five types",
+      "explanation": "Each line below describes a system in one clause. Ask what the user manipulates, and the type follows.",
+      "steps": [
+        "\"A warehouse manager drags a slider for fuel price and watches the delivery-cost model recompute\" manipulates a model, so it is model-driven.",
+        "\"An analyst queries eight quarters of internal sales and margin data by region\" manipulates a time series of internal data, so it is data-driven.",
+        "\"A doctor answers rule-based questions and the program proposes a diagnosis\" uses expertise stored as rules, so it is knowledge-driven.",
+        "\"A lawyer searches scanned depositions, photographs and audio statements\" retrieves unstructured documents, so it is document-driven.",
+        "\"Four regional managers vote in one online session on a shared shortlist\" supports several people on one shared task, so it is communication-driven."
+      ]
+    },
+    "labIds": ["dss-power-taxonomy", "dss-data-versus-model"],
+    "resources": [
+      {
+        "label": "Video · Chapter 2: The Decision Machine",
+        "url": "https://www.youtube.com/watch?v=nu3eMgrHL-Q",
+        "note": "Data and model management — where the data-driven and model-driven types come from."
+      }
+    ]
+  },
+  {
+    "id": "decision-types-and-system-layers",
+    "title": "Match the decision, the management level and the system",
+    "topic": "Decision types and information systems",
+    "minutes": 6,
+    "concepts": [
+      "Structured or programmed decisions are routine, repetitive and predictable, with objectives clearly defined in all phases and standard solutions available. The chapter's examples are accounts receivable and payable, order entry, point of sales, budget analysis, warehouse distribution and short-term forecasting.",
+      "Unstructured or non-programmed decisions are non-routine, unpredictable and fuzzy, with no cut-and-dried solution, so they apply intuition and judgment. They run through the Simon model phases of intelligence, design and choice. Examples include approving loans, operating a help desk, recruiting an executive, R&D planning, negotiation and new technology development.",
+      "Semi-structured decisions combine the two: non-routine but predictable, requiring standard solution procedures plus individual judgment. The named examples are inventory control, credit evaluation, quality assurance, production scheduling, plant layout and project scheduling.",
+      "Information systems support three levels of management activity: strategic management, tactical management and operational management. The decision structure rises from structured at the operational level to unstructured at the strategic level, and the information characteristics change with it: operational information is pre-specified, scheduled, detailed, frequent, historical, internal and narrow in focus, while strategic information is ad hoc, unscheduled, summarised, infrequent, forward-looking, external and wide in scope.",
+      "The four systems sit on a timeline that mirrors those levels. TPS was developed in the early 1960s and serves the operational level with structured decisions. MIS came in the 1960s, serves operational or middle management with summary and exception reports, and focuses on fairly structured decisions. DSS came in the early 1970s, was originally designed to serve middle management, and focuses on semi-structured and unstructured decisions. EIS, also called Executive Support System, came in the late 1980s, serves senior management, is very user-friendly with graphics and offers drill-down.",
+      "The MIS-to-DSS comparison is a frequent exam table. MIS provides information about organisational performance in periodic, exception, demand and push reports of a prespecified fixed format produced by extraction and manipulation of business data. DSS provides information and techniques to analyse specific problems through interactive inquiries and responses, in an ad hoc, flexible and adaptable format, with information produced by analytical modelling of business data."
+    ],
+    "example": {
+      "title": "Three decisions at one company, three answers",
+      "explanation": "A retail chain faces three questions in the same week. Classify each decision, name the management level, and say which system should carry it.",
+      "steps": [
+        "\"Should we reorder SKU 4471 before Friday?\" is routine, predictable and has a standard procedure, so it is structured, sits at operational management, and is served by TPS or MIS data rather than a DSS.",
+        "\"Which of our 40 stores should get the reduced opening hours next quarter?\" needs a standard evaluation plus local judgment, so it is semi-structured, sits at tactical management, and is the classic DSS case.",
+        "\"Should we acquire the competitor that just entered our region?\" is non-routine, unpredictable and depends on judgment, so it is unstructured, sits at strategic management, and is served by an EIS drawing on MIS and DSS output.",
+        "Notice the information profile changes with the decision: the reorder question wants detailed, frequent, historical internal figures; the acquisition question wants summarised, ad hoc, forward-looking external data."
+      ]
+    },
+    "labIds": ["dss-decision-structure", "dss-system-by-era"],
+    "resources": [
+      {
+        "label": "Video · Chapter 3: Decoding Decision Styles",
+        "url": "https://www.youtube.com/watch?v=6zrtCs29KKA",
+        "note": "Who decides, which management level, and how decision styles differ."
+      },
+      {
+        "label": "Video · Chapter 4: The Decision Making Process",
+        "url": "https://www.youtube.com/watch?v=cnPLTiCxnbk",
+        "note": "Simon's intelligence, design, choice and implementation phases."
+      }
+    ]
+  }
+]

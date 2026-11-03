@@ -1,0 +1,27 @@
+{
+  "id": "decision-support-system",
+  "title": "Decision Support System (BIT30303)",
+  "shortTitle": "DSS",
+  "description": "UTHM BIT30303 Decision Support System: practice questions, lessons and a decision lab built from the lecture slides and the past-year finals. Chapter 1 pilot — what a DSS is, its three components, Power's five types, and how decisions and information systems sit across the management levels.",
+  "exam": {
+    "questions": 20,
+    "minutes": 25,
+    "passPercent": 50
+  },
+  "lab": {
+    "label": "Decision lab",
+    "note": "Fill the gaps in summary tables of DSS components, types and decision categories. Most gaps are dropdowns; a typed gap needs the term spelled as the slides write it, because a differently worded but equivalent answer may not be recognized."
+  },
+  "resources": [
+    {
+      "label": "DSS video playlist · all nine chapters",
+      "url": "https://youtube.com/playlist?list=PLjZJ5J1CN9KWr9SYZBSZpQuCCzeSIZja6",
+      "note": "NotebookLM narrations of this subject's slides — one video per chapter, plus an introduction."
+    },
+    {
+      "label": "Source notebook on NotebookLM",
+      "url": "https://notebook.google.com/notebook/1d3caef1-dfaa-48c3-b534-19c9f6c91a02",
+      "note": "Google sign-in needed — the slide decks behind the videos, for asking the notebook questions."
+    }
+  ]
+}

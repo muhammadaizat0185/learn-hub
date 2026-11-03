@@ -33,6 +33,16 @@ export interface CourseLabOptions {
   compile?: "javac";
 }
 
+/**
+ * An external study link offered by a course. Only https URLs survive loading, so a
+ * hand-edited course file cannot smuggle a javascript: or file: target into an anchor.
+ */
+export interface CourseResource {
+  label: string;
+  url: string;
+  note?: string;
+}
+
 export interface CourseMeta {
   id: string;
   title: string;
@@ -41,6 +51,7 @@ export interface CourseMeta {
   exam: ExamConfig;
   sample?: boolean;
   lab?: CourseLabOptions;
+  resources?: CourseResource[];
 }
 
 export interface TopicLesson {
@@ -57,7 +68,11 @@ export interface TopicLesson {
     steps?: string[];
   };
   labIds: string[];
+  resources?: CourseResource[];
 }
+
+/** A lesson after loading, where every resource link has passed https validation. */
+export type LoadedLesson = TopicLesson & { resources: CourseResource[] };
 
 export interface TopicGroup {
   name: string;
@@ -111,8 +126,9 @@ export interface CourseData {
   questionById: Map<number, Question>;
   explanations: Record<number, AnswerExplanation>;
   topics: TopicGroup[];
+  resources: CourseResource[];
   lab?: LabData;
-  lessons?: TopicLesson[];
+  lessons?: LoadedLesson[];
 }
 
 export interface ExamAnswer {

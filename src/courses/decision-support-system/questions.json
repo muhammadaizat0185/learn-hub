@@ -1,0 +1,267 @@
+[
+  {
+    "id": 1,
+    "topic": "DSS fundamentals",
+    "type": "mcq",
+    "question": "Which statement best matches the course definition of a Decision Support System?",
+    "options": [
+      { "letter": "A", "text": "A computer application that records routine, repetitive transactions and updates the operational database." },
+      { "letter": "B", "text": "An interactive computer-based system that helps decision makers solve semi-structured and unstructured problems." },
+      { "letter": "C", "text": "A reporting system that delivers fixed monthly and exception reports to middle managers." },
+      { "letter": "D", "text": "A system that replaces the decision maker by choosing strategic options automatically." }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 2,
+    "topic": "DSS fundamentals",
+    "type": "multi",
+    "question": "Which of the following are listed as general characteristics and capabilities of a DSS?\n· Select every item that appears in the chapter list.",
+    "options": [
+      { "letter": "A", "text": "Support for decision makers in semi-structured and unstructured problems." },
+      { "letter": "B", "text": "Support for managers at all levels of the organisation." },
+      { "letter": "C", "text": "Efficiency in processing, rather than effectiveness of the resulting decision." },
+      { "letter": "D", "text": "Complete control by the decision-maker." },
+      { "letter": "E", "text": "Support for interdependent or sequential decisions." }
+    ],
+    "answer": ["A", "B", "D", "E"]
+  },
+  {
+    "id": 3,
+    "topic": "DSS fundamentals",
+    "type": "mcq",
+    "question": "One characteristic of a DSS is stated as \"effectiveness, but not efficiency\". What does that mean when you judge a DSS?",
+    "options": [
+      { "letter": "A", "text": "It is judged by the quality of the decision reached, even if reaching it takes longer or costs more." },
+      { "letter": "B", "text": "It must process transactions faster than the transaction processing system below it." },
+      { "letter": "C", "text": "It should minimise its own running cost before considering the decision it produces." },
+      { "letter": "D", "text": "It is effective only when it removes the manager from the decision entirely." }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 4,
+    "topic": "DSS fundamentals",
+    "type": "mcq",
+    "question": "Which constraint on DSS use is stated in Chapter 1?",
+    "options": [
+      { "letter": "A", "text": "A DSS can only be used by operational-level staff." },
+      { "letter": "B", "text": "A DSS cannot be designed to contain distinctly human decision making such as creativity, imagination or intuition." },
+      { "letter": "C", "text": "A DSS only reads data from external sources such as the Internet." },
+      { "letter": "D", "text": "A DSS must be reprogrammed by a specialist before any parameter can be changed." }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 5,
+    "topic": "DSS fundamentals",
+    "type": "mcq",
+    "question": "A DSS keeps sales, market and user-supplied data, offers optimisation and goal-seeking models, and lets a manager run what-if scenarios from an interactive screen. Which two components supply the models and the interaction respectively?",
+    "options": [
+      { "letter": "A", "text": "Model management (MBMS) and dialog generation and management (DGMS)." },
+      { "letter": "B", "text": "Data management (DBMS) and model management (MBMS)." },
+      { "letter": "C", "text": "Dialog generation and management (DGMS) and data management (DBMS)." },
+      { "letter": "D", "text": "Transaction processing (TPS) and on-line analytical processing (OLAP)." }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 6,
+    "topic": "DSS fundamentals",
+    "type": "multi",
+    "question": "In the typical DSS architecture, which descriptions are correctly matched to their label?",
+    "options": [
+      { "letter": "A", "text": "TPS: transaction processing system." },
+      { "letter": "B", "text": "OLAP: on-line analytical processing." },
+      { "letter": "C", "text": "DSS DATABASE: current data from applications or groups." },
+      { "letter": "D", "text": "DATA MINING: hardware that stores the model base." },
+      { "letter": "E", "text": "MODEL: a protocol for pushing reports to executives." }
+    ],
+    "answer": ["A", "B", "C"]
+  },
+  {
+    "id": 7,
+    "topic": "Types of DSS",
+    "type": "mcq",
+    "question": "Using the mode of assistance as the criterion, Power (2002) differentiates DSS into which five types?",
+    "options": [
+      { "letter": "A", "text": "Communication-driven, data-driven, document-driven, knowledge-driven and model-driven." },
+      { "letter": "B", "text": "Strategic, tactical, operational, analytical and predictive." },
+      { "letter": "C", "text": "Transaction-driven, report-driven, query-driven, dashboard-driven and alert-driven." },
+      { "letter": "D", "text": "Individual, group, organisational, inter-organisational and national." }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 8,
+    "topic": "Types of DSS",
+    "type": "mcq",
+    "question": "A spreadsheet with formulas, a statistical forecasting model and an optimum routing model are examples of which type of DSS?",
+    "options": [
+      { "letter": "A", "text": "Data-driven DSS." },
+      { "letter": "B", "text": "Model-driven DSS." },
+      { "letter": "C", "text": "Document-driven DSS." },
+      { "letter": "D", "text": "Knowledge-driven DSS." }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 9,
+    "topic": "Types of DSS",
+    "type": "mcq",
+    "question": "MYCIN is a rule-based reasoning program that helps physicians diagnose blood disease. Which type of DSS is it?",
+    "options": [
+      { "letter": "A", "text": "Communication-driven, because it connects physician and patient." },
+      { "letter": "B", "text": "Data-driven, because it queries a time series of hospital records." },
+      { "letter": "C", "text": "Knowledge-driven, because it provides problem-solving expertise stored as facts, rules and procedures." },
+      { "letter": "D", "text": "Document-driven, because it retrieves unstructured clinical reports." }
+    ],
+    "answer": ["C"]
+  },
+  {
+    "id": 10,
+    "topic": "Types of DSS",
+    "type": "mcq",
+    "question": "A DSS manages scanned documents, hypertext, images, sound and video, and its primary tool is a search engine. Which type is it?",
+    "options": [
+      { "letter": "A", "text": "Document-driven DSS." },
+      { "letter": "B", "text": "Model-driven DSS." },
+      { "letter": "C", "text": "Knowledge-driven DSS." },
+      { "letter": "D", "text": "Communication-driven DSS." }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 11,
+    "topic": "Types of DSS",
+    "type": "mcq",
+    "question": "Which statement about a data-driven (data-oriented) DSS is correct?",
+    "options": [
+      { "letter": "A", "text": "It emphasises access to and manipulation of a time series of internal company data, and sometimes external data." },
+      { "letter": "B", "text": "It stores specialised problem-solving expertise as facts and rules." },
+      { "letter": "C", "text": "It relies mainly on network and communication technologies for collaboration." },
+      { "letter": "D", "text": "It supplies the analytical model and is never data intensive." }
+    ],
+    "answer": ["A"]
+  },
+  {
+    "id": 12,
+    "topic": "Types of DSS",
+    "type": "mcq",
+    "question": "Video conferencing and integrated collaboration tools such as NetMeeting or Groove let several people work on one shared task. Which DSS type, related to group decision support systems, is this?",
+    "options": [
+      { "letter": "A", "text": "Data-driven DSS." },
+      { "letter": "B", "text": "Communication-driven DSS." },
+      { "letter": "C", "text": "Document-driven DSS." },
+      { "letter": "D", "text": "Model-driven DSS." }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 13,
+    "topic": "Decision types and information systems",
+    "type": "multi",
+    "question": "Which of these are given as semi-structured decisions?",
+    "options": [
+      { "letter": "A", "text": "Inventory control." },
+      { "letter": "B", "text": "Credit evaluation." },
+      { "letter": "C", "text": "Point of sales." },
+      { "letter": "D", "text": "Quality assurance." },
+      { "letter": "E", "text": "Research and development planning." }
+    ],
+    "answer": ["A", "B", "D"]
+  },
+  {
+    "id": 14,
+    "topic": "Decision types and information systems",
+    "type": "mcq",
+    "question": "Which decision is structured (programmed)?",
+    "options": [
+      { "letter": "A", "text": "Recruiting an executive." },
+      { "letter": "B", "text": "Warehouse distribution." },
+      { "letter": "C", "text": "Research and development planning." },
+      { "letter": "D", "text": "Negotiating with a supplier." }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 15,
+    "topic": "Decision types and information systems",
+    "type": "mcq",
+    "question": "A decision is non-routine and unpredictable, has no cut-and-dried solution, and relies on intuition and judgment. How is it classified, and which phases of the Simon model does the chapter attach to it?",
+    "options": [
+      { "letter": "A", "text": "Structured; the phases are data capture, storage and retrieval." },
+      { "letter": "B", "text": "Semi-structured; the phases are planning, scheduling and controlling." },
+      { "letter": "C", "text": "Unstructured; the phases are intelligence, design and choice." },
+      { "letter": "D", "text": "Unstructured; the phases are analysis, modelling and deployment." }
+    ],
+    "answer": ["C"]
+  },
+  {
+    "id": 16,
+    "topic": "Decision types and information systems",
+    "type": "mcq",
+    "question": "According to Chapter 1, when was DSS developed and whom was it originally designed to serve?",
+    "options": [
+      { "letter": "A", "text": "Early 1960s, serving the operational management level." },
+      { "letter": "B", "text": "The 1960s, serving operational or middle management with summary and exception reports." },
+      { "letter": "C", "text": "Early 1970s, originally designed to serve middle management." },
+      { "letter": "D", "text": "Late 1980s, serving senior management with drill-down displays." }
+    ],
+    "answer": ["C"]
+  },
+  {
+    "id": 17,
+    "topic": "Decision types and information systems",
+    "type": "mcq",
+    "question": "Which information system was developed in the late 1980s, serves the senior management level, is very user-friendly with graphics, and offers drill-down capability?",
+    "options": [
+      { "letter": "A", "text": "Transaction Processing System (TPS)." },
+      { "letter": "B", "text": "Management Information System (MIS)." },
+      { "letter": "C", "text": "Decision Support System (DSS)." },
+      { "letter": "D", "text": "Executive Information System (EIS), also called Executive Support System." }
+    ],
+    "answer": ["D"]
+  },
+  {
+    "id": 18,
+    "topic": "Decision types and information systems",
+    "type": "multi",
+    "question": "In the MIS-to-DSS comparison table, which rows describe the DSS side rather than the MIS side?",
+    "options": [
+      { "letter": "A", "text": "Provides information and techniques to analyse specific problems." },
+      { "letter": "B", "text": "Periodic, exception, demand and push reports." },
+      { "letter": "C", "text": "Ad hoc, flexible and adaptable information format." },
+      { "letter": "D", "text": "Information produced by analytical modelling of business data." },
+      { "letter": "E", "text": "Prespecified, fixed format produced by extraction and manipulation of business data." }
+    ],
+    "answer": ["A", "C", "D"]
+  },
+  {
+    "id": 19,
+    "topic": "Decision types and information systems",
+    "type": "mcq",
+    "question": "Strategic management faces unstructured decisions. Which set of information characteristics fits that level?",
+    "options": [
+      { "letter": "A", "text": "Pre-specified, scheduled, detailed, frequent, historical, internal, narrow focus." },
+      { "letter": "B", "text": "Ad hoc, unscheduled, summarised, infrequent, forward-looking, external, wide scope." },
+      { "letter": "C", "text": "Fixed format, transaction-level, internal only, produced by extraction alone." },
+      { "letter": "D", "text": "Real-time, machine-generated, operational and highly repetitive." }
+    ],
+    "answer": ["B"]
+  },
+  {
+    "id": 20,
+    "topic": "DSS fundamentals",
+    "type": "multi",
+    "question": "Which of these are listed as business pressures that make decision making harder and motivate the need for a DSS?",
+    "options": [
+      { "letter": "A", "text": "Information overload." },
+      { "letter": "B", "text": "Powerful customers whose expectations rise as they become more knowledgeable about products and services." },
+      { "letter": "C", "text": "A shrinking global economy with weaker competition." },
+      { "letter": "D", "text": "A workforce that is becoming more diversified, with people able to work from home." },
+      { "letter": "E", "text": "The elimination of government regulation and societal issues." }
+    ],
+    "answer": ["A", "B", "D"]
+  }
+]

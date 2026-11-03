@@ -345,6 +345,14 @@ div.option { cursor: default; }
 .topic-info p { margin: 0 0 6px; font-size: 13px; }
 .topic-row .btn { flex-shrink: 0; }
 
+.resource-list { display: grid; gap: 10px; }
+.resource-card {
+  display: grid; gap: 4px; margin-bottom: 0; color: inherit; text-decoration: none;
+  transition: border-color 0.12s, transform 0.12s;
+}
+.resource-card:hover { border-color: var(--accent); transform: translateY(-1px); }
+.resource-label { font-weight: 600; font-size: 14px; }
+
 .qtext, .qstem-list, .feedback, .explanation, .bank-snippet {
   overflow-wrap: anywhere;
 }

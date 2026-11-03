@@ -81,3 +81,20 @@ test("code lab flags wrong syntax, then solves the set", async ({ page }) => {
   await page.getByRole("button", { name: "← All labs" }).click();
   await expect(page.getByRole("button", { name: /Welcome banner/ })).toContainText("solved");
 });
+
+test("study resources open in a new tab and only appear when a course declares them", async ({ page }) => {
+  await page.goto("/#/c/decision-support-system");
+  await expect(page.getByRole("heading", { name: "Watch and explore" })).toBeVisible();
+  const playlist = page.getByRole("link", { name: /DSS video playlist/ });
+  await expect(playlist).toHaveAttribute("href", "https://youtube.com/playlist?list=PLjZJ5J1CN9KWr9SYZBSZpQuCCzeSIZja6");
+  await expect(playlist).toHaveAttribute("target", "_blank");
+  await expect(playlist).toHaveAttribute("rel", "noopener noreferrer");
+  await expect(page.getByRole("link", { name: /Source notebook on NotebookLM/ })).toContainText("Google sign-in needed");
+
+  await page.goto("/#/c/decision-support-system/learn/power-five-dss-types");
+  await expect(page.getByRole("heading", { name: "Watch this topic" })).toBeVisible();
+  await expect(page.getByRole("link", { name: /Chapter 2: The Decision Machine/ })).toHaveCount(1);
+
+  await page.goto("/#/c/sample-course");
+  await expect(page.getByRole("heading", { name: "Watch and explore" })).toHaveCount(0);
+});

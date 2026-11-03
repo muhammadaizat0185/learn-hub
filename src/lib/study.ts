@@ -1,6 +1,7 @@
 import type { CourseData, Question } from "../types";
 import type { StoredState } from "./storage";
 import { dueReviewIds } from "./storage";
+import { labLabel } from "./lab";
 import type { LabProgress } from "./lab";
 
 export function topicMetrics(ids: number[], state: StoredState, now = Date.now()) {
@@ -51,7 +52,7 @@ export function recommendStudy(data: CourseData, state: StoredState, labProgress
     } : { kind: "practice", title: `Try ${untouched.name}`, description: "Start small with up to five questions and explanations.", questionIds: selectQuestions(untouched.ids.map((id) => data.questionById.get(id)!), 5).map((q) => q.id), topic: untouched.name };
   }
   const nextLab = data.lab?.sets.find((set) => !labProgress?.sets[set.id]?.solved);
-  if (nextLab) return { kind: "lab", title: `Apply it: ${nextLab.title}`, description: "Put your knowledge into a coding exercise. Hints are available.", labId: nextLab.id };
+  if (nextLab) return { kind: "lab", title: `Apply it: ${nextLab.title}`, description: `Put your knowledge into a ${labLabel(data.meta).toLowerCase()} set. Hints are available.`, labId: nextLab.id };
   return { kind: "practice", title: "Keep your knowledge fresh", description: "Nothing is due right now. Try up to five mixed questions, or finish for today.", questionIds: selectQuestions(data.questions, 5).map((q) => q.id) };
 }
 

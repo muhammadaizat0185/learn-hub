@@ -88,8 +88,8 @@ function CourseCodeLab({ selectedSetId, onSelectSet }: CodeLabProps) {
   if (!lab) {
     return (
       <div className="card">
-        <h1 ref={headingRef} tabIndex={-1}>Code lab</h1>
-        <p className="muted">This course has no coding exercises yet.</p>
+        <h1 ref={headingRef} tabIndex={-1}>{labLabel(meta)}</h1>
+        <p className="muted">This course has no {labLabel(meta).toLowerCase()} exercises yet.</p>
       </div>
     );
   }

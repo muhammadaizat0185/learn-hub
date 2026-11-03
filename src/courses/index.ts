@@ -2,6 +2,7 @@ import type {
   AnswerExplanation,
   CourseData,
   CourseMeta,
+  CourseResource,
   LabData,
   LabSet,
   LabTopicGroup,
@@ -102,6 +103,23 @@ function validate(meta: CourseMeta, questions: Question[]): string[] {
   return errors;
 }
 
+/**
+ * Course files are hand-authored JSON, so a resource link is only trusted when it is an
+ * https URL with a label. Anything else is dropped rather than rendered as an anchor.
+ */
+export function normalizeResources(value: unknown): CourseResource[] {
+  if (!Array.isArray(value)) return [];
+  const resources: CourseResource[] = [];
+  for (const item of value) {
+    if (!item || typeof item !== "object") continue;
+    const { label, url, note } = item as Partial<CourseResource>;
+    if (typeof label !== "string" || !label.trim()) continue;
+    if (typeof url !== "string" || !/^https:\/\/[^\s/]{2,}(?:\/\S*)?$/i.test(url.trim())) continue;
+    resources.push({ label: label.trim(), url: url.trim(), ...(typeof note === "string" && note.trim() ? { note: note.trim() } : {}) });
+  }
+  return resources;
+}
+
 function groupTopics(questions: Question[]): TopicGroup[] {
   const order: string[] = [];
   const ids = new Map<string, number[]>();
@@ -191,6 +209,7 @@ export async function loadCourse(id: string): Promise<CourseData> {
     questionById: new Map(unique.map((q) => [q.id, q])),
     explanations,
     topics: groupTopics(unique),
+    resources: normalizeResources(meta.resources),
     ...(labModule?.default?.length ? { lab: buildLab(folder, labModule.default) } : {}),
   };
   if (lessonModule) {
@@ -203,7 +222,7 @@ export async function loadCourse(id: string): Promise<CourseData> {
       if ((lesson.example.code !== undefined && !text(lesson.example.code)) || (lesson.example.output !== undefined && !text(lesson.example.output)) || (lesson.example.steps !== undefined && (!Array.isArray(lesson.example.steps) || !lesson.example.steps.every(text)))) throw new Error("Invalid worked example.");
       ids.add(lesson.id);
     }
-    data.lessons = lessons;
+    data.lessons = lessons.map((lesson) => ({ ...lesson, resources: normalizeResources(lesson.resources) }));
   }
   cache.set(id, data);
   return data;

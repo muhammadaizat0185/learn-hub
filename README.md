@@ -97,6 +97,13 @@ Create `src/courses/<folder>/` with three files:
    compares the typed tokens against every entry in `answers`; `answers[0]` is what "Show
    solution" fills in. Sets are grouped by `topic` in first-seen order.
 
+Both `course.json` and each lesson in `lessons.json` may carry a `resources` array of
+`{ "label", "url", "note?" }` study links. Course resources appear under **Watch and explore** on the
+course home, lesson resources under **Watch this topic** on the lesson page. Only an https URL with a
+non-empty label is kept; anything else is dropped at load time instead of rendered, so a hand-edited
+file cannot point an anchor at `javascript:` or a local file. Use `note` for the caveat the learner
+needs before clicking, for example "Google sign-in needed".
+
 Course files load lazily in their own bundle when a course is opened. The loader validates ids,
 option letters, answer sets, and exam settings, and shows an error page instead of a broken quiz
 when a course is invalid. `tests/unit/courses.test.ts` checks the bundled sample course.
@@ -124,8 +131,8 @@ block:
 "lab": { "label": "Logic lab", "note": "How the gaps work for this subject." }
 ```
 
-`labLabel()` and `labNote()` fall back to the Java wording, so the navigation tab, the heading and
-the runner text stay honest per subject. Typed gaps still pass through the Java tokeniser, which
+`labLabel()` and `labNote()` fall back to the Java wording, so the navigation tab, the heading, the
+runner text and the lesson page's exercise links stay honest per subject. Typed gaps still pass through the Java tokeniser, which
 rejects `∀ ∃ ¬ ∧ ∨`: keep those symbols in `select` options or in the `code` text, and leave the
 typed answers as ASCII (`T`, `F`, `k + 1`, `n = 1`, `k(k + 1) / 2`).
 
@@ -154,5 +161,8 @@ Live at `learn.aizat.my`. The Java Programming course has 41 practice questions 
 simulations across eight topics. Discrete Structure (BIT11003/BIC10103) is in progress: a 40-question
 bank and one lesson per topic across four units — propositions and logic, CNF and DNF, predicates and
 quantifiers, and mathematical induction — plus a Logic lab of eight gap-filling sets, two per unit,
-all built from the tutorial sheets and lecture slides. The sample course stays as a template for new
-courses.
+all built from the tutorial sheets and lecture slides. Decision Support System (BIT30303) is a
+Chapter 1 pilot: 20 questions and one lesson across three topics — DSS fundamentals, Power's five
+DSS types, and decision types and information systems — plus a six-set Decision lab. Its lecture
+slides and scanned finals live in a `DSS/` folder beside this repo, so they are never committed.
+The sample course stays as a template for new courses.
