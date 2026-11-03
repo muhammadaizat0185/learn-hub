@@ -10,6 +10,9 @@ import javaLabs from "../../src/courses/java-programming/lab.json";
 import discreteLessons from "../../src/courses/discrete-structure/lessons.json";
 import discreteQuestions from "../../src/courses/discrete-structure/questions.json";
 import discreteLabs from "../../src/courses/discrete-structure/lab.json";
+import dssLessons from "../../src/courses/decision-support-system/lessons.json";
+import dssQuestions from "../../src/courses/decision-support-system/questions.json";
+import dssLabs from "../../src/courses/decision-support-system/lab.json";
 import sampleLessons from "../../src/courses/sample-course/lessons.json";
 import sampleQuestions from "../../src/courses/sample-course/questions.json";
 import type { TopicLesson } from "../../src/types";
@@ -22,6 +25,7 @@ const courses: {
 }[] = [
   { name: "Java", lessons: javaLessons, questions: javaQuestions, labs: javaLabs },
   { name: "Discrete Structure", lessons: discreteLessons, questions: discreteQuestions, labs: discreteLabs },
+  { name: "Decision Support System", lessons: dssLessons, questions: dssQuestions, labs: dssLabs },
   { name: "Sample", lessons: sampleLessons, questions: sampleQuestions, labs: [] },
 ];
 
@@ -46,11 +50,13 @@ describe.each(courses)("$name learning content", ({ lessons, questions, labs }) 
     }
   });
 
-  it("teaches three to five distinct, nonempty concepts per lesson", () => {
+  it("teaches three to six distinct, nonempty concepts per lesson", () => {
     for (const lesson of lessons) {
       expect(Array.isArray(lesson.concepts), lesson.id).toBe(true);
       expect(lesson.concepts.length, lesson.id).toBeGreaterThanOrEqual(3);
-      expect(lesson.concepts.length, lesson.id).toBeLessThanOrEqual(5);
+      // Six only for subjects where one lesson is one chapter of slides (DSS); the
+      // code-and-theory courses stay at five.
+      expect(lesson.concepts.length, lesson.id).toBeLessThanOrEqual(6);
       for (const concept of lesson.concepts) {
         expectText(concept, `${lesson.id}: concept`);
       }

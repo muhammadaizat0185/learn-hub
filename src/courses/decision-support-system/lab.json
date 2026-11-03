@@ -555,5 +555,1476 @@
         "The last two blanks come from the same slide: the three levels of management activity are strategic, tactical and operational, and the DSS was originally aimed at middle management."
       ]
     }
+  },
+  {
+    "id": "dss-data-vs-model-subsystem",
+    "topic": "Data and model management",
+    "title": "Data subsystem or model subsystem?",
+    "brief": "The parts and the general functions of the two management subsystems, each labelled as data management or model management.",
+    "hint": "Anything that stores, describes or retrieves data, or protects it, is on the data side; anything that stores, builds, lists or runs models is on the model side.",
+    "code": "Sort each item into the subsystem that owns it.\nPick data management or model management for each.\n\n  PARTS OF THE TWO SUBSYSTEMS\n    DSS database                {{1}}\n    data directory              {{2}}\n    query facility              {{3}}\n    model base                  {{4}}\n    model directory             {{5}}\n    modelling language          {{6}}\n\n  GENERAL FUNCTIONS\n    data integrity              {{7}}\n    transaction recovery        {{8}}\n    model library               {{9}}\n\n  The model base is what differentiates a DSS from\n  other information systems, and the MBMS is the\n  {{10}} of the DBMS.",
+    "blanks": [
+      {
+        "id": 1,
+        "kind": "select",
+        "options": [
+          "data management",
+          "model management"
+        ],
+        "answer": "data management",
+        "explanation": "The DSS database is the first of the four parts listed for the data management subsystem."
+      },
+      {
+        "id": 2,
+        "kind": "select",
+        "options": [
+          "data management",
+          "model management"
+        ],
+        "answer": "data management",
+        "explanation": "The data directory is the third part of the data management subsystem; its model-side twin is the model directory."
+      },
+      {
+        "id": 3,
+        "kind": "select",
+        "options": [
+          "data management",
+          "model management"
+        ],
+        "answer": "data management",
+        "explanation": "The query facility is the fourth part of the data management subsystem: it is how the user gets data out."
+      },
+      {
+        "id": 4,
+        "kind": "select",
+        "options": [
+          "data management",
+          "model management"
+        ],
+        "answer": "model management",
+        "explanation": "The model base stores and organises the various models the DSS uses in its analyses, and it is the modelling counterpart of the database."
+      },
+      {
+        "id": 5,
+        "kind": "select",
+        "options": [
+          "data management",
+          "model management"
+        ],
+        "answer": "model management",
+        "explanation": "The model directory is one of the five parts the chapter lists for the model management subsystem."
+      },
+      {
+        "id": 6,
+        "kind": "select",
+        "options": [
+          "data management",
+          "model management"
+        ],
+        "answer": "model management",
+        "explanation": "The modelling language both appears as a part of the model management subsystem and heads the list of MBMS general functions, because it allows the creation of decision models."
+      },
+      {
+        "id": 7,
+        "kind": "select",
+        "options": [
+          "data management",
+          "model management"
+        ],
+        "answer": "data management",
+        "explanation": "Data integrity is one of the six general functions of the DBMS: the user describes rules that maintain integrity and check for errors."
+      },
+      {
+        "id": 8,
+        "kind": "select",
+        "options": [
+          "data management",
+          "model management"
+        ],
+        "answer": "data management",
+        "explanation": "Transaction recovery is a DBMS function: mechanisms for restart and reconciliation in the event of hardware failure."
+      },
+      {
+        "id": 9,
+        "kind": "select",
+        "options": [
+          "data management",
+          "model management"
+        ],
+        "answer": "model management",
+        "explanation": "The model library is an MBMS function: it stores and manages all the models and provides a catalogue and description of them."
+      },
+      {
+        "id": 10,
+        "kind": "input",
+        "answers": [
+          "analog",
+          "analogue",
+          "counterpart"
+        ],
+        "placeholder": "one word",
+        "reveal": "analog",
+        "explanation": "The chapter titles the model management subsystem as the analog of the database management subsystem, and Marakas calls the MBMS the counterpart to the DBMS."
+      }
+    ],
+    "walkthrough": {
+      "steps": [
+        "The two subsystems are deliberately parallel, so learn them as pairs rather than as two unrelated lists.",
+        "Blanks 1 to 3 are data-side parts: the DSS database, the database management system, the data directory and the query facility, and blanks 4 to 6 are model-side parts, where the model base answers the database and the model directory answers the data directory.",
+        "The function rows split the same way. Data integrity and transaction recovery belong to the DBMS with data definition, data manipulation, access control and concurrency control, which is six functions in all.",
+        "The model library belongs to the MBMS, which has only three general functions: the modelling language, the model library itself, and model manipulation with run, store and query functions similar to those in a DBMS.",
+        "The closing pair of lines carries the two lines examiners like: the model base is what differentiates a DSS from other information systems, and the MBMS is the analog of the DBMS."
+      ]
+    }
+  },
+  {
+    "id": "dss-warehouse-to-olap",
+    "topic": "Data and model management",
+    "title": "From file systems to warehouses to OLAP",
+    "brief": "The ascending data-oriented functionality ladder, what a data warehouse holds, and the five listed styles of business intelligence.",
+    "hint": "The ladder runs from the plainest storage to the most analytical. The warehouse rows use the chapter's own originally and today contrast.",
+    "code": "Complete the data ladder, the warehouse note and\nthe five styles of business intelligence.\n\n  DATA-ORIENTED FUNCTIONALITY, LOW TO HIGH\n    {{1}} systems reached by query and retrieval tools\n    {{2}} warehouses     organised, summarised data\n    {{3}}                the highest level\n\n  WHAT THE WAREHOUSE HOLDS\n    originally {{4}} data, organised and summarised\n    today some add {{5}} data, enabling {{6}}\n    decision support\n\n  FIVE STYLES OF BI\n    1. Report delivery and {{7}}\n    2. Enterprise reporting: dashboard, scorecard\n    3. Cube analysis, also called {{8}} analysis\n    4. Ad-hoc {{9}}\n    5. Statistics and data {{10}}",
+    "blanks": [
+      {
+        "id": 1,
+        "kind": "input",
+        "answers": [
+          "file"
+        ],
+        "placeholder": "one word",
+        "reveal": "file systems",
+        "explanation": "Simple file systems accessed by query and retrieval tools give the elementary level of data-oriented functionality."
+      },
+      {
+        "id": 2,
+        "kind": "input",
+        "answers": [
+          "data"
+        ],
+        "placeholder": "one word",
+        "reveal": "data warehouses",
+        "explanation": "Data warehouses are the middle rung, adding functionality above plain files."
+      },
+      {
+        "id": 3,
+        "kind": "input",
+        "answers": [
+          "OLAP"
+        ],
+        "placeholder": "abbreviation",
+        "reveal": "OLAP",
+        "explanation": "OLAP, Online Analytical Processing, provides the highest level and lets users analyse data from many business perspectives."
+      },
+      {
+        "id": 4,
+        "kind": "select",
+        "options": [
+          "historical",
+          "encrypted",
+          "duplicated"
+        ],
+        "answer": "historical",
+        "explanation": "The slide says a warehouse originally included historical data that were organised and summarised so end users could easily view or manipulate them."
+      },
+      {
+        "id": 5,
+        "kind": "select",
+        "options": [
+          "current",
+          "backup",
+          "offline"
+        ],
+        "answer": "current",
+        "explanation": "Today some data warehouses include current data as well, which is what lets them support decisions as they happen."
+      },
+      {
+        "id": 6,
+        "kind": "select",
+        "options": [
+          "real-time",
+          "archived",
+          "monthly"
+        ],
+        "answer": "real-time",
+        "explanation": "The stated payoff of holding current data as well is real time decision support, which is why the warehouse had to stop being a purely historical store."
+      },
+      {
+        "id": 7,
+        "kind": "select",
+        "options": [
+          "alerting",
+          "mining",
+          "modelling"
+        ],
+        "answer": "alerting",
+        "explanation": "The first listed style of BI is report delivery and alerting."
+      },
+      {
+        "id": 8,
+        "kind": "input",
+        "answers": [
+          "slice and dice"
+        ],
+        "placeholder": "three words",
+        "reveal": "slice and dice analysis",
+        "explanation": "The slide glosses cube analysis as slice and dice analysis."
+      },
+      {
+        "id": 9,
+        "kind": "input",
+        "answers": [
+          "query"
+        ],
+        "placeholder": "one word",
+        "reveal": "Ad-hoc query",
+        "explanation": "Ad-hoc query is the fourth style, and it is what a data-oriented DSS supports alongside ad-hoc reporting."
+      },
+      {
+        "id": 10,
+        "kind": "input",
+        "answers": [
+          "mining"
+        ],
+        "placeholder": "one word",
+        "reveal": "Statistics and data mining",
+        "explanation": "The fifth style is statistics and data mining, the search for unknown relationships in large databases or data warehouses."
+      }
+    ],
+    "walkthrough": {
+      "steps": [
+        "Read the first block as a ladder of analytical power, not of storage size: plain file systems at the bottom, data warehouses in the middle, OLAP at the top.",
+        "The warehouse block is the chapter's originally and today contrast. It originally held organised and summarised historical data for end users, and some warehouses now also carry current data, which is what makes real-time decision support possible.",
+        "Data mining sits on top of that store rather than replacing it: the chapter defines it as searching large databases or data warehouses for unknown relationships using intelligent tools.",
+        "The five BI styles run from push reporting at one end to statistics and data mining at the other, with enterprise reporting bringing the dashboard and the scorecard and cube analysis bringing the slice and dice view.",
+        "Ad-hoc query in style four matches the chapter's one-line definition of a data-oriented DSS, which supports ad-hoc reporting and queries."
+      ]
+    }
+  },
+  {
+    "id": "dss-decision-style-grid",
+    "topic": "Decision makers and styles",
+    "title": "Fill in the four decision styles",
+    "brief": "The chapter's four decision style categories as a filled-in note, giving each style its tolerance for ambiguity and the other traits the slides name.",
+    "hint": "Directive and Analytical are the two the slides contrast on information; Conceptual is the people person and Behavioral avoids conflict.",
+    "code": "The four decision styles, with their traits.\n\nDirective: low tolerance for ambiguity, a high\nneed for problem {{1}}, and decisions of a\n{{2}} nature that require little {{3}}.\n\nAnalytical: a {{4}} tolerance for ambiguity, and\na tendency to need {{5}} information.\n\nConceptual: a {{6}} tolerance for ambiguity, but\ntends to be more a \"people {{7}}\".\n\nBehavioral: a low {{8}} of data, relatively\n{{9}} vision, conflict-averse, relies\non consensus.\n\nKey design issues: the reaction to stress and the\nmethod in which problems are usually solved.",
+    "blanks": [
+      {
+        "id": 1,
+        "kind": "select",
+        "options": [
+          "structure",
+          "silence"
+        ],
+        "answer": "structure",
+        "explanation": "The directive style combines a low tolerance for ambiguity with a high need for problem structure."
+      },
+      {
+        "id": 2,
+        "kind": "select",
+        "options": [
+          "technical",
+          "personal"
+        ],
+        "answer": "technical",
+        "explanation": "The slide adds that for the directive style these are often decisions of a technical nature."
+      },
+      {
+        "id": 3,
+        "kind": "select",
+        "options": [
+          "information",
+          "consensus"
+        ],
+        "answer": "information",
+        "explanation": "Directive decisions of a technical nature are the ones that require little information."
+      },
+      {
+        "id": 4,
+        "kind": "select",
+        "options": [
+          "greater",
+          "lower"
+        ],
+        "answer": "greater",
+        "explanation": "Analytical is defined by a greater tolerance for ambiguity than the directive style shows."
+      },
+      {
+        "id": 5,
+        "kind": "select",
+        "options": [
+          "more",
+          "less"
+        ],
+        "answer": "more",
+        "explanation": "The analytical style tends to need more information, which is the opposite of the directive style."
+      },
+      {
+        "id": 6,
+        "kind": "select",
+        "options": [
+          "low",
+          "high"
+        ],
+        "answer": "high",
+        "explanation": "Conceptual has a high tolerance for ambiguity, the same end of the scale as analytical."
+      },
+      {
+        "id": 7,
+        "kind": "input",
+        "answers": [
+          "person"
+        ],
+        "placeholder": "what kind of people person?",
+        "reveal": "a \"people person\"",
+        "explanation": "The slide's own phrase for the conceptual style is that it tends to be more a people person."
+      },
+      {
+        "id": 8,
+        "kind": "input",
+        "answers": [
+          "amount"
+        ],
+        "placeholder": "a low ___ of data",
+        "reveal": "a low amount of data",
+        "explanation": "Behavioral requires a low amount of data; the slide gives it no tolerance for ambiguity of its own."
+      },
+      {
+        "id": 9,
+        "kind": "input",
+        "answers": [
+          "short-range"
+        ],
+        "placeholder": "what kind of vision",
+        "reveal": "short-range vision",
+        "explanation": "The behavioral style demonstrates relatively short-range vision, and is conflict-averse and relies on consensus."
+      }
+    ],
+    "walkthrough": {
+      "steps": [
+        "The four styles are separated on two axes, the tolerance for ambiguity and how much information each one needs, so read each block as a pair of answers.",
+        "Directive is the tightest of them, with a low tolerance for ambiguity, a high need for problem structure, and decisions of a technical nature that require little information.",
+        "Analytical takes the greater tolerance for ambiguity and answers it by needing more information, which is why the design slide asks for access to many data sources for that type.",
+        "Conceptual shares the high tolerance for ambiguity but tends to be more a people person, while behavioral is given a low amount of data, relatively short-range vision, and a conflict-averse reliance on consensus, with no ambiguity tolerance stated for it.",
+        "The closing two lines are the chapter's design rule: the key issues are the decision maker's reaction to stress and the method in which problems are usually solved, so a directive type who does not handle stress well needs an interface that allows control of the system without tedious input."
+      ]
+    }
+  },
+  {
+    "id": "dss-effectiveness-versus-forces",
+    "topic": "Decision makers and styles",
+    "title": "Effectiveness, the forces, and what a DSS adds",
+    "brief": "The chapter's test of a good decision, the six natures of the forces acting upon the decision maker, and three of the supports a DSS gives.",
+    "hint": "The forces come in two rows of three in the slides: personal, emotional and economic, then contextual, emergent and organizational.",
+    "code": "What counts as a good decision, the forces that pull\non the decision maker, and what a DSS adds.\n\n  THE TEST OF A GOOD DECISION\n    attainment of the {{1}} within the\n    {{2}} imposed\n    the decision maker must {{3}} the forces\n    acting upon the process and contend with\n    their {{4}}\n\n  SIX NATURES OF THE FORCES\n    upper row  personal, {{5}}, economic\n    lower row  {{6}}, emergent, {{7}}\n\n  SUPPORT A DSS GIVES\n    multiple and higher quality {{8}}\n    guidance and a reduction of {{9}}\n    it {{10}} premature decision-making",
+    "blanks": [
+      {
+        "id": 1,
+        "kind": "input",
+        "answers": [
+          "objective"
+        ],
+        "placeholder": "attainment of what?",
+        "reveal": "attainment of the objective",
+        "explanation": "Section 3.3 says a good decision results in attainment of the objective, so the objective is what the decision is measured against."
+      },
+      {
+        "id": 2,
+        "kind": "input",
+        "answers": [
+          "constraints",
+          "constraint"
+        ],
+        "placeholder": "what is imposed on the decision?",
+        "reveal": "the constraints imposed",
+        "explanation": "The attainment must happen within the constraints imposed, which is what separates the chapter's test from a measure of speed."
+      },
+      {
+        "id": 3,
+        "kind": "select",
+        "options": [
+          "balance",
+          "remove"
+        ],
+        "answer": "balance",
+        "explanation": "Most decision models suggest the decision maker must balance the forces acting upon the process; they are not something that can be removed."
+      },
+      {
+        "id": 4,
+        "kind": "input",
+        "answers": [
+          "dynamics"
+        ],
+        "placeholder": "what must be contended with?",
+        "reveal": "their dynamics",
+        "explanation": "The same sentence adds that the decision maker must contend with the dynamics of those forces."
+      },
+      {
+        "id": 5,
+        "kind": "input",
+        "answers": [
+          "emotional"
+        ],
+        "placeholder": "a nature of the forces",
+        "reveal": "emotional",
+        "explanation": "Emotional is the second nature listed, beside personal and economic."
+      },
+      {
+        "id": 6,
+        "kind": "input",
+        "answers": [
+          "contextual"
+        ],
+        "placeholder": "the first nature of the lower row",
+        "reveal": "contextual",
+        "explanation": "Contextual opens the lower row of three, ahead of emergent and organizational."
+      },
+      {
+        "id": 7,
+        "kind": "input",
+        "answers": [
+          "organizational"
+        ],
+        "placeholder": "the last nature of the forces",
+        "reveal": "organizational",
+        "explanation": "Organizational closes the list of six natures the chapter gives for the forces acting upon the decision."
+      },
+      {
+        "id": 8,
+        "kind": "input",
+        "answers": [
+          "alternatives"
+        ],
+        "placeholder": "what does the DSS generate?",
+        "reveal": "higher quality alternatives",
+        "explanation": "The support list says a DSS generates multiple and higher quality alternatives, which is what feeds the choice of an option."
+      },
+      {
+        "id": 9,
+        "kind": "input",
+        "answers": [
+          "bias"
+        ],
+        "placeholder": "what does the DSS reduce?",
+        "reveal": "a reduction of bias",
+        "explanation": "Providing guidance and reduction of bias is one of the listed supports, so the gap names what the decision maker brings to the problem."
+      },
+      {
+        "id": 10,
+        "kind": "select",
+        "options": [
+          "discourages",
+          "guarantees"
+        ],
+        "answer": "discourages",
+        "explanation": "The list says a DSS discourages premature decision-making; it supports the decision maker and cannot guarantee attainment of the objective."
+      }
+    ],
+    "walkthrough": {
+      "steps": [
+        "The first block is the definition of effectiveness: a good decision results in attainment of the objective within the constraints imposed, so the constraints rather than the clock set the test.",
+        "The next three lines explain why that test is hard, because most decision models suggest the decision maker must balance the forces acting upon the process and contend with the dynamics of them.",
+        "Those forces come as six natures arranged on the slide as two rows of three, personal, emotional and economic, then contextual, emergent and organizational.",
+        "The support block returns to section 3.4, where the DSS generates multiple and higher quality alternatives, provides guidance and reduction of bias, and discourages premature decision-making.",
+        "Read together the note gives the chain the chapter builds, a decision maker under pressure from six kinds of force, served by a DSS that widens the options and holds the decision maker back from deciding too early."
+      ]
+    }
+  },
+  {
+    "id": "dss-simon-phases",
+    "topic": "Decision making process",
+    "title": "Name the four stages and their jobs",
+    "brief": "Simon's model as the chapter stages it, with each stage named, the job it does filled in, and the loop-back the slides attach to it.",
+    "hint": "The order of the rows is the order of the stages: identify, then develop, then choose, then carry out.",
+    "code": "STAGE      THE JOB THE CHAPTER GIVES IT\n{{1}}      {{2}} problems and opportunities,\n           then collect data or {{3}}\n{{4}}      analyse or develop the possible solutions\n           for {{5}}; go back to stage 1 if there\n           is insufficient data\n{{6}}      choose one alternative; go back to stage\n           1 or 2 if none is {{7}}\n{{8}}      put the chosen alternative to work;\n           if it fails, go back to stage 1, 2 or 3",
+    "blanks": [
+      {
+        "id": 1,
+        "kind": "select",
+        "options": [
+          "Intelligence",
+          "Design",
+          "Choice",
+          "Implementation"
+        ],
+        "answer": "Intelligence",
+        "explanation": "Stage 1 is intelligence, the phase in which the decision maker looks for indications that a problem exists and examines the organization's environment for conditions that need decisions."
+      },
+      {
+        "id": 2,
+        "kind": "input",
+        "answers": [
+          "identify"
+        ],
+        "placeholder": "one verb: what stage 1 does with problems and opportunities",
+        "reveal": "identify the problems and opportunities",
+        "explanation": "The chapter's wording for stage 1 is to identify the problems or opportunities and then collect data or information."
+      },
+      {
+        "id": 3,
+        "kind": "input",
+        "answers": [
+          "information"
+        ],
+        "placeholder": "what is collected besides data",
+        "reveal": "then collect data or information",
+        "explanation": "Data is collected from a variety of sources and processed; the pair the slides use throughout is data or information."
+      },
+      {
+        "id": 4,
+        "kind": "select",
+        "options": [
+          "Intelligence",
+          "Design",
+          "Choice",
+          "Implementation"
+        ],
+        "answer": "Design",
+        "explanation": "Stage 2 is design, where alternatives are formulated and analyzed, the criteria are defined and possible solutions are tested for feasibility."
+      },
+      {
+        "id": 5,
+        "kind": "input",
+        "answers": [
+          "feasibility"
+        ],
+        "placeholder": "possible solutions are analysed or developed for what?",
+        "reveal": "analyse or develop the possible solutions for feasibility",
+        "explanation": "The design stage line reads analyse or develop the possible solutions for the feasibility, and the testing of solutions for feasibility is repeated in the design-phase slide."
+      },
+      {
+        "id": 6,
+        "kind": "select",
+        "options": [
+          "Intelligence",
+          "Design",
+          "Choice",
+          "Implementation"
+        ],
+        "answer": "Choice",
+        "explanation": "Stage 3 is choice, the phase in which an alternative is selected, the best and most effective course of action from the practical alternatives."
+      },
+      {
+        "id": 7,
+        "kind": "input",
+        "answers": [
+          "satisfactory"
+        ],
+        "placeholder": "go back to stage 1 or 2 if no solution is what?",
+        "reveal": "1 or 2 if none is satisfactory",
+        "explanation": "The chapter's condition for returning from choice is that there are no satisfactory solutions, so the loop-back word is satisfactory."
+      },
+      {
+        "id": 8,
+        "kind": "select",
+        "options": [
+          "Design",
+          "Choice",
+          "Implementation",
+          "Intelligence"
+        ],
+        "answer": "Implementation",
+        "explanation": "Stage 4 is implementation, added as the fourth phase, in which the organization devises a plan, obtains the resources and puts the recommended solution to work."
+      }
+    ],
+    "walkthrough": {
+      "steps": [
+        "Simon proposed a three-phase model of problem solving, intelligence, design and choice, and the chapter adds implementation as the fourth phase, so the four rows are in the order the slides give them.",
+        "Intelligence is the initial phase of problem definition: identify the problems or opportunities, then collect data or information from a variety of sources and process it.",
+        "Design analyses or develops the possible solutions for feasibility, defining the criteria, generating alternatives and defining the associations between criteria and alternatives; if the data proves insufficient the chapter sends you back to stage 1.",
+        "Choice selects one alternative from the practical ones, and the loop-back is to stage 1 or 2 when there are no satisfactory solutions; a DSS is said to be particularly useful in this stage.",
+        "Implementation puts the selected alternative to work, obtaining the resources and dealing with resistance to change, top management support and user training, and a failure of implementation sends the decision maker back to stage 1, 2 or 3."
+      ]
+    }
+  },
+  {
+    "id": "dss-heuristic-and-trap",
+    "topic": "Decision making process",
+    "title": "Match the four heuristic biases to their traps",
+    "brief": "The four major categories of heuristic bias from section 4.6, each paired with the trap the chapter says it produces.",
+    "hint": "Availability looks back at past experience, anchoring starts from a value, representativeness is about group membership, motivational is about incentives.",
+    "code": "THE FOUR MAJOR CATEGORIES OF HEURISTIC BIAS\n\n{{1}}\n   people estimate {{2}} from past experience,\n   which may not be {{3}}\n{{4}}\n   pick a {{5}} value, then adjust up and down\n   from it; underestimate the need for {{6}}\n{{7}}\n   misestimate the probabilities of {{8}} to a\n   group\n{{9}}\n   {{10}} often lead decision makers to estimate\n   probabilities that do not reflect their true\n   beliefs",
+    "blanks": [
+      {
+        "id": 1,
+        "kind": "select",
+        "options": [
+          "Availability",
+          "Adjustment and anchoring",
+          "Representativeness",
+          "Motivational"
+        ],
+        "answer": "Availability",
+        "explanation": "Availability is the first of the four bias categories, the one that works from past experience."
+      },
+      {
+        "id": 2,
+        "kind": "input",
+        "answers": [
+          "probability",
+          "probabilities"
+        ],
+        "placeholder": "what do people tend to estimate?",
+        "reveal": "people estimate probability from past experience",
+        "explanation": "The slide says people tend to estimate probability based on past experience, so probability is what the bias distorts."
+      },
+      {
+        "id": 3,
+        "kind": "input",
+        "answers": [
+          "representative"
+        ],
+        "placeholder": "the past experience may not be what?",
+        "reveal": "which may not be representative",
+        "explanation": "The trap the chapter names for availability is that the past experience may not be representative."
+      },
+      {
+        "id": 4,
+        "kind": "select",
+        "options": [
+          "Availability",
+          "Adjustment and anchoring",
+          "Representativeness",
+          "Motivational"
+        ],
+        "answer": "Adjustment and anchoring",
+        "explanation": "The second category is adjustment and anchoring, where a starting value is fixed and then adjusted from."
+      },
+      {
+        "id": 5,
+        "kind": "input",
+        "answers": [
+          "starting"
+        ],
+        "placeholder": "what kind of value do people pick first?",
+        "reveal": "pick a starting value",
+        "explanation": "People often pick a starting value and then adjust up and down from it, which is the anchoring half of the category."
+      },
+      {
+        "id": 6,
+        "kind": "input",
+        "answers": [
+          "adjustments"
+        ],
+        "placeholder": "what do people underestimate the need for?",
+        "reveal": "underestimate the need for adjustments",
+        "explanation": "The slide closes the category by saying people tend to underestimate the need for adjustments."
+      },
+      {
+        "id": 7,
+        "kind": "select",
+        "options": [
+          "Availability",
+          "Adjustment and anchoring",
+          "Representativeness",
+          "Motivational"
+        ],
+        "answer": "Representativeness",
+        "explanation": "Representativeness is the third category, the one the chapter defines in terms of group membership."
+      },
+      {
+        "id": 8,
+        "kind": "input",
+        "answers": [
+          "belonging"
+        ],
+        "placeholder": "misestimate the probabilities of what to a group?",
+        "reveal": "misestimate the probabilities of belonging to a group",
+        "explanation": "The chapter's wording is that people tend to misestimate probabilities of belonging to a group."
+      },
+      {
+        "id": 9,
+        "kind": "select",
+        "options": [
+          "Availability",
+          "Adjustment and anchoring",
+          "Representativeness",
+          "Motivational"
+        ],
+        "answer": "Motivational",
+        "explanation": "Motivational is the fourth category, the one driven by incentives rather than by experience or group membership."
+      },
+      {
+        "id": 10,
+        "kind": "input",
+        "answers": [
+          "Incentives"
+        ],
+        "placeholder": "what leads decision makers to restate their estimates?",
+        "reveal": "Incentives often lead decision makers to estimate",
+        "explanation": "The slide says incentives often lead decision makers to estimate probabilities that do not reflect their true beliefs."
+      }
+    ],
+    "walkthrough": {
+      "steps": [
+        "Heuristics are the rules of thumb everyone relies on, and the chapter grants that they are simple to understand, easy to implement, need less conception time and less cognitive effort, and can produce multiple solutions, with searches often landing very close to an exhaustive search.",
+        "Because heuristics can also hamper finding a solution, the slides group the traps into four major categories of bias, and each row of this table is one of them.",
+        "Availability estimates probability from past experience that may not be representative, while adjustment and anchoring fixes a starting value, adjusts up and down from it and underestimates the need for adjustments.",
+        "Representativeness is narrower than it sounds: it is misestimating the probabilities of belonging to a group, not misremembering a past case.",
+        "Motivational bias is the one where incentives lead decision makers to put probabilities that do not reflect their true beliefs, so the last row is about who is paying for the answer rather than about what was seen before."
+      ]
+    }
+  },
+  {
+    "id": "dss-decision-tree-emv",
+    "topic": "Decision modelling and forecasting",
+    "title": "Fill the EMV branches of a decision tree",
+    "brief": "A decision tree for launching through an online channel or a retail store: the payoffs of each state of demand, the probability-weighted terms, the EMV of each branch, the alternative the expected value selects, and the expected value of perfect information.",
+    "hint": "Each weighted term is the payoff of that state multiplied by the probability of that state, and the three probabilities must total 1.",
+    "code": "DECISION: launch online or retail (RM 000s)\nUNCERTAIN EVENT = DEMAND: LOW / MEDIUM / HIGH\nPROBABILITIES = {{1}} / 0.5 / 0.3\n\nBRANCH     PAYOFFS        WEIGHTED TERMS    EMV\nonline  50 / 120 / 200  {{2}} + 60 + 60   {{3}}\nretail  30 / 150 / 300  6 + {{4}} + 90    {{5}}\n\nCHOSEN ALTERNATIVE BY EMV: {{6}}\nWITH PERFECT INFO TAKE THE BEST PAYOFF OF EACH\nSTATE AND WEIGHT IT: that EMV is {{7}}\nEVPI = that EMV - chosen EMV = {{8}}",
+    "blanks": [
+      {
+        "id": 1,
+        "kind": "input",
+        "answers": [
+          "0.2",
+          "0.20"
+        ],
+        "placeholder": "the probability of low demand",
+        "reveal": "PROBABILITIES = 0.2 / 0.5 / 0.3",
+        "explanation": "The three states of demand form a complete set of outcomes, so low demand carries 1 - 0.5 - 0.3 = 0.2, because the total probability of a complete set must equal 1."
+      },
+      {
+        "id": 2,
+        "kind": "input",
+        "answers": [
+          "10"
+        ],
+        "placeholder": "the weighted low-demand term of the online branch",
+        "reveal": "online  50 / 120 / 200  10 + 60 + 60",
+        "explanation": "Risk analysis weights every outcome by its probability: 0.2 x 50 = 10, next to 0.5 x 120 = 60 and 0.3 x 200 = 60."
+      },
+      {
+        "id": 3,
+        "kind": "input",
+        "answers": [
+          "130"
+        ],
+        "placeholder": "the EMV of the online branch",
+        "reveal": "60 + 60   130",
+        "explanation": "Adding the weighted terms gives the expected value of the online branch: 10 + 60 + 60 = RM130,000."
+      },
+      {
+        "id": 4,
+        "kind": "input",
+        "answers": [
+          "75"
+        ],
+        "placeholder": "the weighted medium-demand term of the retail branch",
+        "reveal": "retail  30 / 150 / 300  6 + 75 + 90",
+        "explanation": "The moderate-demand branch of retail is 0.5 x 150 = 75, alongside the given 0.2 x 30 = 6 and 0.3 x 300 = 90."
+      },
+      {
+        "id": 5,
+        "kind": "input",
+        "answers": [
+          "171"
+        ],
+        "placeholder": "the EMV of the retail branch",
+        "reveal": "+ 90    171",
+        "explanation": "Summing the weighted terms of the retail branch gives 6 + 75 + 90 = RM171,000."
+      },
+      {
+        "id": 6,
+        "kind": "select",
+        "options": [
+          "online",
+          "retail"
+        ],
+        "answer": "retail",
+        "explanation": "The expected value selects the branch with the higher EMV, and retail at 171 beats online at 130, so the tree prunes the online branch."
+      },
+      {
+        "id": 7,
+        "kind": "input",
+        "answers": [
+          "175"
+        ],
+        "placeholder": "the expected return with perfect information",
+        "reveal": "STATE AND WEIGHT IT: that EMV is 175",
+        "explanation": "With perfect information the best payoff of each state is taken, 50 in low demand, 150 in medium and 300 in high, giving 10 + 75 + 90 = RM175,000."
+      },
+      {
+        "id": 8,
+        "kind": "input",
+        "answers": [
+          "4"
+        ],
+        "placeholder": "the EVPI in RM thousands",
+        "reveal": "EVPI = that EMV - chosen EMV = 4",
+        "explanation": "Value analysis compares the expected return with the information to the expected return without it: 175 - 171 = RM4,000, the most that demand research is worth."
+      }
+    ],
+    "walkthrough": {
+      "steps": [
+        "The tree reads from the decision on the left to the uncertain event, the level of demand, and out to the payoff of each branch, which is exactly the structure the chapter says a decision tree models, choices and uncertainties joined by branches.",
+        "The probabilities of the three states are 0.2, 0.5 and 0.3 and total 1, satisfying the requirement that the total probability of a complete set of outcomes must equal 1.",
+        "Each branch is weighted by multiplying every payoff by the probability of its state: online gives 0.2 x 50 + 0.5 x 120 + 0.3 x 200 = 10 + 60 + 60 = RM130,000, and retail gives 0.2 x 30 + 0.5 x 150 + 0.3 x 300 = 6 + 75 + 90 = RM171,000.",
+        "The expected value at the decision node is the best of those, so the retail branch is chosen at RM171,000 and the online branch is cut off, which is the risk-analysis treatment of uncertainty the chapter contrasts with certainty models and with uncertainty where probabilities are unknown.",
+        "Perfect information would let the firm take the best payoff of each state, 50, 150 and 300, for an expected return of 0.2 x 50 + 0.5 x 150 + 0.3 x 300 = 175, so the expected value of perfect information is 175 - 171 = RM4,000.",
+        "That RM4,000 is a ceiling price for demand forecasting: a study costing more than the increase in expected return is not worth buying, which is the comparison of expected return with and without the information that section 5.6 calls value analysis."
+      ]
+    }
+  },
+  {
+    "id": "dss-probability-types",
+    "topic": "Decision modelling and forecasting",
+    "title": "Complete the probability requirements and forecasting table",
+    "brief": "Sections 5.5 and 5.6 in one note: the three requirements of probability, the three ways probabilities are generated, the three forecasting probability techniques, and the sensitivity test that closes the chapter.",
+    "hint": "Requirements first, then how the numbers are produced, then how an expert's estimate is elicited, and last how the finished model is tested.",
+    "code": "PROBABILITY, FORECASTING AND TESTING THE MODEL\n\nTHREE REQUIREMENTS OF PROBABILITY\n 1. every probability lies in the range {{1}} to 1\n 2. the outcomes of an event add up to the probability\n    of their {{2}}\n 3. a complete set of outcomes must total {{3}}\n\nHOW PROBABILITIES ARE GENERATED\nlong-run {{4}}    relative frequency from history\n{{5}}              an individual's degree of belief\nlogic              derivable, but accuracy may fail\n\nFORECASTING TECHNIQUES\n{{6}}              an expert simply estimates the chance\nodds               a series of {{7}} tests the belief\ncomparison         like odds, but one game has {{8}}\n\nSENSITIVITY: a measurable change in output from a\nsmall change in a variable makes it highly {{9}}",
+    "blanks": [
+      {
+        "id": 1,
+        "kind": "select",
+        "options": [
+          "0",
+          "0.5",
+          "1"
+        ],
+        "answer": "0",
+        "explanation": "The first requirement is that all probabilities are in the range 0 to 1, so the lower bound asked for is 0."
+      },
+      {
+        "id": 2,
+        "kind": "input",
+        "answers": [
+          "union"
+        ],
+        "placeholder": "what the probabilities of all outcomes of an event add up to",
+        "reveal": "    of their union",
+        "explanation": "Requirement 2 states that the probabilities of all outcomes of an event must add up to the probability of their union."
+      },
+      {
+        "id": 3,
+        "kind": "select",
+        "options": [
+          "0",
+          "0.5",
+          "1"
+        ],
+        "answer": "1",
+        "explanation": "Requirement 3 closes the set: the total probability of a complete set of outcomes must equal 1, which is why the probability of the third state of the economy is the remainder of the two already assigned."
+      },
+      {
+        "id": 4,
+        "kind": "input",
+        "answers": [
+          "frequency"
+        ],
+        "placeholder": "the long-run route to a probability estimate",
+        "reveal": "long-run frequency    relative frequency from enough history",
+        "explanation": "With enough history an event's probability can be estimated by its relative frequency, which the chapter calls the long-run frequency route."
+      },
+      {
+        "id": 5,
+        "kind": "select",
+        "options": [
+          "Subjective",
+          "Logic",
+          "Long-run frequency"
+        ],
+        "answer": "Subjective",
+        "explanation": "The subjective view holds that a probability represents an individual's degree of belief that an event will occur."
+      },
+      {
+        "id": 6,
+        "kind": "select",
+        "options": [
+          "Direct",
+          "Odds",
+          "Comparison"
+        ],
+        "answer": "Direct",
+        "explanation": "Direct probability forecasting simply asks an expert to estimate the chance that an outcome will occur."
+      },
+      {
+        "id": 7,
+        "kind": "input",
+        "answers": [
+          "bets"
+        ],
+        "placeholder": "what odds forecasting proposes in series",
+        "reveal": "odds               a series of bets tests the belief",
+        "explanation": "Odds forecasting proposes a series of bets to determine how strongly the bettor feels that an event will occur."
+      },
+      {
+        "id": 8,
+        "kind": "input",
+        "answers": [
+          "known"
+        ],
+        "placeholder": "what kind of probabilities the one game has in comparison forecasting",
+        "reveal": "comparison         like odds, but one game has known",
+        "explanation": "Comparison forecasting is like odds forecasting except that one game has known probabilities, giving the bettor a reference point."
+      },
+      {
+        "id": 9,
+        "kind": "select",
+        "options": [
+          "sensitive",
+          "fixed",
+          "calibrated"
+        ],
+        "answer": "sensitive",
+        "explanation": "Sensitivity analysis says a variable is highly sensitive when a small change in its value yields a measurable change in output; variables that are not sensitive may be treated as fixed, reducing the model's complexity."
+      }
+    ],
+    "walkthrough": {
+      "steps": [
+        "The three requirements are the arithmetic every model in the chapter has to satisfy: each probability lies in the range 0 to 1, the probabilities of all outcomes of an event add up to the probability of their union, and a complete set of outcomes totals exactly 1.",
+        "Those requirements are what force a missing state of the economy to take the remainder, as with solid growth at 0.30 and stagnation at 0.45 leaving inflation at 0.25.",
+        "Section 5.5 then separates where the numbers come from: long-run frequency estimates a probability by relative frequency once there is enough history, the subjective view reads it as an individual's degree of belief, and a logic-derived probability may be sound but unacceptable in accuracy.",
+        "Section 5.6 elicits those estimates three ways, direct probability forecasting, which simply asks an expert for the chance, odds forecasting, which proposes a series of bets to measure the strength of feeling, and comparison forecasting, which is odds forecasting where one game has known probabilities.",
+        "Complex probabilities are decomposed instead of guessed, using conditional probabilities within subsets, so sales of a weather-related product are forecast under good weather and under bad weather and then combined with the probability of bad weather.",
+        "The model is finally tested rather than trusted: calibration asks whether 9 out of 10 of the 90% confidence intervals really land, most forecasters being too optimistic with intervals that are too tight, and sensitivity analysis flags any variable whose small change moves the output so that insensitive variables may be treated as fixed."
+      ]
+    }
+  },
+  {
+    "id": "dss-interface-components",
+    "topic": "DSS design and user interface",
+    "title": "Sort the interface components from the modes of communication",
+    "brief": "Chapter 7's three user interface components with what each one covers, its separate list of modes of communication, and the chapter's definitions of the interface, the GUI and the UIMS.",
+    "hint": "Two different lists live on the same slide: the components are three, the modes of communication are four.",
+    "code": "THE THREE USER INTERFACE COMPONENTS\n{{1}}            menu, question-answer, command\n                 language, input/output structured,\n                 free form - the five basic types\nDisplay or {{2}}\n                 results reach the user this way\n{{3}}            the third listed component\n\nMODES OF COMMUNICATION, A SEPARATE LIST\nMental model\nMetaphors and {{4}}\n{{5}} of the model\nLook\n\nWHAT THE OTHER NAMES MEAN\nUser interface   allows {{6}} communication\nGUI              uses {{7}} and similar objects\nUIMS             handles {{8}} interaction\n                 between users and the system",
+    "blanks": [
+      {
+        "id": 1,
+        "kind": "select",
+        "options": [
+          "Action language",
+          "Mental model",
+          "Knowledge base"
+        ],
+        "answer": "Action language",
+        "explanation": "The action language is the component whose five basic types the chapter lists: menu format, question-answer format, command language format, input/output structured format and free form natural language format."
+      },
+      {
+        "id": 2,
+        "kind": "input",
+        "answers": [
+          "presentation language"
+        ],
+        "placeholder": "the words that complete the second component's name",
+        "reveal": "Display or presentation language results reach the user this way",
+        "explanation": "The slide names the second component 'display or presentation language', which is the presentation side of the interface rather than the way the user acts on it."
+      },
+      {
+        "id": 3,
+        "kind": "select",
+        "options": [
+          "Knowledge base",
+          "Look",
+          "Command language"
+        ],
+        "answer": "Knowledge base",
+        "explanation": "The knowledge base is the third of the three user interface components listed alongside the action language and the display or presentation language."
+      },
+      {
+        "id": 4,
+        "kind": "input",
+        "answers": [
+          "idioms"
+        ],
+        "placeholder": "the second half of the second mode of communication",
+        "reveal": "Metaphors and idioms",
+        "explanation": "Modes of communication are a different list from the components: mental model, metaphors and idioms, navigation of the model and look."
+      },
+      {
+        "id": 5,
+        "kind": "select",
+        "options": [
+          "Navigation",
+          "Display",
+          "Operation"
+        ],
+        "answer": "Navigation",
+        "explanation": "Navigation of the model is the third mode of communication in the chapter's list."
+      },
+      {
+        "id": 6,
+        "kind": "input",
+        "answers": [
+          "bidirectional"
+        ],
+        "placeholder": "the kind of communication a user interface allows",
+        "reveal": "User interface   allows bidirectional communication",
+        "explanation": "The chapter defines the user interface as the component of a computer system that allows bidirectional communication between the system and its user."
+      },
+      {
+        "id": 7,
+        "kind": "input",
+        "answers": [
+          "icons"
+        ],
+        "placeholder": "the on-screen objects a GUI is used with",
+        "reveal": "GUI              uses icons and similar objects",
+        "explanation": "A graphical user interface is an interactive, user-friendly interface in which, by using icons and similar objects, the user can control communication with a computer."
+      },
+      {
+        "id": 8,
+        "kind": "input",
+        "answers": [
+          "all"
+        ],
+        "placeholder": "how much of the interaction the UIMS handles",
+        "reveal": "UIMS             handles all interaction",
+        "explanation": "The user interface management system is defined as the DSS component that handles all interaction between users and the system."
+      }
+    ],
+    "walkthrough": {
+      "steps": [
+        "The component block holds three items only: the action language, the display or presentation language and the knowledge base.",
+        "The five formats named under the action language - menu, question-answer, command language, input/output structured and free form - belong inside that one component, so they are not components themselves.",
+        "The middle block is the other list on the same slide: mental model, metaphors and idioms, navigation of the model and look are the modes of communication.",
+        "The last block separates three names learners often swap: the interface allows bidirectional communication, the GUI does it with icons and similar objects, and the UIMS is the DSS component handling all interaction between users and the system."
+      ]
+    }
+  },
+  {
+    "id": "dss-menu-versus-language",
+    "topic": "DSS design and user interface",
+    "title": "Name the action language types and their trade-offs",
+    "brief": "The five basic action language types from section 7.2, then the strength or drawback the chapter states for each matching interface type.",
+    "hint": "Complete the list first, then read the second block as cause and effect: what each type saves the user, and what it costs.",
+    "code": "THE FIVE BASIC ACTION LANGUAGE TYPES\n1. {{1}} format\n2. Question-answer format\n3. Command language format\n4. Input/output {{2}} format\n5. Free form {{3}} language format\n\nTHE INTERFACE TYPES AND THEIR STATED POINTS\nMenu             suits {{4}} systems; complex ones\n                 need several sets of menus\nQuestion-answer  becomes a dialogue; {{5}}\n                 answers are not understood\nCommand-line     powerful, but the user must\n                 {{6}} the commands\nGraphical        point or {{7}} images, icons,\n                 symbols; more multimedia than text\nVoice            the most {{8}} type; eyes-free\n                 and hands-free",
+    "blanks": [
+      {
+        "id": 1,
+        "kind": "select",
+        "options": [
+          "Menu",
+          "Ribbon bar",
+          "Nested"
+        ],
+        "answer": "Menu",
+        "explanation": "Menu format is the first of the five basic action language types; the ribbon bar and nested structures appear in the chapter's figures as forms a menu can take."
+      },
+      {
+        "id": 2,
+        "kind": "select",
+        "options": [
+          "structured",
+          "unlimited",
+          "summarised"
+        ],
+        "answer": "structured",
+        "explanation": "The fourth type is the input/output structured format, which the chapter illustrates with its I/O structured format figure."
+      },
+      {
+        "id": 3,
+        "kind": "select",
+        "options": [
+          "natural",
+          "numeric",
+          "nested"
+        ],
+        "answer": "natural",
+        "explanation": "The fifth type is the free form natural language format, the last item on the list of five basic action language types."
+      },
+      {
+        "id": 4,
+        "kind": "input",
+        "answers": [
+          "simple"
+        ],
+        "placeholder": "the kind of system menus are appropriate for",
+        "reveal": "Menu             suits simple systems; complex ones",
+        "explanation": "The chapter says menus are appropriate for simple systems, and that as complexity increases users require several sets of menus to choose from, with menu items themselves able to have sub menus."
+      },
+      {
+        "id": 5,
+        "kind": "input",
+        "answers": [
+          "unstructured"
+        ],
+        "placeholder": "the kind of answer a computer does not understand",
+        "reveal": "Question-answer  becomes a dialogue; unstructured",
+        "explanation": "The major challenge of the question-and-answer interface is that answers fed by the user may be unstructured, and a computer does not understand unstructured responses."
+      },
+      {
+        "id": 6,
+        "kind": "input",
+        "answers": [
+          "learn"
+        ],
+        "placeholder": "what the user has to do with the commands in a command-line interface",
+        "reveal": "                 learn the commands",
+        "explanation": "Command-line interfaces were powerful, but the user would actually have to learn the commands to make the system work for them, which the chapter calls definitely restricting."
+      },
+      {
+        "id": 7,
+        "kind": "input",
+        "answers": [
+          "touch"
+        ],
+        "placeholder": "the action besides pointing at an image, icon or symbol",
+        "reveal": "Graphical        point or touch images, icons,",
+        "explanation": "The graphical interface lets users give commands through visible objects: you either point or touch the images, icons or symbols to perform an action."
+      },
+      {
+        "id": 8,
+        "kind": "select",
+        "options": [
+          "recent",
+          "oldest",
+          "rarest"
+        ],
+        "answer": "recent",
+        "explanation": "The voice user interface is called the most popular and most recent type of user interface, working as an eyes-free and hands-free interface that performs an action by recognising speech."
+      }
+    ],
+    "walkthrough": {
+      "steps": [
+        "The list in the first block is the closed set the chapter gives for basic action language types: menu, question-answer, command language, input/output structured and free form natural language.",
+        "Voice does not appear in that list, even though it is discussed later as a type of user interface - a distinction past-year papers like to test.",
+        "Each line in the second block pairs a saving with a cost: menus spare the user from learning commands but only suit simple systems, and once complexity grows several menu sets and sub menus are needed.",
+        "The question-answer type buys a natural dialogue but breaks down on unstructured answers, while the command-line type is powerful yet restricting, because the user actually has to learn the commands to make the system work."
+      ]
+    }
+  },
+  {
+    "id": "dss-design-steps",
+    "topic": "DSS design and user interface",
+    "title": "Work through the analysis, design and development steps",
+    "brief": "Chapter 6's approaches to analysis and design - the system development life cycle, prototyping, ROMC analysis and functional category analysis - above the seven activities used for unstructured problems.",
+    "hint": "The life cycle runs from problem definition to maintenance; the seven activities run from diagnosis to adaptation.",
+    "code": "APPROACHES TO ANALYSIS AND DESIGN\nSystem development life cycle: recursive phases,\n  each with its own inputs, activities and outputs\n  {{1}} with problem definition and feasibility\n  analysis; it finishes with implementation\n  and {{2}}\n  its gift is structure and discipline; its\n  complaint is {{3}}, since DSS requirements\n  can change rapidly\nPrototyping: for DSS usually iterative or {{4}}\n\nROMC analysis: representations, operations,\n  memory aids and {{5}}\nFunctional category analysis: the functions a\n  specific DSS needs, from a broad list of\n  available functions\n\nSEVEN ACTIVITIES FOR UNSTRUCTURED PROBLEMS\n1 Problem diagnosis: formal identification of\n  the problem {{6}}\n2 Objectives and resources: objectives described\n  and available resources identified\n3 System analysis: {{7}}, interface and\n  coordination requirements\n4 System design: components, structure, {{8}}\n5 System construction: iterative prototyping\n  with small but constant refinement\n6 System implementation: {{9}}, evaluation\n  and deployment\n7 Incremental adaptation: continual refinement of\n  the activities of the earlier six stages",
+    "blanks": [
+      {
+        "id": 1,
+        "kind": "select",
+        "options": [
+          "begins",
+          "closes",
+          "pauses"
+        ],
+        "answer": "begins",
+        "explanation": "The chapter says the life cycle phases begin with problem definition, then feasibility analysis, and finish with implementation and maintenance."
+      },
+      {
+        "id": 2,
+        "kind": "input",
+        "answers": [
+          "maintenance"
+        ],
+        "placeholder": "the last phase of the life cycle, after implementation",
+        "reveal": "  and maintenance",
+        "explanation": "Implementation and maintenance are the two closing phases of the system development life cycle."
+      },
+      {
+        "id": 3,
+        "kind": "input",
+        "answers": [
+          "rigidity"
+        ],
+        "placeholder": "the major complaint against the life cycle",
+        "reveal": "  complaint is rigidity, since DSS requirements",
+        "explanation": "The primary advantage of the life cycle is the structure and discipline it brings, but its major complaint is rigidity, since requirements in a DSS can change rapidly."
+      },
+      {
+        "id": 4,
+        "kind": "select",
+        "options": [
+          "evolutionary",
+          "linear",
+          "sequential"
+        ],
+        "answer": "evolutionary",
+        "explanation": "For DSS development prototyping is usually of an iterative or evolutionary nature, with the early stages similar to the classic life cycle until the first prototype is in place."
+      },
+      {
+        "id": 5,
+        "kind": "input",
+        "answers": [
+          "controls"
+        ],
+        "placeholder": "the fourth thing ROMC analysis asks the developer to understand",
+        "reveal": "  memory aids and controls",
+        "explanation": "ROMC analysis asks the developer to understand representations (R), operations (O), memory aids (M) and controls (C), and the chapter notes that representations include charts and tables."
+      },
+      {
+        "id": 6,
+        "kind": "input",
+        "answers": [
+          "context"
+        ],
+        "placeholder": "what problem diagnosis formally identifies",
+        "reveal": "  the problem context",
+        "explanation": "Activity 1, problem diagnosis, is the formal identification of the problem context."
+      },
+      {
+        "id": 7,
+        "kind": "input",
+        "answers": [
+          "functional"
+        ],
+        "placeholder": "the first of the three categories of requirements",
+        "reveal": "3 System analysis: functional, interface and",
+        "explanation": "System analysis establishes three categories of requirements: functional, interface and coordination."
+      },
+      {
+        "id": 8,
+        "kind": "input",
+        "answers": [
+          "platform"
+        ],
+        "placeholder": "the third thing system design determines, after components and structure",
+        "reveal": "4 System design: components, structure, platform",
+        "explanation": "System design is the determination of components, structure and platform."
+      },
+      {
+        "id": 9,
+        "kind": "input",
+        "answers": [
+          "testing"
+        ],
+        "placeholder": "the first of the three things done at system implementation",
+        "reveal": "6 System implementation: testing, evaluation",
+        "explanation": "System implementation is where testing, evaluation and deployment occur, and it is followed by incremental adaptation, a continual refinement of the earlier six stages."
+      }
+    ],
+    "walkthrough": {
+      "steps": [
+        "The first block contrasts the two process approaches: the life cycle's recursive phases from problem definition and feasibility analysis through implementation and maintenance, against prototyping, which follows the classic stages until the first prototype exists and then changes in small, constant steps.",
+        "Structure and discipline are what the life cycle buys, and rigidity is what it costs, which is why it is still often used today where the developer and the end users are in a contractual relationship.",
+        "ROMC analysis and functional category analysis are the two non-life-cycle approaches: one asks the developer to understand representations, operations, memory aids and controls, the other to pick the functions a specific DSS needs from a broad list of available functions.",
+        "The seven activities run in the order the chapter gives them, from problem diagnosis to incremental adaptation, and it notes that not all of them may be performed in every project.",
+        "Each activity has one signature phrase worth memorising: three categories of requirements at system analysis, components, structure and platform at system design, iterative prototyping at construction, and testing, evaluation and deployment at implementation."
+      ]
+    }
+  },
+  {
+    "id": "dss-implementation-risks",
+    "topic": "Implementation and group decision support",
+    "title": "Fill in Alter's risks, his strategies and the success framework",
+    "brief": "Chapter 8's three implementation lists side by side: S.L. Alter's eight clusters of risk factor, his four general categories of implementation strategy, and the four measurement categories of the framework for measuring DSS success.",
+    "hint": "Work down the page: the numbered block is the risk list, the lettered block is the strategy list, and the last block is the success framework - each blank repeats a phrase the slide uses.",
+    "code": "ALTER: EIGHT BASIC CLUSTERS OF RISK FACTOR\n1 Nonexistent or {{1}} users\n2 Multiple users or {{2}}\n3 Disappearing users, implementers, maintainers\n4 Inability to specify purpose or usage pattern\n5 Inability to predict and cushion impact\n6 Loss or lack of {{3}}\n7 Lack of experience with similar systems\n8 Technical problems and cost-effectiveness\n\nALTER: FOUR CATEGORIES OF IMPLEMENTATION STRATEGY\nA  {{4}} the project into manageable pieces, with\n   prototypes, an evolutionary approach and tools\nB  Keep the solution simple, hide {{5}} and avoid\n   change\nC  Develop a support base, get user participation\n   and commitment, and get management {{6}}\nD  Meet user needs and institutionalize the system,\n   provide training and assistance, insist on\n   mandatory use, tailor to users' capabilities\n\nMEASURING SUCCESS: ONE FOUR-CATEGORY FRAMEWORK\nSystem performance  response time, data entry,\n                    output {{7}}, usage, user\n                    interface\nTask performance    decision quality measured by\n                    time spent, and trust,\n                    confidence and satisfaction\nBusiness            costs of development and\nopportunities       operation, income and changes\n                    in {{8}}\nEvolutionary        degree of flexibility and\naspects             overall {{9}} of the DSS",
+    "blanks": [
+      {
+        "id": 1,
+        "kind": "select",
+        "options": [
+          "unwilling",
+          "overworked",
+          "untracked"
+        ],
+        "answer": "unwilling",
+        "explanation": "The first risk cluster is 'nonexistent or unwilling users' - a DSS built for people who do not want to use it."
+      },
+      {
+        "id": 2,
+        "kind": "select",
+        "options": [
+          "implementers",
+          "interfaces",
+          "inventories"
+        ],
+        "answer": "implementers",
+        "explanation": "Cluster 2 on Alter's list of risk factors is 'multiple users or implementers'."
+      },
+      {
+        "id": 3,
+        "kind": "select",
+        "options": [
+          "support",
+          "structure",
+          "storage"
+        ],
+        "answer": "support",
+        "explanation": "Cluster 6 reads 'loss or lack of support'; Alter's strategy category C likewise speaks of support, developing a satisfactory support base and obtaining management support."
+      },
+      {
+        "id": 4,
+        "kind": "input",
+        "answers": [
+          "Divide"
+        ],
+        "placeholder": "the verb that opens strategy category A",
+        "reveal": "A  Divide the project into manageable pieces, with",
+        "explanation": "Category A tells you to divide the project into manageable pieces, use prototypes and an evolutionary approach, and develop a set of tools."
+      },
+      {
+        "id": 5,
+        "kind": "input",
+        "answers": [
+          "complexity"
+        ],
+        "placeholder": "what category B says to hide",
+        "reveal": "B  Keep the solution simple, hide complexity and avoid",
+        "explanation": "Category B of Alter's four implementation strategy categories is to keep the solution simple, hide complexity and avoid change."
+      },
+      {
+        "id": 6,
+        "kind": "input",
+        "answers": [
+          "support"
+        ],
+        "placeholder": "whose backing category C asks for, besides user commitment",
+        "reveal": "   and commitment, and get management support",
+        "explanation": "Category C develops a satisfactory support base, obtains user participation and commitment, and obtains management support."
+      },
+      {
+        "id": 7,
+        "kind": "input",
+        "answers": [
+          "format"
+        ],
+        "placeholder": "one of the five things system performance covers, after 'output'",
+        "reveal": "                    output format, usage, user",
+        "explanation": "System performance covers response time, data entry, output format, usage and the user interface."
+      },
+      {
+        "id": 8,
+        "kind": "input",
+        "answers": [
+          "productivity"
+        ],
+        "placeholder": "what business opportunities tracks changing",
+        "reveal": "                    in productivity",
+        "explanation": "Business opportunities weighs the costs of development and operation against increased income and changes in productivity."
+      },
+      {
+        "id": 9,
+        "kind": "input",
+        "answers": [
+          "functionality"
+        ],
+        "placeholder": "the second thing evolutionary aspects measures, after flexibility",
+        "reveal": "aspects             overall functionality of the DSS",
+        "explanation": "Evolutionary aspects are the degree of flexibility and the overall functionality of the DSS."
+      }
+    ],
+    "walkthrough": {
+      "steps": [
+        "The top block is Alter's closed set of eight clusters of risk factor, and every blank is wording straight off the slide: unwilling users, multiple implementers, and loss or lack of support sit alongside disappearing users, implementers and maintainers, the two inability clusters, lack of experience with similar systems, and technical problems and cost-effectiveness.",
+        "The chapter's point is that a risk analysis run over these factors identifies several that may occur, and that identification calls for strategies to deal with them.",
+        "The lettered block is Alter's four general categories of implementation strategy, and the choice among them depends on available resources, the likelihood of project completion and the constraints specific to each strategy: A divides and evolves with prototypes and tools, B hides complexity and avoids change, C builds the support base, and D institutionalizes the system with training, mandatory use and tailoring to users' capabilities.",
+        "The last block is a different list again - the four measurement categories used to judge the finished DSS - so do not read it as part of the strategy set: system performance looks at response time, data entry, output format, usage and user interface, task performance at decision quality measured by time spent plus trust, confidence and satisfaction, business opportunities at development and operating costs, income and productivity, and evolutionary aspects at flexibility and overall functionality."
+      ]
+    }
+  },
+  {
+    "id": "dss-groupware-versus-gdss",
+    "topic": "Implementation and group decision support",
+    "title": "Separate groupware from GDSS and complete the support lists",
+    "brief": "Chapter 9's definitions of GDSS and groupware, its list of GDSS characteristics, the three levels of collaboration capability, the process gains and losses of groupwork, and the standard GSS meeting process.",
+    "hint": "Read the first block as a pair of definitions that exams swap, then take each heading in the order the chapter gives it.",
+    "code": "TWO DEFINITIONS TO KEEP APART\nGDSS       a DSS whose design, structure and usage\n           reflect the way {{1}} of a group interact\n           to make a particular decision or type of\n           decision\nGroupware  software giving collaborative support\n  to groups; different {{2}} and place applications,\n  mostly built on Internet technologies\n\nGDSS CHARACTERISTICS IN THE CHAPTER'S OWN WORDS\nGroup work: collaboration and {{3}}\nMembers in different places working at different\n  times; information may be located {{4}} the\n  project\nRapid solutions, but normal team problems of\n  synergy or {{5}}\nOften Internet based, with groupware tools\n  supporting work called computer-supported\n  cooperative work or {{6}} computing\n\nTHREE LEVELS OF COLLABORATION CAPABILITY\nLevel 1  collected work:   uncoordinated individual\n         efforts (sprinters)\nLevel 2  coordinated work: {{7}} individual\n         efforts (relay)\nLevel 3  concerted work:   concerted team effort\n         (crew)\n\nBENEFITS AND PROBLEMS OF GROUPWORK\nProcess {{8}} from the nominal group technique and\n  the Delphi method, with hardware and software\n  combined as GDSS to enhance groupwork\nProcess losses: the group work is inefficient\n\nTHE STANDARD MEETING PROCESS\nexploratory idea generation, idea {{9}} tool,\n  prioritization, new idea generation, selection\n  of the final idea\nSuccess rests on effectiveness, reduction in costs,\n  better decisions and increased {{10}}",
+    "blanks": [
+      {
+        "id": 1,
+        "kind": "select",
+        "options": [
+          "members",
+          "servers",
+          "budgets"
+        ],
+        "answer": "members",
+        "explanation": "The GDSS definition turns on the people: its design, structure and usage reflect the way members of a group interact to make a particular decision or type of decision."
+      },
+      {
+        "id": 2,
+        "kind": "select",
+        "options": [
+          "time",
+          "cost",
+          "risk"
+        ],
+        "answer": "time",
+        "explanation": "The groupware slide lists 'different time/place applications', the same pair of dimensions the communication support slide uses for collaborative groups."
+      },
+      {
+        "id": 3,
+        "kind": "input",
+        "answers": [
+          "communication"
+        ],
+        "placeholder": "the second half of the first GDSS characteristic, after collaboration",
+        "reveal": "Group work: collaboration and communication",
+        "explanation": "The first characteristic is group work - collaboration and communication."
+      },
+      {
+        "id": 4,
+        "kind": "input",
+        "answers": [
+          "external to"
+        ],
+        "placeholder": "where the information may be located, relative to the project",
+        "reveal": "  times; information may be located external to the",
+        "explanation": "The slide says information may be located external to the project, so a GDSS group is not limited to its own data."
+      },
+      {
+        "id": 5,
+        "kind": "input",
+        "answers": [
+          "conflict"
+        ],
+        "placeholder": "the team problem named next to synergy",
+        "reveal": "  synergy or conflict",
+        "explanation": "A GDSS may exhibit normal team problems of synergy or conflict; the chapter also carries a slide on why collaboration is difficult, with problems such as domination, groupthink and hidden agendas."
+      },
+      {
+        "id": 6,
+        "kind": "input",
+        "answers": [
+          "collaborative"
+        ],
+        "placeholder": "the kind of computing the chapter names besides computer-supported cooperative work",
+        "reveal": "  cooperative work or collaborative computing",
+        "explanation": "The chapter calls the work computer-supported cooperative work or collaborative computing, supported by groupware tools that are often Internet based."
+      },
+      {
+        "id": 7,
+        "kind": "input",
+        "answers": [
+          "coordinated"
+        ],
+        "placeholder": "the kind of individual efforts that level 2 is",
+        "reveal": "Level 2  coordinated work: coordinated individual",
+        "explanation": "Level 2 is coordinated work - coordinated individual efforts, the relay stage of the three levels of collaboration capability."
+      },
+      {
+        "id": 8,
+        "kind": "select",
+        "options": [
+          "gains",
+          "losses",
+          "limits"
+        ],
+        "answer": "gains",
+        "explanation": "The benefits of groupwork are process gains, reached through the nominal group technique and the Delphi method; the problems slide names process losses and inefficient group work."
+      },
+      {
+        "id": 9,
+        "kind": "input",
+        "answers": [
+          "organization"
+        ],
+        "placeholder": "the kind of tool that follows exploratory idea generation",
+        "reveal": "exploratory idea generation, idea organization tool,",
+        "explanation": "The standard process runs exploratory idea generation, idea organization tool, prioritization, new idea generation and selection of the final idea, and in the meeting process the facilitator employs idea organization software to sort comments into common themes."
+      },
+      {
+        "id": 10,
+        "kind": "input",
+        "answers": [
+          "productivity"
+        ],
+        "placeholder": "the last thing the chapter says the meeting's success rests on",
+        "reveal": "  better decisions and increased productivity",
+        "explanation": "Success is based upon effectiveness, reduction in costs, better decisions and increased productivity."
+      }
+    ],
+    "walkthrough": {
+      "steps": [
+        "The two definitions at the top are the ones papers trade over: a GDSS is a decision support system whose design, structure and usage reflect the way the members of a group interact to make a particular decision or type of decision, whereas groupware is only software providing collaborative support to groups, with different time and place applications and most of it built on Internet technologies.",
+        "The characteristics block adds what the GDSS is said to allow: members located in different places and working at different times, information located external to the project, and rapid solutions - while still exhibiting the normal team problems of synergy or conflict, and going by the names computer-supported cooperative work or collaborative computing.",
+        "The levels block is the chapter's ladder of collaboration capability, from collected work as uncoordinated individual efforts (sprinters), through coordinated work as coordinated individual efforts (relay), up to concerted work as a concerted team effort (crew), with the degree of collaborative effort rising as you go down the list.",
+        "The benefits and problems block keeps the vocabulary tight: groupwork pays off in process gains, illustrated by the nominal group technique and the Delphi method and by hardware and software combined as GDSS, while groupwork that fails is recorded as process losses and called inefficient.",
+        "The final block is the order of the standard meeting process, and it is the same order the meeting slides tell as a story: participants brainstorm by entering comments, the facilitator runs idea organization software to sort those comments into common themes, the results are displayed, themes are prioritized, and the highest priority topics are either sent through the process again or put to a vote before the final idea is selected."
+      ]
+    }
   }
 ]

@@ -22,7 +22,10 @@
         "\"The manager decides the reorder, not the system\" is the characteristic that the decision-maker keeps complete control, and it is also why the limitation about intuition matters: the judgment half of the decision stays human."
       ]
     },
-    "labIds": ["dss-three-components", "dss-characteristics-or-limitation"],
+    "labIds": [
+      "dss-three-components",
+      "dss-characteristics-or-limitation"
+    ],
     "resources": [
       {
         "label": "Video · Intro: Making Sense of the Noise",
@@ -60,7 +63,10 @@
         "\"Four regional managers vote in one online session on a shared shortlist\" supports several people on one shared task, so it is communication-driven."
       ]
     },
-    "labIds": ["dss-power-taxonomy", "dss-data-versus-model"],
+    "labIds": [
+      "dss-power-taxonomy",
+      "dss-data-versus-model"
+    ],
     "resources": [
       {
         "label": "Video · Chapter 2: The Decision Machine",
@@ -92,7 +98,10 @@
         "Notice the information profile changes with the decision: the reorder question wants detailed, frequent, historical internal figures; the acquisition question wants summarised, ad hoc, forward-looking external data."
       ]
     },
-    "labIds": ["dss-decision-structure", "dss-system-by-era"],
+    "labIds": [
+      "dss-decision-structure",
+      "dss-system-by-era"
+    ],
     "resources": [
       {
         "label": "Video · Chapter 3: Decoding Decision Styles",
@@ -103,6 +112,238 @@
         "label": "Video · Chapter 4: The Decision Making Process",
         "url": "https://www.youtube.com/watch?v=cnPLTiCxnbk",
         "note": "Simon's intelligence, design, choice and implementation phases."
+      }
+    ]
+  },
+  {
+    "id": "dss-data-and-model-management",
+    "title": "Split a DSS into its data, model and knowledge stores",
+    "topic": "Data and model management",
+    "minutes": 6,
+    "concepts": [
+      "The data management subsystem is listed as four parts: the DSS database, the database management system, the data directory and the query facility. Around it the chapter stacks a long list of database issues, among them the data warehouse, data mining, special independent DSS databases, extraction of data from internal, external and private sources, web browser data access, web database servers, multimedia databases, special GSS databases such as Lotus Notes / Domino Server, Online Analytical Processing (OLAP), object-oriented databases and commercial database management systems.",
+      "The model management subsystem mirrors the data side: a model base, a model base management system (MBMS), a modelling language, a model directory, and model execution, integration and a command processor. Marakas defines a model as a simplification of an event built to help study it, calls the model base the modelling counterpart of the database and the MBMS the counterpart of the DBMS, and names the model base as what differentiates a DSS from other information systems. The MBMS has three general functions: the modelling language creates and links models, the model library stores and catalogues them, and model manipulation runs, stores and queries them.",
+      "Data is organised by granularity, not by size: the quality and structure of the database largely determine a DSS's success, and a database organises data into a logical hierarchy of four elements — the database, files, records and data elements. The records inside one file share a structure, but the files themselves may be quite diverse, so the DBMS takes the organising role with two responsibilities: coordinating the tasks of storing and accessing information, and keeping the data in the DSS database logically independent of the DSS application. Its six general functions are data definition, data manipulation, data integrity, access control, concurrency control and transaction recovery.",
+      "The knowledge repository is where the DSS stores what reasoning needs, which may be raw information or rules, heuristics, constraints or previous outcomes. Its contents fall into two simple groups: facts, which represent what we know to be true at a given time, and hypotheses, which represent the rules or relationships we believe to exist between the facts. Knowledge differs from the information in the database or the model base because it is problem-specific. Knowledge engineers gather it using trained techniques for extracting it from experts in the domain, and the inference engine is the part of the knowledge base that applies the rules to pull the information out in the form the user desires.",
+      "The knowledge based (management) subsystem is the advanced addition that leads to an intelligent DSS: it provides, through an expert system or other intelligent system, the expertise needed to solve complex unstructured and semi-structured problems, and data mining is the chapter's example. On the dialog side the interface has two general functions, the communication language, which allows interaction in a variety of ways, identifies the form of input, supports users and captures previous dialogues so future interactions improve, and the presentation language, which presents data in a variety of formats, allows detailed report generation and can give multiple views of the data.",
+      "Business intelligence is an umbrella term combining architectures, tools, databases, applications and methodologies; its architecture carries the data warehouse, business analytics, performance measurement with KPIs, and dashboards. A warehouse originally held historical, summarised data for easy end-user viewing; today some also hold current data for real-time support. BI evolved from DSS, so the architectures look similar but the emphasis differs: a DSS directly supports specific decision making, grew mostly in academia with more programming and is analyst-oriented, while BI gives accurate, timely information as indirect support, is assembled from commercial tools and is executive- and strategy-oriented."
+    ],
+    "example": {
+      "title": "Filing five design statements into the chapter's buckets",
+      "explanation": "A grocery chain is building a system that decides how much fresh produce to reorder. Its project notes contain the five statements below. For each one, name the subsystem, function or concept the chapter files it under.",
+      "steps": [
+        "\"We keep ten years of store sales, plus a supplier feed pulled from the web, and a list of which files hold what\" is the data management subsystem: the DSS database holds the data, the extraction of data from internal, external and private sources explains the feed, and the list of which files hold what is the data directory.",
+        "\"The buyer drags a delivery-cost formula and presses run, store or query\" is the model management subsystem, and the run, store and query buttons are model manipulation, the MBMS function the chapter says is similar to the DBMS functions; the formula itself is a stored model, and that model base is what makes the system a DSS rather than another information system.",
+        "\"Our senior buyer checks every reorder rule, and we interviewed her for three weeks to write the rules down\" is the knowledge repository: knowledge engineers extracting expertise from a domain expert, with facts and hypotheses as the two groups of content, and the inference engine applying those rules to return the answer in the form she asks for.",
+        "\"The screen offers typed commands, menus and a saved record of past sessions, and shows the same figures as a table, a chart or a printable report\" splits across the two interface functions: the first half is the communication language, which identifies the form of input and captures previous dialogues, and the second half is the presentation language, which offers multiple views and detailed report generation.",
+        "\"Every night the sales tables are copied into one summarised history store, the buyer slices it by region and week, and the executives ask for a screen that shows the hot spots in seconds\" is the business intelligence side: the ascending functionality ladder runs from file systems reached by query and retrieval tools, through the data warehouse, up to OLAP; the slicing is the cube analysis, or slice and dice, style of BI; and the executive screen is the dashboard, the visual presentation of critical data. The DSS itself gives direct support to the reorder decision, while BI gives indirect support by supplying accurate and timely information."
+      ]
+    },
+    "labIds": [
+      "dss-data-vs-model-subsystem",
+      "dss-warehouse-to-olap"
+    ],
+    "resources": [
+      {
+        "label": "Video · Chapter 2: The Decision Machine",
+        "url": "https://www.youtube.com/watch?v=nu3eMgrHL-Q",
+        "note": "The narration covers the data and model management subsystems, the data hierarchy a DBMS organises, and the move from data warehouses to OLAP and business intelligence."
+      }
+    ]
+  },
+  {
+    "id": "dss-decision-makers-and-styles",
+    "title": "Match a DSS to its decision maker and decision style",
+    "topic": "Decision makers and styles",
+    "minutes": 5,
+    "concepts": [
+      "A decision maker is the person or group of individuals who is responsible for making strategically important decisions, and the chapter lists the variables they work with as time constraints, resources available, the amount and type of information available, and the number of stakeholders involved; a DSS, defined alongside this, is a computerized program used to support determinations, judgments, and courses of action in an organization or a business, and many different types of DSS exist because there are many different types of decision maker.",
+      "Decision makers fall into individual and multiple classes: an individual decision maker can be a single person or a computer system, while multiple decision makers are groups where all members have a say in the decisions, teams where members support a single decision maker, or organizational arrangements where global agreement is needed.",
+      "Style is the manner in which a manager makes decisions, and the effect of a particular style depends on the problem context, the perceptions of the decision maker and his own set of values, with the complexity of these intertwining in the formation of the decision style.",
+      "The four style categories are separated by tolerance for ambiguity and by how much information each needs: Directive combines a high need for problem structure with a low tolerance for ambiguity and often covers decisions of a technical nature that require little information, Analytical has a greater tolerance for ambiguity and tends to need more information, Conceptual has a high tolerance for ambiguity but tends to be more a \"people person\", and Behavioral requires a low amount of data, demonstrates relatively short-range vision, and is conflict-averse and relies on consensus.",
+      "In DSS design the key issues are the decision maker's reaction to stress and the method in which problems are usually solved, so a directive type who does not handle stress well needs an interface that allows the decision maker to control the system without tedious input, whereas for an analytic type the DSS must allow access to many data sources which the decision maker will analyze.",
+      "Decision effectiveness is judged by outcome rather than speed, because a good decision results in attainment of the objective within the constraints imposed, and most decision models suggest that the decision maker must balance the forces acting upon the process and contend with the dynamics of them; those forces are of several natures, namely personal, emotional, economic, contextual, emergent and organizational."
+    ],
+    "example": {
+      "title": "Reading one decision maker, her style and the support she needs",
+      "explanation": "Farah chairs a five-person new-product panel at a regional distributor. Every other member exists to support her, and she alone signs off the launch. She likes technical problems that need little information, wants the task laid out for her, and works badly under month-end pressure. The organisation is deciding what a DSS should offer her. Work through the chapter's four sections in order.",
+      "steps": [
+        "Classify the decision maker first: Farah is the person responsible for making a strategically important decision, and the panel around her is a multiple arrangement whose members support a single decision maker, which the chapter calls a team rather than a group, where all members have a say, or an organizational arrangement, where global agreement is needed.",
+        "Name the variables she is working with, because the chapter lists them: the launch deadline is a time constraint, the panel size is the number of stakeholders involved, and the sales figures she is willing to look at are the amount and type of information available.",
+        "Read her style from the two axes the categories use: a high need for problem structure together with a low tolerance for ambiguity, on decisions of a technical nature that require little information, makes her directive, not analytical, since the analytical style tolerates more ambiguity and needs more information.",
+        "Turn the style into a design requirement using the chapter's own rule: reaction to stress is one of the two key issues, so the interface must let her control the system without tedious input, and the requirement to open up many data sources for the user to analyze is the one the chapter attaches to the analytic type instead.",
+        "Check her against the support list in 3.4: the DSS should explore multiple perspectives of the launch, generate multiple and higher quality alternatives, provide guidance and reduction of bias, and discourage the premature decision that a stress-averse user might otherwise rush to reach, while also improving response time and giving control over multiple sources of data.",
+        "Judge the result by the effectiveness test rather than by speed: the launch counts as a good decision only if it attains the objective within the constraints imposed, and getting there means Farah balances the forces acting on the process, of personal, emotional, economic, contextual, emergent and organizational natures, and contends with the dynamics of them."
+      ]
+    },
+    "labIds": [
+      "dss-decision-style-grid",
+      "dss-effectiveness-versus-forces"
+    ],
+    "resources": [
+      {
+        "label": "Video · Chapter 3: Decoding Decision Styles",
+        "url": "https://www.youtube.com/watch?v=6zrtCs29KKA",
+        "note": "The narration walks through who the decision maker is, the four decision style categories and their tolerances for ambiguity, and how style and effectiveness shape what a DSS must offer."
+      }
+    ]
+  },
+  {
+    "id": "dss-decision-making-process",
+    "title": "Run a decision through the four phases and check it for bias",
+    "topic": "Decision making process",
+    "minutes": 7,
+    "concepts": [
+      "Section 4.1 answers why decisions are hard with four key areas that determine the relative difficulty of a decision: structure, because in general the more structure the less information required; cognitive limitations, because the human mind is limited to handling 5 to 9 distinct pieces of information; uncertainty, whose amount is based on how complete and accurate the information is; and alternatives and multiple objectives, where the selection of one alternative may impede the progress towards a different goal.",
+      "No two decisions are alike, so section 4.2 sorts them into three topologies: negotiation-based decisions are classified as routine, creative or negotiated; activity-based decisions are typed as entrepreneurial, adaptive or planning; and strategy-based decisions are grouped into computational, judgmental, inspirational or compromise.",
+      "Keen and Scott Morton categorized decision theory into five perspectives, the rational manager, process-oriented, organizational procedures, political and individual difference perspectives, and the chapter then sets out the decision-making process as four phases: intelligence, the initial phase of problem definition; design, which involves finding possible alternatives and assessing their contributions; choice, in which an alternative is selected; and implementation, involving actually putting a recommended solution to work.",
+      "Simon proposed a three-phase model of problem solving, intelligence where the decision maker looks for indications that a problem exists, design where alternatives are formulated and analyzed, and choice where one of the alternatives is selected and implemented, with implementation added as the fourth phase; the stages are not one-way, since the chapter says to go back to stage 1 when the design stage finds insufficient data, back to stage 1 or 2 when the choice stage finds no satisfactory solutions, and back to stage 1, 2 or 3 when the implementation fails.",
+      "The intelligence phase classifies the problem (conceptualizing it in an attempt to place it in a definable category, possibly leading to a standard solution approach), decomposes it into simpler subproblems and settles problem ownership, the jurisdiction or authority to solve it, while gathering data that may be unavailable, expensive, inaccurate, insecure, subjective in estimation or qualitative, and while facing information overload and outcomes that may occur over an extended period.",
+      "The design phase defines the criteria, generates the alternatives that meet them, links criteria to alternatives, and builds a model from decision variables plus a principle of choice. It ends by accepting satisficing — a solution that satisfies the constraints and works well enough rather than the best possible one, which the chapter allows under time pressure because the marginal benefit of a better solution is not worth its marginal cost. The choice phase searches by analytical techniques, algorithms, heuristics or blind search, and is where a DSS is said to be particularly useful; implementation handles resistance to change, top-management support and training, then follows up on how the solution performs."
+    ],
+    "example": {
+      "title": "Taking a utility company's smart-meter launch through the four phases",
+      "explanation": "A regional electricity utility notices rising complaints about billing estimates and a spike in connection requests, and its planning unit must decide whether to launch smart meters next year. Follow the chapter's own order: judge how hard the decision is, work through the four stages with their loop-backs, decide whether to optimize or satisfice, and then audit the judgment for bias.",
+      "steps": [
+        "Gauge the difficulty first, using the four key areas: the billing-complaint data are plentiful and the decision is fairly structured, so less information is required; the mind handles only 5 to 9 distinct pieces of information, so the rollout is divided into simpler subproblems such as pricing, capacity and customer service, which is the problem decomposition the chapter recommends inside the intelligence phase; uncertainty is judged by how complete and accurate the meter readings are; and choosing a fast rollout may impede the progress towards the different goal of keeping tariffs low.",
+        "Intelligence: examine the organization's environment for conditions that need decisions, identify the problem and the opportunity, and collect and process data from a variety of sources, watching for the collection issues the chapter lists, that data may be unavailable, expensive, inaccurate, insecure or qualitative, and that outcomes may unfold over an extended period; classify the problem so that a standard solution approach may apply, and confirm who holds the problem ownership, the jurisdiction to solve it.",
+        "Design: define the criteria for the decision, generate alternatives that meet them, such as full rollout, phased rollout or no change, and define the associations between the criteria and the alternatives, understanding how each alternative affects each criterion; abstract the problem into a model with decision variables, such as the number of meters installed and the resources allocated, and a principle of choice, the criterion used to choose among the alternatives, and test the solutions for feasibility, going back to stage 1 if the data turns out to be insufficient.",
+        "Choice: pick the best and most effective course of action from the practical alternatives by analysing each one against the criteria, remembering that information technology does not support the design phase much but a DSS can be particularly useful here; it can settle for analytical techniques if the problem is structured, an algorithm that improves at every step, a heuristic rule of thumb, or a blind search, and can run what-if and sensitivity analyses to see the effect of a change in input variables on the proposed solution.",
+        "Satisficing rather than optimizing: optimization means examining all the alternatives and proving that the one selected is the best, and if that costs more than the marginal benefit of a better answer, accept the alternative that satisfies a set of constraints and works well enough, which is what the chapter allows under time pressures.",
+        "Implementation and bias check: devise the plan for carrying out the alternative selected in the choice phase, obtain the resources, and manage resistance to change, the degree of support of top management and user training, letting the DSS do a follow-up assessment of how well the solution is performing, and return to stage 1, 2 or 3 if it fails; finally review the estimates for the four heuristic biases, availability, adjustment and anchoring, representativeness and motivational, since judgment is faster, more convenient and less stressful than detailed analysis but may be nothing but a guess that rests on a recollection which may fail."
+      ]
+    },
+    "labIds": [
+      "dss-simon-phases",
+      "dss-heuristic-and-trap"
+    ],
+    "resources": [
+      {
+        "label": "Video · Chapter 4: The Decision Making Process",
+        "url": "https://www.youtube.com/watch?v=cnPLTiCxnbk",
+        "note": "The lecture runs through why decisions are hard, the decision topologies, and Simon's intelligence, design, choice and implementation phases before ending on the heuristics and biases that distort a decision."
+      }
+    ]
+  },
+  {
+    "id": "dss-decision-modelling-and-forecasting",
+    "title": "Model a decision problem and price its uncertainty with EMV and EVPI",
+    "topic": "Decision modelling and forecasting",
+    "minutes": 7,
+    "concepts": [
+      "Chapter 5 begins by defining the problem precisely and separating its individual elements, the decisions, the uncertain events and the choices, and a fully formed problem statement carries three key elements, the current state of affairs, the desired state of affairs and a statement of the central objective or objectives that distinguish the two; scope comes next, because a problem may be worth solving yet lie beyond the available resources or time constraints, so the scope must be reduced to a focus that allows a solution and its breadth identified by asking the people involved and looking at cost and magnitude.",
+      "Whatever the context, a problem's structure is described in terms of choices, uncertainties and objectives, and the difference between a choice and an uncertainty is probability, since at least one alternative is selected with certainty. The unknown is then handled three ways: certainty models assume complete knowledge of every outcome and may yield an optimal solution; uncertainty gives several outcomes for each decision but no probability for any of them; and risk analysis, or probabilistic decision making, assigns a probability to each outcome so that uncertainty becomes risk expressed as an expected value — the EMV computed at the branches of a decision tree.",
+      "Structuring a decision problem takes five steps: create the three lists of decisions, uncertain events and objectives, sort the lists in decreasing order of importance, create an initial influence diagram or decision tree, add elements one at a time until the initial lists are exhausted, and evaluate the overall structure and revise it if necessary, using the chapter's definitions that a decision is a choice between two or more alternatives and an uncertain event is a situation outside the control of the decision maker that could result in two or more possible outcomes.",
+      "The structuring tools each show something different. An influence diagram graphs a decision's components and their relationships: a rectangle for a decision variable, a circle for an uncontrollable or intermediate variable and an oval for a result, joined by arrows of influence, and it is properly built only when it has no cycles — no arrow may lead back to its own starting point. A decision tree joins choices and uncertainties through branches whose lines from a choice node hold the alternatives; it handles sequential decisions but becomes cumbersome with many alternatives. A decision table keeps decision, uncontrollable and result variables in rows, and the analytic hierarchy process weights criteria against alternatives.",
+      "Decision models are classified by whether time is a factor, separating static from dynamic models, and by the mathematical focus of the technique, giving deterministic models such as linear programming and production planning, stochastic models such as queuing theory and linear regression analysis, simulation models such as production modeling and transportation analysis, and domain-specific models such as EOQ, technology diffusion and meteorological models; where a formal mathematical approach is not appropriate, conceptual models rest on the notion that although all problems are unique no problem is completely new, so decision makers recall and combine past experiences into an accurate model of the current situation.",
+      "Probability carries three requirements: every probability lies in the range 0 to 1, the probabilities of an event's outcomes add up to the probability of their union, and a complete set of outcomes totals 1. Probabilities come from long-run frequency, from a subjective degree of belief, or from logic. The chapter forecasts them directly, by odds, or by comparison with an event of known probability, and decomposes complex probabilities into conditionals such as sales under good weather. Calibration judges the forecaster, sensitivity analysis flags the variables whose small changes move the output, and value analysis prices information as the EMV with perfect information minus the EMV of the chosen alternative."
+    ],
+    "example": {
+      "title": "Choosing a property investment with a decision tree, EMV and the value of perfect information",
+      "explanation": "A real-estate firm is weighing five holdings against the movement of interest rates over five years, with returns in US$ millions and probabilities of 0.5 for a decline, 0.4 for stable rates and 0.1 for an increase (the past-year case the examiner set as a decision-tree calculation). The case follows the chapter's own order: define the problem, set the scope, structure the elements, draw the tree, weight each branch by its probability, choose, and then price the information before buying any forecast.",
+      "steps": [
+        "Define the problem in its three elements: the current state of affairs is that the firm's capital earns little, the desired state is the best five-year return of the holdings on offer, and the central objective that separates the two is to maximise that return; then check the scope, since weighing five alternatives against three rate movements at once runs into the time and cognitive limits, so the study is reduced to a focus that allows a solution, the interest-rate uncertainty.",
+        "Structure it in terms of choices, uncertainties and objectives: the decision is which single property type to buy, with office park, office building, warehouse, mall and condominiums as the alternatives; the uncertain event is the movement of interest rates, outside the firm's control, with declining, stable and increasing rates as its outcomes; and the objective is five-year return, the criterion by which each outcome is judged.",
+        "Apply the five structuring steps to draw the model: list the decisions, uncertain events and objectives, sort them in decreasing order of importance, build an initial decision tree with one choice node carrying five branches, each branch leading to an event node with three outcome branches labelled 0.5, 0.4 and 0.1, add any element still missing from the lists one at a time, then evaluate the finished structure and revise it.",
+        "Weight each payoff by the probability of its outcome to get the expected value at every branch: office park 0.5 x 0.5 + 0.4 x 1.7 + 0.1 x 4.5 = 0.25 + 0.68 + 0.45 = 1.38, and condominiums 0.5 x 3.2 + 0.4 x 1.5 + 0.1 x 0.6 = 1.60 + 0.60 + 0.06 = 2.26.",
+        "Finish the arithmetic for the remaining alternatives, office building 0.75 + 0.76 + 0.25 = 1.76, warehouse 0.85 + 0.56 + 0.10 = 1.51 and mall 0.35 + 0.96 + 0.36 = 1.67, prune the branches below the best and read the decision: the tree selects condominiums at an EMV of US$2.26 million, the risk-analysis expected value the chapter attaches to the level of uncertainty.",
+        "Test and price the model before committing: in a sensitivity check the 0.5 probability of declining rates is varied, and because the winner depends on that branch the variable is highly sensitive and may not be treated as fixed; then value analysis takes the best payoff of each state, 3.2 in a decline, 2.4 when stable and 4.5 in an increase, for an expected return with perfect information of 0.5 x 3.2 + 0.4 x 2.4 + 0.1 x 4.5 = 1.60 + 0.96 + 0.45 = 3.01, so the expected value of perfect information is 3.01 - 2.26 = US$0.75 million, the most the firm should pay any economic forecaster for a rate prediction."
+      ]
+    },
+    "labIds": [
+      "dss-decision-tree-emv",
+      "dss-probability-types"
+    ],
+    "resources": [
+      {
+        "label": "Video · Chapter 5: Modelling Your Decisions",
+        "url": "https://www.youtube.com/watch?v=WeRjdHADLjA",
+        "note": "The lecture defines and scopes a problem, structures it with influence diagrams, decision trees and decision tables, classifies decision models, and closes with the types of probability, the forecasting techniques and the expected-value and value-of-information calculations."
+      }
+    ]
+  },
+  {
+    "id": "dss-design-and-user-interface",
+    "title": "Design the DSS development path and its user interface",
+    "topic": "DSS design and user interface",
+    "minutes": 8,
+    "concepts": [
+      "Chapter 6 names two strategies for building a DSS - programming a customized DSS in a general-purpose language such as C++ or a fourth-generation language such as Delphi, which allows special interfaces between the DSS and other applications, or employing a DSS generator, which ranges from a spreadsheet such as Excel, perhaps with add-ins, up to a more sophisticated generator such as MicroStrategy's DSS Architect - and its tools fall into three categories: primary development tools, DSS generators and specific DSS applications bought and customised.",
+      "Selecting a DSS generator weighs seven criteria the chapter calls particularly important: data management functions, model management functions, user interface capabilities, compatibility and degree of connectivity, available hardware platforms, cost, and the quality and availability of vendor support.",
+      "The system development life cycle uses recursive phases, each with its own inputs, activities and outputs, running from problem definition and feasibility analysis to implementation and maintenance; its primary advantage is the structure and discipline it brings and it suits a contractual relationship between developer and end users, but its major complaint is rigidity because DSS requirements change rapidly, so prototyping - usually iterative or evolutionary, sharing the classic stages until the first prototype exists and then undergoing almost constant, small changes - is the alternative.",
+      "Besides the life cycle the chapter offers two more approaches to analysis and design: ROMC analysis, which asks the developer to understand representations (R), operations (O), memory aids (M) and controls (C) and notes that representations include charts and tables, and functional category analysis, which identifies the specific functions a DSS needs from a broad list of available functions.",
+      "For unstructured problems seven basic activities are listed, though not all may be performed in every project: problem diagnosis, identification of objectives and resources, system analysis into functional, interface and coordination requirements, system design of components, structure and platform, system construction by iterative prototyping, system implementation with testing, evaluation and deployment, and incremental adaptation that keeps refining the activities of the earlier six stages.",
+      "Chapter 7 calls the user interface the part of the system that allows bidirectional communication between system and user while drawing little attention to itself, built from the action language, the display or presentation language and a knowledge base, with the action language itself offered in five basic formats - menu, question-answer, command language, input/output structured and free form natural language - and designed through ROMC (Sprague and Carlson, 1982) so that learning time, fatigue, errors and recall effort all fall while users stay motivated."
+    ],
+    "example": {
+      "title": "Planning the build and the dialog for a clinical DSS",
+      "explanation": "A hospital wants a DSS that helps ward staff decide bed allocation from live occupancy, staffing rosters and admission forecasts. The task is to settle the development route first, then the interface, using only what Chapters 6 and 7 state.",
+      "steps": [
+        "Choose the strategy and the process together: the staff need special interfaces between the DSS and the ward system, which is the chapter's argument for programming a customized DSS rather than buying a generator, and although the rigidity complaint against the life cycle points to iterative prototyping, the formal contract with the hospital's IT supplier is exactly the setting in which the life cycle is still often used.",
+        "Run the activities in order: problem diagnosis formally identifies the problem context; specific objectives (fewer delayed admissions) are described and the available resources (bed data, rosters, forecast models) identified; system analysis then separates the functional, interface and coordination requirements.",
+        "Carry on to design: system design determines the components, the structure and the platform, with the generator criteria - data and model management functions, user interface capabilities, connectivity, available hardware platforms, cost and vendor support - settling the platform choice.",
+        "Shape the dialog with ROMC: representations as tables and charts of occupancy, operations such as tracking admission trends and suggesting alternatives, memory aids that link the staff to the data warehouse and to command shortcuts or sequences, and control aids that let them edit, redo, undo, save, view and delete a scenario.",
+        "Pick the action language for each group of users: a menu format for the routine choices, since it spares users from learning commands and menus suit simple parts of the system, plus question-answer prompts for the what-if inputs, keeping those answers structured because a computer does not understand unstructured responses.",
+        "Judge the result against the chapter's tests for a good interface: it should balance the technicality of the system with the mentality of the user, give a picture-oriented way to interact, reduce errors, increase speed and stay logical and intuitive at the same time - and since its design largely determines whether the software will be used at all, analysts and end users must work together to resolve the issues that arise before construction, implementation and the continual refinement of incremental adaptation."
+      ]
+    },
+    "labIds": [
+      "dss-interface-components",
+      "dss-menu-versus-language",
+      "dss-design-steps"
+    ],
+    "resources": [
+      {
+        "label": "Video · Chapter 6: The Architect's Blueprint",
+        "url": "https://www.youtube.com/watch?v=i-qpbeoQ5TM",
+        "note": "Watch this alongside the analysis, design and development lists, since it covers the choices a DSS developer makes before any screen is drawn."
+      },
+      {
+        "label": "Video · Chapter 7: The Power of UI Design",
+        "url": "https://www.youtube.com/watch?v=Q7U0XlPsJHk",
+        "note": "Pair it with the interface components, the action language formats and the ROMC design approach, which are the parts the past-year papers keep asking about."
+      }
+    ]
+  },
+  {
+    "id": "dss-implementation-and-group-support",
+    "title": "Judge, implement and group-support a DSS",
+    "topic": "Implementation and group decision support",
+    "minutes": 8,
+    "concepts": [
+      "Implementation is as unique to a DSS as its design and construction, and is essentially the deliberate introduction of change into the organisation — which is why success is hard to pin down: no generalisable set of standards exists, and each way of measuring success carries its own criteria. Several authors start from software quality: portability as platform independence, reliability as completeness, accuracy and consistency, efficiency and accessibility, human-engineering as communicativeness, testability as structuredness, understandability as self-description, conciseness and legibility, and modifiability as augmentability.",
+      "Besides software quality the chapter offers three measures of success — attitudinal, asking whether the system is actually used and whether users are satisfied; technical, comparing the DSS's features with the original user requirements; and organisational, asking how far organisational needs were met or exceeded — and one framework of four categories: system performance (response time, data entry, output format, usage and interface), task performance (decision quality by the time spent deciding, plus trust, confidence and satisfaction), business opportunities (development and operating costs, income, productivity) and evolutionary aspects (flexibility and overall functionality).",
+      "A separate slide lists six criteria for a successful DSS: it improves the way decision makers think about problems, fits well with the organisation's planning methods, fits well with the political approach to decision making within the organisation, results in alternatives and choices that are implemented, is considered both cost-effective and valuable relative to its development costs, and is expected to be used for a measurable period of time.",
+      "S.L. Alter contributes two paired lists. His eight clusters of risk factor in a DSS implementation project: nonexistent or unwilling users; multiple users or implementers; disappearing users, implementers and maintainers; inability to specify purpose or usage pattern; inability to predict and cushion impact; loss or lack of support; lack of experience with similar systems; and technical problems and cost-effectiveness. His four categories of strategy: divide the project into manageable pieces with prototypes and tools; keep the solution simple and hide complexity; build a support base through user participation and management support; and meet user needs and institutionalise the system through training, mandatory use and tailoring.",
+      "The chapter's alternative view is the issue-based management approach, a process-centric perspective in which designers focus on the issues and objectives of each step rather than on decision makers and problems and favour multimedia connectivity and object-oriented programming over expert systems and artificial intelligence, while section 8.3 stresses integration: merging the new application in a seamless fashion supports the user perception that it is easy to use and useful, and the two general categories are functional integration, where the DSS functions are linked to existing systems, and physical integration, where its hardware and software merge with the existing ones.",
+      "Because implementation is change, resistance is normal and expected. The five contributing factors are self-interest (the new system may threaten current status), fear of the unknown (users doubt they can learn it), differing perceptions (users believe it will be ineffective), suspicion (users distrust its advocates) and conservatism (everything seems fine as it is). Chapter 9 extends the idea to groups: a group decision support system (GDSS) is a DSS whose design, structure and usage reflect how group members interact to make a particular type of decision, built on Internet-based groupware — the field called computer-supported cooperative work or collaborative computing."
+    ],
+    "example": {
+      "title": "Rolling out a demand-planning DSS and then running a group decision with it",
+      "explanation": "A regional retailer has built a DSS that plans replenishment for its stores. The project team has to say whether it is a success, plan the roll-out, and then let the buying group use group technology to decide what to do about perishables. Only the statements Chapters 8 and 9 make are used below.",
+      "steps": [
+        "Fix the yardsticks first, accepting the chapter's warning that measures of success are less than clear and that no generalizable set of standards exists: judge the software itself against the seven quality characteristics (platform independence for portability, completeness, accuracy and consistency for reliability, accessibility for efficiency, communicativeness for human-engineering, structuredness for testability, self-descriptiveness and legibility for understandability, augmentability for modifiability), and then read the four measurement categories as the framework - system performance, task performance, business opportunities and evolutionary aspects.",
+        "Cross-check with the other lists before claiming success: an attitudinal measure asks how far the system is actually used and how satisfied its users are, a technical measure compares the delivered features with the original user requirements, an organizational measure asks whether organisational needs have been met or exceeded, and the six criteria for a successful DSS add fit with the planning methods and the political approach to decision making, alternatives and choices that are actually implemented, cost-effectiveness relative to development costs, and use over a measurable period of time.",
+        "Run a risk analysis over Alter's eight clusters - are the users nonexistent or unwilling, are there multiple users or implementers, might users, implementers or maintainers disappear, can the purpose and usage pattern be specified, can the impact be predicted and cushioned, is support present, is there experience with similar systems, and are technical problems and cost-effectiveness under control - and let the risks that surface call for strategies, choosing among Alter's four categories according to available resources, likelihood of project completion and each strategy's constraints: manageable pieces with prototypes and an evolutionary approach plus a set of tools; a simple solution with complexity hidden and change avoided; a support base with user participation, commitment and management support; or meeting user needs and institutionalizing the system with training and assistance, mandatory use and tailoring to users' capabilities.",
+        "Plan the integration and expect resistance: decide whether the DSS is linked functionally to the existing systems or merged physically with their hardware and software, and remember that a seamless merge is what makes users perceive the system as easy to use and useful; then line the five causes of resistance the chapter lists - self-interest in the current status, fear of unknown about learning new skills, differing perceptions that the new system will be ineffective, suspicion of the project's advocates, and conservatism - against the strategies that speak to them, since user participation and management support are what category C promises and training and assistance what category D promises.",
+        "For the perishables decision the team is a group, so name the technology correctly: groupware is software that provides collaborative support to groups, mostly built on Internet technologies and offering capabilities such as electronic brainstorming with a free flow of ideas, electronic or video conferencing, group scheduling and calendars, conflict resolution, model building, electronic document sharing and voting services, while a GDSS is a DSS whose design, structure and usage reflect how the group members interact - hardware and software combined to enhance groupwork, with computer assistance for information retrieval, information sharing (parallelism and anonymity) and information use, while the benefits and problems slide sorts group work itself into process gains, illustrated by the nominal group technique and the Delphi method, and process losses, where the group work is inefficient.",
+        "Choose the deployment and run the meeting: because buyers, suppliers and store managers meet at different times and places, the web-based groupware with clients fits, with deadlines established, software bought or leased, no facility costs and flexibility, whereas a decision room or a multiple use facility would need a facility and a trained facilitator to coordinate a meeting that the group leader structures with the facilitator; then follow the standard process - exploratory idea generation, the idea organization tool that sorts comments into common themes, prioritization, new idea generation and selection of the final idea, with the highest priority topics sent through again or put to a vote - and judge it by effectiveness, reduction in costs, better decisions and increased productivity."
+      ]
+    },
+    "labIds": [
+      "dss-implementation-risks",
+      "dss-groupware-versus-gdss"
+    ],
+    "resources": [
+      {
+        "label": "Video · Chapter 8: DSS Implementation",
+        "url": "https://www.youtube.com/watch?v=25PU4PoYYP4",
+        "note": "Watch this with the evaluation lists open, since implementation, the measures of success and Alter's risks and strategies are exactly what it walks through."
+      },
+      {
+        "label": "Video · Chapter 9: Supercharging Decisions",
+        "url": "https://www.youtube.com/watch?v=BDu27KTDvck",
+        "note": "Pair it with the GDSS and groupware definitions, the three deployment types and the meeting process, which are the parts the past-year papers keep asking about."
       }
     ]
   }

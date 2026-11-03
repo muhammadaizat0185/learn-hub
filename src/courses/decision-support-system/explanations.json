@@ -183,5 +183,481 @@
       "D": "Correct: a changing, more diversified workforce and remote working are listed.",
       "E": "Societal issues and government regulation are listed as pressures that add to the difficulty, not as things being eliminated."
     }
+  },
+  "21": {
+    "summary": "The 2.1 slide names exactly four parts of the data management subsystem: the DSS database, the database management system, the data directory and the query facility.",
+    "options": {
+      "A": "These are parts of the model management subsystem, which the chapter calls the analog of the database management subsystem.",
+      "B": "Facts and hypotheses are the two groups of content in the knowledge base, and the inference engine is the part of the knowledge base that applies the rules; only the DSS database belongs to the data management subsystem.",
+      "C": "Correct: this is the four-part list on the data management subsystem slide, taken from Turban and Aronson.",
+      "D": "These come from the separate DSS database issues slide, which lists topics and technologies the database has to cope with, not the four structural parts of the subsystem."
+    }
+  },
+  "22": {
+    "summary": "Marakas's model base slide states that the model base is what differentiates a DSS from other information systems; the model base stores and organises the various models the DSS uses in its analyses.",
+    "options": {
+      "A": "The data directory belongs to the data management subsystem, and the chapter never calls it the differentiating component.",
+      "B": "\"To most users, the user interface is the system\" is a line from the user interface (dialog) subsystem slide, not the differentiator.",
+      "C": "The data warehouse is one of the DSS database issues and part of the BI architecture; the chapter does not give it this role.",
+      "D": "Correct: the model base, the modelling counterpart of the database, is named as what sets a DSS apart."
+    }
+  },
+  "23": {
+    "summary": "The DSS database issues slide lists the data warehouse, data mining, special independent DSS databases, extraction of data from internal, external and private sources, web browser data access, web database servers, multimedia databases, special GSS databases such as Lotus Notes / Domino Server, Online Analytical Processing (OLAP), object-oriented databases and commercial DBMS.",
+    "options": {
+      "A": "Correct: special GSS databases, with Lotus Notes / Domino Server as the named example, are on the issues list.",
+      "B": "That is one of the two main responsibilities of the DBMS, stated on the DBMS slide, not a DSS database issue.",
+      "C": "Correct: both multimedia databases and object-oriented databases appear on the issues list.",
+      "D": "A catalogue and description of the stored models is the model library function of the MBMS, on the model side of the chapter.",
+      "E": "Correct: Online Analytical Processing (OLAP) and data mining are both listed among the DSS database issues."
+    }
+  },
+  "24": {
+    "summary": "The data and model management slide says a database organises data into a logical hierarchy based on the granularity of the data, and that the hierarchy contains four elements: database, files, records and data elements.",
+    "options": {
+      "A": "Reports, dashboards and scorecards belong to the BI architecture and the BI styles, not to the logical hierarchy of data.",
+      "B": "Correct: the four named elements in the chapter's order, organised by granularity.",
+      "C": "Facts and hypotheses are the two groups of content in the knowledge base, and rules and heuristics are kinds of knowledge the chapter lists separately.",
+      "D": "Internal, external and private are the sources the DSS database extracts from, not elements of the hierarchy."
+    }
+  },
+  "25": {
+    "summary": "The six general functions of the DBMS are data definition (a data definition language and interrelation of data), data manipulation (a query language, capture and extraction), data integrity (rules that maintain integrity and check for errors), access control (identification of users, controlling access and tracking usage), concurrency control (controlling the effects of simultaneous access) and transaction recovery (restart and reconciliation after hardware failure).",
+    "options": {
+      "A": "Mismatched: a query language that allows capture and extraction is data manipulation; data integrity is the rules that maintain integrity and check for errors.",
+      "B": "Correct: this is the concurrency control definition on the slide, word for word.",
+      "C": "Mismatched: describing rules that maintain integrity and check for errors is data integrity; access control identifies users, controls access and tracks usage.",
+      "D": "Correct: data definition provides the data definition language and allows interrelation of data.",
+      "E": "Correct: transaction recovery supplies the mechanisms for restart and reconciliation when hardware fails."
+    }
+  },
+  "26": {
+    "summary": "The knowledge base stores what reasoning needs, which may be raw information or rules, heuristics, constraints or previous outcomes; its contents fall into facts and hypotheses, and the chapter stresses that knowledge differs from database or model-base information because it is problem-specific.",
+    "options": {
+      "A": "Correct: the slide lists raw information, rules, heuristics, constraints and previous outcomes as what the base holds.",
+      "B": "Correct: these are the chapter's two definitions of facts and hypotheses.",
+      "C": "That is a knowledge engineer. The inference engine is the part of the knowledge base that applies the rules to pull information out in the form the user desires.",
+      "D": "Correct: problem-specific is the stated difference between knowledge and the information held in the database or model base.",
+      "E": "The two definitions are reversed: facts are what we know to be true at a given time, and hypotheses are the rules or relationships believed to exist between the facts."
+    }
+  },
+  "27": {
+    "summary": "The BI framework slides say a data warehouse originally included historical data that were organised and summarised so end users could easily view or manipulate them, and that today some data warehouses include current data as well, so they can provide real-time decision support.",
+    "options": {
+      "A": "Correct: this combines both stated lines about the data warehouse, the historical origin and the current-data addition.",
+      "B": "Reversed: the original emphasis was historical data, and current data are the later addition.",
+      "C": "Wrong: the slide is built on a change over time, contrasting the original historical contents with the current data some warehouses add today, so an unchanging warehouse contradicts it.",
+      "D": "Models and the modelling language belong to the model management subsystem, not to the data warehouse."
+    }
+  },
+  "28": {
+    "summary": "OLAP is listed as a DSS database issue and as a BI tool: OLAP tools let users analyse datasets from a wide variety of angles based on different business perspectives, and cube analysis, that is slice and dice analysis, is the third of the five listed BI styles.",
+    "options": {
+      "A": "That is the chapter's definition of an automated decision system (ADS), the support named for structured decisions such as pricing.",
+      "B": "That is the bottom of the data-oriented functionality ladder, simple file systems reached by query and retrieval tools; OLAP is the highest level, not the elementary one.",
+      "C": "Correct: the BI tools slide gives the wide-angle analysis, and the BI styles slide names cube (slice and dice) analysis.",
+      "D": "The chapter keeps both boxes: the data warehouse stays in the BI architecture, and pushing reports and alerts is the report delivery and alerting style, not OLAP."
+    }
+  },
+  "29": {
+    "summary": "Section 3.1 defines a decision maker as the person or group of individuals who is responsible for making strategically important decisions, and adds that they use a number of variables: time constraints, resources available, the amount and type of information available, and the number of stakeholders involved.",
+    "options": {
+      "A": "Recording routine transactions against a standard procedure is transaction processing, and the chapter reserves the decision-maker label for strategically important decisions.",
+      "B": "The chapter never makes the technical custodian the decision maker; that person maintains the stores the decision maker draws on, and an individual decision maker is described as a single person or a computer system, not an IT role.",
+      "C": "Correct: this is the wording of the opening slide of 3.1, person or group of individuals, responsible for strategically important decisions.",
+      "D": "The number of stakeholders involved is one of the variables the decision maker works with, not a limit on who counts as a decision maker; a group of individuals is explicitly allowed."
+    }
+  },
+  "30": {
+    "summary": "The chapter splits decision makers into individual and multiple. Individual decision makers can be a single person or a computer system, while multiple decision makers are classified as groups where all members have a say, teams where members support a single decision maker, or organizational arrangements where global agreement is needed.",
+    "options": {
+      "A": "That is the individual class, which the chapter says can be a single person or a computer system; a team is one of the three multiple classes.",
+      "B": "Correct: a team is the multiple class in which the members support a single decision maker.",
+      "C": "That is the description of a group, where all of the members have a say in the decisions.",
+      "D": "That is the organizational class, the one in which global agreement is needed."
+    }
+  },
+  "31": {
+    "summary": "The decision style categories slide gives four profiles: Directive combines a high need for problem structure with a low tolerance for ambiguity and often covers technical decisions needing little information; Analytical has a greater tolerance for ambiguity and tends to need more information; Conceptual has a high tolerance for ambiguity but tends to be more a \"people person\"; Behavioral requires a low amount of data, shows relatively short-range vision, is conflict-averse and relies on consensus.",
+    "options": {
+      "A": "Correct: high need for problem structure with a low tolerance for ambiguity is the directive profile exactly as the slide states it.",
+      "B": "These are the directive traits; the conceptual style is the one with a high tolerance for ambiguity, and it tends to be more a \"people person\".",
+      "C": "Correct: a low amount of data, conflict aversion and reliance on consensus are the three traits the slide lists for the behavioral style.",
+      "D": "Reversed and borrowed: the analytical style tends to need more information, and conflict avoidance belongs to the behavioral style.",
+      "E": "Correct: greater tolerance for ambiguity and a need for more information is the analytical line on the slide."
+    }
+  },
+  "32": {
+    "summary": "The Decision Style in DSS Design slide names the key issues as the decision maker's reaction to stress and the method in which problems are usually solved, and gives the directive example: to best serve a directive type who does not handle stress well, the interface needs to allow the decision maker to control the system without tedious input.",
+    "options": {
+      "A": "Brainstorming is one of the supports listed in 3.4, and relying on consensus belongs to the behavioral style; nothing in the design slide asks for a group session for a directive user.",
+      "B": "The slide about response time is 3.4, where a DSS improves response time; the design rule for a directive type is about control and input, not about more time.",
+      "C": "That is the analytic type's requirement: for an analytic type the DSS needs to allow access to many data sources which the decision maker will analyze.",
+      "D": "Correct: this is the stated rule for a directive type who does not handle stress well."
+    }
+  },
+  "33": {
+    "summary": "Section 3.3 states that a good decision results in attainment of the objective within the constraints imposed, and that most decision models require the decision maker to balance the forces acting upon the process and contend with the dynamics of them.",
+    "options": {
+      "A": "Correct: attainment of the objective within the constraints imposed is the chapter's test of a good decision.",
+      "B": "Speed is a support a DSS offers, since the chapter lists improved response time, but effectiveness is judged against the objective and the constraints, not against earlier decisions.",
+      "C": "The opposite of the slide: the forces cannot be removed, because the decision maker must balance them and contend with the dynamics of them.",
+      "D": "A standard solution procedure describes a structured decision, not the effectiveness of a decision; 3.3 says nothing about it."
+    }
+  },
+  "34": {
+    "summary": "The chapter's list of common types of support provided by a DSS covers exploring multiple perspectives of a decision, generating multiple and higher quality alternatives, exploring multiple strategies, facilitating brainstorming, providing guidance and reduction of bias, increasing the ability to tackle complex problems, improving response time, discouraging premature decision-making, and providing control over multiple sources of data.",
+    "options": {
+      "A": "Correct: exploring multiple perspectives of a decision heads the list of supports.",
+      "B": "Correct: discouraging premature decision-making is on the list, alongside facilitating brainstorming.",
+      "C": "That is section 3.3's definition of a good decision, not a promise the system makes; a DSS supports the decision maker and cannot guarantee the outcome.",
+      "D": "Correct: improving response time is one of the listed supports.",
+      "E": "Correct: providing control over multiple sources of data closes the chapter's list."
+    }
+  },
+  "35": {
+    "summary": "Section 4.1 names four key areas that determine the relative difficulty of a decision: structure, cognitive limitations (the mind handles only 5 to 9 distinct pieces of information), uncertainty, and alternatives and multiple objectives.",
+    "options": {
+      "A": "This borrows the cognitive-limitation area, the mind handling only 5 to 9 distinct pieces of information, and applies it to structure; the slide's own sentence points the other way.",
+      "B": "Correct: the slides state that in general, the more structure, the less information required.",
+      "C": "The chapter links structure to the information a decision needs, not to assigning the decision to one of Simon's phases.",
+      "D": "They are connected in exactly this sentence: the information requirement is what structure reduces, so the two are not unrelated."
+    }
+  },
+  "36": {
+    "summary": "Section 4.5 says judgment is the most favoured strategy for evaluating solution alternatives because it is faster, more convenient and less stressful than detailed analysis, but applied in isolation it may be nothing but a guess and it relies heavily on a recollection that may fail.",
+    "options": {
+      "A": "The comparison is stated the other way round: compared to detailed analysis, judgment is faster, more convenient and less stressful.",
+      "B": "The slides say the opposite: although numerous strategies exist, judgment appears to be the most favoured.",
+      "C": "Nothing in the judgment slide makes an exact method a precondition; needing a reliable exact method is discussed under heuristics instead.",
+      "D": "Correct: the chapter's own reason for not using judgment exclusively is that it relies heavily on the decision maker's recollection, which may fail."
+    }
+  },
+  "37": {
+    "summary": "Section 4.4: many decision strategies attempt to find optimal solutions and this is considered rational behaviour in many circles, but it is not always possible to optimize, and in such situations rational behaviour would be to choose a \"good\" solution.",
+    "options": {
+      "A": "Correct: where a problem has only qualitative solutions or several objectives at odds with each other, the chapter says rational behaviour is to choose a \"good\" solution.",
+      "B": "That is optimization, examining all the alternatives and proving the one selected is the best, which the section says is not always possible.",
+      "C": "The model is called a critical component and a source of errors, but the chapter never hands the choice over to it; the decision maker chooses.",
+      "D": "Postponing is not the chapter's answer; it says that in such situations rational behaviour is to choose a \"good\" solution."
+    }
+  },
+  "38": {
+    "summary": "Section 4.2 categorises decisions three ways: negotiation-based as routine, creative or negotiated; activity-based as entrepreneurial, adaptive or planning; strategy-based as computational, judgmental, inspirational or compromise.",
+    "options": {
+      "A": "Correct: routine, creative or negotiated is the classification the chapter gives the negotiation-based decisions.",
+      "B": "Correct: computational, judgmental, inspirational or compromise belongs to the strategy-based group.",
+      "C": "Mispaired: those three types belong to negotiation-based decisions, while activity-based decisions are entrepreneurial, adaptive or planning.",
+      "D": "Correct: entrepreneurial, adaptive or planning is exactly the typing given to activity-based decisions.",
+      "E": "Mispaired: entrepreneurial, adaptive or planning types the activity-based decisions, not the negotiation-based ones."
+    }
+  },
+  "39": {
+    "summary": "Keen and Scott Morton categorized decision theory into five perspectives: rational manager, process-oriented, organizational procedures, political and individual difference.",
+    "options": {
+      "A": "Not on the list of five; the chapter's perspectives concern managers, process, organization, politics and individual differences, not infrastructure.",
+      "B": "A financial perspective is not among the five perspectives the slides name.",
+      "C": "Correct: the individual difference perspective is the fifth of the five perspectives Keen and Scott Morton give.",
+      "D": "Scheduling is not one of them; the closest listed perspective is organizational procedures."
+    }
+  },
+  "40": {
+    "summary": "The chapter's stages are intelligence (identify problems or opportunities and collect data), design (analyse or develop possible solutions for feasibility), choice (choose one alternative) and implementation (implement the selected alternative), with loop-backs at each stage.",
+    "options": {
+      "A": "Correct: the design stage is followed by the instruction to go back to stage 1 if there is insufficient data.",
+      "B": "Obtaining the resources to implement the plan is put in the implementation stage, not the choice stage.",
+      "C": "Correct: implementation is where the organization devises a plan for carrying out the alternative selected in the choice phase.",
+      "D": "Formulating and analysing alternatives is the design phase; intelligence looks for indications that a problem exists.",
+      "E": "Correct: in the choice phase the best and most effective course of action is chosen from the practical alternatives, and a DSS is said to be particularly useful there."
+    }
+  },
+  "41": {
+    "summary": "The design-phase slide says modeling conceptualizes a problem and abstracts it to quantitative or qualitative form, and that models have decision variables and a principle of choice, the latter being the criterion for making a choice among alternatives.",
+    "options": {
+      "A": "That is the definition of a decision variable, the other component of the model, not the principle of choice.",
+      "B": "An imitation of reality is the chapter's definition of simulation, a descriptive technique, not a model component.",
+      "C": "Jurisdiction or authority to solve a problem is problem ownership, an intelligence-phase idea.",
+      "D": "Correct: the principle of choice is the criterion for making a choice among alternatives."
+    }
+  },
+  "42": {
+    "summary": "The intelligence-phase slides list the issues that may arise during data collection, including data being unavailable, expensive to obtain, not accurate or precise enough, subjectively estimated, insecure or qualitative, plus information overload and outcomes spread over an extended period.",
+    "options": {
+      "A": "Automatic generation of alternatives belongs to the design phase, where optimization models may generate them; it is not a data-collection issue.",
+      "B": "Correct: obtaining data may be expensive is one of the listed collection issues.",
+      "C": "Correct: data may be insecure is on the same list.",
+      "D": "That sentence defines a normative model in the design phase, not a problem with gathering data.",
+      "E": "Correct: outcomes or results may occur over an extended period is listed among the issues arising during data collection."
+    }
+  },
+  "43": {
+    "summary": "The choice phase lists four ways of searching for an appropriate course of action: analytical techniques, algorithms, heuristics and blind searches; an algorithm is a step-by-step search in which improvement is made at every step until the best solution is found.",
+    "options": {
+      "A": "Correct: this is the chapter's definition of an algorithm, a step-by-step search that improves at every step until the best solution is found.",
+      "B": "Analytical techniques use mathematical formulas to derive an optimal solution directly or predict a result, mainly for structured problems.",
+      "C": "Heuristics are informal, judgmental rules of good judgment in a field, not a step-by-step improving search.",
+      "D": "Blind searches are named in the list but carry no definition of step-by-step improvement."
+    }
+  },
+  "44": {
+    "summary": "The four major categories of heuristic bias are availability, adjustment and anchoring, representativeness and motivational; anchoring is picking a starting value and adjusting up and down from it while underestimating the need for adjustment.",
+    "options": {
+      "A": "Availability is estimating probability from past experience that may not be representative; no starting value is involved.",
+      "B": "Correct: the team anchored on a starting value, adjusted from it and underestimated the need for adjustments, which is the bias the chapter calls adjustment and anchoring.",
+      "C": "Representativeness is misestimating the probabilities of belonging to a group, not holding to an opening figure.",
+      "D": "Motivational bias is incentives leading decision makers to state probabilities that do not reflect their true beliefs."
+    }
+  },
+  "45": {
+    "summary": "The chapter states that a fully formed problem statement contains three key elements: the current state of affairs, the desired state of affairs, and a statement of the central objective or objectives that distinguish the two.",
+    "options": {
+      "A": "Correct: the current state of affairs is the first element, the way things stand now, as in Ahmad Bakery's higher production cost at the main plant.",
+      "B": "Resources and time belong to the scope discussion in section 5.2, not to the three key elements of the problem statement itself.",
+      "C": "Correct: the desired state of affairs is the second element; the statement is only complete once the situation the decision maker wants is named.",
+      "D": "Alternatives already ruled out are not part of the problem statement; the chapter has the analyst distinguish decisions, uncertain events and choices only after the problem is defined.",
+      "E": "Correct: the third element is the statement of the central objective or objectives that distinguish the current state from the desired state."
+    }
+  },
+  "46": {
+    "summary": "Section 5.2 says a problem may be worth solving but be beyond the available resources or time constraints, so the scope must be reduced to a focus that allows a solution, and its breadth identified by asking the people involved and looking at cost and magnitude.",
+    "options": {
+      "A": "The chapter does not abandon the problem: it says the worth of the problem and the resources available are separate questions, and the remedy is to narrow the scope.",
+      "B": "Extending the duration is what Ahmad Bakery proposed for studying the problem, but the scope remedy is to reduce the focus, not to run the same wide study longer.",
+      "C": "The opposite of the rule: widening the scope makes the resource and time limits worse, while the chapter tells you to reduce it to a solvable focus.",
+      "D": "Correct: reduce the scope to a focus that allows a solution, and identify its breadth by asking the people involved, the cost and the magnitude."
+    }
+  },
+  "47": {
+    "summary": "The chapter's five steps are: create the three lists of decisions, uncertain events and objectives; sort them in decreasing order of importance; create an initial influence diagram or decision tree; add elements one at a time until the initial lists are exhausted; and evaluate the overall structure and revise if necessary.",
+    "options": {
+      "A": "Correct: step 1 is to create the three lists of decisions, uncertain events and objectives.",
+      "B": "Correct: step 2 sorts those lists in decreasing order of importance before anything is drawn.",
+      "C": "Contradicts steps 3 and 4: the diagram is built in an initial version and elements are added one at a time, then the whole structure is revised.",
+      "D": "Correct: steps 3 and 4 are the initial influence diagram or decision tree and the one-at-a-time addition of elements until the lists are exhausted.",
+      "E": "Correct: step 5 is to evaluate the overall structure and revise it if necessary."
+    }
+  },
+  "48": {
+    "summary": "Risk analysis, the probabilistic decision making of section 5.2, weights each outcome by its probability, so EMV = 0.2 x (-50) + 0.5 x 120 + 0.3 x 250 = -10 + 60 + 75 = 125, i.e. RM125,000 (the Faizal Travel Agency case from the July 2025 paper).",
+    "options": {
+      "A": "RM75,000 is only the 0.3 x 250 term; the other two states of demand have been left out of the weighted sum.",
+      "B": "Correct: 0.2 x (-50) = -10, 0.5 x 120 = 60 and 0.3 x 250 = 75, and -10 + 60 + 75 = 125 (RM thousands).",
+      "C": "RM145,000 comes from dropping the negative sign on the low-demand result: 10 + 60 + 75 = 145. The loss must be weighted as -10.",
+      "D": "RM320,000 is the unweighted sum -50 + 120 + 250; the probabilities 0.2, 0.5 and 0.3 must multiply the payoffs, not be ignored."
+    }
+  },
+  "49": {
+    "summary": "Weighting each row by 0.2, 0.5 and 0.3 gives A = -10 + 60 + 75 = RM125,000, B = 4 + 45 + 30 = RM79,000 and C = 6 + 25 + 18 = RM49,000; with perfect information the best result of each state is 30, 120 and 250, giving 0.2 x 30 + 0.5 x 120 + 0.3 x 250 = 6 + 60 + 75 = RM141,000, so the information is worth 141 - 125 = RM16,000. This is the value analysis of section 5.6 applied to the July 2025 Faizal Travel Agency case.",
+    "options": {
+      "A": "The arithmetic for B is right (4 + 45 + 30 = 79), but RM79,000 is not the highest EMV: strategy A reaches RM125,000, so B is not selected.",
+      "B": "Correct: 0.2 x (-50) + 0.5 x 120 + 0.3 x 250 = -10 + 60 + 75 = 125, the largest of the three EMVs, so the expected value picks A.",
+      "C": "Correct: 0.2 x 30 + 0.5 x 50 + 0.3 x 60 = 6 + 25 + 18 = RM49,000, the weakest of the three strategies.",
+      "D": "Correct: value analysis compares the expected return with the information to the expected return without it, and here RM141,000 - RM125,000 = RM16,000 is the ceiling price for perfect information.",
+      "E": "Dropping the probabilities is the uncertainty case; here the probability of each outcome is given, so this is risk analysis and the expected value must be computed."
+    }
+  },
+  "50": {
+    "summary": "Requirement 3 says the total probability of a complete set of outcomes must equal 1, so inflation = 1 - (0.30 + 0.45) = 1 - 0.75 = 0.25.",
+    "options": {
+      "A": "There is no rule that gives the least likely state a fixed smallest share; the value is forced by the requirement that the complete set total 1.",
+      "B": "The requirements do not ask for a margin below 1: every probability must lie in the range 0 to 1 and the complete set must add to exactly 1.",
+      "C": "Correct: 0.30 + 0.45 + 0.25 = 1.00, which satisfies the third requirement of probability.",
+      "D": "0.75 is 0.30 + 0.45, the probability of the union of the two states already listed, which requirement 2 explains but is not the remaining state's probability."
+    }
+  },
+  "51": {
+    "summary": "The chapter defines an influence diagram as a graph of the components of a decision linked to show their relationships; properly constructed it has no cycles, the arrows form a one-way path with no backward path to the starting point, and rectangle, circle and oval stand for decision, uncontrollable or intermediate, and result variables.",
+    "options": {
+      "A": "Correct: no cycles, one-way arrow paths and no backward path to the starting point are exactly the stated test of a properly built diagram.",
+      "B": "Swapped: the oval is the result or outcome variable, intermediate or final; the circle is the uncontrollable or intermediate variable.",
+      "C": "Swapped: the rectangle is the decision variable, and the circle is the uncontrollable or intermediate variable.",
+      "D": "Arrows indicate the direction of influence, that is, the relationship between variables; payoffs on branches belong to the decision tree, not the influence diagram."
+    }
+  },
+  "52": {
+    "summary": "Section 5.6 lists three forecasting probability techniques; odds forecasting is the one where a series of bets is proposed to determine how strongly the bettor feels an event will occur.",
+    "options": {
+      "A": "Direct probability forecasting simply asks an expert to estimate the chance that an outcome will occur; no bets are involved.",
+      "B": "Comparison forecasting is similar to odds forecasting except that one of the games has known probabilities, which the question does not state.",
+      "C": "Decomposing complex probabilities is a different passage: it uses conditional probabilities within subsets of an event, such as good and bad weather, not a betting task.",
+      "D": "Correct: the proposed series of bets measures the strength of belief, which is the definition of odds forecasting."
+    }
+  },
+  "53": {
+    "summary": "The chapter separates certainty models (complete knowledge, all potential outcomes known, may yield an optimal solution), uncertainty (several outcomes for each decision with the probability of each outcome unknown, and knowledge would lead to less uncertainty) and risk analysis, where the probability of each of several outcomes is assessed and the level of uncertainty becomes risk expressed as an expected value.",
+    "options": {
+      "A": "A certainty model assumes complete knowledge and all potential outcomes known; here the probabilities of the outcomes are unknown, so it is not the certainty case.",
+      "B": "Risk analysis needs the probability of each of the several outcomes, and those probabilities are precisely what is missing in the question.",
+      "C": "Correct: several outcomes per decision with unknown outcome probabilities is the chapter's uncertainty, and it adds that knowledge would lead to less uncertainty.",
+      "D": "Domain-specific is a value in the mathematical-focus classification (EOQ, technology diffusion, meteorological models), not a label for unknown probabilities."
+    }
+  },
+  "54": {
+    "summary": "Chapter 7's component list for a user interface is exactly three items: action language, display or presentation language and knowledge base.",
+    "options": {
+      "A": "These three belong to the separate list of modes of communication (mental model, metaphors and idioms, navigation of the model, look), not to the interface components.",
+      "B": "Correct: the chapter names action language, display or presentation language and knowledge base as the user interface components.",
+      "C": "These are three of the five basic action language types, so they sit inside the action language component rather than being components themselves.",
+      "D": "Commands, a set of menus, graphics and icons come from the list of what a user interface may include, alongside guidelines, acoustics, tactile and hardware."
+    }
+  },
+  "55": {
+    "summary": "The chapter defines the GUI as an interactive, user-friendly interface in which, by using icons and similar objects, the user can control communication with a computer - which is what pointing at icons describes.",
+    "options": {
+      "A": "The UIMS is indeed the DSS component that handles all interaction between users and the system, but that definition is about the software component, not about the icons the user points at.",
+      "B": "A command-line interface makes the user enter commands such as run, and the chapter's complaint is that the user has to learn those commands; the ward sister is not typing commands.",
+      "C": "Correct: icons and similar objects controlled by pointing or touching match the chapter's definition of the graphical user interface.",
+      "D": "The question-and-answer interface has the machine asking questions and the user answering; nothing in that description involves icons or pointing."
+    }
+  },
+  "56": {
+    "summary": "The five basic action language types are the menu format, question-answer format, command language format, input/output structured format and free form natural language format.",
+    "options": {
+      "A": "It is on the list: input/output structured format is one of the five basic action language types.",
+      "B": "It is on the list: free form natural language format completes the five types.",
+      "C": "It is on the list: question-answer format is the second of the five types.",
+      "D": "Correct choice because it is absent from that list. Voice appears in the chapter as a type of user interface - eyes-free and hands-free speech recognition - not as one of the five basic action language formats."
+    }
+  },
+  "57": {
+    "summary": "Chapter 7 describes the question-and-answer interface as the machine asking questions, a dialogue forming while the user keeps answering, and unstructured answers as its major challenge because a computer does not understand them.",
+    "options": {
+      "A": "This is the command-line interface, where the user enters a command such as run and the system executes it.",
+      "B": "Correct: the chapter says this interface lets the machine ask questions and the user enter answers to the questions.",
+      "C": "Correct: the chapter says it turns into a dialogue while the user continues to answer questions asked by the system.",
+      "D": "This is the voice user interface, described as eyes-free and hands-free and acting by recognising speech.",
+      "E": "Correct: the stated major challenge is that answers fed by the user may be unstructured, and a computer does not understand unstructured responses."
+    }
+  },
+  "58": {
+    "summary": "The chapter's warning about menus is that they are appropriate for simple systems; as complexity increases the users require several sets of menus, and menu items themselves can have sub menus.",
+    "options": {
+      "A": "Correct: this is the chapter's stated position, including the note that menu items can carry sub menus.",
+      "B": "Contradicted directly: menus suit simple systems, and the chapter's own example of the trouble is precisely that items can have sub menus.",
+      "C": "Reversed: the chapter says building a DSS with a menu interface takes huge time and resources to design and develop in the long run.",
+      "D": "Nothing supports this: the command language format is a different basic action language type, and adding menu sets does not turn one into the other."
+    }
+  },
+  "59": {
+    "summary": "The listed factors are eliminating or reducing fatigue, reducing learning time, reducing chances of end-user errors, keeping users motivated, and offering users the ease to recall.",
+    "options": {
+      "A": "Correct: reduce the learning time of DSS users appears in the list.",
+      "B": "Contradicted by the definition of an interface, which facilitates interaction between the user and the software system without drawing much attention to itself.",
+      "C": "Correct: reduce the chances of errors made by end users appears in the list.",
+      "D": "Correct: keep users motivated to use the decision support system appears in the list.",
+      "E": "Correct: offer users the ease to recall is the fifth factor on the list."
+    }
+  },
+  "60": {
+    "summary": "In ROMC, control aid is the element that lets users effectively use representations, operations and memory aids, allowing them to edit, redo, undo, save, view and delete information, representations or tasks.",
+    "options": {
+      "A": "Representation presents information or results in a structured way, as a table, graph, map, chart or text document; it is not the editing and undo mechanism.",
+      "B": "Operation covers the specific tasks performed by or with the DSS, such as processing data, tracking market trends or suggesting alternatives, not the user's control commands.",
+      "C": "Correct: edit, redo, undo, save, view and delete are the chapter's own examples of control aid, which lets users effectively use representations, operations and memory aids, with commands depending on the type of user interface.",
+      "D": "Memory aid is the access to data - a data warehouse is its memory aid - plus links and command shortcuts or sequences, not the ability to undo or delete."
+    }
+  },
+  "61": {
+    "summary": "Chapter 6 says the primary advantage of the system development life cycle is the structure and discipline it brings, that it is often used where there is a contractual relationship between the DSS developer and the end users, and that its major complaint is rigidity since DSS requirements can change rapidly.",
+    "options": {
+      "A": "The contractual-relationship note belongs to the life cycle, not to prototyping, and prototyping is described as iterative or evolutionary rather than fixed.",
+      "B": "Correct: it captures the advantage, the contractual setting and the rigidity complaint exactly as the chapter states them.",
+      "C": "The phases begin with problem definition and feasibility analysis and finish with implementation and maintenance, and the chapter still uses the life cycle for DSS work.",
+      "D": "The chapter says early stages of prototyping are similar to the classic life cycle methodology until the first prototype is in place; only then do the methods diverge."
+    }
+  },
+  "62": {
+    "summary": "The seven activities are problem diagnosis, identification of objectives and resources, system analysis, system design, system construction, system implementation and incremental adaptation, each with the job the chapter states.",
+    "options": {
+      "A": "Correct: system construction is described as an iterative prototyping approach with small but constant refinement.",
+      "B": "Correct: system analysis establishes three categories of requirements - functional, interface and coordination.",
+      "C": "That definition belongs to activity 1, problem diagnosis; system implementation is where testing, evaluation and deployment occur.",
+      "D": "System design is the determination of components, structure and platform; testing, evaluation and deployment are system implementation.",
+      "E": "Correct: incremental adaptation is the final stage and is a continual refinement of the activities of the earlier six stages."
+    }
+  },
+  "63": {
+    "summary": "The seven criteria the chapter calls particularly important in selecting a DSS generator are data management functions, model management functions, user interface capabilities, compatibility and degree of connectivity, available hardware platforms, cost, and quality and availability of vendor support.",
+    "options": {
+      "A": "Correct: available hardware platforms and cost are both on that list of selection criteria.",
+      "B": "Nested menu structures and screen density come from the user interface chapters, not from the development tool selection criteria.",
+      "C": "Chance nodes appear in the decision-tree slides of the same chapter, but how many of them a tool can draw is not one of the seven listed selection criteria.",
+      "D": "The learning time of users is one of the factors influencing user interface design success, and the tool list instead names user interface capabilities as a criterion."
+    }
+  },
+  "64": {
+    "summary": "Chapter 8 puts it plainly in the DSS Implementation slide: 'In essence, implementation is the process of deliberately introducing change into the organization', and it adds that this process is as unique to a DSS as its design and construction.",
+    "options": {
+      "A": "That comparison of DSS features with the original user requirements is the technical measure of success from section 8.2, not the definition of implementation.",
+      "B": "Correct: implementation is the deliberate introduction of change into the organisation, which is why Chapter 8 goes on to discuss risks, strategies and resistance.",
+      "C": "Merging the hardware and software of the DSS with the existing systems is physical integration, the second category of integration in section 8.3.",
+      "D": "Sorting participants' comments into common themes is the idea organization step of the GSS meeting process in Chapter 9, not implementation."
+    }
+  },
+  "65": {
+    "summary": "The 'Characteristics of Software Quality' slide pairs each characteristic with the degree to which it holds: testability is the degree of structuredness.",
+    "options": {
+      "A": "Correct: testability is defined on the slide as the degree of structuredness.",
+      "B": "Portability is the amount of platform independence, a different line of the same list.",
+      "C": "Human-engineering is the degree of communicativeness, so it is the dimension that is weak when users cannot get around the DSS comfortably.",
+      "D": "Modifiability is the degree of augmentability, another line of the same software quality list."
+    }
+  },
+  "66": {
+    "summary": "The 'Measuring DSS Success' slide gives one framework of four measurement categories: system performance, task performance, business opportunities and evolutionary aspects.",
+    "options": {
+      "A": "Correct: system performance covers response time, data entry, output format, usage and the user interface.",
+      "B": "Correct: task performance is decision quality, measured by the time spent in the decision process, together with trust, confidence and satisfaction.",
+      "C": "There is no 'political performance' category. Fitting well with the political approach to decision making is one of the six criteria for a successful DSS.",
+      "D": "Correct: business opportunities covers the costs of development and operation, increased income and changes in productivity.",
+      "E": "Two different lists are fused here: user satisfaction and actual use are attitudinal measures, while needs met or exceeded are organizational measures - neither is a category of this framework."
+    }
+  },
+  "67": {
+    "summary": "Section 8.3 says there are two general categories of integration: functional, where the DSS functions are linked to existing systems, and physical, where the hardware and software of the DSS merge with the existing ones; a seamless merge feeds the user perception that the system is easy to use and useful.",
+    "options": {
+      "A": "The two definitions are swapped: linking functions to existing systems is functional, and merging hardware and software is physical.",
+      "B": "Technical and organizational are two of the three other measures of success in section 8.2, not categories of integration.",
+      "C": "Correct: functional and physical are the two categories named, and integrating the DSS in a seamless fashion is what supports the user's perception of ease of use and usefulness.",
+      "D": "System performance and evolutionary aspects are measurement categories from the success framework, not integration categories."
+    }
+  },
+  "68": {
+    "summary": "The GDSS Technology Deployment slide lists three deployments: the special purpose decision room, the multiple use facility and web-based groupware with clients, and only the third is described as anytime/anyplace with deadlines, software bought or leased, no facility costs and flexible.",
+    "options": {
+      "A": "The decision room is an electronic meeting room whose software operates across a LAN and allows face-to-face meetings, with a trained facilitator coordinating.",
+      "B": "The multiple use facility is a general purpose computer lab; it lowers costs, but the meeting is still held in a facility and coordinated by a trained facilitator.",
+      "C": "The creativity support system belongs to a later slide about stimulating innovation; it is not one of the three deployment types.",
+      "D": "Correct: web-based groupware with clients gives anytime/anyplace meetings with deadlines established, the software is bought or leased, there are no facility costs, and the chapter calls it flexible."
+    }
+  },
+  "69": {
+    "summary": "The standard process is exploratory idea generation, idea organization tool, prioritization, new idea generation, selection of final idea; in the meeting process the facilitator 'employs idea organization software to sort comments into common themes'.",
+    "options": {
+      "A": "Exploratory idea generation is the brainstorming stage, when participants enter their own comments into the computer; sorting them comes after that.",
+      "B": "New idea generation happens later still, once the themes have been prioritized.",
+      "C": "Correct: sorting the brainstormed comments into common themes is exactly the idea organization tool step, which in the standard process sits between exploratory idea generation and prioritization.",
+      "D": "Prioritization is the stage that ranks the themes the organization step has produced, not the sorting of the raw comments."
+    }
+  },
+  "70": {
+    "summary": "The 'Characteristics of GDSS' slide says group work involves collaboration and communication, that members can be located in different places and work at different times, that information may be located external to the project, that rapid solutions are allowed, that normal team problems of synergy or conflict may appear, and that the work is called computer-supported cooperative work or collaborative computing.",
+    "options": {
+      "A": "Correct: distributed members working at different times are the first stated characteristics, alongside collaboration and communication.",
+      "B": "Contradicted by the slide, which says information may be located external to the project.",
+      "C": "Correct: the chapter lists that a GDSS may exhibit the normal team problems of synergy or conflict.",
+      "D": "The opposite: the characteristics slide says a GDSS allows for rapid solutions, while slow, inefficient group work is listed as a process loss in groupwork itself.",
+      "E": "Correct: the slide names the work computer-supported cooperative work, or collaborative computing, and notes that Internet-based groupware tools support it."
+    }
+  },
+  "71": {
+    "summary": "The Groupware slide says most groupware offers one or more of these capabilities: electronic brainstorming with a free flow of ideas and comments, electronic or video conferencing, group scheduling and calendars, conflict resolution, model building, electronic document sharing and voting services.",
+    "options": {
+      "A": "Correct: electronic brainstorming, allowing a free flow of ideas and comments, heads the list of groupware capabilities.",
+      "B": "That is the second of S.L. Alter's four categories of DSS implementation strategy in Chapter 8, not a groupware capability.",
+      "C": "Correct: voting services and group scheduling and calendars both appear on the capability list.",
+      "D": "Correct: model building and electronic document sharing are also on that list, and the slide adds that electronic meeting services are available too.",
+      "E": "Merging the hardware and software of the DSS with the existing systems is physical integration in Chapter 8, not something groupware is said to offer."
+    }
   }
 }

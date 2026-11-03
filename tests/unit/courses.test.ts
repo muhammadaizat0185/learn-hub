@@ -106,14 +106,22 @@ describe("discrete structure course", () => {
 });
 
 describe("decision support system course", () => {
-  it("is listed and groups the chapter 1 pilot into three topics", async () => {
+  it("is listed and groups all nine chapters into nine topics", async () => {
     expect(listCourses().map((course) => course.id)).toContain("decision-support-system");
     const data = await loadCourse("decision-support-system");
-    expect(data.questions).toHaveLength(data.meta.exam.questions);
+    expect(data.questions).toHaveLength(71);
+    expect(data.meta.exam.questions).toBe(40);
+    expect(data.questions.length).toBeGreaterThanOrEqual(data.meta.exam.questions);
     expect(data.topics.map((topic) => [topic.name, topic.ids.length])).toEqual([
       ["DSS fundamentals", 7],
       ["Types of DSS", 6],
       ["Decision types and information systems", 7],
+      ["Data and model management", 8],
+      ["Decision makers and styles", 6],
+      ["Decision making process", 10],
+      ["Decision modelling and forecasting", 9],
+      ["DSS design and user interface", 10],
+      ["Implementation and group decision support", 8],
     ]);
   });
 
@@ -129,18 +137,27 @@ describe("decision support system course", () => {
     }
   });
 
-  it("pairs every topic with two decision lab sets of at least four blanks", async () => {
+  it("pairs every topic with decision lab sets of at least four blanks", async () => {
     const data = await loadCourse("decision-support-system");
     expect(data.meta.lab?.label).toBe("Decision lab");
     expect(data.lab?.topics.map((topic) => [topic.name, topic.sets.length])).toEqual([
       ["DSS fundamentals", 2],
       ["Types of DSS", 2],
       ["Decision types and information systems", 2],
+      ["Data and model management", 2],
+      ["Decision makers and styles", 2],
+      ["Decision making process", 2],
+      ["Decision modelling and forecasting", 2],
+      ["DSS design and user interface", 3],
+      ["Implementation and group decision support", 2],
     ]);
-    for (const set of data.lab?.sets ?? []) expect(set.blanks.length, set.id).toBeGreaterThanOrEqual(4);
+    for (const set of data.lab?.sets ?? []) {
+      expect(set.blanks.length, set.id).toBeGreaterThanOrEqual(4);
+      expect(set.blanks.length, set.id).toBeLessThanOrEqual(10);
+    }
   });
 
-  it("offers the playlist and notebook, and one video link per lesson", async () => {
+  it("offers the playlist and notebook, and a chapter video for every lesson", async () => {
     const data = await loadCourse("decision-support-system");
     expect(data.resources.map((resource) => resource.url)).toEqual([
       "https://youtube.com/playlist?list=PLjZJ5J1CN9KWr9SYZBSZpQuCCzeSIZja6",
@@ -149,13 +166,18 @@ describe("decision support system course", () => {
     expect(data.resources[1].note).toMatch(/sign-in/i);
 
     const lessons = data.lessons ?? [];
-    expect(lessons).toHaveLength(3);
+    expect(lessons).toHaveLength(9);
+    const videoIds = new Set<string>();
     for (const lesson of lessons) {
       expect(lesson.resources.length, lesson.id).toBeGreaterThan(0);
       for (const resource of lesson.resources) {
-        expect(resource.url, `${lesson.id}: ${resource.label}`).toMatch(/^https:\/\/(www\.)?youtube\.com\/watch\?v=[\w-]{11}$/);
+        expect(resource.url, `${lesson.id}: ${resource.label}`).toMatch(/^https:\/\/www\.youtube\.com\/watch\?v=[\w-]{11}$/);
+        videoIds.add(resource.url.slice(-11));
       }
     }
+    // The playlist's nine chapter videos, with the introduction on top of them.
+    expect(videoIds.size).toBe(10);
+    expect(videoIds.has("PLvbLcs3Vq8")).toBe(true);
   });
 });
 

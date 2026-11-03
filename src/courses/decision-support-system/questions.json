@@ -5,12 +5,26 @@
     "type": "mcq",
     "question": "Which statement best matches the course definition of a Decision Support System?",
     "options": [
-      { "letter": "A", "text": "A computer application that records routine, repetitive transactions and updates the operational database." },
-      { "letter": "B", "text": "An interactive computer-based system that helps decision makers solve semi-structured and unstructured problems." },
-      { "letter": "C", "text": "A reporting system that delivers fixed monthly and exception reports to middle managers." },
-      { "letter": "D", "text": "A system that replaces the decision maker by choosing strategic options automatically." }
+      {
+        "letter": "A",
+        "text": "A computer application that records routine, repetitive transactions and updates the operational database."
+      },
+      {
+        "letter": "B",
+        "text": "An interactive computer-based system that helps decision makers solve semi-structured and unstructured problems."
+      },
+      {
+        "letter": "C",
+        "text": "A reporting system that delivers fixed monthly and exception reports to middle managers."
+      },
+      {
+        "letter": "D",
+        "text": "A system that replaces the decision maker by choosing strategic options automatically."
+      }
     ],
-    "answer": ["B"]
+    "answer": [
+      "B"
+    ]
   },
   {
     "id": 2,
@@ -18,13 +32,33 @@
     "type": "multi",
     "question": "Which of the following are listed as general characteristics and capabilities of a DSS?\n· Select every item that appears in the chapter list.",
     "options": [
-      { "letter": "A", "text": "Support for decision makers in semi-structured and unstructured problems." },
-      { "letter": "B", "text": "Support for managers at all levels of the organisation." },
-      { "letter": "C", "text": "Efficiency in processing, rather than effectiveness of the resulting decision." },
-      { "letter": "D", "text": "Complete control by the decision-maker." },
-      { "letter": "E", "text": "Support for interdependent or sequential decisions." }
+      {
+        "letter": "A",
+        "text": "Support for decision makers in semi-structured and unstructured problems."
+      },
+      {
+        "letter": "B",
+        "text": "Support for managers at all levels of the organisation."
+      },
+      {
+        "letter": "C",
+        "text": "Efficiency in processing, rather than effectiveness of the resulting decision."
+      },
+      {
+        "letter": "D",
+        "text": "Complete control by the decision-maker."
+      },
+      {
+        "letter": "E",
+        "text": "Support for interdependent or sequential decisions."
+      }
     ],
-    "answer": ["A", "B", "D", "E"]
+    "answer": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ]
   },
   {
     "id": 3,
@@ -32,12 +66,26 @@
     "type": "mcq",
     "question": "One characteristic of a DSS is stated as \"effectiveness, but not efficiency\". What does that mean when you judge a DSS?",
     "options": [
-      { "letter": "A", "text": "It is judged by the quality of the decision reached, even if reaching it takes longer or costs more." },
-      { "letter": "B", "text": "It must process transactions faster than the transaction processing system below it." },
-      { "letter": "C", "text": "It should minimise its own running cost before considering the decision it produces." },
-      { "letter": "D", "text": "It is effective only when it removes the manager from the decision entirely." }
+      {
+        "letter": "A",
+        "text": "It is judged by the quality of the decision reached, even if reaching it takes longer or costs more."
+      },
+      {
+        "letter": "B",
+        "text": "It must process transactions faster than the transaction processing system below it."
+      },
+      {
+        "letter": "C",
+        "text": "It should minimise its own running cost before considering the decision it produces."
+      },
+      {
+        "letter": "D",
+        "text": "It is effective only when it removes the manager from the decision entirely."
+      }
     ],
-    "answer": ["A"]
+    "answer": [
+      "A"
+    ]
   },
   {
     "id": 4,
@@ -45,12 +93,26 @@
     "type": "mcq",
     "question": "Which constraint on DSS use is stated in Chapter 1?",
     "options": [
-      { "letter": "A", "text": "A DSS can only be used by operational-level staff." },
-      { "letter": "B", "text": "A DSS cannot be designed to contain distinctly human decision making such as creativity, imagination or intuition." },
-      { "letter": "C", "text": "A DSS only reads data from external sources such as the Internet." },
-      { "letter": "D", "text": "A DSS must be reprogrammed by a specialist before any parameter can be changed." }
+      {
+        "letter": "A",
+        "text": "A DSS can only be used by operational-level staff."
+      },
+      {
+        "letter": "B",
+        "text": "A DSS cannot be designed to contain distinctly human decision making such as creativity, imagination or intuition."
+      },
+      {
+        "letter": "C",
+        "text": "A DSS only reads data from external sources such as the Internet."
+      },
+      {
+        "letter": "D",
+        "text": "A DSS must be reprogrammed by a specialist before any parameter can be changed."
+      }
     ],
-    "answer": ["B"]
+    "answer": [
+      "B"
+    ]
   },
   {
     "id": 5,
@@ -58,12 +120,26 @@
     "type": "mcq",
     "question": "A DSS keeps sales, market and user-supplied data, offers optimisation and goal-seeking models, and lets a manager run what-if scenarios from an interactive screen. Which two components supply the models and the interaction respectively?",
     "options": [
-      { "letter": "A", "text": "Model management (MBMS) and dialog generation and management (DGMS)." },
-      { "letter": "B", "text": "Data management (DBMS) and model management (MBMS)." },
-      { "letter": "C", "text": "Dialog generation and management (DGMS) and data management (DBMS)." },
-      { "letter": "D", "text": "Transaction processing (TPS) and on-line analytical processing (OLAP)." }
+      {
+        "letter": "A",
+        "text": "Model management (MBMS) and dialog generation and management (DGMS)."
+      },
+      {
+        "letter": "B",
+        "text": "Data management (DBMS) and model management (MBMS)."
+      },
+      {
+        "letter": "C",
+        "text": "Dialog generation and management (DGMS) and data management (DBMS)."
+      },
+      {
+        "letter": "D",
+        "text": "Transaction processing (TPS) and on-line analytical processing (OLAP)."
+      }
     ],
-    "answer": ["A"]
+    "answer": [
+      "A"
+    ]
   },
   {
     "id": 6,
@@ -71,13 +147,32 @@
     "type": "multi",
     "question": "In the typical DSS architecture, which descriptions are correctly matched to their label?",
     "options": [
-      { "letter": "A", "text": "TPS: transaction processing system." },
-      { "letter": "B", "text": "OLAP: on-line analytical processing." },
-      { "letter": "C", "text": "DSS DATABASE: current data from applications or groups." },
-      { "letter": "D", "text": "DATA MINING: hardware that stores the model base." },
-      { "letter": "E", "text": "MODEL: a protocol for pushing reports to executives." }
+      {
+        "letter": "A",
+        "text": "TPS: transaction processing system."
+      },
+      {
+        "letter": "B",
+        "text": "OLAP: on-line analytical processing."
+      },
+      {
+        "letter": "C",
+        "text": "DSS DATABASE: current data from applications or groups."
+      },
+      {
+        "letter": "D",
+        "text": "DATA MINING: hardware that stores the model base."
+      },
+      {
+        "letter": "E",
+        "text": "MODEL: a protocol for pushing reports to executives."
+      }
     ],
-    "answer": ["A", "B", "C"]
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ]
   },
   {
     "id": 7,
@@ -85,12 +180,26 @@
     "type": "mcq",
     "question": "Using the mode of assistance as the criterion, Power (2002) differentiates DSS into which five types?",
     "options": [
-      { "letter": "A", "text": "Communication-driven, data-driven, document-driven, knowledge-driven and model-driven." },
-      { "letter": "B", "text": "Strategic, tactical, operational, analytical and predictive." },
-      { "letter": "C", "text": "Transaction-driven, report-driven, query-driven, dashboard-driven and alert-driven." },
-      { "letter": "D", "text": "Individual, group, organisational, inter-organisational and national." }
+      {
+        "letter": "A",
+        "text": "Communication-driven, data-driven, document-driven, knowledge-driven and model-driven."
+      },
+      {
+        "letter": "B",
+        "text": "Strategic, tactical, operational, analytical and predictive."
+      },
+      {
+        "letter": "C",
+        "text": "Transaction-driven, report-driven, query-driven, dashboard-driven and alert-driven."
+      },
+      {
+        "letter": "D",
+        "text": "Individual, group, organisational, inter-organisational and national."
+      }
     ],
-    "answer": ["A"]
+    "answer": [
+      "A"
+    ]
   },
   {
     "id": 8,
@@ -98,12 +207,26 @@
     "type": "mcq",
     "question": "A spreadsheet with formulas, a statistical forecasting model and an optimum routing model are examples of which type of DSS?",
     "options": [
-      { "letter": "A", "text": "Data-driven DSS." },
-      { "letter": "B", "text": "Model-driven DSS." },
-      { "letter": "C", "text": "Document-driven DSS." },
-      { "letter": "D", "text": "Knowledge-driven DSS." }
+      {
+        "letter": "A",
+        "text": "Data-driven DSS."
+      },
+      {
+        "letter": "B",
+        "text": "Model-driven DSS."
+      },
+      {
+        "letter": "C",
+        "text": "Document-driven DSS."
+      },
+      {
+        "letter": "D",
+        "text": "Knowledge-driven DSS."
+      }
     ],
-    "answer": ["B"]
+    "answer": [
+      "B"
+    ]
   },
   {
     "id": 9,
@@ -111,12 +234,26 @@
     "type": "mcq",
     "question": "MYCIN is a rule-based reasoning program that helps physicians diagnose blood disease. Which type of DSS is it?",
     "options": [
-      { "letter": "A", "text": "Communication-driven, because it connects physician and patient." },
-      { "letter": "B", "text": "Data-driven, because it queries a time series of hospital records." },
-      { "letter": "C", "text": "Knowledge-driven, because it provides problem-solving expertise stored as facts, rules and procedures." },
-      { "letter": "D", "text": "Document-driven, because it retrieves unstructured clinical reports." }
+      {
+        "letter": "A",
+        "text": "Communication-driven, because it connects physician and patient."
+      },
+      {
+        "letter": "B",
+        "text": "Data-driven, because it queries a time series of hospital records."
+      },
+      {
+        "letter": "C",
+        "text": "Knowledge-driven, because it provides problem-solving expertise stored as facts, rules and procedures."
+      },
+      {
+        "letter": "D",
+        "text": "Document-driven, because it retrieves unstructured clinical reports."
+      }
     ],
-    "answer": ["C"]
+    "answer": [
+      "C"
+    ]
   },
   {
     "id": 10,
@@ -124,12 +261,26 @@
     "type": "mcq",
     "question": "A DSS manages scanned documents, hypertext, images, sound and video, and its primary tool is a search engine. Which type is it?",
     "options": [
-      { "letter": "A", "text": "Document-driven DSS." },
-      { "letter": "B", "text": "Model-driven DSS." },
-      { "letter": "C", "text": "Knowledge-driven DSS." },
-      { "letter": "D", "text": "Communication-driven DSS." }
+      {
+        "letter": "A",
+        "text": "Document-driven DSS."
+      },
+      {
+        "letter": "B",
+        "text": "Model-driven DSS."
+      },
+      {
+        "letter": "C",
+        "text": "Knowledge-driven DSS."
+      },
+      {
+        "letter": "D",
+        "text": "Communication-driven DSS."
+      }
     ],
-    "answer": ["A"]
+    "answer": [
+      "A"
+    ]
   },
   {
     "id": 11,
@@ -137,12 +288,26 @@
     "type": "mcq",
     "question": "Which statement about a data-driven (data-oriented) DSS is correct?",
     "options": [
-      { "letter": "A", "text": "It emphasises access to and manipulation of a time series of internal company data, and sometimes external data." },
-      { "letter": "B", "text": "It stores specialised problem-solving expertise as facts and rules." },
-      { "letter": "C", "text": "It relies mainly on network and communication technologies for collaboration." },
-      { "letter": "D", "text": "It supplies the analytical model and is never data intensive." }
+      {
+        "letter": "A",
+        "text": "It emphasises access to and manipulation of a time series of internal company data, and sometimes external data."
+      },
+      {
+        "letter": "B",
+        "text": "It stores specialised problem-solving expertise as facts and rules."
+      },
+      {
+        "letter": "C",
+        "text": "It relies mainly on network and communication technologies for collaboration."
+      },
+      {
+        "letter": "D",
+        "text": "It supplies the analytical model and is never data intensive."
+      }
     ],
-    "answer": ["A"]
+    "answer": [
+      "A"
+    ]
   },
   {
     "id": 12,
@@ -150,12 +315,26 @@
     "type": "mcq",
     "question": "Video conferencing and integrated collaboration tools such as NetMeeting or Groove let several people work on one shared task. Which DSS type, related to group decision support systems, is this?",
     "options": [
-      { "letter": "A", "text": "Data-driven DSS." },
-      { "letter": "B", "text": "Communication-driven DSS." },
-      { "letter": "C", "text": "Document-driven DSS." },
-      { "letter": "D", "text": "Model-driven DSS." }
+      {
+        "letter": "A",
+        "text": "Data-driven DSS."
+      },
+      {
+        "letter": "B",
+        "text": "Communication-driven DSS."
+      },
+      {
+        "letter": "C",
+        "text": "Document-driven DSS."
+      },
+      {
+        "letter": "D",
+        "text": "Model-driven DSS."
+      }
     ],
-    "answer": ["B"]
+    "answer": [
+      "B"
+    ]
   },
   {
     "id": 13,
@@ -163,13 +342,32 @@
     "type": "multi",
     "question": "Which of these are given as semi-structured decisions?",
     "options": [
-      { "letter": "A", "text": "Inventory control." },
-      { "letter": "B", "text": "Credit evaluation." },
-      { "letter": "C", "text": "Point of sales." },
-      { "letter": "D", "text": "Quality assurance." },
-      { "letter": "E", "text": "Research and development planning." }
+      {
+        "letter": "A",
+        "text": "Inventory control."
+      },
+      {
+        "letter": "B",
+        "text": "Credit evaluation."
+      },
+      {
+        "letter": "C",
+        "text": "Point of sales."
+      },
+      {
+        "letter": "D",
+        "text": "Quality assurance."
+      },
+      {
+        "letter": "E",
+        "text": "Research and development planning."
+      }
     ],
-    "answer": ["A", "B", "D"]
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ]
   },
   {
     "id": 14,
@@ -177,12 +375,26 @@
     "type": "mcq",
     "question": "Which decision is structured (programmed)?",
     "options": [
-      { "letter": "A", "text": "Recruiting an executive." },
-      { "letter": "B", "text": "Warehouse distribution." },
-      { "letter": "C", "text": "Research and development planning." },
-      { "letter": "D", "text": "Negotiating with a supplier." }
+      {
+        "letter": "A",
+        "text": "Recruiting an executive."
+      },
+      {
+        "letter": "B",
+        "text": "Warehouse distribution."
+      },
+      {
+        "letter": "C",
+        "text": "Research and development planning."
+      },
+      {
+        "letter": "D",
+        "text": "Negotiating with a supplier."
+      }
     ],
-    "answer": ["B"]
+    "answer": [
+      "B"
+    ]
   },
   {
     "id": 15,
@@ -190,12 +402,26 @@
     "type": "mcq",
     "question": "A decision is non-routine and unpredictable, has no cut-and-dried solution, and relies on intuition and judgment. How is it classified, and which phases of the Simon model does the chapter attach to it?",
     "options": [
-      { "letter": "A", "text": "Structured; the phases are data capture, storage and retrieval." },
-      { "letter": "B", "text": "Semi-structured; the phases are planning, scheduling and controlling." },
-      { "letter": "C", "text": "Unstructured; the phases are intelligence, design and choice." },
-      { "letter": "D", "text": "Unstructured; the phases are analysis, modelling and deployment." }
+      {
+        "letter": "A",
+        "text": "Structured; the phases are data capture, storage and retrieval."
+      },
+      {
+        "letter": "B",
+        "text": "Semi-structured; the phases are planning, scheduling and controlling."
+      },
+      {
+        "letter": "C",
+        "text": "Unstructured; the phases are intelligence, design and choice."
+      },
+      {
+        "letter": "D",
+        "text": "Unstructured; the phases are analysis, modelling and deployment."
+      }
     ],
-    "answer": ["C"]
+    "answer": [
+      "C"
+    ]
   },
   {
     "id": 16,
@@ -203,12 +429,26 @@
     "type": "mcq",
     "question": "According to Chapter 1, when was DSS developed and whom was it originally designed to serve?",
     "options": [
-      { "letter": "A", "text": "Early 1960s, serving the operational management level." },
-      { "letter": "B", "text": "The 1960s, serving operational or middle management with summary and exception reports." },
-      { "letter": "C", "text": "Early 1970s, originally designed to serve middle management." },
-      { "letter": "D", "text": "Late 1980s, serving senior management with drill-down displays." }
+      {
+        "letter": "A",
+        "text": "Early 1960s, serving the operational management level."
+      },
+      {
+        "letter": "B",
+        "text": "The 1960s, serving operational or middle management with summary and exception reports."
+      },
+      {
+        "letter": "C",
+        "text": "Early 1970s, originally designed to serve middle management."
+      },
+      {
+        "letter": "D",
+        "text": "Late 1980s, serving senior management with drill-down displays."
+      }
     ],
-    "answer": ["C"]
+    "answer": [
+      "C"
+    ]
   },
   {
     "id": 17,
@@ -216,12 +456,26 @@
     "type": "mcq",
     "question": "Which information system was developed in the late 1980s, serves the senior management level, is very user-friendly with graphics, and offers drill-down capability?",
     "options": [
-      { "letter": "A", "text": "Transaction Processing System (TPS)." },
-      { "letter": "B", "text": "Management Information System (MIS)." },
-      { "letter": "C", "text": "Decision Support System (DSS)." },
-      { "letter": "D", "text": "Executive Information System (EIS), also called Executive Support System." }
+      {
+        "letter": "A",
+        "text": "Transaction Processing System (TPS)."
+      },
+      {
+        "letter": "B",
+        "text": "Management Information System (MIS)."
+      },
+      {
+        "letter": "C",
+        "text": "Decision Support System (DSS)."
+      },
+      {
+        "letter": "D",
+        "text": "Executive Information System (EIS), also called Executive Support System."
+      }
     ],
-    "answer": ["D"]
+    "answer": [
+      "D"
+    ]
   },
   {
     "id": 18,
@@ -229,13 +483,32 @@
     "type": "multi",
     "question": "In the MIS-to-DSS comparison table, which rows describe the DSS side rather than the MIS side?",
     "options": [
-      { "letter": "A", "text": "Provides information and techniques to analyse specific problems." },
-      { "letter": "B", "text": "Periodic, exception, demand and push reports." },
-      { "letter": "C", "text": "Ad hoc, flexible and adaptable information format." },
-      { "letter": "D", "text": "Information produced by analytical modelling of business data." },
-      { "letter": "E", "text": "Prespecified, fixed format produced by extraction and manipulation of business data." }
+      {
+        "letter": "A",
+        "text": "Provides information and techniques to analyse specific problems."
+      },
+      {
+        "letter": "B",
+        "text": "Periodic, exception, demand and push reports."
+      },
+      {
+        "letter": "C",
+        "text": "Ad hoc, flexible and adaptable information format."
+      },
+      {
+        "letter": "D",
+        "text": "Information produced by analytical modelling of business data."
+      },
+      {
+        "letter": "E",
+        "text": "Prespecified, fixed format produced by extraction and manipulation of business data."
+      }
     ],
-    "answer": ["A", "C", "D"]
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ]
   },
   {
     "id": 19,
@@ -243,12 +516,26 @@
     "type": "mcq",
     "question": "Strategic management faces unstructured decisions. Which set of information characteristics fits that level?",
     "options": [
-      { "letter": "A", "text": "Pre-specified, scheduled, detailed, frequent, historical, internal, narrow focus." },
-      { "letter": "B", "text": "Ad hoc, unscheduled, summarised, infrequent, forward-looking, external, wide scope." },
-      { "letter": "C", "text": "Fixed format, transaction-level, internal only, produced by extraction alone." },
-      { "letter": "D", "text": "Real-time, machine-generated, operational and highly repetitive." }
+      {
+        "letter": "A",
+        "text": "Pre-specified, scheduled, detailed, frequent, historical, internal, narrow focus."
+      },
+      {
+        "letter": "B",
+        "text": "Ad hoc, unscheduled, summarised, infrequent, forward-looking, external, wide scope."
+      },
+      {
+        "letter": "C",
+        "text": "Fixed format, transaction-level, internal only, produced by extraction alone."
+      },
+      {
+        "letter": "D",
+        "text": "Real-time, machine-generated, operational and highly repetitive."
+      }
     ],
-    "answer": ["B"]
+    "answer": [
+      "B"
+    ]
   },
   {
     "id": 20,
@@ -256,12 +543,1513 @@
     "type": "multi",
     "question": "Which of these are listed as business pressures that make decision making harder and motivate the need for a DSS?",
     "options": [
-      { "letter": "A", "text": "Information overload." },
-      { "letter": "B", "text": "Powerful customers whose expectations rise as they become more knowledgeable about products and services." },
-      { "letter": "C", "text": "A shrinking global economy with weaker competition." },
-      { "letter": "D", "text": "A workforce that is becoming more diversified, with people able to work from home." },
-      { "letter": "E", "text": "The elimination of government regulation and societal issues." }
+      {
+        "letter": "A",
+        "text": "Information overload."
+      },
+      {
+        "letter": "B",
+        "text": "Powerful customers whose expectations rise as they become more knowledgeable about products and services."
+      },
+      {
+        "letter": "C",
+        "text": "A shrinking global economy with weaker competition."
+      },
+      {
+        "letter": "D",
+        "text": "A workforce that is becoming more diversified, with people able to work from home."
+      },
+      {
+        "letter": "E",
+        "text": "The elimination of government regulation and societal issues."
+      }
     ],
-    "answer": ["A", "B", "D"]
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ]
+  },
+  {
+    "id": 21,
+    "topic": "Data and model management",
+    "type": "mcq",
+    "question": "Which set lists the four parts of the data management subsystem?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Model base, model base management system, modelling language and model directory."
+      },
+      {
+        "letter": "B",
+        "text": "DSS database, facts, hypotheses and an inference engine."
+      },
+      {
+        "letter": "C",
+        "text": "DSS database, database management system, data directory and query facility."
+      },
+      {
+        "letter": "D",
+        "text": "Data warehouse, data mining, OLAP and multimedia databases."
+      }
+    ],
+    "answer": [
+      "C"
+    ]
+  },
+  {
+    "id": 22,
+    "topic": "Data and model management",
+    "type": "mcq",
+    "question": "According to Marakas, which component is what differentiates a DSS from other information systems?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "The data directory, because it records the granularity of every stored file."
+      },
+      {
+        "letter": "B",
+        "text": "The user interface, because to most users it is the system."
+      },
+      {
+        "letter": "C",
+        "text": "The data warehouse, because it holds the historical data end users can view or manipulate."
+      },
+      {
+        "letter": "D",
+        "text": "The model base, because it stores and organises the various models the DSS uses in its analyses."
+      }
+    ],
+    "answer": [
+      "D"
+    ]
+  },
+  {
+    "id": 23,
+    "topic": "Data and model management",
+    "type": "multi",
+    "question": "Which of these appear in the chapter's list of issues for the DSS database?\n· Select every item the DSS database issues slide gives.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Special GSS databases such as Lotus Notes / Domino Server."
+      },
+      {
+        "letter": "B",
+        "text": "Maintenance of logical independence between the data in the DSS database and the DSS application."
+      },
+      {
+        "letter": "C",
+        "text": "Multimedia databases and object-oriented databases."
+      },
+      {
+        "letter": "D",
+        "text": "A catalogue and description of every model the system stores."
+      },
+      {
+        "letter": "E",
+        "text": "Online analytical processing (OLAP) and data mining."
+      }
+    ],
+    "answer": [
+      "A",
+      "C",
+      "E"
+    ]
+  },
+  {
+    "id": 24,
+    "topic": "Data and model management",
+    "type": "mcq",
+    "question": "The data organisation slides say a database organises data into a logical hierarchy. Which four elements does that hierarchy contain, and on what is it based?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Reports, dashboards, scorecards and cubes, based on how executives consume the data."
+      },
+      {
+        "letter": "B",
+        "text": "Database, files, records and data elements, based on the granularity of the data."
+      },
+      {
+        "letter": "C",
+        "text": "Facts, hypotheses, rules and heuristics, based on how problem-specific each one is."
+      },
+      {
+        "letter": "D",
+        "text": "Internal, external and private sources, based on where each data item comes from."
+      }
+    ],
+    "answer": [
+      "B"
+    ]
+  },
+  {
+    "id": 25,
+    "topic": "Data and model management",
+    "type": "multi",
+    "question": "Which statements correctly pair a general DBMS function with the job the chapter gives it?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Data integrity means providing a query language that allows capture and extraction."
+      },
+      {
+        "letter": "B",
+        "text": "Concurrency control provides procedures for controlling the effects of simultaneous access."
+      },
+      {
+        "letter": "C",
+        "text": "Access control means describing the rules that maintain integrity and check for errors."
+      },
+      {
+        "letter": "D",
+        "text": "Data definition means providing a data definition language and allowing for interrelation of data."
+      },
+      {
+        "letter": "E",
+        "text": "Transaction recovery means providing mechanisms for restart and reconciliation in the event of hardware failure."
+      }
+    ],
+    "answer": [
+      "B",
+      "D",
+      "E"
+    ]
+  },
+  {
+    "id": 26,
+    "topic": "Data and model management",
+    "type": "multi",
+    "question": "Which statements about the DSS knowledge repository are supported by the chapter?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "The knowledge base can hold raw information as well as rules, heuristics, constraints or previous outcomes."
+      },
+      {
+        "letter": "B",
+        "text": "Facts represent what we know to be true at a given time, while hypotheses represent the rules or relationships we believe to exist between the facts."
+      },
+      {
+        "letter": "C",
+        "text": "The inference engine is the trained person who extracts knowledge from experts in the domain."
+      },
+      {
+        "letter": "D",
+        "text": "Knowledge is different from the information in the database or model base because it is problem-specific."
+      },
+      {
+        "letter": "E",
+        "text": "Hypotheses are what we know to be true at a given time, and facts are the relationships we believe exist between them."
+      }
+    ],
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ]
+  },
+  {
+    "id": 27,
+    "topic": "Data and model management",
+    "type": "mcq",
+    "question": "How does Chapter 2 describe what a data warehouse holds?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "It originally held historical data that were organised and summarised so end users could easily view or manipulate them, and today some warehouses also include current data so they can give real-time decision support."
+      },
+      {
+        "letter": "B",
+        "text": "It originally held only current data, and historical data were moved out of it when data mining arrived."
+      },
+      {
+        "letter": "C",
+        "text": "It has always held both current and historical data, and its structure has never changed."
+      },
+      {
+        "letter": "D",
+        "text": "It holds the models and the modelling language, which earlier systems kept in the model base."
+      }
+    ],
+    "answer": [
+      "A"
+    ]
+  },
+  {
+    "id": 28,
+    "topic": "Data and model management",
+    "type": "mcq",
+    "question": "Which statement about OLAP is supported by the chapter?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "It is a business rules-based system that recommends solutions to repetitive decisions such as pricing."
+      },
+      {
+        "letter": "B",
+        "text": "It gives the elementary data-oriented functionality, accessing simple file systems by query and retrieval tools."
+      },
+      {
+        "letter": "C",
+        "text": "Its tools let users analyse datasets from a wide variety of angles based on different business perspectives, and cube (slice and dice) analysis is a listed business intelligence style."
+      },
+      {
+        "letter": "D",
+        "text": "It replaces the data warehouse by pushing prespecified reports and alerts straight to executive dashboards."
+      }
+    ],
+    "answer": [
+      "C"
+    ]
+  },
+  {
+    "id": 29,
+    "topic": "Decision makers and styles",
+    "type": "mcq",
+    "question": "According to section 3.1 of Chapter 3, who is a decision maker?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "An employee who records routine transactions and applies a standard solution procedure."
+      },
+      {
+        "letter": "B",
+        "text": "The specialist who maintains the DSS database and the model base an organisation depends on."
+      },
+      {
+        "letter": "C",
+        "text": "The person or group of individuals who is responsible for making strategically important decisions."
+      },
+      {
+        "letter": "D",
+        "text": "A manager whose decisions involve only one or two stakeholders."
+      }
+    ],
+    "answer": [
+      "C"
+    ]
+  },
+  {
+    "id": 30,
+    "topic": "Decision makers and styles",
+    "type": "mcq",
+    "question": "In the chapter's classification of decision makers, which description belongs to a team?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "A decision maker that may be a single person or a computer system."
+      },
+      {
+        "letter": "B",
+        "text": "Members support a single decision maker."
+      },
+      {
+        "letter": "C",
+        "text": "All of the members have a say in the decisions."
+      },
+      {
+        "letter": "D",
+        "text": "Global agreement is needed before the decision is taken."
+      }
+    ],
+    "answer": [
+      "B"
+    ]
+  },
+  {
+    "id": 31,
+    "topic": "Decision makers and styles",
+    "type": "multi",
+    "question": "Which of these decision styles are matched correctly to the traits the chapter gives them?\n· Select every style whose description is stated in the slides.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Directive, which combines a high need for problem structure with a low tolerance for ambiguity."
+      },
+      {
+        "letter": "B",
+        "text": "Conceptual, which shows a low tolerance for ambiguity and suits technical decisions needing little information."
+      },
+      {
+        "letter": "C",
+        "text": "Behavioral, which requires a low amount of data, is conflict-averse and relies on consensus."
+      },
+      {
+        "letter": "D",
+        "text": "Analytical, which needs less information than the other styles and avoids conflict."
+      },
+      {
+        "letter": "E",
+        "text": "Analytical, which has a greater tolerance for ambiguity and tends to need more information."
+      }
+    ],
+    "answer": [
+      "A",
+      "C",
+      "E"
+    ]
+  },
+  {
+    "id": 32,
+    "topic": "Decision makers and styles",
+    "type": "mcq",
+    "question": "A DSS is being designed for a directive decision maker who does not handle stress well. What does the chapter say that interface must do?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "It must organise the decision as a group brainstorming session."
+      },
+      {
+        "letter": "B",
+        "text": "It must lengthen the time available before the decision is taken."
+      },
+      {
+        "letter": "C",
+        "text": "It must gather many data sources for the decision maker to analyze."
+      },
+      {
+        "letter": "D",
+        "text": "It must allow the decision maker to control the system without tedious input."
+      }
+    ],
+    "answer": [
+      "D"
+    ]
+  },
+  {
+    "id": 33,
+    "topic": "Decision makers and styles",
+    "type": "mcq",
+    "question": "In section 3.3, what makes a decision an effective one?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "It results in attainment of the objective within the constraints imposed."
+      },
+      {
+        "letter": "B",
+        "text": "It is reached in a shorter time than the organisation's previous comparable decision."
+      },
+      {
+        "letter": "C",
+        "text": "It removes the forces acting upon the process so that no balancing is needed."
+      },
+      {
+        "letter": "D",
+        "text": "It follows a standard solution procedure already defined for that problem type."
+      }
+    ],
+    "answer": [
+      "A"
+    ]
+  },
+  {
+    "id": 34,
+    "topic": "Decision makers and styles",
+    "type": "multi",
+    "question": "Which of these are listed as common types of support a DSS provides?\n· Select every item that appears in the chapter's list.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "It explores multiple perspectives of a decision."
+      },
+      {
+        "letter": "B",
+        "text": "It discourages premature decision-making."
+      },
+      {
+        "letter": "C",
+        "text": "It guarantees attainment of the objective within the constraints imposed."
+      },
+      {
+        "letter": "D",
+        "text": "It improves response time."
+      },
+      {
+        "letter": "E",
+        "text": "It provides control over multiple sources of data."
+      }
+    ],
+    "answer": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ]
+  },
+  {
+    "id": 35,
+    "topic": "Decision making process",
+    "type": "mcq",
+    "question": "Chapter 4 lists four key areas that determine the relative difficulty of a decision. What does it say about structure?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "The more structure a decision has, the more distinct pieces of information the mind must handle."
+      },
+      {
+        "letter": "B",
+        "text": "In general, the more structure, the less information required."
+      },
+      {
+        "letter": "C",
+        "text": "Structure decides which of Simon's four phases the decision belongs to."
+      },
+      {
+        "letter": "D",
+        "text": "Structure and information requirement are unrelated areas of difficulty."
+      }
+    ],
+    "answer": [
+      "B"
+    ]
+  },
+  {
+    "id": 36,
+    "topic": "Decision making process",
+    "type": "mcq",
+    "question": "According to section 4.5, why can judgment not be used exclusively when a decision maker evaluates solution alternatives?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "It is slower and more stressful than detailed analysis."
+      },
+      {
+        "letter": "B",
+        "text": "It is the least favoured of the strategies for evaluating alternatives."
+      },
+      {
+        "letter": "C",
+        "text": "It requires an exact, reliable method before it can be applied at all."
+      },
+      {
+        "letter": "D",
+        "text": "It relies heavily on the decision maker's recollection, which may fail."
+      }
+    ],
+    "answer": [
+      "D"
+    ]
+  },
+  {
+    "id": 37,
+    "topic": "Decision making process",
+    "type": "mcq",
+    "question": "Section 4.4 notes that it is not always possible to optimize, because some problems have only qualitative solutions and others are quantitative but have multiple objectives at odds with others. What does the chapter call rational behaviour in such a situation?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Choosing a \"good\" solution rather than an optimal one."
+      },
+      {
+        "letter": "B",
+        "text": "Examining every alternative until the selected one is proved to be the best."
+      },
+      {
+        "letter": "C",
+        "text": "Leaving the choice to the model, since the model is a critical component."
+      },
+      {
+        "letter": "D",
+        "text": "Postponing the decision until a quantitative solution exists."
+      }
+    ],
+    "answer": [
+      "A"
+    ]
+  },
+  {
+    "id": 38,
+    "topic": "Decision making process",
+    "type": "multi",
+    "question": "Which decision topologies are matched to the categories section 4.2 gives them?\n· Select every pairing the slides actually state.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Negotiation-based decisions are classified as routine, creative or negotiated."
+      },
+      {
+        "letter": "B",
+        "text": "Strategy-based decisions are grouped into computational, judgmental, inspirational or compromise."
+      },
+      {
+        "letter": "C",
+        "text": "Activity-based decisions are classified as routine, creative or negotiated."
+      },
+      {
+        "letter": "D",
+        "text": "Activity-based decisions are typed as entrepreneurial, adaptive or planning."
+      },
+      {
+        "letter": "E",
+        "text": "Negotiation-based decisions are typed as entrepreneurial, adaptive or planning."
+      }
+    ],
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ]
+  },
+  {
+    "id": 39,
+    "topic": "Decision making process",
+    "type": "mcq",
+    "question": "Keen and Scott Morton categorized decision theory into five perspectives. Which one of these is one of those five?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "The technological infrastructure perspective."
+      },
+      {
+        "letter": "B",
+        "text": "The financial reporting perspective."
+      },
+      {
+        "letter": "C",
+        "text": "The individual difference perspective."
+      },
+      {
+        "letter": "D",
+        "text": "The operational scheduling perspective."
+      }
+    ],
+    "answer": [
+      "C"
+    ]
+  },
+  {
+    "id": 40,
+    "topic": "Decision making process",
+    "type": "multi",
+    "question": "Which statements about the phases and stages of Simon's model are supported by section 4.3?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "In the design stage the decision maker goes back to stage 1 if there is insufficient data."
+      },
+      {
+        "letter": "B",
+        "text": "The choice stage is where the organization obtains the resources to implement the plan."
+      },
+      {
+        "letter": "C",
+        "text": "The implementation stage is where the organization devises a plan for carrying out the alternative selected in the choice phase."
+      },
+      {
+        "letter": "D",
+        "text": "The intelligence stage is the one in which alternatives are formulated and analyzed."
+      },
+      {
+        "letter": "E",
+        "text": "In the choice stage the best and most effective course of action is chosen from the practical alternatives."
+      }
+    ],
+    "answer": [
+      "A",
+      "C",
+      "E"
+    ]
+  },
+  {
+    "id": 41,
+    "topic": "Decision making process",
+    "type": "mcq",
+    "question": "In the design phase, modeling abstracts the problem to quantitative or qualitative form, and the chapter says a model has decision variables and a principle of choice. What is the principle of choice?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "A variable that can be changed and manipulated by the decision maker, such as the quantity to produce."
+      },
+      {
+        "letter": "B",
+        "text": "A process that imitates reality so that alternatives can be tried out."
+      },
+      {
+        "letter": "C",
+        "text": "The jurisdiction or authority to solve the problem."
+      },
+      {
+        "letter": "D",
+        "text": "The criterion for making a choice among alternatives."
+      }
+    ],
+    "answer": [
+      "D"
+    ]
+  },
+  {
+    "id": 42,
+    "topic": "Decision making process",
+    "type": "multi",
+    "question": "Which of these are listed as issues that may arise during data collection in the intelligence phase?\n· Select every item that appears in that list.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "The model generates all the alternatives automatically."
+      },
+      {
+        "letter": "B",
+        "text": "Obtaining data may be expensive."
+      },
+      {
+        "letter": "C",
+        "text": "Data may be insecure."
+      },
+      {
+        "letter": "D",
+        "text": "The chosen alternative is demonstrably the best of all possible alternatives."
+      },
+      {
+        "letter": "E",
+        "text": "Outcomes or results may occur over an extended period."
+      }
+    ],
+    "answer": [
+      "B",
+      "C",
+      "E"
+    ]
+  },
+  {
+    "id": 43,
+    "topic": "Decision making process",
+    "type": "mcq",
+    "question": "In the choice phase, solving a decision-making model involves searching for an appropriate course of action. Which search approach is defined as a step-by-step search in which improvement is made at every step until the best solution is found?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Algorithm."
+      },
+      {
+        "letter": "B",
+        "text": "Analytical technique."
+      },
+      {
+        "letter": "C",
+        "text": "Heuristic."
+      },
+      {
+        "letter": "D",
+        "text": "Blind search."
+      }
+    ],
+    "answer": [
+      "A"
+    ]
+  },
+  {
+    "id": 44,
+    "topic": "Decision making process",
+    "type": "mcq",
+    "question": "A project team fixes on the first cost figure quoted for a build, then adjusts up and down from it, and ends up underestimating how much adjustment was needed. Which of the chapter's four major categories of heuristic bias is this?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Availability."
+      },
+      {
+        "letter": "B",
+        "text": "Adjustment and anchoring."
+      },
+      {
+        "letter": "C",
+        "text": "Representativeness."
+      },
+      {
+        "letter": "D",
+        "text": "Motivational."
+      }
+    ],
+    "answer": [
+      "B"
+    ]
+  },
+  {
+    "id": 45,
+    "topic": "Decision modelling and forecasting",
+    "type": "multi",
+    "question": "Chapter 5 says a fully formed problem statement contains three key elements.\n· Select the three the chapter lists.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "The current state of affairs."
+      },
+      {
+        "letter": "B",
+        "text": "The budget and staffing allocated to studying the problem."
+      },
+      {
+        "letter": "C",
+        "text": "The desired state of affairs."
+      },
+      {
+        "letter": "D",
+        "text": "The list of alternatives management has already ruled out."
+      },
+      {
+        "letter": "E",
+        "text": "A statement of the central objective or objectives that distinguish the two states."
+      }
+    ],
+    "answer": [
+      "A",
+      "C",
+      "E"
+    ]
+  },
+  {
+    "id": 46,
+    "topic": "Decision modelling and forecasting",
+    "type": "mcq",
+    "question": "A problem may be worth solving yet lie beyond the available resources or the time constraints. What does the chapter prescribe for that case?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Drop the problem, since anything that exceeds the available resources cannot be modelled."
+      },
+      {
+        "letter": "B",
+        "text": "Keep the scope unchanged and extend the study duration until the cause is found."
+      },
+      {
+        "letter": "C",
+        "text": "Widen the scope to every facility so that no element of the problem is missed."
+      },
+      {
+        "letter": "D",
+        "text": "Reduce the scope to a focus that allows a solution, and identify its breadth by asking the people involved and looking at cost and magnitude."
+      }
+    ],
+    "answer": [
+      "D"
+    ]
+  },
+  {
+    "id": 47,
+    "topic": "Decision modelling and forecasting",
+    "type": "multi",
+    "question": "Which of these are steps the chapter gives for structuring a decision problem?\n· Select every step that appears in the list of five.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Create three lists of the decisions, the uncertain events and the objectives."
+      },
+      {
+        "letter": "B",
+        "text": "Sort the lists in decreasing order of importance."
+      },
+      {
+        "letter": "C",
+        "text": "Draw the influence diagram or tree only after every element is fixed, so nothing has to be added later."
+      },
+      {
+        "letter": "D",
+        "text": "Create an initial influence diagram or decision tree, then add elements one at a time until the initial lists are exhausted."
+      },
+      {
+        "letter": "E",
+        "text": "Evaluate the overall structure and revise it if necessary."
+      }
+    ],
+    "answer": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ]
+  },
+  {
+    "id": 48,
+    "topic": "Decision modelling and forecasting",
+    "type": "mcq",
+    "question": "Strategy A of a travel agency returns -RM50,000 under low demand, RM120,000 under moderate demand and RM250,000 under high demand, with probabilities 0.2, 0.5 and 0.3. Using the expected value the chapter attaches to risk analysis, what is the EMV of strategy A?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "RM75,000, counting only the weighted high-demand branch."
+      },
+      {
+        "letter": "B",
+        "text": "RM125,000."
+      },
+      {
+        "letter": "C",
+        "text": "RM145,000, reading the low-demand result as a gain."
+      },
+      {
+        "letter": "D",
+        "text": "RM320,000, adding the three results without probabilities."
+      }
+    ],
+    "answer": [
+      "B"
+    ]
+  },
+  {
+    "id": 49,
+    "topic": "Decision modelling and forecasting",
+    "type": "multi",
+    "question": "Strategy A of a travel agency returns -RM50,000, RM120,000 and RM250,000, strategy B returns RM20,000, RM90,000 and RM100,000, and strategy C returns RM30,000, RM50,000 and RM60,000 under low, moderate and high demand, whose probabilities are 0.2, 0.5 and 0.3.\n· Which statements follow from the chapter's expected-value method?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Strategy B has the highest EMV at RM79,000, so B is the choice."
+      },
+      {
+        "letter": "B",
+        "text": "Strategy A has an EMV of RM125,000, the highest of the three, so A is selected."
+      },
+      {
+        "letter": "C",
+        "text": "Strategy C has an EMV of RM49,000."
+      },
+      {
+        "letter": "D",
+        "text": "Perfect information about demand is worth up to RM16,000, because the expected return with it is RM141,000 against RM125,000 without it."
+      },
+      {
+        "letter": "E",
+        "text": "Because demand is uncertain, the probabilities should be dropped and each strategy judged on its best result."
+      }
+    ],
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ]
+  },
+  {
+    "id": 50,
+    "topic": "Decision modelling and forecasting",
+    "type": "mcq",
+    "question": "An investment decision table uses the three states of the economy the chapter names: solid growth, stagnation and inflation. If solid growth is given 0.30 and stagnation 0.45, what probability must inflation carry?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "0.15, because the least likely state is given the smallest share."
+      },
+      {
+        "letter": "B",
+        "text": "0.20, because the probabilities must leave a margin below 1."
+      },
+      {
+        "letter": "C",
+        "text": "0.25, because the total probability of a complete set of outcomes must equal 1."
+      },
+      {
+        "letter": "D",
+        "text": "0.75, because that is the probability of the union of the two states already listed."
+      }
+    ],
+    "answer": [
+      "C"
+    ]
+  },
+  {
+    "id": 51,
+    "topic": "Decision modelling and forecasting",
+    "type": "mcq",
+    "question": "Which statement about an influence diagram matches the chapter?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "When properly constructed it has no cycles: the arrows form a one-way path with no backward path to the starting point."
+      },
+      {
+        "letter": "B",
+        "text": "Circles stand for the result or outcome variables, intermediate or final."
+      },
+      {
+        "letter": "C",
+        "text": "A rectangle represents an uncontrollable or intermediate variable."
+      },
+      {
+        "letter": "D",
+        "text": "The arrows record the payoff attached to each branch of the choice."
+      }
+    ],
+    "answer": [
+      "A"
+    ]
+  },
+  {
+    "id": 52,
+    "topic": "Decision modelling and forecasting",
+    "type": "mcq",
+    "question": "In section 5.6 a forecaster is offered a series of bets to determine how strongly they feel that an event will occur. Which forecasting probability technique is being used?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Direct probability forecasting."
+      },
+      {
+        "letter": "B",
+        "text": "Comparison forecasting."
+      },
+      {
+        "letter": "C",
+        "text": "Decomposition of a complex probability."
+      },
+      {
+        "letter": "D",
+        "text": "Odds forecasting."
+      }
+    ],
+    "answer": [
+      "D"
+    ]
+  },
+  {
+    "id": 53,
+    "topic": "Decision modelling and forecasting",
+    "type": "mcq",
+    "question": "A decision maker faces several outcomes for each decision, and the probability of each outcome is unknown. Which treatment does the chapter give for that situation?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "A certainty model, because all potential outcomes are already known."
+      },
+      {
+        "letter": "B",
+        "text": "A risk analysis, because more than one outcome always means risk."
+      },
+      {
+        "letter": "C",
+        "text": "Uncertainty, where knowledge would lead to less uncertainty."
+      },
+      {
+        "letter": "D",
+        "text": "A domain-specific model, since probabilities belong only to stochastic techniques."
+      }
+    ],
+    "answer": [
+      "C"
+    ]
+  },
+  {
+    "id": 54,
+    "topic": "DSS design and user interface",
+    "type": "mcq",
+    "question": "Chapter 7 splits the user interface into three components. Which option names all three of them?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Mental model, metaphors and idioms, and navigation of the model."
+      },
+      {
+        "letter": "B",
+        "text": "Action language, display or presentation language, and knowledge base."
+      },
+      {
+        "letter": "C",
+        "text": "Menu format, question-answer format, and command language format."
+      },
+      {
+        "letter": "D",
+        "text": "Commands, a set of menus, graphics and icons."
+      }
+    ],
+    "answer": [
+      "B"
+    ]
+  },
+  {
+    "id": 55,
+    "topic": "DSS design and user interface",
+    "type": "mcq",
+    "question": "A ward sister runs a clinical DSS by pointing at icons and similar objects on the screen instead of typing instructions. Which term and definition from Chapter 7 fit her interface best?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "User interface management system (UIMS), the DSS component that handles all interaction between users and the system."
+      },
+      {
+        "letter": "B",
+        "text": "Command-line interface, where the user enters a command such as run and the system executes it."
+      },
+      {
+        "letter": "C",
+        "text": "Graphical user interface (GUI), an interactive, user-friendly interface in which, by using icons and similar objects, the user can control communication with a computer."
+      },
+      {
+        "letter": "D",
+        "text": "Question-and-answer interface, where the machine asks questions and the user enters the answers."
+      }
+    ],
+    "answer": [
+      "C"
+    ]
+  },
+  {
+    "id": 56,
+    "topic": "DSS design and user interface",
+    "type": "mcq",
+    "question": "Which of these is not one of the five basic action language types listed in Chapter 7?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Input/output structured format."
+      },
+      {
+        "letter": "B",
+        "text": "Free form natural language format."
+      },
+      {
+        "letter": "C",
+        "text": "Question-answer format."
+      },
+      {
+        "letter": "D",
+        "text": "Voice recognition format."
+      }
+    ],
+    "answer": [
+      "D"
+    ]
+  },
+  {
+    "id": 57,
+    "topic": "DSS design and user interface",
+    "type": "multi",
+    "question": "Which statements about the question-and-answer interface are given in Chapter 7?\n· Select every statement the chapter makes about this interface type.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "The user must enter commands such as run before the system will act."
+      },
+      {
+        "letter": "B",
+        "text": "The machine asks the questions and the user enters the answers to them."
+      },
+      {
+        "letter": "C",
+        "text": "It turns into a dialogue while the user continues to answer the questions asked by the system."
+      },
+      {
+        "letter": "D",
+        "text": "It works through eyes-free and hands-free recognition of the user's speech."
+      },
+      {
+        "letter": "E",
+        "text": "Its major challenge is unstructured answers, because a computer does not understand them."
+      }
+    ],
+    "answer": [
+      "B",
+      "C",
+      "E"
+    ]
+  },
+  {
+    "id": 58,
+    "topic": "DSS design and user interface",
+    "type": "mcq",
+    "question": "A DSS that started as one short menu has grown into several sets of menus whose items open further sub menus. What is the chapter's position on this situation?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Menus are appropriate for simple systems, and as complexity increases users require several sets of menus to choose from while menu items can have sub menus."
+      },
+      {
+        "letter": "B",
+        "text": "Menus suit complex systems best, because their items never need to open another menu."
+      },
+      {
+        "letter": "C",
+        "text": "A menu interface saves time and resources when the DSS interface and software are designed and developed."
+      },
+      {
+        "letter": "D",
+        "text": "Adding more menu sets converts the interface into a command language format."
+      }
+    ],
+    "answer": [
+      "A"
+    ]
+  },
+  {
+    "id": 59,
+    "topic": "DSS design and user interface",
+    "type": "multi",
+    "question": "Which of these are listed as factors influencing the success of user interface design in a DSS?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Reduce the learning time of DSS users."
+      },
+      {
+        "letter": "B",
+        "text": "Make the interface draw attention to itself so that users can see it working."
+      },
+      {
+        "letter": "C",
+        "text": "Reduce the chances of errors made by end users."
+      },
+      {
+        "letter": "D",
+        "text": "Keep users motivated to use the decision support system."
+      },
+      {
+        "letter": "E",
+        "text": "Offer users the ease to recall."
+      }
+    ],
+    "answer": [
+      "A",
+      "C",
+      "D",
+      "E"
+    ]
+  },
+  {
+    "id": 60,
+    "topic": "DSS design and user interface",
+    "type": "mcq",
+    "question": "In the ROMC design approach, a user is given commands that edit, redo, undo, save, view and delete the information, representations or tasks performed by or with the DSS. Which ROMC element do these commands belong to?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Representation, because it presents information and results in a structured way."
+      },
+      {
+        "letter": "B",
+        "text": "Operation, because it covers the specific tasks performed by or with the DSS."
+      },
+      {
+        "letter": "C",
+        "text": "Control aid, because it lets users effectively use representations, operations and memory aids."
+      },
+      {
+        "letter": "D",
+        "text": "Memory aid, because it links the user to the data warehouse and to command shortcuts."
+      }
+    ],
+    "answer": [
+      "C"
+    ]
+  },
+  {
+    "id": 61,
+    "topic": "DSS design and user interface",
+    "type": "mcq",
+    "question": "The DSS developer and the end users are bound by a contract, management wants a disciplined sequence of phases, yet the requirements are expected to shift. Which judgement follows Chapter 6?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Prototyping is the method the chapter links to contractual relationships, because its phases are fixed in advance."
+      },
+      {
+        "letter": "B",
+        "text": "The system development life cycle is often used where there is a contractual relationship between developer and end users, and its primary advantage is the structure and discipline it brings, but its major complaint is rigidity since DSS requirements can change rapidly."
+      },
+      {
+        "letter": "C",
+        "text": "The life cycle runs from implementation back to problem definition, so it cannot be applied to a DSS at all."
+      },
+      {
+        "letter": "D",
+        "text": "Prototyping shares nothing with the classic life cycle, because the two methods diverge from the very first stage."
+      }
+    ],
+    "answer": [
+      "B"
+    ]
+  },
+  {
+    "id": 62,
+    "topic": "DSS design and user interface",
+    "type": "multi",
+    "question": "For unstructured problems Chapter 6 lists seven basic activities, noting that not all may be performed in every project. Which activities are correctly matched to what the chapter says they do?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "System construction - an iterative prototyping approach with small but constant refinement."
+      },
+      {
+        "letter": "B",
+        "text": "System analysis - establishing the functional, interface and coordination categories of requirements."
+      },
+      {
+        "letter": "C",
+        "text": "System implementation - the formal identification of the problem context."
+      },
+      {
+        "letter": "D",
+        "text": "System design - testing, evaluation and deployment of the finished system."
+      },
+      {
+        "letter": "E",
+        "text": "Incremental adaptation - continual refinement of the activities of the earlier six stages."
+      }
+    ],
+    "answer": [
+      "A",
+      "B",
+      "E"
+    ]
+  },
+  {
+    "id": 63,
+    "topic": "DSS design and user interface",
+    "type": "mcq",
+    "question": "The team is comparing DSS generators before buying one. Which option lists only criteria that Chapter 6 names for selecting a development tool?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Available hardware platforms and cost."
+      },
+      {
+        "letter": "B",
+        "text": "The depth of nested menus and the density of the screen layout."
+      },
+      {
+        "letter": "C",
+        "text": "The number of chance nodes a prototype can draw."
+      },
+      {
+        "letter": "D",
+        "text": "The learning time of the end users who will operate it."
+      }
+    ],
+    "answer": [
+      "A"
+    ]
+  },
+  {
+    "id": 64,
+    "topic": "Implementation and group decision support",
+    "type": "mcq",
+    "question": "Chapter 8 sums up DSS implementation in a single sentence. Which option gives that essence?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "The process of comparing the features of the DSS to the original user requirements."
+      },
+      {
+        "letter": "B",
+        "text": "The process of deliberately introducing change into the organisation."
+      },
+      {
+        "letter": "C",
+        "text": "The process of merging the hardware and software of the DSS with the existing systems."
+      },
+      {
+        "letter": "D",
+        "text": "The process of sorting the comments entered by participants into common themes."
+      }
+    ],
+    "answer": [
+      "B"
+    ]
+  },
+  {
+    "id": 65,
+    "topic": "Implementation and group decision support",
+    "type": "mcq",
+    "question": "Several authors measure DSS success by the quality of the software. In Chapter 8's list of software quality characteristics, which one is the degree of structuredness?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Testability, the degree of structuredness."
+      },
+      {
+        "letter": "B",
+        "text": "Portability, the amount of platform independence."
+      },
+      {
+        "letter": "C",
+        "text": "Human-engineering, the degree of communicativeness."
+      },
+      {
+        "letter": "D",
+        "text": "Modifiability, the degree of augmentability."
+      }
+    ],
+    "answer": [
+      "A"
+    ]
+  },
+  {
+    "id": 66,
+    "topic": "Implementation and group decision support",
+    "type": "multi",
+    "question": "One framework for measuring DSS success contains four measurement categories. Which options are categories of that framework, with the contents Chapter 8 lists for them?\n· Select every category that belongs to the four-category framework.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "System performance - response time, data entry, output format, usage and user interface."
+      },
+      {
+        "letter": "B",
+        "text": "Task performance - decision quality measured by time spent in the decision process, plus trust, confidence and satisfaction."
+      },
+      {
+        "letter": "C",
+        "text": "Political performance - the fit with the political approach to decision making within the organisation."
+      },
+      {
+        "letter": "D",
+        "text": "Business opportunities - costs of development and operation, increased income and changes in productivity."
+      },
+      {
+        "letter": "E",
+        "text": "Attitudinal performance - the degree to which organisational needs have been met or exceeded."
+      }
+    ],
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ]
+  },
+  {
+    "id": 67,
+    "topic": "Implementation and group decision support",
+    "type": "mcq",
+    "question": "Chapter 8 names two general categories of integration when a DSS is merged into the organisation. Which option states both correctly?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Functional integration merges the hardware and software of the DSS with the existing systems, while physical integration links the DSS functions to them."
+      },
+      {
+        "letter": "B",
+        "text": "Technical integration compares the DSS features with the original user requirements, while organizational integration measures the needs met."
+      },
+      {
+        "letter": "C",
+        "text": "Functional and physical integration are the two categories, and merging the new application seamlessly supports the user perception that it is easy to use and useful."
+      },
+      {
+        "letter": "D",
+        "text": "Evolutionary and system integration are the two categories, covering flexibility and response time."
+      }
+    ],
+    "answer": [
+      "C"
+    ]
+  },
+  {
+    "id": 68,
+    "topic": "Implementation and group decision support",
+    "type": "mcq",
+    "question": "A firm wants meetings at any time and any place with agreed deadlines, the software is bought or leased rather than housed in a room of its own, and there are no facility costs. Which of Chapter 9's three ways of deploying group support technology does this describe?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "The special purpose decision room."
+      },
+      {
+        "letter": "B",
+        "text": "The multiple use facility."
+      },
+      {
+        "letter": "C",
+        "text": "The creativity support system."
+      },
+      {
+        "letter": "D",
+        "text": "Web-based groupware with clients."
+      }
+    ],
+    "answer": [
+      "D"
+    ]
+  },
+  {
+    "id": 69,
+    "topic": "Implementation and group decision support",
+    "type": "mcq",
+    "question": "In a GDSS meeting, participants enter their comments into their computers and the facilitator then runs software that sorts those comments into common themes. Which part of the standard GSS meeting process is this?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Exploratory idea generation."
+      },
+      {
+        "letter": "B",
+        "text": "New idea generation."
+      },
+      {
+        "letter": "C",
+        "text": "The idea organization tool."
+      },
+      {
+        "letter": "D",
+        "text": "Prioritization."
+      }
+    ],
+    "answer": [
+      "C"
+    ]
+  },
+  {
+    "id": 70,
+    "topic": "Implementation and group decision support",
+    "type": "multi",
+    "question": "Which of these statements about a group decision support system are given in Chapter 9's list of GDSS characteristics?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Members can be located in different places and work at different times."
+      },
+      {
+        "letter": "B",
+        "text": "All the information the group uses has to be kept inside the project itself."
+      },
+      {
+        "letter": "C",
+        "text": "It may exhibit the normal team problems of synergy or conflict."
+      },
+      {
+        "letter": "D",
+        "text": "It slows decision making down in order to reach consensus."
+      },
+      {
+        "letter": "E",
+        "text": "The work it supports is called computer-supported cooperative work or collaborative computing."
+      }
+    ],
+    "answer": [
+      "A",
+      "C",
+      "E"
+    ]
+  },
+  {
+    "id": 71,
+    "topic": "Implementation and group decision support",
+    "type": "multi",
+    "question": "Chapter 9 says most groupware offers one or more of several collaborative capabilities. Which options are capabilities on that list?\n· Select every capability the chapter gives for groupware.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Electronic brainstorming, with a free flow of ideas and comments."
+      },
+      {
+        "letter": "B",
+        "text": "Keeping the solution simple, hiding complexity and avoiding change."
+      },
+      {
+        "letter": "C",
+        "text": "Voting services, and group scheduling and calendars."
+      },
+      {
+        "letter": "D",
+        "text": "Model building, and electronic document sharing."
+      },
+      {
+        "letter": "E",
+        "text": "Merging the hardware and software of the DSS with the existing systems."
+      }
+    ],
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ]
   }
 ]

@@ -98,3 +98,33 @@ test("study resources open in a new tab and only appear when a course declares t
   await page.goto("/#/c/sample-course");
   await expect(page.getByRole("heading", { name: "Watch and explore" })).toHaveCount(0);
 });
+
+test("DSS chapters 2-9 reach a lesson and a decision lab set", async ({ page }) => {
+  await page.goto("/#/c/decision-support-system");
+  await expect(page.locator(".topic-row")).toHaveCount(9);
+  await expect(page.getByRole("heading", { name: "Decision modelling and forecasting" })).toBeVisible();
+
+  await page.goto("/#/c/decision-support-system/learn/dss-decision-making-process");
+  await expect(page.getByRole("heading", { name: /Run a decision through the four phases/ })).toBeVisible();
+  await expect(page.getByRole("link", { name: /Chapter 4: The Decision Making Process/ })).toHaveCount(1);
+  await expect(page.getByRole("heading", { name: "Apply it in the Decision lab" })).toBeVisible();
+
+  await page.goto("/#/c/decision-support-system/lab/dss-simon-phases");
+  await expect(page.getByRole("heading", { name: "Name the four stages and their jobs" })).toBeVisible();
+  await expect(page.locator(".lab-field")).toHaveCount(8);
+
+  await page.locator('select[data-blank="1"]').selectOption("Intelligence");
+  await page.locator('input[data-blank="2"]').fill("identify");
+  await page.locator('input[data-blank="3"]').fill("information");
+  await page.locator('select[data-blank="4"]').selectOption("Design");
+  await page.locator('input[data-blank="5"]').fill("feasibility");
+  await page.locator('select[data-blank="6"]').selectOption("Choice");
+  await page.locator('input[data-blank="7"]').fill("satisfactory");
+  await page.locator('select[data-blank="8"]').selectOption("Implementation");
+  await page.getByRole("button", { name: "Check answers" }).click();
+  await expect(page.locator(".lab-feedback.good")).toContainText("Lab complete");
+
+  await page.getByRole("button", { name: "← All labs" }).click();
+  await expect(page.getByRole("heading", { name: "Decision lab" })).toBeVisible();
+  await expect(page.getByRole("button", { name: /Name the four stages and their jobs/ })).toContainText("solved");
+});

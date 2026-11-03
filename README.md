@@ -161,8 +161,10 @@ Live at `learn.aizat.my`. The Java Programming course has 41 practice questions 
 simulations across eight topics. Discrete Structure (BIT11003/BIC10103) is in progress: a 40-question
 bank and one lesson per topic across four units — propositions and logic, CNF and DNF, predicates and
 quantifiers, and mathematical induction — plus a Logic lab of eight gap-filling sets, two per unit,
-all built from the tutorial sheets and lecture slides. Decision Support System (BIT30303) is a
-Chapter 1 pilot: 20 questions and one lesson across three topics — DSS fundamentals, Power's five
-DSS types, and decision types and information systems — plus a six-set Decision lab. Its lecture
+all built from the tutorial sheets and lecture slides. Decision Support System (BIT30303) covers all
+nine chapters: a 71-question bank with a 40-question timed exam, one lesson per topic across nine
+topics — from DSS fundamentals and Power's five types through decision modelling, design and
+implementation — and a Decision lab of 19 gap-filling sets. Each lesson links the chapter's
+NotebookLM video, and the course home links the full playlist plus the source notebook. Its lecture
 slides and scanned finals live in a `DSS/` folder beside this repo, so they are never committed.
 The sample course stays as a template for new courses.
